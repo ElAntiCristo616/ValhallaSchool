@@ -51,3 +51,7 @@ python3 tools/pdf_to_assets.py deepstash-content.pdf   # needs poppler's pdftote
 ```
 
 The mapping of books to topics is in `tools/pdf_to_assets.py`.
+
+## License
+
+[MIT](LICENSE)
