@@ -1,0 +1,16 @@
+<p>Stash is a small, fully offline app for learning and remembering the key ideas from nonfiction books. It has 2,300 bite-sized ideas from 230 books across 14 topics, with Duolingo-style learning on top.</p>
+
+<p><b>No account. No internet. No tracking. No permissions.</b> Your progress stays on your device.</p>
+
+<p><b>Features</b></p>
+<ul>
+<li><b>Home:</b> full-screen vertical swipe cards. Read ideas never show up in the feed again. Filter by topic.</li>
+<li><b>Explore:</b> all 230 books with progress bars, topic filters, and instant search across books and ideas. Each book has a "Continue" button and a quiz.</li>
+<li><b>Learn:</b> daily XP goal, streaks and levels; 690 short lessons; spaced-repetition reviews; four question types (pick the idea, which book, true/false, fill in the blank); wrong answers come back at the end of the session.</li>
+<li><b>Stash:</b> your saved ideas, plus your full reading history grouped by day.</li>
+<li><b>Profile:</b> weekly XP chart, progress per topic, 16 achievements, dark/light theme, sounds, and JSON backup export/import.</li>
+</ul>
+
+<p>Topics: Productivity, Money, Psychology, Thinking, Self-Improvement, Communication, Business, Philosophy, Happiness, Mindfulness, Health, Learning, Science, Relationships.</p>
+
+<p>The app is about 220 KB and has a single dependency (androidx.recyclerview).</p>
