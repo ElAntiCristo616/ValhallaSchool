@@ -254,7 +254,7 @@ final class Store {
             {"r25", "🔎", "Curious", "Read 25 ideas"},
             {"r100", "🐛", "Bookworm", "Read 100 ideas"},
             {"r500", "🎓", "Scholar", "Read 500 ideas"},
-            {"r1200", "🏛️", "Library", "Read all 1,200 ideas"},
+            {"r1200", "🏛️", "Library", "Read every idea"},
             {"b1", "📗", "Finisher", "Finish a book"},
             {"b10", "📚", "Shelf", "Finish 10 books"},
             {"s3", "🔥", "On fire", "3-day streak"},

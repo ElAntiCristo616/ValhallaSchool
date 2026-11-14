@@ -128,9 +128,20 @@ def main():
             for r in rows:
                 f.write("\t".join(clean(x) for x in r) + "\n")
 
+    rows = [(b["t"], b["a"], cat_of[i + 1]) for i, b in enumerate(books)]
+    # extra hand-written books are appended after the PDF ones so existing idea ids never shift
+    with open(os.path.join(ROOT, "tools/extra_books.tsv"), encoding="utf-8") as f:
+        for line in filter(None, (l.rstrip("\n") for l in f)):
+            if line.startswith("#"):
+                t, a, c = line[1:].split("\t")
+                rows.append((t, a, int(c)))
+                books.append({"t": t, "a": a, "ideas": []})
+            else:
+                books[-1]["ideas"].append(tuple(line.split("\t", 1)))
+
     os.makedirs(ASSETS, exist_ok=True)
     tsv("cats.tsv", CATS)
-    tsv("books.tsv", [(b["t"], b["a"], cat_of[i + 1]) for i, b in enumerate(books)])
+    tsv("books.tsv", rows)
     tsv("ideas.tsv", [idea for b in books for idea in b["ideas"]])
     odd = [(i + 1, b["t"], len(b["ideas"])) for i, b in enumerate(books) if len(b["ideas"]) != 10]
     print(f"{len(books)} books, {sum(len(b['ideas']) for b in books)} ideas -> {ASSETS}" + (f"; not 10 ideas: {odd}" if odd else ""))
