@@ -1,6 +1,6 @@
 # Stash
 
-A personal, offline Android app in the style of Deepstash: 1,300 bite-sized ideas from 130 books, with Duolingo-style learning on top. No login, no backend, no tracking.
+A personal, offline Android app in the style of Deepstash: 2,300 bite-sized ideas from 230 books, with Duolingo-style learning on top. No login, no backend, no tracking.
 
 **[⬇ Download the latest APK](https://github.com/safwanpp/stash/releases/latest)** (about 220 KB, Android 8+)
 
@@ -15,10 +15,10 @@ Your progress is stored on the device only. Use Profile → Export to keep a bac
 ## Features
 
 - **Home**: full-screen vertical swipe cards. A card counts as read once it stays on screen for about 1.2 s. Read ideas never show up in the feed again. Filter by topic.
-- **Explore**: all 130 books with progress bars, topic filters, and instant search across books and ideas. Each book page has a progress bar, "Continue" (unread ideas only), and a quiz.
+- **Explore**: all 230 books with progress bars, topic filters, and instant search across books and ideas. Each book page has a progress bar, "Continue" (unread ideas only), and a quiz.
 - **Learn**:
   - Daily XP goal, streaks, and levels.
-  - A path of 390 lessons: two 5-idea lessons plus a book quiz per book.
+  - A path of 690 lessons: two 5-idea lessons plus a book quiz per book.
   - Spaced-repetition reviews.
   - Four question types: pick the idea, which book, true/false, and fill in the blank.
   - Wrong answers come back at the end of the session.
