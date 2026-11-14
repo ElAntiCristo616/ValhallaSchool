@@ -2,6 +2,16 @@
 
 A personal, offline Android app in the style of Deepstash: 1,200 bite-sized ideas from 120 books, with Duolingo-style learning on top. No login, no backend, no tracking.
 
+**[⬇ Download the latest APK](https://github.com/safwanpp/stash/releases/latest)** (about 220 KB, Android 8+)
+
+## Install
+
+1. On your phone, open the [latest release](https://github.com/safwanpp/stash/releases/latest) and download `Stash-<version>.apk`.
+2. Open the file. If Android asks, allow "Install unknown apps" for your browser or file manager.
+3. Launch **Stash**. It needs no account, no internet connection, and no permissions.
+
+Your progress is stored on the device only. Use Profile → Export to keep a backup.
+
 ## Features
 
 - **Home**: full-screen vertical swipe cards. A card counts as read once it stays on screen for about 1.2 s. Read ideas never show up in the feed again. Filter by topic.
