@@ -1,0 +1,14 @@
+# build outputs
+build/
+.gradle/
+*.apk
+*.aab
+
+# machine-specific
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# source content PDF stays local
+*.pdf
