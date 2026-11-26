@@ -2,6 +2,7 @@ package com.valhallaschool.app;
 
 import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -47,6 +48,8 @@ final class ProfileTab extends MainActivity.Tab {
         mc.addView(new Views.Bar(a).set((xp - base) / (float) (next - base), ACCENT), lpm(M, dp(8), 0, 8, 0, 0));
         me.addView(mc, lp(0, W, 1));
         content.addView(me, lpm(M, W, 0, 4, 0, 18));
+
+        accountSection();
 
         LinearLayout lib = box(a);
         LinearLayout lr = row(a);
@@ -131,6 +134,103 @@ final class ProfileTab extends MainActivity.Tab {
         TextView foot = tv(a, Data.NB + " lecciones · " + Data.N + " ideas · sin internet", 12, MUTED, REG);
         foot.setGravity(Gravity.CENTER);
         content.addView(foot, lpm(M, W, 0, 24, 0, 0));
+    }
+
+    /** Cuenta de Valhalla School (Supabase) + ranking. */
+    private void accountSection() {
+        content.addView(section(a, "Cuenta"));
+        LinearLayout box = box(a);
+        if (SupabaseAuth.INSTANCE.isSignedIn()) {
+            SupabaseAuth.Session s = SupabaseAuth.INSTANCE.currentSession();
+            String email = s != null && s.getEmail() != null ? s.getEmail() : "Conectado";
+            box.addView(tv(a, email, 16, TEXT, BLACK));
+            box.addView(tv(a, "Tu progreso se guarda en la nube.", 13, MUTED, REG), lpm(M, W, 0, 4, 0, 10));
+            box.addView(link("Cerrar sesión", RED, v -> { SupabaseAuth.INSTANCE.signOut(); refresh(); }));
+            content.addView(box, lpm(M, W, 0, 0, 0, 12));
+            rankingBox();
+        } else {
+            EditText em = new EditText(a);
+            em.setHint("Correo");
+            em.setHintTextColor(MUTED);
+            em.setTextColor(TEXT);
+            em.setTextSize(16);
+            em.setSingleLine(true);
+            em.setBackground(round(SURF2, 12, LINE, 1));
+            em.setPadding(dp(14), dp(12), dp(14), dp(12));
+            box.addView(em, lp(M, W));
+            EditText pw = new EditText(a);
+            pw.setHint("Contraseña (mín. 6 caracteres)");
+            pw.setHintTextColor(MUTED);
+            pw.setTextColor(TEXT);
+            pw.setTextSize(16);
+            pw.setSingleLine(true);
+            pw.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            pw.setBackground(round(SURF2, 12, LINE, 1));
+            pw.setPadding(dp(14), dp(12), dp(14), dp(12));
+            box.addView(pw, lpm(M, W, 0, 10, 0, 0));
+            TextView st = tv(a, "Crea tu cuenta o entra: tu progreso se guarda en la nube.", 13, MUTED, REG);
+            box.addView(st, lpm(M, W, 0, 10, 0, 10));
+            LinearLayout bs = row(a);
+            bs.addView(btn(a, "Crear cuenta", B_YELLOW, v -> authGo(em.getText().toString().trim(), pw.getText().toString(), true, st)), lp(0, W, 1));
+            LinearLayout.LayoutParams p2 = lpm(0, W, 10, 0, 0, 0);
+            p2.weight = 1;
+            bs.addView(btn(a, "Entrar", B_GREEN, v -> authGo(em.getText().toString().trim(), pw.getText().toString(), false, st)), p2);
+            box.addView(bs, lp(M, W));
+            content.addView(box, lpm(M, W, 0, 0, 0, 12));
+        }
+    }
+
+    private void authGo(String email, String pass, boolean signup, TextView st) {
+        if (email.isEmpty() || pass.length() < 6) {
+            st.setText("Escribe un correo y una contraseña de 6 caracteres o más.");
+            st.setTextColor(RED);
+            return;
+        }
+        st.setText("Conectando…");
+        st.setTextColor(MUTED);
+        kotlin.jvm.functions.Function1<kotlin.Result<SupabaseAuth.Session>, kotlin.Unit> cb = result -> {
+            a.runOnUiThread(() -> {
+                if (result.isSuccess()) {
+                    a.toast("¡Bienvenido a Valhalla School!", false);
+                    refresh();
+                } else {
+                    Throwable e = result.exceptionOrNull();
+                    st.setText(e != null && e.getMessage() != null ? e.getMessage() : "Error al entrar.");
+                    st.setTextColor(RED);
+                }
+            });
+            return kotlin.Unit.INSTANCE;
+        };
+        if (signup) SupabaseAuth.INSTANCE.signUp(email, pass, cb);
+        else SupabaseAuth.INSTANCE.signIn(email, pass, cb);
+    }
+
+    private void rankingBox() {
+        content.addView(section(a, "Ranking"));
+        LinearLayout box = box(a);
+        box.addView(tv(a, "Cargando ranking…", 14, MUTED, REG));
+        content.addView(box, lpm(M, W, 0, 0, 0, 12));
+        GameProgressSync.INSTANCE.fetchLeaderboard(10, result -> {
+            a.runOnUiThread(() -> {
+                box.removeAllViews();
+                if (result.isFailure() || result.getOrNull() == null || result.getOrNull().isEmpty()) {
+                    box.addView(tv(a, "Aún no hay ranking. ¡Sé el primero!", 14, MUTED, REG));
+                    return;
+                }
+                int i = 1;
+                for (GameProgressSync.ScoreEntry e : result.getOrNull()) {
+                    String name = e.getUsername() != null ? e.getUsername() : "Jugador";
+                    if (name.contains("@")) name = name.substring(0, name.indexOf('@'));
+                    LinearLayout r = row(a);
+                    r.addView(tv(a, "#" + i, 14, ACCENT, BLACK), lp(dp(36), W));
+                    r.addView(one(tv(a, name, 14, TEXT, MEDIUM)), lp(0, W, 1));
+                    r.addView(tv(a, e.getTotalXp() + " XP · Nv " + e.getLevel(), 13, MUTED, REG));
+                    box.addView(r, lpm(M, W, 0, 6, 0, 6));
+                    i++;
+                }
+            });
+            return kotlin.Unit.INSTANCE;
+        });
     }
 
     private View week() {

@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+body{margin:0;background:#04070f;color:#f5efe0;font-family:sans-serif;padding:16px}
+h1{color:#d9a441;font-size:22px;margin:6px 0 4px}
+p.sub{color:#9aa3b2;font-size:14px;margin:0 0 16px}
+button{background:#d9a441;color:#1a1400;border:none;border-radius:14px;padding:14px 22px;font-size:16px;font-weight:700;margin:14px 0}
+button:disabled{background:#22304a;color:#9aa3b2}
+#win{display:none;background:#0d1526;border:2px solid #d9a441;border-radius:16px;padding:18px;text-align:center;margin-top:16px}
+#win b{color:#d9a441;font-size:20px}
+.muted{color:#9aa3b2}
+</style></head><body><h1>Crucigrama: Los 16 tipos y cuadras</h1><p class="sub">Completa las palabras con las pistas.</p><div id="grid" style="display:grid;grid-template-columns:repeat(15,1fr);gap:2px;max-width:480px"></div><ol style="color:#f5efe0;font-size:14px;line-height:1.7"><li><b>1.</b> Te y Ti (6 letras)</li><li><b>2.</b> Cuadra de EIE, LSI, SLE e IEI (4 letras)</li><li><b>3.</b> Cuadra de SEE, ILI, LIE y ESI (5 letras)</li><li><b>4.</b> Cuatro tipos con valores comunes (6 letras)</li><li><b>5.</b> Complementacion total entre dos tipos (8 letras)</li><li><b>6.</b> Cuadra de ILE, SEI, ESE y LII (4 letras)</li><li><b>7.</b> Cuadra de IEE, SLI, LSE y EII (5 letras)</li><li><b>8.</b> Dos duales juntos (5 letras)</li><li><b>9.</b> Unidad de los 16 tipos (6 letras)</li><li><b>10.</b> Fe y Fi (5 letras)</li></ol><button id="chk">Comprobar</button><p class="muted" id="st"></p><div id="win"><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div><script>const GRID=["######L########", "######O########", "######G########", "######I########", "######C#B######", "######A#E######", "#####G##T######", "#C#D#ALFA######", "#U#U#M#########", "#A#A#M#########", "#DELTA###D#####", "#R#I##SOCION###", "#A#D#####A#####", "###A#####D#####", "###D#ETICA#####"];const UBIC=[{"palabra": "LOGICA", "pista": "Te y Ti", "fila": 0, "columna": 6, "direccion": "vertical"}, {"palabra": "BETA", "pista": "Cuadra de EIE, LSI, SLE e IEI", "fila": 4, "columna": 8, "direccion": "vertical"}, {"palabra": "GAMMA", "pista": "Cuadra de SEE, ILI, LIE y ESI", "fila": 6, "columna": 5, "direccion": "vertical"}, {"palabra": "CUADRA", "pista": "Cuatro tipos con valores comunes", "fila": 7, "columna": 1, "direccion": "vertical"}, {"palabra": "DUALIDAD", "pista": "Complementacion total entre dos tipos", "fila": 7, "columna": 3, "direccion": "vertical"}, {"palabra": "ALFA", "pista": "Cuadra de ILE, SEI, ESE y LII", "fila": 7, "columna": 5, "direccion": "horizontal"}, {"palabra": "DELTA", "pista": "Cuadra de IEE, SLI, LSE y EII", "fila": 10, "columna": 1, "direccion": "horizontal"}, {"palabra": "DIADA", "pista": "Dos duales juntos", "fila": 10, "columna": 9, "direccion": "vertical"}, {"palabra": "SOCION", "pista": "Unidad de los 16 tipos", "fila": 11, "columna": 6, "direccion": "horizontal"}, {"palabra": "ETICA", "pista": "Fe y Fi", "fila": 14, "columna": 5, "direccion": "horizontal"}];
+
+let _won=false;
+function win(){if(_won)return;_won=true;document.getElementById('win').style.display='block';
+try{if(window.Android)Android.gameCompleted();}catch(e){}}
+
+const R=GRID.length,C=GRID[0].length,g=document.getElementById('grid');
+const cells={};
+for(let r=0;r<R;r++)for(let c=0;c<C;c++){const ch=GRID[r][c];const d=document.createElement('div');
+if(ch==='#'){d.style.cssText='background:#04070f;aspect-ratio:1';}
+else{const inp=document.createElement('input');inp.maxLength=1;inp.style.cssText='width:100%;aspect-ratio:1;text-align:center;text-transform:uppercase;background:#16233a;color:#f5efe0;border:1px solid #22304a;border-radius:4px;font-size:15px;font-weight:700;padding:0';
+inp.dataset.r=r;inp.dataset.c=c;inp.dataset.a=ch;d.appendChild(inp);cells[r+','+c]=inp;}
+g.appendChild(d);}
+document.getElementById('chk').onclick=()=>{let ok=0;
+UBIC.forEach(u=>{const dr=u.direccion==='vertical'?1:0,dc=u.direccion==='horizontal'?1:0;let good=true;
+for(let k=0;k<u.palabra.length;k++){const inp=cells[(u.fila+dr*k)+','+(u.columna+dc*k)];if(!inp||inp.value.toUpperCase()!==u.palabra[k]){good=false;break;}}
+for(let k=0;k<u.palabra.length;k++){const inp=cells[(u.fila+dr*k)+','+(u.columna+dc*k)];if(inp)inp.style.background=good?'#2aa198':'#ff4b4b';}
+if(good)ok++;});
+document.getElementById('st').textContent='Palabras correctas: '+ok+' / '+UBIC.length;
+if(ok===UBIC.length)win();};
+</script></body></html>

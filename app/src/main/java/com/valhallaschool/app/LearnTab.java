@@ -26,7 +26,7 @@ final class LearnTab extends MainActivity.Tab {
 
     @Override View build() {
         LinearLayout col = col(a);
-        col.addView(pageTitle(a, "Aprender"));
+        col.addView(pageTitle(a, "Camino de aprendizaje"));
         RecyclerView rv = new RecyclerView(a);
         lm = new LinearLayoutManager(a);
         rv.setLayoutManager(lm);

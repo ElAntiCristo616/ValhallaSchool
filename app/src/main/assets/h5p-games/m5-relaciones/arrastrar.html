@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+body{margin:0;background:#04070f;color:#f5efe0;font-family:sans-serif;padding:16px}
+h1{color:#d9a441;font-size:22px;margin:6px 0 4px}
+p.sub{color:#9aa3b2;font-size:14px;margin:0 0 16px}
+button{background:#d9a441;color:#1a1400;border:none;border-radius:14px;padding:14px 22px;font-size:16px;font-weight:700;margin:14px 0}
+button:disabled{background:#22304a;color:#9aa3b2}
+#win{display:none;background:#0d1526;border:2px solid #d9a441;border-radius:16px;padding:18px;text-align:center;margin-top:16px}
+#win b{color:#d9a441;font-size:20px}
+.muted{color:#9aa3b2}
+</style></head><body><h1>Arrastra y clasifica: Relaciones y supervision</h1><p class="sub">Coloca cada elemento en su zona.</p><div id="items" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px"></div><div class="zone" data-zone="Determinista-Causal (&gt;, +)" style="background:#0d1526;border:2px dashed #2aa198;border-radius:14px;padding:12px;margin-bottom:10px;min-height:56px"><b style="color:#2aa198">Determinista-Causal (&gt;, +)</b><div class="slot"></div></div><div class="zone" data-zone="Dialectico-Algoritmico (&gt;, -)" style="background:#0d1526;border:2px dashed #2aa198;border-radius:14px;padding:12px;margin-bottom:10px;min-height:56px"><b style="color:#2aa198">Dialectico-Algoritmico (&gt;, -)</b><div class="slot"></div></div><div class="zone" data-zone="Holografico-Panoramico (&lt;, -)" style="background:#0d1526;border:2px dashed #2aa198;border-radius:14px;padding:12px;margin-bottom:10px;min-height:56px"><b style="color:#2aa198">Holografico-Panoramico (&lt;, -)</b><div class="slot"></div></div><div class="zone" data-zone="Vortical-Sinergico (&lt;, +)" style="background:#0d1526;border:2px dashed #2aa198;border-radius:14px;padding:12px;margin-bottom:10px;min-height:56px"><b style="color:#2aa198">Vortical-Sinergico (&lt;, +)</b><div class="slot"></div></div><button id="chk">Comprobar</button><p class="muted" id="st">Toca un elemento y luego toca su zona.</p><div id="win"><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div><script>const ZONAS=["Determinista-Causal (>, +)", "Dialectico-Algoritmico (>, -)", "Holografico-Panoramico (<, -)", "Vortical-Sinergico (<, +)"];const ITEMS=[{"texto": "ILE", "zona": "Determinista-Causal (>, +)"}, {"texto": "LSI", "zona": "Determinista-Causal (>, +)"}, {"texto": "SEE", "zona": "Determinista-Causal (>, +)"}, {"texto": "EII", "zona": "Determinista-Causal (>, +)"}, {"texto": "SEI", "zona": "Dialectico-Algoritmico (>, -)"}, {"texto": "EIE", "zona": "Dialectico-Algoritmico (>, -)"}, {"texto": "ILI", "zona": "Dialectico-Algoritmico (>, -)"}, {"texto": "LSE", "zona": "Dialectico-Algoritmico (>, -)"}, {"texto": "LII", "zona": "Holografico-Panoramico (<, -)"}, {"texto": "IEE", "zona": "Holografico-Panoramico (<, -)"}, {"texto": "ESI", "zona": "Holografico-Panoramico (<, -)"}, {"texto": "SLE", "zona": "Holografico-Panoramico (<, -)"}, {"texto": "ESE", "zona": "Vortical-Sinergico (<, +)"}, {"texto": "SLI", "zona": "Vortical-Sinergico (<, +)"}, {"texto": "LIE", "zona": "Vortical-Sinergico (<, +)"}, {"texto": "IEI", "zona": "Vortical-Sinergico (<, +)"}];
+
+let _won=false;
+function win(){if(_won)return;_won=true;document.getElementById('win').style.display='block';
+try{if(window.Android)Android.gameCompleted();}catch(e){}}
+
+let sel=null;const box=document.getElementById('items');
+ITEMS.slice().sort(()=>Math.random()-0.5).forEach(it=>{const d=document.createElement('div');d.textContent=it.texto;d.dataset.zona=it.zona;
+d.style.cssText='background:#16233a;border:2px solid #d9a441;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer';
+d.onclick=()=>{if(sel)sel.style.borderColor='#d9a441';sel=d;d.style.borderColor='#2aa198';};box.appendChild(d);});
+document.querySelectorAll('.zone').forEach(z=>{z.onclick=()=>{if(!sel)return;z.querySelector('.slot').appendChild(sel);sel.style.borderColor='#22304a';sel=null;};});
+document.getElementById('chk').onclick=()=>{let ok=0,tot=0;
+document.querySelectorAll('.zone').forEach(z=>{z.querySelectorAll('.slot > div').forEach(d=>{tot++;const good=d.dataset.zona===z.dataset.zone;d.style.background=good?'#2aa198':'#ff4b4b';d.style.color=good?'#04070f':'#fff';if(good)ok++;});});
+document.getElementById('st').textContent='Correctos: '+ok+' / '+ITEMS.length;
+if(ok===ITEMS.length&&tot===ITEMS.length)win();};
+</script></body></html>

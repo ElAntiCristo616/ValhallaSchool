@@ -45,9 +45,10 @@ final class Store {
     final HashMap<Integer, Long> read = new HashMap<>(), saved = new HashMap<>();
     final HashMap<Integer, int[]> srs = new HashMap<>();
     final HashMap<Integer, Integer> xp = new HashMap<>();
-    final HashSet<Integer> met = new HashSet<>();
+    final HashSet<Integer> met = new HashSet<>(), frozen = new HashSet<>();
     final HashMap<String, Long> lessons = new HashMap<>(), ach = new HashMap<>();
     int qa, qc, perfect, goal = 50, best, cat = -1;
+    int gems = 0, bonusHearts = 0;
     long seed;
     boolean dark = true, sound = true;
 
@@ -103,9 +104,12 @@ final class Store {
         for (Map.Entry<String, Long> e : lessons.entrySet()) l.put(e.getKey(), e.getValue());
         JSONObject a = new JSONObject();
         for (Map.Entry<String, Long> e : ach.entrySet()) a.put(e.getKey(), e.getValue());
-        return o.put("srs", s).put("xp", x).put("met", m).put("lecciones", l).put("ach", a)
+        JSONArray fr = new JSONArray();
+        for (Integer d : frozen) fr.put(d);
+        return o.put("srs", s).put("xp", x).put("met", m).put("lessons", l).put("ach", a)
                 .put("qa", qa).put("qc", qc).put("perfect", perfect).put("goal", goal).put("best", best)
-                .put("cat", cat).put("seed", seed).put("theme", dark ? "dark" : "light").put("sound", sound ? 1 : 0);
+                .put("cat", cat).put("seed", seed).put("theme", dark ? "dark" : "light").put("sound", sound ? 1 : 0)
+                .put("gems", gems).put("bonusHearts", bonusHearts).put("frozen", fr);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -127,10 +131,13 @@ final class Store {
         if (x != null) for (Iterator<String> it = x.keys(); it.hasNext(); ) { String k = it.next(); xp.put(Integer.parseInt(k), x.optInt(k)); }
         JSONObject m = o.optJSONObject("met");
         if (m != null) for (Iterator<String> it = m.keys(); it.hasNext(); ) met.add(Integer.parseInt(it.next()));
-        readStrLongs(o.optJSONObject("lecciones"), lessons);
+        readStrLongs(o.optJSONObject("lessons"), lessons);
         readStrLongs(o.optJSONObject("ach"), ach);
         qa = o.optInt("qa"); qc = o.optInt("qc"); perfect = o.optInt("perfect");
         goal = o.optInt("goal", 50); best = o.optInt("best"); cat = o.optInt("cat", -1);
+        gems = o.optInt("gems"); bonusHearts = o.optInt("bonusHearts");
+        JSONArray fr = o.optJSONArray("frozen");
+        if (fr != null) for (int i = 0; i < fr.length(); i++) frozen.add(fr.optInt(i));
         seed = o.optLong("seed", seed);
         dark = !"light".equals(o.optString("theme", "dark"));
         sound = o.optInt("sound", 1) != 0;
@@ -154,6 +161,7 @@ final class Store {
     void clear() {
         read.clear(); saved.clear(); srs.clear(); xp.clear(); met.clear(); lessons.clear(); ach.clear();
         qa = qc = perfect = best = 0; goal = 50; cat = -1;
+        gems = 0; bonusHearts = 0; frozen.clear();
     }
 
     /* ---------------- dates ---------------- */
@@ -183,8 +191,8 @@ final class Store {
 
     int streak() {
         int d = today(), n = 0;
-        if (!met.contains(d)) d--;
-        while (met.contains(d)) { n++; d--; }
+        if (!met.contains(d) && !frozen.contains(d)) d--;
+        while (met.contains(d) || frozen.contains(d)) { n++; d--; }
         return n;
     }
 
@@ -213,6 +221,8 @@ final class Store {
         checkAch();
         if (ev != null) ev.changed();
     }
+
+    void addGems(int n) { gems += n; save(); }
 
     /** @return true if this idea was not read before. */
     boolean markRead(int id, boolean quiet) {

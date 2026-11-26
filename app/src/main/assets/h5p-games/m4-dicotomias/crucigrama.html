@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+body{margin:0;background:#04070f;color:#f5efe0;font-family:sans-serif;padding:16px}
+h1{color:#d9a441;font-size:22px;margin:6px 0 4px}
+p.sub{color:#9aa3b2;font-size:14px;margin:0 0 16px}
+button{background:#d9a441;color:#1a1400;border:none;border-radius:14px;padding:14px 22px;font-size:16px;font-weight:700;margin:14px 0}
+button:disabled{background:#22304a;color:#9aa3b2}
+#win{display:none;background:#0d1526;border:2px solid #d9a441;border-radius:16px;padding:18px;text-align:center;margin-top:16px}
+#win b{color:#d9a441;font-size:20px}
+.muted{color:#9aa3b2}
+</style></head><body><h1>Crucigrama: Dicotomias de Reinin</h1><p class="sub">Completa las palabras con las pistas.</p><div id="grid" style="display:grid;grid-template-columns:repeat(15,1fr);gap:2px;max-width:480px"></div><ol style="color:#f5efe0;font-size:14px;line-height:1.7"><li><b>1.</b> Une intuicion con etica, dicotomia XIII (11 letras)</li><li><b>2.</b> Acumula recursos, dicotomia XV (8 letras)</li><li><b>3.</b> Polo de la dicotomia II: mueve y narra (8 letras)</li><li><b>4.</b> Une intuicion con logica, dicotomia XIII (9 letras)</li><li><b>5.</b> Busca lo nuevo, dicotomia IV (11 letras)</li><li><b>6.</b> Decide en colectivo, dicotomia XV (8 letras)</li><li><b>7.</b> Orienta a futuro, dicotomia VII (11 letras)</li><li><b>8.</b> Polo de la dicotomia II: detiene y analiza (8 letras)</li><li><b>9.</b> Ayuda en corto, dicotomia VII (7 letras)</li><li><b>10.</b> Revisa lo que falta, dicotomia IV (11 letras)</li></ol><button id="chk">Comprobar</button><p class="muted" id="st"></p><div id="win"><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div><script>const GRID=["####ARISTOCRATA", "D##############", "E#######D#####D", "C####P##I###J#E", "I####O##N###U#M", "S###ESTRATEGICO", "I####I##M###C#C", "V##ESTATICO#I#R", "O####I##C###O#A", "#####V##O###S#T", "#TACTICO####O#A", "#####S#########", "#NEGATIVISTA###", "#####A#########", "###############"];const UBIC=[{"palabra": "ARISTOCRATA", "pista": "Une intuicion con etica, dicotomia XIII", "fila": 0, "columna": 4, "direccion": "horizontal"}, {"palabra": "DECISIVO", "pista": "Acumula recursos, dicotomia XV", "fila": 1, "columna": 0, "direccion": "vertical"}, {"palabra": "DINAMICO", "pista": "Polo de la dicotomia II: mueve y narra", "fila": 2, "columna": 8, "direccion": "vertical"}, {"palabra": "DEMOCRATA", "pista": "Une intuicion con logica, dicotomia XIII", "fila": 2, "columna": 14, "direccion": "vertical"}, {"palabra": "POSITIVISTA", "pista": "Busca lo nuevo, dicotomia IV", "fila": 3, "columna": 5, "direccion": "vertical"}, {"palabra": "JUICIOSO", "pista": "Decide en colectivo, dicotomia XV", "fila": 3, "columna": 12, "direccion": "vertical"}, {"palabra": "ESTRATEGICO", "pista": "Orienta a futuro, dicotomia VII", "fila": 5, "columna": 4, "direccion": "horizontal"}, {"palabra": "ESTATICO", "pista": "Polo de la dicotomia II: detiene y analiza", "fila": 7, "columna": 3, "direccion": "horizontal"}, {"palabra": "TACTICO", "pista": "Ayuda en corto, dicotomia VII", "fila": 10, "columna": 1, "direccion": "horizontal"}, {"palabra": "NEGATIVISTA", "pista": "Revisa lo que falta, dicotomia IV", "fila": 12, "columna": 1, "direccion": "horizontal"}];
+
+let _won=false;
+function win(){if(_won)return;_won=true;document.getElementById('win').style.display='block';
+try{if(window.Android)Android.gameCompleted();}catch(e){}}
+
+const R=GRID.length,C=GRID[0].length,g=document.getElementById('grid');
+const cells={};
+for(let r=0;r<R;r++)for(let c=0;c<C;c++){const ch=GRID[r][c];const d=document.createElement('div');
+if(ch==='#'){d.style.cssText='background:#04070f;aspect-ratio:1';}
+else{const inp=document.createElement('input');inp.maxLength=1;inp.style.cssText='width:100%;aspect-ratio:1;text-align:center;text-transform:uppercase;background:#16233a;color:#f5efe0;border:1px solid #22304a;border-radius:4px;font-size:15px;font-weight:700;padding:0';
+inp.dataset.r=r;inp.dataset.c=c;inp.dataset.a=ch;d.appendChild(inp);cells[r+','+c]=inp;}
+g.appendChild(d);}
+document.getElementById('chk').onclick=()=>{let ok=0;
+UBIC.forEach(u=>{const dr=u.direccion==='vertical'?1:0,dc=u.direccion==='horizontal'?1:0;let good=true;
+for(let k=0;k<u.palabra.length;k++){const inp=cells[(u.fila+dr*k)+','+(u.columna+dc*k)];if(!inp||inp.value.toUpperCase()!==u.palabra[k]){good=false;break;}}
+for(let k=0;k<u.palabra.length;k++){const inp=cells[(u.fila+dr*k)+','+(u.columna+dc*k)];if(inp)inp.style.background=good?'#2aa198':'#ff4b4b';}
+if(good)ok++;});
+document.getElementById('st').textContent='Palabras correctas: '+ok+' / '+UBIC.length;
+if(ok===UBIC.length)win();};
+</script></body></html>

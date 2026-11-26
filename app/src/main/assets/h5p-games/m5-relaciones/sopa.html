@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+body{margin:0;background:#04070f;color:#f5efe0;font-family:sans-serif;padding:16px}
+h1{color:#d9a441;font-size:22px;margin:6px 0 4px}
+p.sub{color:#9aa3b2;font-size:14px;margin:0 0 16px}
+button{background:#d9a441;color:#1a1400;border:none;border-radius:14px;padding:14px 22px;font-size:16px;font-weight:700;margin:14px 0}
+button:disabled{background:#22304a;color:#9aa3b2}
+#win{display:none;background:#0d1526;border:2px solid #d9a441;border-radius:16px;padding:18px;text-align:center;margin-top:16px}
+#win b{color:#d9a441;font-size:20px}
+.muted{color:#9aa3b2}
+</style></head><body><h1>Sopa de letras: Relaciones y supervision</h1><p class="sub">Encuentra las palabras escondidas.</p><div id="grid" style="display:grid;grid-template-columns:repeat(15,1fr);gap:2px;max-width:480px"></div><h3 style="color:#d9a441">Palabras por encontrar</h3><ul id="words" style="columns:2"><li data-w="DUALIDAD" style="margin:4px 0">DUALIDAD</li><li data-w="SUPERVISION" style="margin:4px 0">SUPERVISION</li><li data-w="ACTIVACION" style="margin:4px 0">ACTIVACION</li><li data-w="CONFLICTO" style="margin:4px 0">CONFLICTO</li><li data-w="SOLICITUD" style="margin:4px 0">SOLICITUD</li><li data-w="DIADA" style="margin:4px 0">DIADA</li><li data-w="ANILLO" style="margin:4px 0">ANILLO</li><li data-w="CAUSAL" style="margin:4px 0">CAUSAL</li><li data-w="DIALECTICO" style="margin:4px 0">DIALECTICO</li><li data-w="VORTICAL" style="margin:4px 0">VORTICAL</li></ul><p class="muted" id="st">Toca la primera letra y luego la última de cada palabra.</p><div id="win"><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div><script>const GRID=["TVNLDADILAUDXZK", "NTOQNDMADAIDSGI", "BWNRAOQZRVXXXVG", "SLOSTNICVKTKVDX", "JOLQUIJCVNKMWJR", "EGLNVPCMAVXFTSJ", "MRIIAJEAJVGNZST", "ULNKCOORLOIVGQP", "ZZAXFIVCVJQTVUT", "KCYSHVTJHIZGCEA", "BHPTUYCUONSUSAG", "WWMPMAHEDUWIAYY", "DYNHFZCWQOBROHD", "OEOTCILFNOCZONV", "QRTKYDIALECTICO"];const UBIC=[{"palabra": "DUALIDAD", "fila": 0, "columna": 11, "direccion": [0, -1]}, {"palabra": "SUPERVISION", "fila": 3, "columna": 3, "direccion": [1, 1]}, {"palabra": "ACTIVACION", "fila": 10, "columna": 13, "direccion": [-1, -1]}, {"palabra": "CONFLICTO", "fila": 13, "columna": 10, "direccion": [0, -1]}, {"palabra": "SOLICITUD", "fila": 3, "columna": 0, "direccion": [1, 1]}, {"palabra": "DIADA", "fila": 1, "columna": 11, "direccion": [0, -1]}, {"palabra": "ANILLO", "fila": 8, "columna": 2, "direccion": [-1, 0]}, {"palabra": "CAUSAL", "fila": 12, "columna": 6, "direccion": [-1, -1]}, {"palabra": "DIALECTICO", "fila": 14, "columna": 5, "direccion": [0, 1]}, {"palabra": "VORTICAL", "fila": 0, "columna": 1, "direccion": [1, 1]}];
+
+let _won=false;
+function win(){if(_won)return;_won=true;document.getElementById('win').style.display='block';
+try{if(window.Android)Android.gameCompleted();}catch(e){}}
+
+const R=GRID.length,C=GRID[0].length,g=document.getElementById('grid');
+const cells={};let start=null,found=0;
+for(let r=0;r<R;r++)for(let c=0;c<C;c++){const d=document.createElement('div');d.textContent=GRID[r][c];
+d.style.cssText='background:#16233a;border-radius:6px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer';
+d.dataset.r=r;d.dataset.c=c;
+d.onclick=()=>{if(!start){start=d;d.style.background='#2aa198';d.style.color='#04070f';return;}
+const r0=+start.dataset.r,c0=+start.dataset.c,r1=+d.dataset.r,c1=+d.dataset.c;
+const dr=Math.sign(r1-r0),dc=Math.sign(c1-c0),len=Math.max(Math.abs(r1-r0),Math.abs(c1-c0))+1;
+let word='';for(let k=0;k<len;k++)word+=GRID[r0+dr*k][c0+dc*k];
+const hit=UBIC.find(u=>u.palabra===word&&u.fila===r0&&u.columna===c0&&u.direccion[0]===dr&&u.direccion[1]===dc);
+start.style.background='#16233a';start.style.color='';
+if(hit){for(let k=0;k<len;k++){const cell=cells[(r0+dr*k)+','+(c0+dc*k)];cell.style.background='#d9a441';cell.style.color='#1a1400';}
+const li=document.querySelector('li[data-w="'+word+'"]');if(li)li.style.textDecoration='line-through';
+found++;document.getElementById('st').textContent='Encontradas: '+found+' / '+UBIC.length;
+if(found===UBIC.length)win();}
+start=null;};
+cells[r+','+c]=d;g.appendChild(d);}
+</script></body></html>
