@@ -4,7 +4,7 @@
   "memoria": {
     "pares": [
       [
-        "Basica",
+        "Base",
         "Ego: funcion 1, 4D, fuerte y valiosa"
       ],
       [
@@ -24,7 +24,7 @@
         "SuperId: funcion 5, 1D, puerta de entrada"
       ],
       [
-        "Activacion",
+        "Activación",
         "SuperId: funcion 6, 2D, la movilizadora"
       ],
       [
@@ -46,7 +46,7 @@
     ],
     "items": [
       {
-        "texto": "Basica",
+        "texto": "Base",
         "zona": "Ego"
       },
       {
@@ -66,7 +66,7 @@
         "zona": "SuperId"
       },
       {
-        "texto": "Activacion",
+        "texto": "Activación",
         "zona": "SuperId"
       },
       {
@@ -82,7 +82,7 @@
   "crucigrama": {
     "palabras": [
       {
-        "palabra": "BASICA",
+        "palabra": "BASE",
         "pista": "Funcion 1 del Modelo A"
       },
       {
@@ -106,6 +106,26 @@
         "pista": "Funcion 3 del Modelo A"
       },
       {
+        "palabra": "DOLOROSA",
+        "pista": "Funcion 4 del Modelo A, la PoLR"
+      },
+      {
+        "palabra": "SUGESTIVA",
+        "pista": "Funcion 5 del Modelo A"
+      },
+      {
+        "palabra": "LIMITATIVA",
+        "pista": "Funcion 7 del Modelo A"
+      },
+      {
+        "palabra": "EGO",
+        "pista": "Bloque de las funciones 1 y 2"
+      },
+      {
+        "palabra": "ID",
+        "pista": "Bloque de las funciones 7 y 8"
+      },
+      {
         "palabra": "SUPEREGO",
         "pista": "Bloque de las funciones 3 y 4"
       },
@@ -123,92 +143,129 @@
       }
     ],
     "cuadricula": [
-      "###############",
-      "###########V###",
-      "#MENTAL####I###",
-      "#####C#F###T###",
-      "#####T#U#C#A#S#",
-      "#####I#N#ROL#U#",
-      "#####V#C#E###P#",
-      "####BASICA###E#",
-      "###F#C#O#T###R#",
-      "###O#I#N#I###I#",
-      "###N#O###V###D#",
-      "###D#N###A#####",
-      "###O###########",
-      "###############",
-      "##SUPEREGO#####"
+      "###############S#",
+      "########C######U#",
+      "#F####S#R######P#",
+      "#U#L#SUPERID###E#",
+      "#N#I##G#A##O###R#",
+      "#C#M##E#T##L###E#",
+      "#I#I##S#I#ROL#EGO",
+      "#O#T##T#V##R###O#",
+      "#N#ACTIVACION####",
+      "###T##V####S####M",
+      "###I##A###BASE##E",
+      "###V############N",
+      "VITAL#########F#T",
+      "##############O#A",
+      "##############N#L",
+      "#############ID##",
+      "##############O##"
     ],
     "ubicaciones": [
       {
-        "palabra": "BASICA",
-        "pista": "Funcion 1 del Modelo A",
-        "fila": 7,
-        "columna": 4,
+        "palabra": "ACTIVACION",
+        "pista": "Funcion 6, la movilizadora",
+        "fila": 8,
+        "columna": 3,
         "direccion": "horizontal"
+      },
+      {
+        "palabra": "LIMITATIVA",
+        "pista": "Funcion 7 del Modelo A",
+        "fila": 3,
+        "columna": 3,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SUGESTIVA",
+        "pista": "Funcion 5 del Modelo A",
+        "fila": 2,
+        "columna": 6,
+        "direccion": "vertical"
       },
       {
         "palabra": "CREATIVA",
         "pista": "Funcion 2 del Modelo A",
-        "fila": 4,
-        "columna": 9,
+        "fila": 1,
+        "columna": 8,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DOLOROSA",
+        "pista": "Funcion 4 del Modelo A, la PoLR",
+        "fila": 3,
+        "columna": 11,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SUPEREGO",
+        "pista": "Bloque de las funciones 3 y 4",
+        "fila": 0,
+        "columna": 15,
         "direccion": "vertical"
       },
       {
         "palabra": "FUNCION",
         "pista": "Cada posicion del Modelo A",
+        "fila": 2,
+        "columna": 1,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SUPERID",
+        "pista": "Bloque de las funciones 5 y 6",
         "fila": 3,
-        "columna": 7,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "MENTAL",
+        "pista": "Anillo consciente, funciones 1 a 4",
+        "fila": 9,
+        "columna": 16,
         "direccion": "vertical"
       },
       {
         "palabra": "FONDO",
         "pista": "Funcion 8 del Modelo A",
-        "fila": 8,
-        "columna": 3,
+        "fila": 12,
+        "columna": 14,
         "direccion": "vertical"
-      },
-      {
-        "palabra": "ACTIVACION",
-        "pista": "Funcion 6, la movilizadora",
-        "fila": 2,
-        "columna": 5,
-        "direccion": "vertical"
-      },
-      {
-        "palabra": "ROL",
-        "pista": "Funcion 3 del Modelo A",
-        "fila": 5,
-        "columna": 9,
-        "direccion": "horizontal"
-      },
-      {
-        "palabra": "SUPEREGO",
-        "pista": "Bloque de las funciones 3 y 4",
-        "fila": 14,
-        "columna": 2,
-        "direccion": "horizontal"
-      },
-      {
-        "palabra": "SUPERID",
-        "pista": "Bloque de las funciones 5 y 6",
-        "fila": 4,
-        "columna": 13,
-        "direccion": "vertical"
-      },
-      {
-        "palabra": "MENTAL",
-        "pista": "Anillo consciente, funciones 1 a 4",
-        "fila": 2,
-        "columna": 1,
-        "direccion": "horizontal"
       },
       {
         "palabra": "VITAL",
         "pista": "Anillo inconsciente, funciones 5 a 8",
-        "fila": 1,
-        "columna": 11,
-        "direccion": "vertical"
+        "fila": 12,
+        "columna": 0,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "BASE",
+        "pista": "Funcion 1 del Modelo A",
+        "fila": 10,
+        "columna": 10,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ROL",
+        "pista": "Funcion 3 del Modelo A",
+        "fila": 6,
+        "columna": 10,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "EGO",
+        "pista": "Bloque de las funciones 1 y 2",
+        "fila": 6,
+        "columna": 14,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ID",
+        "pista": "Bloque de las funciones 7 y 8",
+        "fila": 15,
+        "columna": 13,
+        "direccion": "horizontal"
       }
     ]
   },
@@ -218,78 +275,45 @@
       "SUPEREGO",
       "SUPERID",
       "ID",
-      "BASICA",
+      "BASE",
       "CREATIVA",
       "ROL",
       "FONDO",
       "MENTAL",
-      "VITAL"
+      "VITAL",
+      "DOLOROSA",
+      "SUGESTIVA",
+      "LIMITATIVA"
     ],
     "cuadricula": [
-      "HIDFOMIUWOGERHV",
-      "KACISABYYBHBZKM",
-      "ICGSWMKGUPMUOEI",
-      "EHXSERRIXSNSMLH",
-      "EQPNUCYBDEUFZVN",
-      "TCTMMPAVITAERCT",
-      "OAQIRAEVXDVRYIY",
-      "LUKDJNFROAXXIQY",
-      "FQDUJUQTEGEVLYF",
-      "DIREPUSRYGQIATK",
-      "PADLZJHBHSOTCCX",
-      "PCYRYEEROLVAPRF",
-      "IQTNGRYXWGWLJMV",
-      "ULOQODHHCKASRHS",
-      "HAODNOFCWUBHCBK"
+      "HSAVITATIMILCCX",
+      "PCYRFYEEVPRFIQT",
+      "NGROYLATNEMXWGW",
+      "IJNSMVULOQOSDHH",
+      "CDKAUSRHSHAUCWU",
+      "OBHCAGOGEREPUSB",
+      "KCQHVIEVPGREEXS",
+      "SPHZIPZSNGDRDVN",
+      "LNNOTXBVTUUIEDV",
+      "BMXKAROLZIDDGHI",
+      "GGROEENFIOVHOCT",
+      "OZRDRBURACYAHFA",
+      "NPPGCDOLOROSAML",
+      "BFMAMIZESABZOJN",
+      "WXZRVWPEGJGBSXR"
     ],
     "ubicaciones": [
       {
         "palabra": "EGO",
-        "fila": 0,
-        "columna": 11,
+        "fila": 8,
+        "columna": 12,
         "direccion": [
-          0,
-          -1
+          1,
+          0
         ]
       },
       {
         "palabra": "SUPEREGO",
-        "fila": 3,
-        "columna": 3,
-        "direccion": [
-          1,
-          1
-        ]
-      },
-      {
-        "palabra": "SUPERID",
-        "fila": 9,
-        "columna": 6,
-        "direccion": [
-          0,
-          -1
-        ]
-      },
-      {
-        "palabra": "ID",
-        "fila": 0,
-        "columna": 1,
-        "direccion": [
-          0,
-          1
-        ]
-      },
-      {
-        "palabra": "BASICA",
-        "fila": 1,
-        "columna": 6,
-        "direccion": [
-          0,
-          -1
-        ]
-      },
-      {
-        "palabra": "CREATIVA",
         "fila": 5,
         "columna": 13,
         "direccion": [
@@ -298,9 +322,45 @@
         ]
       },
       {
+        "palabra": "SUPERID",
+        "fila": 3,
+        "columna": 11,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ID",
+        "fila": 3,
+        "columna": 0,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "BASE",
+        "fila": 13,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "CREATIVA",
+        "fila": 12,
+        "columna": 4,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
         "palabra": "ROL",
-        "fila": 11,
-        "columna": 7,
+        "fila": 9,
+        "columna": 5,
         "direccion": [
           0,
           1
@@ -308,29 +368,56 @@
       },
       {
         "palabra": "FONDO",
-        "fila": 14,
-        "columna": 6,
+        "fila": 1,
+        "columna": 4,
         "direccion": [
-          0,
+          1,
           -1
         ]
       },
       {
         "palabra": "MENTAL",
         "fila": 2,
-        "columna": 5,
+        "columna": 10,
         "direccion": [
-          1,
+          0,
           -1
         ]
       },
       {
         "palabra": "VITAL",
         "fila": 8,
-        "columna": 11,
+        "columna": 14,
         "direccion": [
           1,
           0
+        ]
+      },
+      {
+        "palabra": "DOLOROSA",
+        "fila": 12,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "SUGESTIVA",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "LIMITATIVA",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
         ]
       }
     ]

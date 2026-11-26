@@ -157,94 +157,325 @@
       {
         "palabra": "DECISIVO",
         "pista": "Acumula recursos, dicotomia XV"
+      },
+      {
+        "palabra": "EXTRATIMIA",
+        "pista": "Polo de la dicotomia I: mira los objetos"
+      },
+      {
+        "palabra": "INTROTImIA",
+        "pista": "Polo de la dicotomia I: mira las relaciones"
+      },
+      {
+        "palabra": "INTERROGATIVO",
+        "pista": "Pregunta al hablar, dicotomia III"
+      },
+      {
+        "palabra": "DECLARATIVO",
+        "pista": "Declara al hablar, dicotomia III"
+      },
+      {
+        "palabra": "TEORICO",
+        "pista": "Programa con intuicion, dicotomia V"
+      },
+      {
+        "palabra": "PRACTICO",
+        "pista": "Programa con sensacion, dicotomia V"
+      },
+      {
+        "palabra": "EXOGENISTA",
+        "pista": "Explica por fuera, dicotomia VI"
+      },
+      {
+        "palabra": "ENDOGENISTA",
+        "pista": "Explica por dentro, dicotomia VI"
+      },
+      {
+        "palabra": "CONSTRUCTIVISTA",
+        "pista": "Entra por el trabajo, dicotomia VIII"
+      },
+      {
+        "palabra": "EMOTIVISTA",
+        "pista": "Entra por la emocion, dicotomia VIII"
+      },
+      {
+        "palabra": "IZQUIERDA",
+        "pista": "Vive el proceso, dicotomia IX"
+      },
+      {
+        "palabra": "DERECHA",
+        "pista": "Vive el resultado, dicotomia IX"
+      },
+      {
+        "palabra": "RACIONAL",
+        "pista": "Decide por criterio, dicotomia X"
+      },
+      {
+        "palabra": "IRRACIONAL",
+        "pista": "Se adapta a la situacion, dicotomia X"
+      },
+      {
+        "palabra": "CEDENTE",
+        "pista": "Cede para seguir, dicotomia XI"
+      },
+      {
+        "palabra": "OBSTINADO",
+        "pista": "Se planta hasta ver pruebas, dicotomia XI"
+      },
+      {
+        "palabra": "DESPREOCUPADO",
+        "pista": "Vive a saltos, dicotomia XII"
+      },
+      {
+        "palabra": "PREVISOR",
+        "pista": "Reparte el tiempo parejo, dicotomia XII"
+      },
+      {
+        "palabra": "ALEGRE",
+        "pista": "Discute animos en colectivo, dicotomia XIV"
+      },
+      {
+        "palabra": "SERIO",
+        "pista": "Discute deseos y acciones, dicotomia XIV"
       }
     ],
     "cuadricula": [
-      "####ARISTOCRATA",
-      "D##############",
-      "E#######D#####D",
-      "C####P##I###J#E",
-      "I####O##N###U#M",
-      "S###ESTRATEGICO",
-      "I####I##M###C#C",
-      "V##ESTATICO#I#R",
-      "O####I##C###O#A",
-      "#####V##O###S#T",
-      "#TACTICO####O#A",
-      "#####S#########",
-      "#NEGATIVISTA###",
-      "#####A#########",
-      "###############"
+      "#######E#########CEDENTE##",
+      "######EXOGENISTA##########",
+      "#######T#####E#########D##",
+      "#######R#####R#####TACTICO",
+      "#DECLARATIVO#I####P####N##",
+      "R#N####T#N###O#DEMOCRATA##",
+      "A#D##D#I#T######S#S####M#J",
+      "C#O##E#M#E######T#I##O#I#U",
+      "I#G##S#I#R######R#T##B#C#I",
+      "O#E##P#A#R###N##A#I##S#O#C",
+      "N#N##R###O###EMOTIVISTA##I",
+      "A#I##E###G###G##E#I##I###O",
+      "L#S##O#I#A###A##G#S##N###S",
+      "##T##CONSTRUCTIVISTA#A###O",
+      "##A##U#T#I###I##C#A##D####",
+      "#####P#R#V###V##O####O####",
+      "#####A#O#O###I############",
+      "#####D#T##ARISTOCRATA#A###",
+      "###TEORICO###T########L#P#",
+      "#######m##IRRACIONAL##E#R#",
+      "#######I##############G#A#",
+      "####ESTATICO###PREVISOR#C#",
+      "######################E#T#",
+      "###############DERECHA##I#",
+      "#####IZQUIERDA##########C#",
+      "#################DECISIVO#"
     ],
     "ubicaciones": [
       {
+        "palabra": "CONSTRUCTIVISTA",
+        "pista": "Entra por el trabajo, dicotomia VIII",
+        "fila": 13,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "INTERROGATIVO",
+        "pista": "Pregunta al hablar, dicotomia III",
+        "fila": 4,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DESPREOCUPADO",
+        "pista": "Vive a saltos, dicotomia XII",
+        "fila": 6,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "pista": "Busca lo nuevo, dicotomia IV",
+        "fila": 4,
+        "columna": 18,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "pista": "Revisa lo que falta, dicotomia IV",
+        "fila": 9,
+        "columna": 13,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "pista": "Orienta a futuro, dicotomia VII",
+        "fila": 5,
+        "columna": 16,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "pista": "Une intuicion con etica, dicotomia XIII",
+        "fila": 17,
+        "columna": 10,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DECLARATIVO",
+        "pista": "Declara al hablar, dicotomia III",
+        "fila": 4,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ENDOGENISTA",
+        "pista": "Explica por dentro, dicotomia VI",
+        "fila": 4,
+        "columna": 2,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "EXTRATIMIA",
+        "pista": "Polo de la dicotomia I: mira los objetos",
+        "fila": 0,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "INTROTImIA",
+        "pista": "Polo de la dicotomia I: mira las relaciones",
+        "fila": 12,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "EXOGENISTA",
+        "pista": "Explica por fuera, dicotomia VI",
+        "fila": 1,
+        "columna": 6,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "EMOTIVISTA",
+        "pista": "Entra por la emocion, dicotomia VIII",
+        "fila": 10,
+        "columna": 13,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "IRRACIONAL",
+        "pista": "Se adapta a la situacion, dicotomia X",
+        "fila": 19,
+        "columna": 10,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "pista": "Une intuicion con logica, dicotomia XIII",
+        "fila": 5,
+        "columna": 15,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "IZQUIERDA",
+        "pista": "Vive el proceso, dicotomia IX",
+        "fila": 24,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "OBSTINADO",
+        "pista": "Se planta hasta ver pruebas, dicotomia XI",
+        "fila": 7,
+        "columna": 21,
+        "direccion": "vertical"
+      },
+      {
         "palabra": "ESTATICO",
         "pista": "Polo de la dicotomia II: detiene y analiza",
-        "fila": 7,
-        "columna": 3,
+        "fila": 21,
+        "columna": 4,
         "direccion": "horizontal"
       },
       {
         "palabra": "DINAMICO",
         "pista": "Polo de la dicotomia II: mueve y narra",
         "fila": 2,
-        "columna": 8,
+        "columna": 23,
         "direccion": "vertical"
-      },
-      {
-        "palabra": "POSITIVISTA",
-        "pista": "Busca lo nuevo, dicotomia IV",
-        "fila": 3,
-        "columna": 5,
-        "direccion": "vertical"
-      },
-      {
-        "palabra": "NEGATIVISTA",
-        "pista": "Revisa lo que falta, dicotomia IV",
-        "fila": 12,
-        "columna": 1,
-        "direccion": "horizontal"
-      },
-      {
-        "palabra": "TACTICO",
-        "pista": "Ayuda en corto, dicotomia VII",
-        "fila": 10,
-        "columna": 1,
-        "direccion": "horizontal"
-      },
-      {
-        "palabra": "ESTRATEGICO",
-        "pista": "Orienta a futuro, dicotomia VII",
-        "fila": 5,
-        "columna": 4,
-        "direccion": "horizontal"
-      },
-      {
-        "palabra": "DEMOCRATA",
-        "pista": "Une intuicion con logica, dicotomia XIII",
-        "fila": 2,
-        "columna": 14,
-        "direccion": "vertical"
-      },
-      {
-        "palabra": "ARISTOCRATA",
-        "pista": "Une intuicion con etica, dicotomia XIII",
-        "fila": 0,
-        "columna": 4,
-        "direccion": "horizontal"
       },
       {
         "palabra": "JUICIOSO",
         "pista": "Decide en colectivo, dicotomia XV",
-        "fila": 3,
-        "columna": 12,
+        "fila": 6,
+        "columna": 25,
         "direccion": "vertical"
       },
       {
         "palabra": "DECISIVO",
         "pista": "Acumula recursos, dicotomia XV",
-        "fila": 1,
+        "fila": 25,
+        "columna": 17,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "PRACTICO",
+        "pista": "Programa con sensacion, dicotomia V",
+        "fila": 18,
+        "columna": 24,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "RACIONAL",
+        "pista": "Decide por criterio, dicotomia X",
+        "fila": 5,
         "columna": 0,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "PREVISOR",
+        "pista": "Reparte el tiempo parejo, dicotomia XII",
+        "fila": 21,
+        "columna": 15,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "TACTICO",
+        "pista": "Ayuda en corto, dicotomia VII",
+        "fila": 3,
+        "columna": 19,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "TEORICO",
+        "pista": "Programa con intuicion, dicotomia V",
+        "fila": 18,
+        "columna": 3,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DERECHA",
+        "pista": "Vive el resultado, dicotomia IX",
+        "fila": 23,
+        "columna": 15,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CEDENTE",
+        "pista": "Cede para seguir, dicotomia XI",
+        "fila": 0,
+        "columna": 17,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ALEGRE",
+        "pista": "Discute animos en colectivo, dicotomia XIV",
+        "fila": 17,
+        "columna": 22,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SERIO",
+        "pista": "Discute deseos y acciones, dicotomia XIV",
+        "fila": 1,
+        "columna": 13,
         "direccion": "vertical"
       }
     ]
@@ -262,64 +493,238 @@
       "JUICIOSO",
       "DECISIVO",
       "ALEGRE",
-      "SERIO"
+      "SERIO",
+      "EXTRATIMIA",
+      "INTROTImIA",
+      "INTERROGATIVO",
+      "DECLARATIVO",
+      "TEORICO",
+      "PRACTICO",
+      "EXOGENISTA",
+      "ENDOGENISTA",
+      "CONSTRUCTIVISTA",
+      "EMOTIVISTA",
+      "IZQUIERDA",
+      "DERECHA",
+      "RACIONAL",
+      "IRRACIONAL",
+      "CEDENTE",
+      "OBSTINADO",
+      "DESPREOCUPADO",
+      "PREVISOR"
     ],
     "cuadricula": [
-      "ZBLGOCITATSEVHV",
-      "DATARCOTSIRALYR",
-      "ATSIVITAGENNTXE",
-      "HFZDZFNAFXKZNZV",
-      "XZHIISERIOFZWDM",
-      "BPHGONLJZHHAVGM",
-      "JKAICYAILUQMVRK",
-      "UALDIFSMIBDTNLX",
-      "IZEPOSITIVISTAT",
-      "CKGNTDEMOCRATAA",
-      "IQRDMSGIBWONAQC",
-      "OZERVDECISIVOXT",
-      "SXXVGLNCVKTKVDI",
-      "OCIGETARTSEXJQC",
-      "JVNKMWJREGNVMVO"
+      "LZHLINTROTImIACNAM",
+      "AOOVISICEDAGWTETTD",
+      "NCDERECHAATTXADESD",
+      "OIERRVOODTSWZCEOIE",
+      "IGXOADMAFAIIATNRVS",
+      "CETOCOPTSRNNDITIIP",
+      "ATREIVOSPCETRCECTR",
+      "RAANOISIROGEEOQOCE",
+      "ORTDNTIVETORICEEUO",
+      "BTIOAATIVSXRUIMSRC",
+      "SSMGLRITIIEOQMOTTU",
+      "TEIEEAVASRKGZATASP",
+      "IWANGLIGOAJAINITNA",
+      "NSLIRCSERIOTNIVIOD",
+      "AWYSEETNPIJIVDICCO",
+      "DVFTVDAWTXHVDJSOSW",
+      "ONOAPRACTICOUBTMYK",
+      "OSOICIUJDEMOCRATAS"
     ],
     "ubicaciones": [
       {
         "palabra": "ESTATICO",
-        "fila": 0,
-        "columna": 11,
+        "fila": 8,
+        "columna": 15,
         "direccion": [
-          0,
-          -1
+          1,
+          0
         ]
       },
       {
         "palabra": "DINAMICO",
-        "fila": 3,
-        "columna": 3,
+        "fila": 14,
+        "columna": 13,
         "direccion": [
-          1,
-          1
+          -1,
+          0
         ]
       },
       {
         "palabra": "POSITIVISTA",
-        "fila": 8,
-        "columna": 3,
+        "fila": 5,
+        "columna": 6,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "fila": 14,
+        "columna": 7,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TACTICO",
+        "fila": 1,
+        "columna": 13,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "fila": 17,
+        "columna": 8,
         "direccion": [
           0,
           1
         ]
       },
       {
-        "palabra": "NEGATIVISTA",
-        "fila": 2,
-        "columna": 10,
+        "palabra": "ARISTOCRATA",
+        "fila": 12,
+        "columna": 9,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "JUICIOSO",
+        "fila": 17,
+        "columna": 7,
         "direccion": [
           0,
           -1
         ]
       },
       {
-        "palabra": "TACTICO",
+        "palabra": "DECISIVO",
+        "fila": 1,
+        "columna": 9,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ALEGRE",
+        "fila": 9,
+        "columna": 4,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SERIO",
+        "fila": 13,
+        "columna": 6,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "EXTRATIMIA",
+        "fila": 3,
+        "columna": 2,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "INTROTImIA",
+        "fila": 0,
+        "columna": 4,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "INTERROGATIVO",
+        "fila": 4,
+        "columna": 11,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "DECLARATIVO",
+        "fila": 15,
+        "columna": 5,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TEORICO",
+        "fila": 1,
+        "columna": 15,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "PRACTICO",
+        "fila": 16,
+        "columna": 4,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "EXOGENISTA",
+        "fila": 10,
+        "columna": 10,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "ENDOGENISTA",
+        "fila": 6,
+        "columna": 3,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "CONSTRUCTIVISTA",
+        "fila": 14,
+        "columna": 16,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "EMOTIVISTA",
         "fila": 8,
         "columna": 14,
         "direccion": [
@@ -328,35 +733,53 @@
         ]
       },
       {
-        "palabra": "ESTRATEGICO",
-        "fila": 13,
-        "columna": 10,
+        "palabra": "IZQUIERDA",
+        "fila": 12,
+        "columna": 12,
         "direccion": [
-          0,
-          -1
+          -1,
+          0
         ]
       },
       {
-        "palabra": "DEMOCRATA",
-        "fila": 9,
-        "columna": 5,
+        "palabra": "DERECHA",
+        "fila": 2,
+        "columna": 2,
         "direccion": [
           0,
           1
         ]
       },
       {
-        "palabra": "ARISTOCRATA",
-        "fila": 1,
-        "columna": 11,
+        "palabra": "RACIONAL",
+        "fila": 7,
+        "columna": 0,
         "direccion": [
-          0,
-          -1
+          -1,
+          0
         ]
       },
       {
-        "palabra": "JUICIOSO",
-        "fila": 6,
+        "palabra": "IRRACIONAL",
+        "fila": 1,
+        "columna": 4,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "CEDENTE",
+        "fila": 0,
+        "columna": 14,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "OBSTINADO",
+        "fila": 8,
         "columna": 0,
         "direccion": [
           1,
@@ -364,30 +787,21 @@
         ]
       },
       {
-        "palabra": "DECISIVO",
-        "fila": 11,
-        "columna": 5,
-        "direccion": [
-          0,
-          1
-        ]
-      },
-      {
-        "palabra": "ALEGRE",
-        "fila": 6,
-        "columna": 2,
+        "palabra": "DESPREOCUPADO",
+        "fila": 2,
+        "columna": 17,
         "direccion": [
           1,
           0
         ]
       },
       {
-        "palabra": "SERIO",
-        "fila": 4,
-        "columna": 5,
+        "palabra": "PREVISOR",
+        "fila": 6,
+        "columna": 8,
         "direccion": [
-          0,
-          1
+          1,
+          0
         ]
       }
     ]

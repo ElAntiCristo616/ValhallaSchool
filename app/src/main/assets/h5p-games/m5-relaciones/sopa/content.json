@@ -10,28 +10,39 @@
       "ANILLO",
       "CAUSAL",
       "DIALECTICO",
-      "VORTICAL"
+      "VORTICAL",
+      "HOLOGRAFICO",
+      "PROGRESO"
     ],
     "grid": [
-      "TVNLDADILAUDXZK",
-      "NTOQNDMADAIDSGI",
-      "BWNRAOQZRVXXXVG",
-      "SLOSTNICVKTKVDX",
-      "JOLQUIJCVNKMWJR",
-      "EGLNVPCMAVXFTSJ",
-      "MRIIAJEAJVGNZST",
-      "ULNKCOORLOIVGQP",
-      "ZZAXFIVCVJQTVUT",
-      "KCYSHVTJHIZGCEA",
-      "BHPTUYCUONSUSAG",
-      "WWMPMAHEDUWIAYY",
-      "DYNHFZCWQOBROHD",
-      "OEOTCILFNOCZONV",
-      "QRTKYDIALECTICO"
+      "QNOISIVREPUSMVR",
+      "KADIOFSDIBDTNLX",
+      "ZKNTQCDMASGIBWN",
+      "AQZHNRIVXDXXVGL",
+      "NCVKOTKTVDIXJQJ",
+      "VNKLILMWCJDLREG",
+      "SNPACVOMVEXIAFT",
+      "OSRSAVJGMRLAAUJ",
+      "LJOUVGONRZSATDD",
+      "IUGAIKOROAOVIGA",
+      "CQRCTPZZTXFFVDC",
+      "IJEQCVUTKICIYHV",
+      "TJSHAZGEABCHCPT",
+      "UYOTCILFNOCACOO",
+      "DNUSGANILLOWLWM"
     ],
     "placements": [
       {
         "palabra": "DUALIDAD",
+        "fila": 8,
+        "columna": 14,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "SUPERVISION",
         "fila": 0,
         "columna": 11,
         "direccion": [
@@ -40,21 +51,12 @@
         ]
       },
       {
-        "palabra": "SUPERVISION",
-        "fila": 3,
-        "columna": 3,
-        "direccion": [
-          1,
-          1
-        ]
-      },
-      {
         "palabra": "ACTIVACION",
-        "fila": 10,
-        "columna": 13,
+        "fila": 12,
+        "columna": 4,
         "direccion": [
           -1,
-          -1
+          0
         ]
       },
       {
@@ -68,42 +70,24 @@
       },
       {
         "palabra": "SOLICITUD",
-        "fila": 3,
+        "fila": 6,
         "columna": 0,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "DIADA",
+        "fila": 5,
+        "columna": 10,
         "direccion": [
           1,
           1
         ]
       },
       {
-        "palabra": "DIADA",
-        "fila": 1,
-        "columna": 11,
-        "direccion": [
-          0,
-          -1
-        ]
-      },
-      {
         "palabra": "ANILLO",
-        "fila": 8,
-        "columna": 2,
-        "direccion": [
-          -1,
-          0
-        ]
-      },
-      {
-        "palabra": "CAUSAL",
-        "fila": 12,
-        "columna": 6,
-        "direccion": [
-          -1,
-          -1
-        ]
-      },
-      {
-        "palabra": "DIALECTICO",
         "fila": 14,
         "columna": 5,
         "direccion": [
@@ -112,12 +96,48 @@
         ]
       },
       {
+        "palabra": "CAUSAL",
+        "fila": 10,
+        "columna": 3,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "DIALECTICO",
+        "fila": 10,
+        "columna": 13,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
         "palabra": "VORTICAL",
-        "fila": 0,
-        "columna": 1,
+        "fila": 7,
+        "columna": 5,
         "direccion": [
           1,
           1
+        ]
+      },
+      {
+        "palabra": "HOLOGRAFICO",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "PROGRESO",
+        "fila": 6,
+        "columna": 2,
+        "direccion": [
+          1,
+          0
         ]
       }
     ]

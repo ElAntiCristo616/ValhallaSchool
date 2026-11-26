@@ -69,13 +69,35 @@ def arrastrar(mod, data):
     items = data["arrastrar"]["items"]
     body = ('<div id="items" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px"></div>'
             + ''.join(f'<div class="zone" data-zone="{html.escape(z)}" style="background:#0d1526;border:2px dashed #2aa198;border-radius:14px;padding:12px;margin-bottom:10px;min-height:56px"><b style="color:#2aa198">{html.escape(z)}</b><div class="slot"></div></div>' for z in zonas)
-            + '<button id="chk">Comprobar</button><p class="muted" id="st">Toca un elemento y luego toca su zona.</p>')
+            + '<button id="chk">Comprobar</button><p class="muted" id="st">Arrastra cada elemento a su zona, o toca uno y luego toca su zona.</p>')
+    # Arrastre real con Pointer Events (tactil + raton): presionar, arrastrar
+    # con el dedo y soltar sobre el destino. El toque simple (sin mover)
+    # sigue funcionando como tocar-tocar, por accesibilidad.
     script = ("const ZONAS=" + json.dumps(zonas, ensure_ascii=False) + ";const ITEMS=" + json.dumps(items, ensure_ascii=False) + ";\n" + WIN_JS + """
 let sel=null;const box=document.getElementById('items');
+function clearHi(){document.querySelectorAll('.zone').forEach(z=>{z.style.borderColor='#2aa198';z.style.background='#0d1526';});}
 ITEMS.slice().sort(()=>Math.random()-0.5).forEach(it=>{const d=document.createElement('div');d.textContent=it.texto;d.dataset.zona=it.zona;
-d.style.cssText='background:#16233a;border:2px solid #d9a441;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer';
-d.onclick=()=>{if(sel)sel.style.borderColor='#d9a441';sel=d;d.style.borderColor='#2aa198';};box.appendChild(d);});
-document.querySelectorAll('.zone').forEach(z=>{z.onclick=()=>{if(!sel)return;z.querySelector('.slot').appendChild(sel);sel.style.borderColor='#22304a';sel=null;};});
+d.style.cssText='background:#16233a;border:2px solid #d9a441;border-radius:12px;padding:10px 14px;font-weight:700;cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none';
+let sx=0,sy=0,dragging=false,origParent=null,origNext=null,w=0,h=0;
+d.addEventListener('pointerdown',e=>{e.preventDefault();sx=e.clientX;sy=e.clientY;dragging=false;origParent=d.parentNode;origNext=d.nextSibling;w=d.offsetWidth;h=d.offsetHeight;try{d.setPointerCapture(e.pointerId);}catch(err){}});
+d.addEventListener('pointermove',e=>{if(!sx&&!sy)return;const dx=e.clientX-sx,dy=e.clientY-sy;
+if(!dragging&&Math.hypot(dx,dy)>10){dragging=true;if(sel===d)sel=null;
+d.style.position='fixed';d.style.left=(e.clientX-w/2)+'px';d.style.top=(e.clientY-h/2)+'px';d.style.width=w+'px';d.style.zIndex='999';d.style.pointerEvents='none';d.style.opacity='0.92';d.style.boxShadow='0 8px 20px rgba(0,0,0,.5)';d.style.cursor='grabbing';}
+if(dragging){d.style.left=(e.clientX-w/2)+'px';d.style.top=(e.clientY-h/2)+'px';clearHi();
+const under=document.elementFromPoint(e.clientX,e.clientY);const z=under?under.closest('.zone'):null;
+if(z){z.style.borderColor='#d9a441';z.style.background='#12233d';}}});
+function endDrag(e,cancelled){const under=(e.clientX!==undefined)?document.elementFromPoint(e.clientX,e.clientY):null;
+const z=under?under.closest('.zone'):null;const tray=under?under.closest('#items'):null;
+d.style.position='';d.style.left='';d.style.top='';d.style.width='';d.style.zIndex='';d.style.pointerEvents='';d.style.opacity='';d.style.boxShadow='';d.style.cursor='grab';
+clearHi();
+if(!cancelled&&z){z.querySelector('.slot').appendChild(d);d.style.borderColor='#22304a';}
+else if(!cancelled&&tray){box.appendChild(d);d.style.borderColor='#d9a441';}
+else{if(origParent)origParent.insertBefore(d,origNext);d.style.borderColor='#d9a441';}
+dragging=false;sx=0;sy=0;}
+d.addEventListener('pointerup',e=>{if(dragging){endDrag(e,false);}else{sx=0;sy=0;if(sel)sel.style.borderColor='#d9a441';sel=d;d.style.borderColor='#2aa198';}});
+d.addEventListener('pointercancel',e=>{if(dragging)endDrag(e,true);dragging=false;sx=0;sy=0;});
+box.appendChild(d);});
+document.querySelectorAll('.zone').forEach(z=>{z.addEventListener('click',()=>{if(!sel)return;z.querySelector('.slot').appendChild(sel);sel.style.borderColor='#22304a';sel=null;});});
 document.getElementById('chk').onclick=()=>{let ok=0,tot=0;
 document.querySelectorAll('.zone').forEach(z=>{z.querySelectorAll('.slot > div').forEach(d=>{tot++;const good=d.dataset.zona===z.dataset.zone;d.style.background=good?'#2aa198':'#ff4b4b';d.style.color=good?'#04070f':'#fff';if(good)ok++;});});
 document.getElementById('st').textContent='Correctos: '+ok+' / '+ITEMS.length;
@@ -89,9 +111,20 @@ def crucigrama(mod, data):
     ubic = sorted(c["ubicaciones"], key=lambda u: (u["fila"], u["columna"]))
     clues = "".join(f'<li><b>{i+1}.</b> {html.escape(u["pista"])} ({len(u["palabra"])} letras)</li>' for i, u in enumerate(ubic))
     rows = len(grid); cols = len(grid[0])
-    body = (f'<div id="grid" style="display:grid;grid-template-columns:repeat({cols},1fr);gap:2px;max-width:480px"></div>'
-            f'<ol style="color:#f5efe0;font-size:14px;line-height:1.7">{clues}</ol>'
-            '<button id="chk">Comprobar</button><p class="muted" id="st"></p>')
+    # Cuadriculas anchas (v1.1.2: crucigramas completos): celdas fijas de 30px
+    # con desplazamiento lateral, para que las letras sigan legibles en el
+    # telefono. Cuadriculas normales: ancho flexible y fuente segun tamano.
+    if cols > 20:
+        fs = 15
+        grid_html = (f'<div style="overflow-x:auto;max-width:100%;padding-bottom:6px">'
+                     f'<div id="grid" style="display:grid;grid-template-columns:repeat({cols},30px);gap:2px;width:max-content"></div></div>'
+                     '<p class="muted">Desliza de lado para ver toda la cuadrícula.</p>')
+    else:
+        fs = 15 if cols <= 15 else (14 if cols <= 18 else 13)
+        grid_html = f'<div id="grid" style="display:grid;grid-template-columns:repeat({cols},1fr);gap:2px;max-width:480px"></div>'
+    body = (grid_html
+            + f'<ol style="color:#f5efe0;font-size:14px;line-height:1.7">{clues}</ol>'
+            + '<button id="chk">Comprobar</button><p class="muted" id="st"></p>')
     script = ("const GRID=" + json.dumps(grid, ensure_ascii=False) + ";const UBIC=" + json.dumps(ubic, ensure_ascii=False) + ";\n" + WIN_JS + """
 const R=GRID.length,C=GRID[0].length,g=document.getElementById('grid');
 const cells={};
@@ -108,6 +141,7 @@ if(good)ok++;});
 document.getElementById('st').textContent='Palabras correctas: '+ok+' / '+UBIC.length;
 if(ok===UBIC.length)win();};
 """)
+    script = script.replace("font-size:15px", "font-size:%dpx" % fs)
     return page("Crucigrama: " + mod["nombre"], "Completa las palabras con las pistas.", body, script)
 
 def sopa(mod, data):

@@ -2,7 +2,7 @@
   "params": {
     "cards": [
       {
-        "text": "Basica",
+        "text": "Base",
         "match": "Ego: funcion 1, 4D, fuerte y valiosa"
       },
       {
@@ -22,7 +22,7 @@
         "match": "SuperId: funcion 5, 1D, puerta de entrada"
       },
       {
-        "text": "Activacion",
+        "text": "Activación",
         "match": "SuperId: funcion 6, 2D, la movilizadora"
       },
       {

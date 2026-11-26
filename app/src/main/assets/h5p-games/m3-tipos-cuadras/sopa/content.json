@@ -23,70 +23,34 @@
       "DELTA"
     ],
     "grid": [
-      "IEIEWVUCTELIUFR",
-      "XHFOISEMIIUWRHV",
-      "KYYBHGBZSKMICGS",
-      "WKGSAUPMLUDOEIE",
-      "HXIMERRIXESNSML",
-      "HLMEQIPCLYBEEID",
-      "IAFLAEUTFZVNTCM",
-      "MTOQIRAAVXADVRY",
-      "IYUSLEKDJNFTOAX",
-      "XIQYIILFQDUJEUQ",
-      "TGELIEYFRYQATBK",
-      "PEADIISSLILZJHB",
-      "HSSCELECXPCYIEI",
-      "REYEEVEPRFIQTNG",
-      "RYXWESLGWJMVULO"
+      "IILEWVUAMMAGCTU",
+      "FRXHIEIFIOMIUWR",
+      "HVKYYLBHEBZKMIC",
+      "GSWDSKGUSPEMUOE",
+      "IELEEHXRRIIXSNS",
+      "MSLHELQPICYEESB",
+      "IDEEIETUFZVNTCM",
+      "MTOQIRAAVXDVRYI",
+      "YUKESEDJNFOIAXX",
+      "IQYATEBFQDUJLUQ",
+      "TGELIEYFRYQATSK",
+      "PAADSLEILILZJHB",
+      "HLSCESICXPCYLII",
+      "RFYEEVEPRFIQTNG",
+      "RAYXEILWGWJMVUL"
     ],
     "placements": [
       {
         "palabra": "ILE",
         "fila": 0,
-        "columna": 11,
+        "columna": 1,
         "direccion": [
           0,
-          -1
+          1
         ]
       },
       {
         "palabra": "SEI",
-        "fila": 3,
-        "columna": 3,
-        "direccion": [
-          1,
-          1
-        ]
-      },
-      {
-        "palabra": "ESE",
-        "fila": 11,
-        "columna": 1,
-        "direccion": [
-          1,
-          0
-        ]
-      },
-      {
-        "palabra": "LII",
-        "fila": 9,
-        "columna": 6,
-        "direccion": [
-          0,
-          -1
-        ]
-      },
-      {
-        "palabra": "EIE",
-        "fila": 0,
-        "columna": 1,
-        "direccion": [
-          0,
-          1
-        ]
-      },
-      {
-        "palabra": "LSI",
         "fila": 3,
         "columna": 8,
         "direccion": [
@@ -95,7 +59,7 @@
         ]
       },
       {
-        "palabra": "SLE",
+        "palabra": "ESE",
         "fila": 8,
         "columna": 3,
         "direccion": [
@@ -104,7 +68,7 @@
         ]
       },
       {
-        "palabra": "IEI",
+        "palabra": "LII",
         "fila": 12,
         "columna": 12,
         "direccion": [
@@ -113,7 +77,7 @@
         ]
       },
       {
-        "palabra": "SEE",
+        "palabra": "EIE",
         "fila": 11,
         "columna": 6,
         "direccion": [
@@ -122,7 +86,7 @@
         ]
       },
       {
-        "palabra": "ILI",
+        "palabra": "LSI",
         "fila": 4,
         "columna": 2,
         "direccion": [
@@ -131,7 +95,7 @@
         ]
       },
       {
-        "palabra": "LIE",
+        "palabra": "SLE",
         "fila": 12,
         "columna": 5,
         "direccion": [
@@ -140,7 +104,7 @@
         ]
       },
       {
-        "palabra": "ESI",
+        "palabra": "IEI",
         "fila": 1,
         "columna": 6,
         "direccion": [
@@ -149,7 +113,7 @@
         ]
       },
       {
-        "palabra": "IEE",
+        "palabra": "SEE",
         "fila": 5,
         "columna": 13,
         "direccion": [
@@ -158,7 +122,7 @@
         ]
       },
       {
-        "palabra": "SLI",
+        "palabra": "ILI",
         "fila": 11,
         "columna": 7,
         "direccion": [
@@ -167,7 +131,7 @@
         ]
       },
       {
-        "palabra": "LSE",
+        "palabra": "LIE",
         "fila": 14,
         "columna": 6,
         "direccion": [
@@ -176,7 +140,7 @@
         ]
       },
       {
-        "palabra": "EII",
+        "palabra": "ESI",
         "fila": 12,
         "columna": 4,
         "direccion": [
@@ -185,7 +149,7 @@
         ]
       },
       {
-        "palabra": "ALFA",
+        "palabra": "IEE",
         "fila": 6,
         "columna": 4,
         "direccion": [
@@ -194,7 +158,7 @@
         ]
       },
       {
-        "palabra": "BETA",
+        "palabra": "SLI",
         "fila": 10,
         "columna": 13,
         "direccion": [
@@ -203,7 +167,7 @@
         ]
       },
       {
-        "palabra": "GAMMA",
+        "palabra": "LSE",
         "fila": 2,
         "columna": 5,
         "direccion": [
@@ -212,12 +176,48 @@
         ]
       },
       {
-        "palabra": "DELTA",
+        "palabra": "EII",
         "fila": 3,
         "columna": 10,
         "direccion": [
           1,
           -1
+        ]
+      },
+      {
+        "palabra": "ALFA",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "BETA",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "GAMMA",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "DELTA",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
         ]
       }
     ]

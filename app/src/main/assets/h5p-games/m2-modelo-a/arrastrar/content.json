@@ -52,7 +52,7 @@
         "type": {
           "library": "H5P.AdvancedText 1.1",
           "params": {
-            "text": "<p>Basica</p>"
+            "text": "<p>Base</p>"
           }
         },
         "x": 4,
@@ -117,7 +117,7 @@
         "type": {
           "library": "H5P.AdvancedText 1.1",
           "params": {
-            "text": "<p>Activacion</p>"
+            "text": "<p>Activación</p>"
           }
         },
         "x": 28,

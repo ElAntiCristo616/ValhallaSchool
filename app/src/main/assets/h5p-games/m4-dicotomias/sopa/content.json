@@ -12,64 +12,238 @@
       "JUICIOSO",
       "DECISIVO",
       "ALEGRE",
-      "SERIO"
+      "SERIO",
+      "EXTRATIMIA",
+      "INTROTImIA",
+      "INTERROGATIVO",
+      "DECLARATIVO",
+      "TEORICO",
+      "PRACTICO",
+      "EXOGENISTA",
+      "ENDOGENISTA",
+      "CONSTRUCTIVISTA",
+      "EMOTIVISTA",
+      "IZQUIERDA",
+      "DERECHA",
+      "RACIONAL",
+      "IRRACIONAL",
+      "CEDENTE",
+      "OBSTINADO",
+      "DESPREOCUPADO",
+      "PREVISOR"
     ],
     "grid": [
-      "ZBLGOCITATSEVHV",
-      "DATARCOTSIRALYR",
-      "ATSIVITAGENNTXE",
-      "HFZDZFNAFXKZNZV",
-      "XZHIISERIOFZWDM",
-      "BPHGONLJZHHAVGM",
-      "JKAICYAILUQMVRK",
-      "UALDIFSMIBDTNLX",
-      "IZEPOSITIVISTAT",
-      "CKGNTDEMOCRATAA",
-      "IQRDMSGIBWONAQC",
-      "OZERVDECISIVOXT",
-      "SXXVGLNCVKTKVDI",
-      "OCIGETARTSEXJQC",
-      "JVNKMWJREGNVMVO"
+      "LZHLINTROTImIACNAM",
+      "AOOVISICEDAGWTETTD",
+      "NCDERECHAATTXADESD",
+      "OIERRVOODTSWZCEOIE",
+      "IGXOADMAFAIIATNRVS",
+      "CETOCOPTSRNNDITIIP",
+      "ATREIVOSPCETRCECTR",
+      "RAANOISIROGEEOQOCE",
+      "ORTDNTIVETORICEEUO",
+      "BTIOAATIVSXRUIMSRC",
+      "SSMGLRITIIEOQMOTTU",
+      "TEIEEAVASRKGZATASP",
+      "IWANGLIGOAJAINITNA",
+      "NSLIRCSERIOTNIVIOD",
+      "AWYSEETNPIJIVDICCO",
+      "DVFTVDAWTXHVDJSOSW",
+      "ONOAPRACTICOUBTMYK",
+      "OSOICIUJDEMOCRATAS"
     ],
     "placements": [
       {
         "palabra": "ESTATICO",
-        "fila": 0,
-        "columna": 11,
+        "fila": 8,
+        "columna": 15,
         "direccion": [
-          0,
-          -1
+          1,
+          0
         ]
       },
       {
         "palabra": "DINAMICO",
-        "fila": 3,
-        "columna": 3,
+        "fila": 14,
+        "columna": 13,
         "direccion": [
-          1,
-          1
+          -1,
+          0
         ]
       },
       {
         "palabra": "POSITIVISTA",
-        "fila": 8,
-        "columna": 3,
+        "fila": 5,
+        "columna": 6,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "fila": 14,
+        "columna": 7,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TACTICO",
+        "fila": 1,
+        "columna": 13,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "fila": 17,
+        "columna": 8,
         "direccion": [
           0,
           1
         ]
       },
       {
-        "palabra": "NEGATIVISTA",
-        "fila": 2,
-        "columna": 10,
+        "palabra": "ARISTOCRATA",
+        "fila": 12,
+        "columna": 9,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "JUICIOSO",
+        "fila": 17,
+        "columna": 7,
         "direccion": [
           0,
           -1
         ]
       },
       {
-        "palabra": "TACTICO",
+        "palabra": "DECISIVO",
+        "fila": 1,
+        "columna": 9,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ALEGRE",
+        "fila": 9,
+        "columna": 4,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SERIO",
+        "fila": 13,
+        "columna": 6,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "EXTRATIMIA",
+        "fila": 3,
+        "columna": 2,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "INTROTImIA",
+        "fila": 0,
+        "columna": 4,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "INTERROGATIVO",
+        "fila": 4,
+        "columna": 11,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "DECLARATIVO",
+        "fila": 15,
+        "columna": 5,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TEORICO",
+        "fila": 1,
+        "columna": 15,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "PRACTICO",
+        "fila": 16,
+        "columna": 4,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "EXOGENISTA",
+        "fila": 10,
+        "columna": 10,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "ENDOGENISTA",
+        "fila": 6,
+        "columna": 3,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "CONSTRUCTIVISTA",
+        "fila": 14,
+        "columna": 16,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "EMOTIVISTA",
         "fila": 8,
         "columna": 14,
         "direccion": [
@@ -78,35 +252,53 @@
         ]
       },
       {
-        "palabra": "ESTRATEGICO",
-        "fila": 13,
-        "columna": 10,
+        "palabra": "IZQUIERDA",
+        "fila": 12,
+        "columna": 12,
         "direccion": [
-          0,
-          -1
+          -1,
+          0
         ]
       },
       {
-        "palabra": "DEMOCRATA",
-        "fila": 9,
-        "columna": 5,
+        "palabra": "DERECHA",
+        "fila": 2,
+        "columna": 2,
         "direccion": [
           0,
           1
         ]
       },
       {
-        "palabra": "ARISTOCRATA",
-        "fila": 1,
-        "columna": 11,
+        "palabra": "RACIONAL",
+        "fila": 7,
+        "columna": 0,
         "direccion": [
-          0,
-          -1
+          -1,
+          0
         ]
       },
       {
-        "palabra": "JUICIOSO",
-        "fila": 6,
+        "palabra": "IRRACIONAL",
+        "fila": 1,
+        "columna": 4,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "CEDENTE",
+        "fila": 0,
+        "columna": 14,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "OBSTINADO",
+        "fila": 8,
         "columna": 0,
         "direccion": [
           1,
@@ -114,30 +306,21 @@
         ]
       },
       {
-        "palabra": "DECISIVO",
-        "fila": 11,
-        "columna": 5,
-        "direccion": [
-          0,
-          1
-        ]
-      },
-      {
-        "palabra": "ALEGRE",
-        "fila": 6,
-        "columna": 2,
+        "palabra": "DESPREOCUPADO",
+        "fila": 2,
+        "columna": 17,
         "direccion": [
           1,
           0
         ]
       },
       {
-        "palabra": "SERIO",
-        "fila": 4,
-        "columna": 5,
+        "palabra": "PREVISOR",
+        "fila": 6,
+        "columna": 8,
         "direccion": [
-          0,
-          1
+          1,
+          0
         ]
       }
     ]
