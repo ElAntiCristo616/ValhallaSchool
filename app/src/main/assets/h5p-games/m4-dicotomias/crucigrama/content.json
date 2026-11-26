@@ -1,0 +1,93 @@
+{
+  "params": {
+    "words": [
+      {
+        "palabra": "ESTATICO",
+        "pista": "Polo de la dicotomia II: detiene y analiza",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DINAMICO",
+        "pista": "Polo de la dicotomia II: mueve y narra",
+        "fila": 2,
+        "columna": 8,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "pista": "Busca lo nuevo, dicotomia IV",
+        "fila": 3,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "pista": "Revisa lo que falta, dicotomia IV",
+        "fila": 12,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "TACTICO",
+        "pista": "Ayuda en corto, dicotomia VII",
+        "fila": 10,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "pista": "Orienta a futuro, dicotomia VII",
+        "fila": 5,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "pista": "Une intuicion con logica, dicotomia XIII",
+        "fila": 2,
+        "columna": 14,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "pista": "Une intuicion con etica, dicotomia XIII",
+        "fila": 0,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "JUICIOSO",
+        "pista": "Decide en colectivo, dicotomia XV",
+        "fila": 3,
+        "columna": 12,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DECISIVO",
+        "pista": "Acumula recursos, dicotomia XV",
+        "fila": 1,
+        "columna": 0,
+        "direccion": "vertical"
+      }
+    ],
+    "grid": [
+      "####ARISTOCRATA",
+      "D##############",
+      "E#######D#####D",
+      "C####P##I###J#E",
+      "I####O##N###U#M",
+      "S###ESTRATEGICO",
+      "I####I##M###C#C",
+      "V##ESTATICO#I#R",
+      "O####I##C###O#A",
+      "#####V##O###S#T",
+      "#TACTICO####O#A",
+      "#####S#########",
+      "#NEGATIVISTA###",
+      "#####A#########",
+      "###############"
+    ]
+  }
+}

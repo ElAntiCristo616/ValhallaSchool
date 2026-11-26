@@ -1,0 +1,395 @@
+{
+  "modulo": "m4-dicotomias",
+  "nombre": "Dicotomias de Reinin",
+  "memoria": {
+    "pares": [
+      [
+        "I",
+        "Extratimia / Introtimia"
+      ],
+      [
+        "II",
+        "Estatico / Dinamico"
+      ],
+      [
+        "III",
+        "Interrogativo / Declarativo"
+      ],
+      [
+        "IV",
+        "Positivista / Negativista"
+      ],
+      [
+        "V",
+        "Teorico / Practico"
+      ],
+      [
+        "VI",
+        "Exogenista / Endogenista"
+      ],
+      [
+        "VII",
+        "Tactico / Estrategico"
+      ],
+      [
+        "VIII",
+        "Constructivista / Emotivista"
+      ],
+      [
+        "IX",
+        "Izquierda / Derecha"
+      ],
+      [
+        "X",
+        "Racional / Irracional"
+      ],
+      [
+        "XI",
+        "Cedente / Obstinado"
+      ],
+      [
+        "XII",
+        "Despreocupado / Previsor"
+      ],
+      [
+        "XIII",
+        "Democrata / Aristocrata"
+      ],
+      [
+        "XIV",
+        "Alegre / Serio"
+      ],
+      [
+        "XV",
+        "Juicioso / Decisivo"
+      ]
+    ]
+  },
+  "arrastrar": {
+    "zonas": [
+      "Dicotomia II",
+      "Dicotomia IX",
+      "Dicotomia XIII",
+      "Dicotomia XIV",
+      "Dicotomia XV"
+    ],
+    "items": [
+      {
+        "texto": "Estatico",
+        "zona": "Dicotomia II"
+      },
+      {
+        "texto": "Dinamico",
+        "zona": "Dicotomia II"
+      },
+      {
+        "texto": "Izquierda (Proceso)",
+        "zona": "Dicotomia IX"
+      },
+      {
+        "texto": "Derecha (Resultado)",
+        "zona": "Dicotomia IX"
+      },
+      {
+        "texto": "Democrata",
+        "zona": "Dicotomia XIII"
+      },
+      {
+        "texto": "Aristocrata",
+        "zona": "Dicotomia XIII"
+      },
+      {
+        "texto": "Alegre",
+        "zona": "Dicotomia XIV"
+      },
+      {
+        "texto": "Serio",
+        "zona": "Dicotomia XIV"
+      },
+      {
+        "texto": "Juicioso",
+        "zona": "Dicotomia XV"
+      },
+      {
+        "texto": "Decisivo",
+        "zona": "Dicotomia XV"
+      }
+    ]
+  },
+  "crucigrama": {
+    "palabras": [
+      {
+        "palabra": "ESTATICO",
+        "pista": "Polo de la dicotomia II: detiene y analiza"
+      },
+      {
+        "palabra": "DINAMICO",
+        "pista": "Polo de la dicotomia II: mueve y narra"
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "pista": "Busca lo nuevo, dicotomia IV"
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "pista": "Revisa lo que falta, dicotomia IV"
+      },
+      {
+        "palabra": "TACTICO",
+        "pista": "Ayuda en corto, dicotomia VII"
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "pista": "Orienta a futuro, dicotomia VII"
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "pista": "Une intuicion con logica, dicotomia XIII"
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "pista": "Une intuicion con etica, dicotomia XIII"
+      },
+      {
+        "palabra": "JUICIOSO",
+        "pista": "Decide en colectivo, dicotomia XV"
+      },
+      {
+        "palabra": "DECISIVO",
+        "pista": "Acumula recursos, dicotomia XV"
+      }
+    ],
+    "cuadricula": [
+      "####ARISTOCRATA",
+      "D##############",
+      "E#######D#####D",
+      "C####P##I###J#E",
+      "I####O##N###U#M",
+      "S###ESTRATEGICO",
+      "I####I##M###C#C",
+      "V##ESTATICO#I#R",
+      "O####I##C###O#A",
+      "#####V##O###S#T",
+      "#TACTICO####O#A",
+      "#####S#########",
+      "#NEGATIVISTA###",
+      "#####A#########",
+      "###############"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "ESTATICO",
+        "pista": "Polo de la dicotomia II: detiene y analiza",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DINAMICO",
+        "pista": "Polo de la dicotomia II: mueve y narra",
+        "fila": 2,
+        "columna": 8,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "pista": "Busca lo nuevo, dicotomia IV",
+        "fila": 3,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "pista": "Revisa lo que falta, dicotomia IV",
+        "fila": 12,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "TACTICO",
+        "pista": "Ayuda en corto, dicotomia VII",
+        "fila": 10,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "pista": "Orienta a futuro, dicotomia VII",
+        "fila": 5,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "pista": "Une intuicion con logica, dicotomia XIII",
+        "fila": 2,
+        "columna": 14,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "pista": "Une intuicion con etica, dicotomia XIII",
+        "fila": 0,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "JUICIOSO",
+        "pista": "Decide en colectivo, dicotomia XV",
+        "fila": 3,
+        "columna": 12,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DECISIVO",
+        "pista": "Acumula recursos, dicotomia XV",
+        "fila": 1,
+        "columna": 0,
+        "direccion": "vertical"
+      }
+    ]
+  },
+  "sopa": {
+    "palabras": [
+      "ESTATICO",
+      "DINAMICO",
+      "POSITIVISTA",
+      "NEGATIVISTA",
+      "TACTICO",
+      "ESTRATEGICO",
+      "DEMOCRATA",
+      "ARISTOCRATA",
+      "JUICIOSO",
+      "DECISIVO",
+      "ALEGRE",
+      "SERIO"
+    ],
+    "cuadricula": [
+      "ZBLGOCITATSEVHV",
+      "DATARCOTSIRALYR",
+      "ATSIVITAGENNTXE",
+      "HFZDZFNAFXKZNZV",
+      "XZHIISERIOFZWDM",
+      "BPHGONLJZHHAVGM",
+      "JKAICYAILUQMVRK",
+      "UALDIFSMIBDTNLX",
+      "IZEPOSITIVISTAT",
+      "CKGNTDEMOCRATAA",
+      "IQRDMSGIBWONAQC",
+      "OZERVDECISIVOXT",
+      "SXXVGLNCVKTKVDI",
+      "OCIGETARTSEXJQC",
+      "JVNKMWJREGNVMVO"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "ESTATICO",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "DINAMICO",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "fila": 8,
+        "columna": 3,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "fila": 2,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "TACTICO",
+        "fila": 8,
+        "columna": 14,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "fila": 13,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "fila": 9,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "fila": 1,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "JUICIOSO",
+        "fila": 6,
+        "columna": 0,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "DECISIVO",
+        "fila": 11,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "ALEGRE",
+        "fila": 6,
+        "columna": 2,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SERIO",
+        "fila": 4,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      }
+    ]
+  }
+}

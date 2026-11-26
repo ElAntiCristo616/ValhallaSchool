@@ -1,0 +1,145 @@
+{
+  "params": {
+    "words": [
+      "ESTATICO",
+      "DINAMICO",
+      "POSITIVISTA",
+      "NEGATIVISTA",
+      "TACTICO",
+      "ESTRATEGICO",
+      "DEMOCRATA",
+      "ARISTOCRATA",
+      "JUICIOSO",
+      "DECISIVO",
+      "ALEGRE",
+      "SERIO"
+    ],
+    "grid": [
+      "ZBLGOCITATSEVHV",
+      "DATARCOTSIRALYR",
+      "ATSIVITAGENNTXE",
+      "HFZDZFNAFXKZNZV",
+      "XZHIISERIOFZWDM",
+      "BPHGONLJZHHAVGM",
+      "JKAICYAILUQMVRK",
+      "UALDIFSMIBDTNLX",
+      "IZEPOSITIVISTAT",
+      "CKGNTDEMOCRATAA",
+      "IQRDMSGIBWONAQC",
+      "OZERVDECISIVOXT",
+      "SXXVGLNCVKTKVDI",
+      "OCIGETARTSEXJQC",
+      "JVNKMWJREGNVMVO"
+    ],
+    "placements": [
+      {
+        "palabra": "ESTATICO",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "DINAMICO",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "POSITIVISTA",
+        "fila": 8,
+        "columna": 3,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "NEGATIVISTA",
+        "fila": 2,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "TACTICO",
+        "fila": 8,
+        "columna": 14,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ESTRATEGICO",
+        "fila": 13,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "DEMOCRATA",
+        "fila": 9,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "ARISTOCRATA",
+        "fila": 1,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "JUICIOSO",
+        "fila": 6,
+        "columna": 0,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "DECISIVO",
+        "fila": 11,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "ALEGRE",
+        "fila": 6,
+        "columna": 2,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SERIO",
+        "fila": 4,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "params": {
+    "question": "<p>Arrastra cada tarjeta a su grupo correcto.</p>",
+    "dropZones": [
+      {
+        "label": "Cuerpos (extravertidos)",
+        "x": 2.0,
+        "y": 4,
+        "width": 46.0,
+        "height": 22,
+        "correctElements": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "label": "Campos (introvertidos)",
+        "x": 50.0,
+        "y": 4,
+        "width": 46.0,
+        "height": 22,
+        "correctElements": [
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    ],
+    "draggables": [
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Ne</p>"
+          }
+        },
+        "x": 4,
+        "y": 34,
+        "dropZones": [
+          0
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Se</p>"
+          }
+        },
+        "x": 28,
+        "y": 34,
+        "dropZones": [
+          0
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Fe</p>"
+          }
+        },
+        "x": 52,
+        "y": 34,
+        "dropZones": [
+          0
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Te</p>"
+          }
+        },
+        "x": 76,
+        "y": 34,
+        "dropZones": [
+          0
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Ni</p>"
+          }
+        },
+        "x": 4,
+        "y": 48,
+        "dropZones": [
+          1
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Si</p>"
+          }
+        },
+        "x": 28,
+        "y": 48,
+        "dropZones": [
+          1
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Fi</p>"
+          }
+        },
+        "x": 52,
+        "y": 48,
+        "dropZones": [
+          1
+        ]
+      },
+      {
+        "type": {
+          "library": "H5P.AdvancedText 1.1",
+          "params": {
+            "text": "<p>Ti</p>"
+          }
+        },
+        "x": 76,
+        "y": 48,
+        "dropZones": [
+          1
+        ]
+      }
+    ]
+  }
+}

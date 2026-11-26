@@ -1,0 +1,15 @@
+{
+  "title": "Memoria: Los 16 tipos y cuadras",
+  "language": "es",
+  "mainLibrary": "H5P.MemoryGame 1.3",
+  "embedTypes": [
+    "iframe"
+  ],
+  "license": "U",
+  "authors": [
+    {
+      "name": "Valhalla Typology",
+      "role": "Author"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Sopa de letras: Los 8 elementos",
+  "language": "es",
+  "mainLibrary": "H5P.WordSearch 1.0",
+  "embedTypes": [
+    "iframe"
+  ],
+  "license": "U",
+  "authors": [
+    {
+      "name": "Valhalla Typology",
+      "role": "Author"
+    }
+  ]
+}

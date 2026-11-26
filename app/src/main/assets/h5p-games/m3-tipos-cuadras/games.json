@@ -1,0 +1,502 @@
+{
+  "modulo": "m3-tipos-cuadras",
+  "nombre": "Los 16 tipos y cuadras",
+  "memoria": {
+    "pares": [
+      [
+        "ILE",
+        "Base Ne"
+      ],
+      [
+        "SEI",
+        "Base Si"
+      ],
+      [
+        "ESE",
+        "Base Fe"
+      ],
+      [
+        "LII",
+        "Base Ti"
+      ],
+      [
+        "EIE",
+        "Base Fe"
+      ],
+      [
+        "LSI",
+        "Base Ti"
+      ],
+      [
+        "SLE",
+        "Base Se"
+      ],
+      [
+        "IEI",
+        "Base Ni"
+      ],
+      [
+        "SEE",
+        "Base Se"
+      ],
+      [
+        "ILI",
+        "Base Ni"
+      ],
+      [
+        "LIE",
+        "Base Te"
+      ],
+      [
+        "ESI",
+        "Base Fi"
+      ],
+      [
+        "IEE",
+        "Base Ne"
+      ],
+      [
+        "SLI",
+        "Base Si"
+      ],
+      [
+        "LSE",
+        "Base Te"
+      ],
+      [
+        "EII",
+        "Base Fi"
+      ]
+    ]
+  },
+  "arrastrar": {
+    "zonas": [
+      "Alfa",
+      "Beta",
+      "Gamma",
+      "Delta"
+    ],
+    "items": [
+      {
+        "texto": "ILE",
+        "zona": "Alfa"
+      },
+      {
+        "texto": "SEI",
+        "zona": "Alfa"
+      },
+      {
+        "texto": "ESE",
+        "zona": "Alfa"
+      },
+      {
+        "texto": "LII",
+        "zona": "Alfa"
+      },
+      {
+        "texto": "EIE",
+        "zona": "Beta"
+      },
+      {
+        "texto": "LSI",
+        "zona": "Beta"
+      },
+      {
+        "texto": "SLE",
+        "zona": "Beta"
+      },
+      {
+        "texto": "IEI",
+        "zona": "Beta"
+      },
+      {
+        "texto": "SEE",
+        "zona": "Gamma"
+      },
+      {
+        "texto": "ILI",
+        "zona": "Gamma"
+      },
+      {
+        "texto": "LIE",
+        "zona": "Gamma"
+      },
+      {
+        "texto": "ESI",
+        "zona": "Gamma"
+      },
+      {
+        "texto": "IEE",
+        "zona": "Delta"
+      },
+      {
+        "texto": "SLI",
+        "zona": "Delta"
+      },
+      {
+        "texto": "LSE",
+        "zona": "Delta"
+      },
+      {
+        "texto": "EII",
+        "zona": "Delta"
+      }
+    ]
+  },
+  "crucigrama": {
+    "palabras": [
+      {
+        "palabra": "ALFA",
+        "pista": "Cuadra de ILE, SEI, ESE y LII"
+      },
+      {
+        "palabra": "BETA",
+        "pista": "Cuadra de EIE, LSI, SLE e IEI"
+      },
+      {
+        "palabra": "GAMMA",
+        "pista": "Cuadra de SEE, ILI, LIE y ESI"
+      },
+      {
+        "palabra": "DELTA",
+        "pista": "Cuadra de IEE, SLI, LSE y EII"
+      },
+      {
+        "palabra": "CUADRA",
+        "pista": "Cuatro tipos con valores comunes"
+      },
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total entre dos tipos"
+      },
+      {
+        "palabra": "SOCION",
+        "pista": "Unidad de los 16 tipos"
+      },
+      {
+        "palabra": "DIADA",
+        "pista": "Dos duales juntos"
+      },
+      {
+        "palabra": "LOGICA",
+        "pista": "Te y Ti"
+      },
+      {
+        "palabra": "ETICA",
+        "pista": "Fe y Fi"
+      }
+    ],
+    "cuadricula": [
+      "######L########",
+      "######O########",
+      "######G########",
+      "######I########",
+      "######C#B######",
+      "######A#E######",
+      "#####G##T######",
+      "#C#D#ALFA######",
+      "#U#U#M#########",
+      "#A#A#M#########",
+      "#DELTA###D#####",
+      "#R#I##SOCION###",
+      "#A#D#####A#####",
+      "###A#####D#####",
+      "###D#ETICA#####"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "ALFA",
+        "pista": "Cuadra de ILE, SEI, ESE y LII",
+        "fila": 7,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "BETA",
+        "pista": "Cuadra de EIE, LSI, SLE e IEI",
+        "fila": 4,
+        "columna": 8,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "GAMMA",
+        "pista": "Cuadra de SEE, ILI, LIE y ESI",
+        "fila": 6,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DELTA",
+        "pista": "Cuadra de IEE, SLI, LSE y EII",
+        "fila": 10,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CUADRA",
+        "pista": "Cuatro tipos con valores comunes",
+        "fila": 7,
+        "columna": 1,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total entre dos tipos",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SOCION",
+        "pista": "Unidad de los 16 tipos",
+        "fila": 11,
+        "columna": 6,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DIADA",
+        "pista": "Dos duales juntos",
+        "fila": 10,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "LOGICA",
+        "pista": "Te y Ti",
+        "fila": 0,
+        "columna": 6,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ETICA",
+        "pista": "Fe y Fi",
+        "fila": 14,
+        "columna": 5,
+        "direccion": "horizontal"
+      }
+    ]
+  },
+  "sopa": {
+    "palabras": [
+      "ILE",
+      "SEI",
+      "ESE",
+      "LII",
+      "EIE",
+      "LSI",
+      "SLE",
+      "IEI",
+      "SEE",
+      "ILI",
+      "LIE",
+      "ESI",
+      "IEE",
+      "SLI",
+      "LSE",
+      "EII",
+      "ALFA",
+      "BETA",
+      "GAMMA",
+      "DELTA"
+    ],
+    "cuadricula": [
+      "IEIEWVUCTELIUFR",
+      "XHFOISEMIIUWRHV",
+      "KYYBHGBZSKMICGS",
+      "WKGSAUPMLUDOEIE",
+      "HXIMERRIXESNSML",
+      "HLMEQIPCLYBEEID",
+      "IAFLAEUTFZVNTCM",
+      "MTOQIRAAVXADVRY",
+      "IYUSLEKDJNFTOAX",
+      "XIQYIILFQDUJEUQ",
+      "TGELIEYFRYQATBK",
+      "PEADIISSLILZJHB",
+      "HSSCELECXPCYIEI",
+      "REYEEVEPRFIQTNG",
+      "RYXWESLGWJMVULO"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "ILE",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SEI",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "ESE",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "LII",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "EIE",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "LSI",
+        "fila": 3,
+        "columna": 8,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "SLE",
+        "fila": 8,
+        "columna": 3,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "IEI",
+        "fila": 12,
+        "columna": 12,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "SEE",
+        "fila": 11,
+        "columna": 6,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "ILI",
+        "fila": 4,
+        "columna": 2,
+        "direccion": [
+          1,
+          -1
+        ]
+      },
+      {
+        "palabra": "LIE",
+        "fila": 12,
+        "columna": 5,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "ESI",
+        "fila": 1,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "IEE",
+        "fila": 5,
+        "columna": 13,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SLI",
+        "fila": 11,
+        "columna": 7,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "LSE",
+        "fila": 14,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "EII",
+        "fila": 12,
+        "columna": 4,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "ALFA",
+        "fila": 6,
+        "columna": 4,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "BETA",
+        "fila": 10,
+        "columna": 13,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "GAMMA",
+        "fila": 2,
+        "columna": 5,
+        "direccion": [
+          1,
+          -1
+        ]
+      },
+      {
+        "palabra": "DELTA",
+        "fila": 3,
+        "columna": 10,
+        "direccion": [
+          1,
+          -1
+        ]
+      }
+    ]
+  }
+}

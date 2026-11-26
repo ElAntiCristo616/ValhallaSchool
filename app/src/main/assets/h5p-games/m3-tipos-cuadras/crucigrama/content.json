@@ -1,0 +1,93 @@
+{
+  "params": {
+    "words": [
+      {
+        "palabra": "ALFA",
+        "pista": "Cuadra de ILE, SEI, ESE y LII",
+        "fila": 7,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "BETA",
+        "pista": "Cuadra de EIE, LSI, SLE e IEI",
+        "fila": 4,
+        "columna": 8,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "GAMMA",
+        "pista": "Cuadra de SEE, ILI, LIE y ESI",
+        "fila": 6,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DELTA",
+        "pista": "Cuadra de IEE, SLI, LSE y EII",
+        "fila": 10,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CUADRA",
+        "pista": "Cuatro tipos con valores comunes",
+        "fila": 7,
+        "columna": 1,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total entre dos tipos",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SOCION",
+        "pista": "Unidad de los 16 tipos",
+        "fila": 11,
+        "columna": 6,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DIADA",
+        "pista": "Dos duales juntos",
+        "fila": 10,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "LOGICA",
+        "pista": "Te y Ti",
+        "fila": 0,
+        "columna": 6,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ETICA",
+        "pista": "Fe y Fi",
+        "fila": 14,
+        "columna": 5,
+        "direccion": "horizontal"
+      }
+    ],
+    "grid": [
+      "######L########",
+      "######O########",
+      "######G########",
+      "######I########",
+      "######C#B######",
+      "######A#E######",
+      "#####G##T######",
+      "#C#D#ALFA######",
+      "#U#U#M#########",
+      "#A#A#M#########",
+      "#DELTA###D#####",
+      "#R#I##SOCION###",
+      "#A#D#####A#####",
+      "###A#####D#####",
+      "###D#ETICA#####"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "params": {
+    "cards": [
+      {
+        "text": "Basica",
+        "match": "Ego: funcion 1, 4D, fuerte y valiosa"
+      },
+      {
+        "text": "Creativa",
+        "match": "Ego: funcion 2, 3D, fuerte y valiosa"
+      },
+      {
+        "text": "Rol",
+        "match": "SuperEgo: funcion 3, 2D, debil, puerta del anillo mental"
+      },
+      {
+        "text": "Dolorosa",
+        "match": "SuperEgo: funcion 4, 1D, la PoLR"
+      },
+      {
+        "text": "Sugestiva",
+        "match": "SuperId: funcion 5, 1D, puerta de entrada"
+      },
+      {
+        "text": "Activacion",
+        "match": "SuperId: funcion 6, 2D, la movilizadora"
+      },
+      {
+        "text": "Limitativa",
+        "match": "Id: funcion 7, 3D, fuerte, pone limites"
+      },
+      {
+        "text": "Fondo",
+        "match": "Id: funcion 8, 4D, fuerte, respaldo invisible"
+      }
+    ]
+  }
+}

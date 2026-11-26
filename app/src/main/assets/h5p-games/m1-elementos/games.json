@@ -1,0 +1,356 @@
+{
+  "modulo": "m1-elementos",
+  "nombre": "Los 8 elementos",
+  "memoria": {
+    "pares": [
+      [
+        "Ne",
+        "Intuicion extravertida: potencial y posibilidades"
+      ],
+      [
+        "Ni",
+        "Intuicion introvertida: tiempo y futuro"
+      ],
+      [
+        "Se",
+        "Sensacion extravertida: fuerza y voluntad"
+      ],
+      [
+        "Si",
+        "Sensacion introvertida: bienestar y cuerpo"
+      ],
+      [
+        "Fe",
+        "Etica extravertida: emociones y animo"
+      ],
+      [
+        "Fi",
+        "Etica introvertida: distancia entre personas"
+      ],
+      [
+        "Te",
+        "Logica extravertida: trabajo y metodos"
+      ],
+      [
+        "Ti",
+        "Logica introvertida: estructura y sistema"
+      ]
+    ]
+  },
+  "arrastrar": {
+    "zonas": [
+      "Cuerpos (extravertidos)",
+      "Campos (introvertidos)"
+    ],
+    "items": [
+      {
+        "texto": "Ne",
+        "zona": "Cuerpos (extravertidos)"
+      },
+      {
+        "texto": "Se",
+        "zona": "Cuerpos (extravertidos)"
+      },
+      {
+        "texto": "Fe",
+        "zona": "Cuerpos (extravertidos)"
+      },
+      {
+        "texto": "Te",
+        "zona": "Cuerpos (extravertidos)"
+      },
+      {
+        "texto": "Ni",
+        "zona": "Campos (introvertidos)"
+      },
+      {
+        "texto": "Si",
+        "zona": "Campos (introvertidos)"
+      },
+      {
+        "texto": "Fi",
+        "zona": "Campos (introvertidos)"
+      },
+      {
+        "texto": "Ti",
+        "zona": "Campos (introvertidos)"
+      }
+    ]
+  },
+  "crucigrama": {
+    "palabras": [
+      {
+        "palabra": "NOVEDAD",
+        "pista": "Carga positiva de Ne"
+      },
+      {
+        "palabra": "ESPERANZA",
+        "pista": "Carga positiva de Ni"
+      },
+      {
+        "palabra": "PELIGRO",
+        "pista": "Carga negativa de Ni"
+      },
+      {
+        "palabra": "CONSERVACION",
+        "pista": "Carga negativa de Se"
+      },
+      {
+        "palabra": "CONFORT",
+        "pista": "Carga positiva de Si"
+      },
+      {
+        "palabra": "INTENSIDAD",
+        "pista": "Carga positiva de Fe"
+      },
+      {
+        "palabra": "PERDON",
+        "pista": "Carga positiva de Fi"
+      },
+      {
+        "palabra": "ACELERACION",
+        "pista": "Carga positiva de Te"
+      },
+      {
+        "palabra": "CUERPOS",
+        "pista": "Te, Fe, Se y Ne"
+      },
+      {
+        "palabra": "CAMPOS",
+        "pista": "Ti, Fi, Si y Ni"
+      }
+    ],
+    "cuadricula": [
+      "#############C#",
+      "I####P#######A#",
+      "N####E###E###M#",
+      "T#A##L###S###P#",
+      "E#C##I###P###O#",
+      "N#E##G#CUERPOS#",
+      "S#L##R###R#####",
+      "I#E#NOVEDAD####",
+      "D#R######N###C#",
+      "A#A######Z###O#",
+      "D#CONSERVACION#",
+      "##I##########F#",
+      "##O######PERDON",
+      "##N##########R#",
+      "#############T#"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "NOVEDAD",
+        "pista": "Carga positiva de Ne",
+        "fila": 7,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ESPERANZA",
+        "pista": "Carga positiva de Ni",
+        "fila": 2,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "PELIGRO",
+        "pista": "Carga negativa de Ni",
+        "fila": 1,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CONSERVACION",
+        "pista": "Carga negativa de Se",
+        "fila": 10,
+        "columna": 2,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CONFORT",
+        "pista": "Carga positiva de Si",
+        "fila": 8,
+        "columna": 13,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "INTENSIDAD",
+        "pista": "Carga positiva de Fe",
+        "fila": 1,
+        "columna": 0,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "PERDON",
+        "pista": "Carga positiva de Fi",
+        "fila": 12,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ACELERACION",
+        "pista": "Carga positiva de Te",
+        "fila": 3,
+        "columna": 2,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CUERPOS",
+        "pista": "Te, Fe, Se y Ne",
+        "fila": 5,
+        "columna": 7,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CAMPOS",
+        "pista": "Ti, Fi, Si y Ni",
+        "fila": 0,
+        "columna": 13,
+        "direccion": "vertical"
+      }
+    ]
+  },
+  "sopa": {
+    "palabras": [
+      "NE",
+      "NI",
+      "SE",
+      "SI",
+      "FE",
+      "FI",
+      "TE",
+      "TI",
+      "NOVEDAD",
+      "PELIGRO",
+      "CONFORT",
+      "PERDON"
+    ],
+    "cuadricula": [
+      "CFERJUTLSGENWCB",
+      "DADEVONVHYJCHDM",
+      "IOULFLLGIVIWVUC",
+      "TUFNRXHTFFOMIUW",
+      "RHVKIYYBHBZKMIC",
+      "GSWKGUPORGILEPM",
+      "UOEIEHXRRIXSNSM",
+      "LHEQPCYBDEUFZVN",
+      "TCMTEMTOQIRAVXD",
+      "VRYIYISUKDJNFOA",
+      "XXIQYFQDUJUQTGE",
+      "LSYFRYQCONFORTA",
+      "TEKPADLZJHBHSCC",
+      "XPCYRYEEVPRFIQT",
+      "NNODREPGRYXWGWJ"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "NE",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "NI",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "SE",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SI",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "FE",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "FI",
+        "fila": 3,
+        "columna": 8,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TE",
+        "fila": 8,
+        "columna": 3,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "TI",
+        "fila": 3,
+        "columna": 7,
+        "direccion": [
+          -1,
+          1
+        ]
+      },
+      {
+        "palabra": "NOVEDAD",
+        "fila": 1,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "PELIGRO",
+        "fila": 5,
+        "columna": 13,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "CONFORT",
+        "fila": 11,
+        "columna": 7,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "PERDON",
+        "fila": 14,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      }
+    ]
+  }
+}

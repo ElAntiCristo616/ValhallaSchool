@@ -1,0 +1,338 @@
+{
+  "modulo": "m2-modelo-a",
+  "nombre": "Modelo A",
+  "memoria": {
+    "pares": [
+      [
+        "Basica",
+        "Ego: funcion 1, 4D, fuerte y valiosa"
+      ],
+      [
+        "Creativa",
+        "Ego: funcion 2, 3D, fuerte y valiosa"
+      ],
+      [
+        "Rol",
+        "SuperEgo: funcion 3, 2D, debil, puerta del anillo mental"
+      ],
+      [
+        "Dolorosa",
+        "SuperEgo: funcion 4, 1D, la PoLR"
+      ],
+      [
+        "Sugestiva",
+        "SuperId: funcion 5, 1D, puerta de entrada"
+      ],
+      [
+        "Activacion",
+        "SuperId: funcion 6, 2D, la movilizadora"
+      ],
+      [
+        "Limitativa",
+        "Id: funcion 7, 3D, fuerte, pone limites"
+      ],
+      [
+        "Fondo",
+        "Id: funcion 8, 4D, fuerte, respaldo invisible"
+      ]
+    ]
+  },
+  "arrastrar": {
+    "zonas": [
+      "Ego",
+      "SuperEgo",
+      "SuperId",
+      "Id"
+    ],
+    "items": [
+      {
+        "texto": "Basica",
+        "zona": "Ego"
+      },
+      {
+        "texto": "Creativa",
+        "zona": "Ego"
+      },
+      {
+        "texto": "Rol",
+        "zona": "SuperEgo"
+      },
+      {
+        "texto": "Dolorosa",
+        "zona": "SuperEgo"
+      },
+      {
+        "texto": "Sugestiva",
+        "zona": "SuperId"
+      },
+      {
+        "texto": "Activacion",
+        "zona": "SuperId"
+      },
+      {
+        "texto": "Limitativa",
+        "zona": "Id"
+      },
+      {
+        "texto": "Fondo",
+        "zona": "Id"
+      }
+    ]
+  },
+  "crucigrama": {
+    "palabras": [
+      {
+        "palabra": "BASICA",
+        "pista": "Funcion 1 del Modelo A"
+      },
+      {
+        "palabra": "CREATIVA",
+        "pista": "Funcion 2 del Modelo A"
+      },
+      {
+        "palabra": "FUNCION",
+        "pista": "Cada posicion del Modelo A"
+      },
+      {
+        "palabra": "FONDO",
+        "pista": "Funcion 8 del Modelo A"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Funcion 6, la movilizadora"
+      },
+      {
+        "palabra": "ROL",
+        "pista": "Funcion 3 del Modelo A"
+      },
+      {
+        "palabra": "SUPEREGO",
+        "pista": "Bloque de las funciones 3 y 4"
+      },
+      {
+        "palabra": "SUPERID",
+        "pista": "Bloque de las funciones 5 y 6"
+      },
+      {
+        "palabra": "MENTAL",
+        "pista": "Anillo consciente, funciones 1 a 4"
+      },
+      {
+        "palabra": "VITAL",
+        "pista": "Anillo inconsciente, funciones 5 a 8"
+      }
+    ],
+    "cuadricula": [
+      "###############",
+      "###########V###",
+      "#MENTAL####I###",
+      "#####C#F###T###",
+      "#####T#U#C#A#S#",
+      "#####I#N#ROL#U#",
+      "#####V#C#E###P#",
+      "####BASICA###E#",
+      "###F#C#O#T###R#",
+      "###O#I#N#I###I#",
+      "###N#O###V###D#",
+      "###D#N###A#####",
+      "###O###########",
+      "###############",
+      "##SUPEREGO#####"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "BASICA",
+        "pista": "Funcion 1 del Modelo A",
+        "fila": 7,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CREATIVA",
+        "pista": "Funcion 2 del Modelo A",
+        "fila": 4,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "FUNCION",
+        "pista": "Cada posicion del Modelo A",
+        "fila": 3,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "FONDO",
+        "pista": "Funcion 8 del Modelo A",
+        "fila": 8,
+        "columna": 3,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Funcion 6, la movilizadora",
+        "fila": 2,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ROL",
+        "pista": "Funcion 3 del Modelo A",
+        "fila": 5,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPEREGO",
+        "pista": "Bloque de las funciones 3 y 4",
+        "fila": 14,
+        "columna": 2,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPERID",
+        "pista": "Bloque de las funciones 5 y 6",
+        "fila": 4,
+        "columna": 13,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "MENTAL",
+        "pista": "Anillo consciente, funciones 1 a 4",
+        "fila": 2,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "VITAL",
+        "pista": "Anillo inconsciente, funciones 5 a 8",
+        "fila": 1,
+        "columna": 11,
+        "direccion": "vertical"
+      }
+    ]
+  },
+  "sopa": {
+    "palabras": [
+      "EGO",
+      "SUPEREGO",
+      "SUPERID",
+      "ID",
+      "BASICA",
+      "CREATIVA",
+      "ROL",
+      "FONDO",
+      "MENTAL",
+      "VITAL"
+    ],
+    "cuadricula": [
+      "HIDFOMIUWOGERHV",
+      "KACISABYYBHBZKM",
+      "ICGSWMKGUPMUOEI",
+      "EHXSERRIXSNSMLH",
+      "EQPNUCYBDEUFZVN",
+      "TCTMMPAVITAERCT",
+      "OAQIRAEVXDVRYIY",
+      "LUKDJNFROAXXIQY",
+      "FQDUJUQTEGEVLYF",
+      "DIREPUSRYGQIATK",
+      "PADLZJHBHSOTCCX",
+      "PCYRYEEROLVAPRF",
+      "IQTNGRYXWGWLJMV",
+      "ULOQODHHCKASRHS",
+      "HAODNOFCWUBHCBK"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "EGO",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SUPEREGO",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "SUPERID",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ID",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "BASICA",
+        "fila": 1,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "CREATIVA",
+        "fila": 5,
+        "columna": 13,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ROL",
+        "fila": 11,
+        "columna": 7,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "FONDO",
+        "fila": 14,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "MENTAL",
+        "fila": 2,
+        "columna": 5,
+        "direccion": [
+          1,
+          -1
+        ]
+      },
+      {
+        "palabra": "VITAL",
+        "fila": 8,
+        "columna": 11,
+        "direccion": [
+          1,
+          0
+        ]
+      }
+    ]
+  }
+}

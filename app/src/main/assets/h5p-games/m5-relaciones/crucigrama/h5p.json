@@ -1,0 +1,15 @@
+{
+  "title": "Crucigrama: Relaciones y supervision",
+  "language": "es",
+  "mainLibrary": "H5P.Crossword 1.0",
+  "embedTypes": [
+    "iframe"
+  ],
+  "license": "U",
+  "authors": [
+    {
+      "name": "Valhalla Typology",
+      "role": "Author"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "params": {
+    "words": [
+      "DUALIDAD",
+      "SUPERVISION",
+      "ACTIVACION",
+      "CONFLICTO",
+      "SOLICITUD",
+      "DIADA",
+      "ANILLO",
+      "CAUSAL",
+      "DIALECTICO",
+      "VORTICAL"
+    ],
+    "grid": [
+      "TVNLDADILAUDXZK",
+      "NTOQNDMADAIDSGI",
+      "BWNRAOQZRVXXXVG",
+      "SLOSTNICVKTKVDX",
+      "JOLQUIJCVNKMWJR",
+      "EGLNVPCMAVXFTSJ",
+      "MRIIAJEAJVGNZST",
+      "ULNKCOORLOIVGQP",
+      "ZZAXFIVCVJQTVUT",
+      "KCYSHVTJHIZGCEA",
+      "BHPTUYCUONSUSAG",
+      "WWMPMAHEDUWIAYY",
+      "DYNHFZCWQOBROHD",
+      "OEOTCILFNOCZONV",
+      "QRTKYDIALECTICO"
+    ],
+    "placements": [
+      {
+        "palabra": "DUALIDAD",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SUPERVISION",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "ACTIVACION",
+        "fila": 10,
+        "columna": 13,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "CONFLICTO",
+        "fila": 13,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SOLICITUD",
+        "fila": 3,
+        "columna": 0,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "DIADA",
+        "fila": 1,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ANILLO",
+        "fila": 8,
+        "columna": 2,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "CAUSAL",
+        "fila": 12,
+        "columna": 6,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "DIALECTICO",
+        "fila": 14,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "VORTICAL",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

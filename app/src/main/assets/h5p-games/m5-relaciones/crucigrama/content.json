@@ -1,0 +1,93 @@
+{
+  "params": {
+    "words": [
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPERVISION",
+        "pista": "Revision en una sola direccion",
+        "fila": 1,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Induce energia sin complementar",
+        "fila": 2,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CONFLICTO",
+        "pista": "Desgaste sin complementacion",
+        "fila": 5,
+        "columna": 0,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SOLICITUD",
+        "pista": "Beneficio en una sola direccion",
+        "fila": 9,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "PROGRESO",
+        "pista": "Anillos de progreso social",
+        "fila": 1,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CAUSAL",
+        "pista": "Anillo Determinista-Causal",
+        "fila": 3,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DIALECTICO",
+        "pista": "Anillo Dialectico-Algoritmico",
+        "fila": 0,
+        "columna": 14,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "VORTICAL",
+        "pista": "Anillo Vortical-Sinergico",
+        "fila": 5,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "HOLOGRAFICO",
+        "pista": "Anillo Holografico-Panoramico",
+        "fila": 14,
+        "columna": 2,
+        "direccion": "horizontal"
+      }
+    ],
+    "grid": [
+      "##############D",
+      "#PROGRESO#####I",
+      "#######U#A####A",
+      "#######P#CAUSAL",
+      "#######E#T####E",
+      "C####VORTICAL#C",
+      "O######V#V####T",
+      "N##DUALIDAD###I",
+      "F######S#C####C",
+      "L###SOLICITUD#O",
+      "I######O#O#####",
+      "C######N#N#####",
+      "T##############",
+      "O##############",
+      "##HOLOGRAFICO##"
+    ]
+  }
+}

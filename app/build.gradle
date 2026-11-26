@@ -1,18 +1,19 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    namespace 'app.stash'
+    namespace 'com.valhallaschool.app'
     compileSdk 35
     buildToolsVersion '35.0.0'
 
     defaultConfig {
-        applicationId 'app.stash'
+        applicationId 'com.valhallaschool.app'
         minSdk 26
         targetSdk 35
-        versionCode 3
-        versionName '1.2'
+        versionCode 1
+        versionName '1.0.0'
     }
 
     buildTypes {
@@ -20,8 +21,8 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            // Personal sideload build: signed with the local debug key.
-            signingConfig signingConfigs.debug
+            // Sin signingConfig: la firma la inyecta GitHub Actions
+            // (android.injected.signing.*). Ver REBRAND.md §0.
         }
     }
 
@@ -29,8 +30,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
 }
 
 dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.0.21'
 }

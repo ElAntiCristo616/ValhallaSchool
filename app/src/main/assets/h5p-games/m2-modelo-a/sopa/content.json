@@ -1,0 +1,125 @@
+{
+  "params": {
+    "words": [
+      "EGO",
+      "SUPEREGO",
+      "SUPERID",
+      "ID",
+      "BASICA",
+      "CREATIVA",
+      "ROL",
+      "FONDO",
+      "MENTAL",
+      "VITAL"
+    ],
+    "grid": [
+      "HIDFOMIUWOGERHV",
+      "KACISABYYBHBZKM",
+      "ICGSWMKGUPMUOEI",
+      "EHXSERRIXSNSMLH",
+      "EQPNUCYBDEUFZVN",
+      "TCTMMPAVITAERCT",
+      "OAQIRAEVXDVRYIY",
+      "LUKDJNFROAXXIQY",
+      "FQDUJUQTEGEVLYF",
+      "DIREPUSRYGQIATK",
+      "PADLZJHBHSOTCCX",
+      "PCYRYEEROLVAPRF",
+      "IQTNGRYXWGWLJMV",
+      "ULOQODHHCKASRHS",
+      "HAODNOFCWUBHCBK"
+    ],
+    "placements": [
+      {
+        "palabra": "EGO",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SUPEREGO",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "SUPERID",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ID",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "BASICA",
+        "fila": 1,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "CREATIVA",
+        "fila": 5,
+        "columna": 13,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ROL",
+        "fila": 11,
+        "columna": 7,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "FONDO",
+        "fila": 14,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "MENTAL",
+        "fila": 2,
+        "columna": 5,
+        "direccion": [
+          1,
+          -1
+        ]
+      },
+      {
+        "palabra": "VITAL",
+        "fila": 8,
+        "columna": 11,
+        "direccion": [
+          1,
+          0
+        ]
+      }
+    ]
+  }
+}

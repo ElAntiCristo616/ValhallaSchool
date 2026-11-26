@@ -1,0 +1,66 @@
+{
+  "params": {
+    "cards": [
+      {
+        "text": "I",
+        "match": "Extratimia / Introtimia"
+      },
+      {
+        "text": "II",
+        "match": "Estatico / Dinamico"
+      },
+      {
+        "text": "III",
+        "match": "Interrogativo / Declarativo"
+      },
+      {
+        "text": "IV",
+        "match": "Positivista / Negativista"
+      },
+      {
+        "text": "V",
+        "match": "Teorico / Practico"
+      },
+      {
+        "text": "VI",
+        "match": "Exogenista / Endogenista"
+      },
+      {
+        "text": "VII",
+        "match": "Tactico / Estrategico"
+      },
+      {
+        "text": "VIII",
+        "match": "Constructivista / Emotivista"
+      },
+      {
+        "text": "IX",
+        "match": "Izquierda / Derecha"
+      },
+      {
+        "text": "X",
+        "match": "Racional / Irracional"
+      },
+      {
+        "text": "XI",
+        "match": "Cedente / Obstinado"
+      },
+      {
+        "text": "XII",
+        "match": "Despreocupado / Previsor"
+      },
+      {
+        "text": "XIII",
+        "match": "Democrata / Aristocrata"
+      },
+      {
+        "text": "XIV",
+        "match": "Alegre / Serio"
+      },
+      {
+        "text": "XV",
+        "match": "Juicioso / Decisivo"
+      }
+    ]
+  }
+}

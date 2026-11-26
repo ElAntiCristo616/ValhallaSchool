@@ -1,0 +1,15 @@
+{
+  "title": "Arrastra y clasifica: Los 8 elementos",
+  "language": "es",
+  "mainLibrary": "H5P.DragQuestion 1.14",
+  "embedTypes": [
+    "iframe"
+  ],
+  "license": "U",
+  "authors": [
+    {
+      "name": "Valhalla Typology",
+      "role": "Author"
+    }
+  ]
+}

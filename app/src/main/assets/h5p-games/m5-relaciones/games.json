@@ -1,0 +1,362 @@
+{
+  "modulo": "m5-relaciones",
+  "nombre": "Relaciones y supervision",
+  "memoria": {
+    "pares": [
+      [
+        "Dualidad",
+        "Complementacion total entre dos tipos"
+      ],
+      [
+        "Supervision",
+        "Revision en una sola direccion"
+      ],
+      [
+        "Activacion",
+        "Induce energia sin complementar"
+      ],
+      [
+        "Conflicto",
+        "Desgaste permanente sin complementacion"
+      ],
+      [
+        "Solicitud",
+        "Beneficio en una sola direccion"
+      ],
+      [
+        "Diada",
+        "Dos duales juntos, mas que la suma"
+      ]
+    ]
+  },
+  "arrastrar": {
+    "zonas": [
+      "Determinista-Causal (>, +)",
+      "Dialectico-Algoritmico (>, -)",
+      "Holografico-Panoramico (<, -)",
+      "Vortical-Sinergico (<, +)"
+    ],
+    "items": [
+      {
+        "texto": "ILE",
+        "zona": "Determinista-Causal (>, +)"
+      },
+      {
+        "texto": "LSI",
+        "zona": "Determinista-Causal (>, +)"
+      },
+      {
+        "texto": "SEE",
+        "zona": "Determinista-Causal (>, +)"
+      },
+      {
+        "texto": "EII",
+        "zona": "Determinista-Causal (>, +)"
+      },
+      {
+        "texto": "SEI",
+        "zona": "Dialectico-Algoritmico (>, -)"
+      },
+      {
+        "texto": "EIE",
+        "zona": "Dialectico-Algoritmico (>, -)"
+      },
+      {
+        "texto": "ILI",
+        "zona": "Dialectico-Algoritmico (>, -)"
+      },
+      {
+        "texto": "LSE",
+        "zona": "Dialectico-Algoritmico (>, -)"
+      },
+      {
+        "texto": "LII",
+        "zona": "Holografico-Panoramico (<, -)"
+      },
+      {
+        "texto": "IEE",
+        "zona": "Holografico-Panoramico (<, -)"
+      },
+      {
+        "texto": "ESI",
+        "zona": "Holografico-Panoramico (<, -)"
+      },
+      {
+        "texto": "SLE",
+        "zona": "Holografico-Panoramico (<, -)"
+      },
+      {
+        "texto": "ESE",
+        "zona": "Vortical-Sinergico (<, +)"
+      },
+      {
+        "texto": "SLI",
+        "zona": "Vortical-Sinergico (<, +)"
+      },
+      {
+        "texto": "LIE",
+        "zona": "Vortical-Sinergico (<, +)"
+      },
+      {
+        "texto": "IEI",
+        "zona": "Vortical-Sinergico (<, +)"
+      }
+    ]
+  },
+  "crucigrama": {
+    "palabras": [
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total"
+      },
+      {
+        "palabra": "SUPERVISION",
+        "pista": "Revision en una sola direccion"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Induce energia sin complementar"
+      },
+      {
+        "palabra": "CONFLICTO",
+        "pista": "Desgaste sin complementacion"
+      },
+      {
+        "palabra": "SOLICITUD",
+        "pista": "Beneficio en una sola direccion"
+      },
+      {
+        "palabra": "PROGRESO",
+        "pista": "Anillos de progreso social"
+      },
+      {
+        "palabra": "CAUSAL",
+        "pista": "Anillo Determinista-Causal"
+      },
+      {
+        "palabra": "DIALECTICO",
+        "pista": "Anillo Dialectico-Algoritmico"
+      },
+      {
+        "palabra": "VORTICAL",
+        "pista": "Anillo Vortical-Sinergico"
+      },
+      {
+        "palabra": "HOLOGRAFICO",
+        "pista": "Anillo Holografico-Panoramico"
+      }
+    ],
+    "cuadricula": [
+      "##############D",
+      "#PROGRESO#####I",
+      "#######U#A####A",
+      "#######P#CAUSAL",
+      "#######E#T####E",
+      "C####VORTICAL#C",
+      "O######V#V####T",
+      "N##DUALIDAD###I",
+      "F######S#C####C",
+      "L###SOLICITUD#O",
+      "I######O#O#####",
+      "C######N#N#####",
+      "T##############",
+      "O##############",
+      "##HOLOGRAFICO##"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "DUALIDAD",
+        "pista": "Complementacion total",
+        "fila": 7,
+        "columna": 3,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPERVISION",
+        "pista": "Revision en una sola direccion",
+        "fila": 1,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Induce energia sin complementar",
+        "fila": 2,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CONFLICTO",
+        "pista": "Desgaste sin complementacion",
+        "fila": 5,
+        "columna": 0,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "SOLICITUD",
+        "pista": "Beneficio en una sola direccion",
+        "fila": 9,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "PROGRESO",
+        "pista": "Anillos de progreso social",
+        "fila": 1,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CAUSAL",
+        "pista": "Anillo Determinista-Causal",
+        "fila": 3,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "DIALECTICO",
+        "pista": "Anillo Dialectico-Algoritmico",
+        "fila": 0,
+        "columna": 14,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "VORTICAL",
+        "pista": "Anillo Vortical-Sinergico",
+        "fila": 5,
+        "columna": 5,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "HOLOGRAFICO",
+        "pista": "Anillo Holografico-Panoramico",
+        "fila": 14,
+        "columna": 2,
+        "direccion": "horizontal"
+      }
+    ]
+  },
+  "sopa": {
+    "palabras": [
+      "DUALIDAD",
+      "SUPERVISION",
+      "ACTIVACION",
+      "CONFLICTO",
+      "SOLICITUD",
+      "DIADA",
+      "ANILLO",
+      "CAUSAL",
+      "DIALECTICO",
+      "VORTICAL"
+    ],
+    "cuadricula": [
+      "TVNLDADILAUDXZK",
+      "NTOQNDMADAIDSGI",
+      "BWNRAOQZRVXXXVG",
+      "SLOSTNICVKTKVDX",
+      "JOLQUIJCVNKMWJR",
+      "EGLNVPCMAVXFTSJ",
+      "MRIIAJEAJVGNZST",
+      "ULNKCOORLOIVGQP",
+      "ZZAXFIVCVJQTVUT",
+      "KCYSHVTJHIZGCEA",
+      "BHPTUYCUONSUSAG",
+      "WWMPMAHEDUWIAYY",
+      "DYNHFZCWQOBROHD",
+      "OEOTCILFNOCZONV",
+      "QRTKYDIALECTICO"
+    ],
+    "ubicaciones": [
+      {
+        "palabra": "DUALIDAD",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SUPERVISION",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "ACTIVACION",
+        "fila": 10,
+        "columna": 13,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "CONFLICTO",
+        "fila": 13,
+        "columna": 10,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "SOLICITUD",
+        "fila": 3,
+        "columna": 0,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "DIADA",
+        "fila": 1,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "ANILLO",
+        "fila": 8,
+        "columna": 2,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "CAUSAL",
+        "fila": 12,
+        "columna": 6,
+        "direccion": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "palabra": "DIALECTICO",
+        "fila": 14,
+        "columna": 5,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "VORTICAL",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

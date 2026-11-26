@@ -1,0 +1,93 @@
+{
+  "params": {
+    "words": [
+      {
+        "palabra": "NOVEDAD",
+        "pista": "Carga positiva de Ne",
+        "fila": 7,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ESPERANZA",
+        "pista": "Carga positiva de Ni",
+        "fila": 2,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "PELIGRO",
+        "pista": "Carga negativa de Ni",
+        "fila": 1,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CONSERVACION",
+        "pista": "Carga negativa de Se",
+        "fila": 10,
+        "columna": 2,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CONFORT",
+        "pista": "Carga positiva de Si",
+        "fila": 8,
+        "columna": 13,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "INTENSIDAD",
+        "pista": "Carga positiva de Fe",
+        "fila": 1,
+        "columna": 0,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "PERDON",
+        "pista": "Carga positiva de Fi",
+        "fila": 12,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "ACELERACION",
+        "pista": "Carga positiva de Te",
+        "fila": 3,
+        "columna": 2,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "CUERPOS",
+        "pista": "Te, Fe, Se y Ne",
+        "fila": 5,
+        "columna": 7,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CAMPOS",
+        "pista": "Ti, Fi, Si y Ni",
+        "fila": 0,
+        "columna": 13,
+        "direccion": "vertical"
+      }
+    ],
+    "grid": [
+      "#############C#",
+      "I####P#######A#",
+      "N####E###E###M#",
+      "T#A##L###S###P#",
+      "E#C##I###P###O#",
+      "N#E##G#CUERPOS#",
+      "S#L##R###R#####",
+      "I#E#NOVEDAD####",
+      "D#R######N###C#",
+      "A#A######Z###O#",
+      "D#CONSERVACION#",
+      "##I##########F#",
+      "##O######PERDON",
+      "##N##########R#",
+      "#############T#"
+    ]
+  }
+}

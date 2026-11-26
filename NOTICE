@@ -1,0 +1,12 @@
+Valhalla School — créditos
+=========================
+
+Valhalla School es un fork de Stash, de safwanpp
+(https://github.com/safwanpp/stash), bajo licencia MIT. El aviso de
+copyright original se conserva en el archivo LICENSE.
+
+Minijuegos H5P: los juegos usan el formato H5P. El reproductor
+h5p-standalone es de Tunapanda (MIT). Tipos de contenido H5P:
+Memory Game de Joubel AS (MIT), Drag Question de Joubel AS (MIT),
+Crossword de Oliver Tacke (MIT). La sopa de letras es un juego propio
+de Valhalla School (HTML/JS, MIT). Ver content/H5P-LICENSES.md.

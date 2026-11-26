@@ -1,0 +1,145 @@
+{
+  "params": {
+    "words": [
+      "NE",
+      "NI",
+      "SE",
+      "SI",
+      "FE",
+      "FI",
+      "TE",
+      "TI",
+      "NOVEDAD",
+      "PELIGRO",
+      "CONFORT",
+      "PERDON"
+    ],
+    "grid": [
+      "CFERJUTLSGENWCB",
+      "DADEVONVHYJCHDM",
+      "IOULFLLGIVIWVUC",
+      "TUFNRXHTFFOMIUW",
+      "RHVKIYYBHBZKMIC",
+      "GSWKGUPORGILEPM",
+      "UOEIEHXRRIXSNSM",
+      "LHEQPCYBDEUFZVN",
+      "TCMTEMTOQIRAVXD",
+      "VRYIYISUKDJNFOA",
+      "XXIQYFQDUJUQTGE",
+      "LSYFRYQCONFORTA",
+      "TEKPADLZJHBHSCC",
+      "XPCYRYEEVPRFIQT",
+      "NNODREPGRYXWGWJ"
+    ],
+    "placements": [
+      {
+        "palabra": "NE",
+        "fila": 0,
+        "columna": 11,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "NI",
+        "fila": 3,
+        "columna": 3,
+        "direccion": [
+          1,
+          1
+        ]
+      },
+      {
+        "palabra": "SE",
+        "fila": 11,
+        "columna": 1,
+        "direccion": [
+          1,
+          0
+        ]
+      },
+      {
+        "palabra": "SI",
+        "fila": 9,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "FE",
+        "fila": 0,
+        "columna": 1,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "FI",
+        "fila": 3,
+        "columna": 8,
+        "direccion": [
+          -1,
+          0
+        ]
+      },
+      {
+        "palabra": "TE",
+        "fila": 8,
+        "columna": 3,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "TI",
+        "fila": 3,
+        "columna": 7,
+        "direccion": [
+          -1,
+          1
+        ]
+      },
+      {
+        "palabra": "NOVEDAD",
+        "fila": 1,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "PELIGRO",
+        "fila": 5,
+        "columna": 13,
+        "direccion": [
+          0,
+          -1
+        ]
+      },
+      {
+        "palabra": "CONFORT",
+        "fila": 11,
+        "columna": 7,
+        "direccion": [
+          0,
+          1
+        ]
+      },
+      {
+        "palabra": "PERDON",
+        "fila": 14,
+        "columna": 6,
+        "direccion": [
+          0,
+          -1
+        ]
+      }
+    ]
+  }
+}

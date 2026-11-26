@@ -1,0 +1,93 @@
+{
+  "params": {
+    "words": [
+      {
+        "palabra": "BASICA",
+        "pista": "Funcion 1 del Modelo A",
+        "fila": 7,
+        "columna": 4,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "CREATIVA",
+        "pista": "Funcion 2 del Modelo A",
+        "fila": 4,
+        "columna": 9,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "FUNCION",
+        "pista": "Cada posicion del Modelo A",
+        "fila": 3,
+        "columna": 7,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "FONDO",
+        "pista": "Funcion 8 del Modelo A",
+        "fila": 8,
+        "columna": 3,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ACTIVACION",
+        "pista": "Funcion 6, la movilizadora",
+        "fila": 2,
+        "columna": 5,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "ROL",
+        "pista": "Funcion 3 del Modelo A",
+        "fila": 5,
+        "columna": 9,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPEREGO",
+        "pista": "Bloque de las funciones 3 y 4",
+        "fila": 14,
+        "columna": 2,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "SUPERID",
+        "pista": "Bloque de las funciones 5 y 6",
+        "fila": 4,
+        "columna": 13,
+        "direccion": "vertical"
+      },
+      {
+        "palabra": "MENTAL",
+        "pista": "Anillo consciente, funciones 1 a 4",
+        "fila": 2,
+        "columna": 1,
+        "direccion": "horizontal"
+      },
+      {
+        "palabra": "VITAL",
+        "pista": "Anillo inconsciente, funciones 5 a 8",
+        "fila": 1,
+        "columna": 11,
+        "direccion": "vertical"
+      }
+    ],
+    "grid": [
+      "###############",
+      "###########V###",
+      "#MENTAL####I###",
+      "#####C#F###T###",
+      "#####T#U#C#A#S#",
+      "#####I#N#ROL#U#",
+      "#####V#C#E###P#",
+      "####BASICA###E#",
+      "###F#C#O#T###R#",
+      "###O#I#N#I###I#",
+      "###N#O###V###D#",
+      "###D#N###A#####",
+      "###O###########",
+      "###############",
+      "##SUPEREGO#####"
+    ]
+  }
+}
