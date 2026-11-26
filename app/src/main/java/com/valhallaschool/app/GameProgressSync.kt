@@ -20,18 +20,18 @@ import java.net.URLEncoder
  * ("Sin sesión") sin tocar la red.
  *
  * Todas las llamadas son asíncronas (hilo propio) y devuelven el
- * resultado por callback ([Result]). Los callbacks corren en un hilo de
- * fondo: quien los reciba en la UI debe volver al hilo principal
- * (p. ej. `runOnUiThread { ... }`).
+ * resultado por callback ([Callback]): (valor, error). Los callbacks
+ * corren en un hilo de fondo: quien los reciba en la UI debe volver
+ * al hilo principal (p. ej. `runOnUiThread { ... }`).
  *
  * Uso:
  * ```
  * GameProgressSync.upsertProgress(module = 1, lesson = 3, xp = 50,
- *     streak = 2, hearts = 3, gems = 10, completed = true) { result ->
- *     result.onFailure { /* reintentar luego; el progreso local manda */ }
+ *     streak = 2, hearts = 3, gems = 10, completed = true) { _, error ->
+ *     if (error != null) { /* reintentar luego; el progreso local manda */ }
  * }
- * GameProgressSync.fetchLeaderboard(20) { result ->
- *     result.onSuccess { ranking -> /* mostrar top 20 */ }
+ * GameProgressSync.fetchLeaderboard(20) { ranking, _ ->
+ *     /* mostrar top 20 */
  * }
  * ```
  */
@@ -76,11 +76,11 @@ object GameProgressSync {
         hearts: Int,
         gems: Int,
         completed: Boolean,
-        callback: (Result<Progress>) -> Unit
+        callback: Callback<Progress>
     ) {
         val session = SupabaseAuth.currentSession()
         if (session == null) {
-            callback(Result.failure(IllegalStateException("Sin sesión: inicia sesión primero.")))
+            callback.onResult(null, IllegalStateException("Sin sesión: inicia sesión primero."))
             return
         }
         val body = JSONObject()
@@ -100,27 +100,28 @@ object GameProgressSync {
         val path = "$TABLE_PROGRESS?on_conflict=user_id,module,lesson"
         val prefer = "resolution=merge-duplicates,return=representation"
         runRequest("POST", path, body, session.accessToken, prefer) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json ->
                     val row = JSONArray(json).optJSONObject(0)
                     if (row != null) Result.success(parseProgress(row))
                     else Result.failure(IllegalStateException("El servidor no devolvió la fila guardada."))
                 },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 
     /** Lee todo el progreso del usuario, ordenado por módulo y lección. */
-    fun fetchProgress(callback: (Result<List<Progress>>) -> Unit) {
+    fun fetchProgress(callback: Callback<List<Progress>>) {
         val session = SupabaseAuth.currentSession()
         if (session == null) {
-            callback(Result.failure(IllegalStateException("Sin sesión: inicia sesión primero.")))
+            callback.onResult(null, IllegalStateException("Sin sesión: inicia sesión primero."))
             return
         }
         val path = "$TABLE_PROGRESS?select=*&order=module.asc,lesson.asc"
         runRequest("GET", path, null, session.accessToken, null) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json ->
                     val arr = JSONArray(json)
                     val list = ArrayList<Progress>(arr.length())
@@ -128,7 +129,8 @@ object GameProgressSync {
                     Result.success(list)
                 },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 
@@ -144,11 +146,11 @@ object GameProgressSync {
         totalXp: Int,
         level: Int,
         username: String?,
-        callback: (Result<ScoreEntry>) -> Unit
+        callback: Callback<ScoreEntry>
     ) {
         val session = SupabaseAuth.currentSession()
         if (session == null) {
-            callback(Result.failure(IllegalStateException("Sin sesión: inicia sesión primero.")))
+            callback.onResult(null, IllegalStateException("Sin sesión: inicia sesión primero."))
             return
         }
         val body = JSONObject()
@@ -161,14 +163,15 @@ object GameProgressSync {
         val path = "$TABLE_SCORES?on_conflict=user_id"
         val prefer = "resolution=merge-duplicates,return=representation"
         runRequest("POST", path, body, session.accessToken, prefer) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json ->
                     val row = JSONArray(json).optJSONObject(0)
                     if (row != null) Result.success(parseScore(row))
                     else Result.failure(IllegalStateException("El servidor no devolvió la fila guardada."))
                 },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 
@@ -177,17 +180,17 @@ object GameProgressSync {
      * La política RLS de `game_scores` permite leer todas las filas
      * a cualquier usuario autenticado.
      */
-    fun fetchLeaderboard(limit: Int = 20, callback: (Result<List<ScoreEntry>>) -> Unit) {
+    fun fetchLeaderboard(limit: Int = 20, callback: Callback<List<ScoreEntry>>) {
         val session = SupabaseAuth.currentSession()
         if (session == null) {
-            callback(Result.failure(IllegalStateException("Sin sesión: inicia sesión primero.")))
+            callback.onResult(null, IllegalStateException("Sin sesión: inicia sesión primero."))
             return
         }
         val safeLimit = limit.coerceIn(1, 100)
         val path = "$TABLE_SCORES?select=user_id,username,total_xp,level" +
             "&order=total_xp.desc&limit=$safeLimit"
         runRequest("GET", path, null, session.accessToken, null) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json ->
                     val arr = JSONArray(json)
                     val list = ArrayList<ScoreEntry>(arr.length())
@@ -195,7 +198,8 @@ object GameProgressSync {
                     Result.success(list)
                 },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 

@@ -138,11 +138,11 @@ final class SessionScreen extends MainActivity.Screen {
             int module = Data.bCat[b] + 1;
             if (SupabaseAuth.INSTANCE.isSignedIn()) {
                 GameProgressSync.INSTANCE.upsertProgress(module, b, S.todayXP(), S.streak(), 3, S.gems, true,
-                        result -> kotlin.Unit.INSTANCE);
+                        (v, e) -> {});
                 SupabaseAuth.Session sess = SupabaseAuth.INSTANCE.currentSession();
                 String email = sess != null ? sess.getEmail() : null;
                 GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), email,
-                        result -> kotlin.Unit.INSTANCE);
+                        (v, e) -> {});
             }
         } catch (Exception ignored) { /* la nube es espejo, no bloquea */ }
     }

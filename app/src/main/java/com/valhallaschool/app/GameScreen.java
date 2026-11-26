@@ -23,7 +23,7 @@ final class GameScreen extends MainActivity.Screen {
         top.addView(iconBtn(a, R.drawable.ic_close, MUTED, x -> a.back()));
         TextView t = tv(a, title, 17, TEXT, BLACK);
         t.setGravity(Gravity.CENTER);
-        top.addView(t, lpm(0, W, 1));
+        top.addView(t, lp(0, W, 1));
         col.addView(top, lp(M, W));
 
         web = new WebView(a);

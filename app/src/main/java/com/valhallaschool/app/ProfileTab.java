@@ -188,18 +188,16 @@ final class ProfileTab extends MainActivity.Tab {
         }
         st.setText("Conectando…");
         st.setTextColor(MUTED);
-        kotlin.jvm.functions.Function1<kotlin.Result<SupabaseAuth.Session>, kotlin.Unit> cb = result -> {
+        Callback<SupabaseAuth.Session> cb = (session, err) -> {
             a.runOnUiThread(() -> {
-                if (result.isSuccess()) {
+                if (err == null) {
                     a.toast("¡Bienvenido a Valhalla School!", false);
                     refresh();
                 } else {
-                    Throwable e = result.exceptionOrNull();
-                    st.setText(e != null && e.getMessage() != null ? e.getMessage() : "Error al entrar.");
+                    st.setText(err.getMessage() != null ? err.getMessage() : "Error al entrar.");
                     st.setTextColor(RED);
                 }
             });
-            return kotlin.Unit.INSTANCE;
         };
         if (signup) SupabaseAuth.INSTANCE.signUp(email, pass, cb);
         else SupabaseAuth.INSTANCE.signIn(email, pass, cb);
@@ -210,15 +208,15 @@ final class ProfileTab extends MainActivity.Tab {
         LinearLayout box = box(a);
         box.addView(tv(a, "Cargando ranking…", 14, MUTED, REG));
         content.addView(box, lpm(M, W, 0, 0, 0, 12));
-        GameProgressSync.INSTANCE.fetchLeaderboard(10, result -> {
+        GameProgressSync.INSTANCE.fetchLeaderboard(10, (list, err) -> {
             a.runOnUiThread(() -> {
                 box.removeAllViews();
-                if (result.isFailure() || result.getOrNull() == null || result.getOrNull().isEmpty()) {
+                if (err != null || list == null || list.isEmpty()) {
                     box.addView(tv(a, "Aún no hay ranking. ¡Sé el primero!", 14, MUTED, REG));
                     return;
                 }
                 int i = 1;
-                for (GameProgressSync.ScoreEntry e : result.getOrNull()) {
+                for (GameProgressSync.ScoreEntry e : list) {
                     String name = e.getUsername() != null ? e.getUsername() : "Jugador";
                     if (name.contains("@")) name = name.substring(0, name.indexOf('@'));
                     LinearLayout r = row(a);
@@ -229,7 +227,6 @@ final class ProfileTab extends MainActivity.Tab {
                     i++;
                 }
             });
-            return kotlin.Unit.INSTANCE;
         });
     }
 

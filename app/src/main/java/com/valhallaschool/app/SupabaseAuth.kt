@@ -20,16 +20,15 @@ import java.net.URL
  * `Authorization: Bearer <token>` en cada llamada a PostgREST.
  *
  * Todas las llamadas son asíncronas (hilo propio) y devuelven el
- * resultado por callback ([Result]). Los callbacks corren en un hilo de
- * fondo: quien los reciba en la UI debe volver al hilo principal
- * (p. ej. `runOnUiThread { ... }`).
+ * resultado por callback ([Callback]): (sesión, error). Los callbacks
+ * corren en un hilo de fondo: quien los reciba en la UI debe volver
+ * al hilo principal (p. ej. `runOnUiThread { ... }`).
  *
  * Uso:
  * ```
  * SupabaseAuth.init(context)          // una vez, al arrancar la app
- * SupabaseAuth.signUp(email, pass) { result ->
- *     result.onSuccess { session -> /* ya hay sesión */ }
- *     result.onFailure { error -> /* mostrar error */ }
+ * SupabaseAuth.signUp(email, pass) { session, error ->
+ *     if (error == null) { /* ya hay sesión */ }
  * }
  * val session = SupabaseAuth.currentSession()  // null si no hay login
  * ```
@@ -72,16 +71,17 @@ object SupabaseAuth {
      * Si algún día se vuelve a encender la confirmación, la respuesta
      * vendrá sin `access_token` y esto devolverá un fallo explicándolo.
      */
-    fun signUp(email: String, password: String, callback: (Result<Session>) -> Unit) {
+    fun signUp(email: String, password: String, callback: Callback<Session>) {
         val body = JSONObject()
             .put("email", email)
             .put("password", password)
             .toString()
         runRequest("POST", "${SupabaseConfig.SUPABASE_URL}/auth/v1/signup", body) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json -> parseAndStoreSession(json, email) },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 
@@ -89,17 +89,18 @@ object SupabaseAuth {
      * Inicia sesión con correo y contraseña.
      * Endpoint: POST /auth/v1/token?grant_type=password
      */
-    fun signIn(email: String, password: String, callback: (Result<Session>) -> Unit) {
+    fun signIn(email: String, password: String, callback: Callback<Session>) {
         val body = JSONObject()
             .put("email", email)
             .put("password", password)
             .toString()
         val url = "${SupabaseConfig.SUPABASE_URL}/auth/v1/token?grant_type=password"
         runRequest("POST", url, body) { result ->
-            callback(result.fold(
+            val mapped = result.fold(
                 onSuccess = { json -> parseAndStoreSession(json, email) },
                 onFailure = { Result.failure(it) }
-            ))
+            )
+            callback.onResult(mapped.getOrNull(), mapped.exceptionOrNull())
         }
     }
 

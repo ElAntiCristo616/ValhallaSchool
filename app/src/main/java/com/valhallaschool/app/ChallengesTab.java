@@ -32,7 +32,7 @@ final class ChallengesTab extends MainActivity.Tab {
         gems.setBackground(round(SURF, 16, LINE, 1));
         gems.setPadding(dp(16), dp(14), dp(16), dp(14));
         gems.addView(tv(a, "💎", 22, TEXT, REG));
-        gems.addView(tv(a, S.gems + " gemas", 18, TEXT, BLACK), lpm(0, W, 1));
+        gems.addView(tv(a, S.gems + " gemas", 18, TEXT, BLACK), lp(0, W, 1));
         gems.addView(tv(a, "❤️ " + (3 + S.bonusHearts), 16, TEXT, BOLD));
         content.addView(gems, lpm(M, W, 0, 4, 0, 16));
 
