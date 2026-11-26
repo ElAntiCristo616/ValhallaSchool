@@ -11,7 +11,7 @@ import static com.valhallaschool.app.Ui.*;
 /**
  * Práctica: laboratorio de identificación de función+posición.
  * Segmentado: Científico (rondas por nivel, con XP y logros) | Loop
- * (infinito, sin puntos: llega con los avatares).
+ * (infinito, teoría + práctica revueltas, sin puntos ni progreso).
  */
 final class PracticeTab extends MainActivity.Tab {
     private LinearLayout content;
@@ -35,11 +35,12 @@ final class PracticeTab extends MainActivity.Tab {
         content.addView(seg(a, new String[]{"Científico", "Loop"}, mode, i -> { mode = i; refresh(); }),
                 lpm(M, W, 0, 4, 0, 16));
         if (mode == 0) scientific();
-        else loopSoon();
+        else loop();
     }
 
     private void scientific() {
         Store S = Store.I;
+        content.addView(Avatars.bubble(a), lpm(M, W, 0, 0, 0, 14));
         TextView intro = tv(a, "Identifica qué función en qué posición muestra cada ejemplo. Los personajes son anónimos: solo ves la frase, el comportamiento o la acción.", 14, MUTED, REG);
         intro.setLineSpacing(0, 1.3f);
         content.addView(intro, lpm(M, W, 0, 0, 0, 16));
@@ -83,8 +84,9 @@ final class PracticeTab extends MainActivity.Tab {
         return n;
     }
 
-    /** Loop llega con los avatares: placeholder, sin lógica todavía. */
-    private void loopSoon() {
+    /** Loop: infinito, teoría + práctica revueltas, sin puntos ni progreso. */
+    private void loop() {
+        content.addView(Avatars.bubble(a), lpm(M, W, 0, 0, 0, 14));
         LinearLayout b = box(a);
         b.setGravity(Gravity.CENTER_HORIZONTAL);
         b.setPadding(dp(16), dp(28), dp(16), dp(28));
@@ -92,10 +94,17 @@ final class PracticeTab extends MainActivity.Tab {
         TextView t = tv(a, "Loop", 22, TEXT, BLACK);
         t.setGravity(Gravity.CENTER);
         b.addView(t, lpm(M, W, 0, 10, 0, 0));
-        TextView p = tv(a, "Teoría y práctica revueltas y al azar, sin fin, sin puntos: solo bien o mal. Llega con los avatares, muy pronto.", 15, MUTED, REG);
+        TextView p = tv(a, "Teoría y práctica revueltas y al azar, sin fin: una carta tras otra, solo bien o mal. Sin XP, sin gemas, sin logros, sin guardar nada.", 15, MUTED, REG);
         p.setGravity(Gravity.CENTER);
         p.setLineSpacing(0, 1.3f);
-        b.addView(p, lpm(M, W, 0, 8, 0, 0));
+        b.addView(p, lpm(M, W, 0, 8, 0, 16));
+        TextView go = btn(a, "Empezar Loop", B_GREEN, v -> LoopScreen.start(a));
+        go.setMinHeight(dp(52));
+        b.addView(go, lpm(M, W, 0, 0, 0, 0));
         content.addView(b, lpm(M, W, 0, 0, 0, 10));
+        TextView note = tv(a, "217 ejercicios de práctica + 217 preguntas de teoría en cada mazo. Al agotarse, se rebaraja solo.", 13, MUTED, REG);
+        note.setGravity(Gravity.CENTER);
+        note.setLineSpacing(0, 1.3f);
+        content.addView(note, lpm(M, W, 0, 4, 0, 0));
     }
 }

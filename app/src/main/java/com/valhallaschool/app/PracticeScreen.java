@@ -243,6 +243,7 @@ final class PracticeScreen extends MainActivity.Screen {
         LinearLayout fin = col(a);
         fin.setGravity(Gravity.CENTER_HORIZONTAL);
         fin.setPadding(0, dp(48), 0, 0);
+        fin.addView(Avatars.view(a, 120), lpm(W, W, 0, 0, 0, 4));
         fin.addView(tv(a, perfect ? "💎" : levelDone ? "🏆" : "🎯", 84, TEXT, REG));
         fin.addView(tv(a, perfect ? "¡Perfecto!" : levelDone ? "¡Nivel " + level + " completado!" : "¡Ronda terminada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
         TextView p = tv(a, levelDone

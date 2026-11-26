@@ -134,6 +134,14 @@ final class ProfileTab extends MainActivity.Tab {
         TextView foot = tv(a, Data.NB + " lecciones · " + Data.N + " ideas · sin internet", 12, MUTED, REG);
         foot.setGravity(Gravity.CENTER);
         content.addView(foot, lpm(M, W, 0, 24, 0, 0));
+
+        content.addView(section(a, "Créditos"));
+        LinearLayout cr = box(a);
+        cr.addView(tv(a, "Avatares de los 16 tipos sociónicos por Binky (@binkybee_art)", 14, TEXT, REG));
+        TextView cr2 = tv(a, "Uso libre con su permiso. ¿Hiciste algo con ellos? Escríbele: binkybeemail@gmail.com", 13, MUTED, REG);
+        cr2.setLineSpacing(0, 1.3f);
+        cr.addView(cr2, lpm(M, W, 0, 6, 0, 0));
+        content.addView(cr);
     }
 
     /** Cuenta de Valhalla School (Supabase) + ranking. */

@@ -17,6 +17,7 @@ import static com.valhallaschool.app.Ui.*;
 /** Home: endless feed of unread ideas, shuffled once per install (stable order), filterable by topic. */
 final class HomeTab extends MainActivity.Tab {
     private FrameLayout feedBox;
+    private LinearLayout avStrip;
     private TextView streakTx, xpTx, flame;
     private Views.Ring ring;
     private int[] order;
@@ -49,6 +50,9 @@ final class HomeTab extends MainActivity.Tab {
         col.addView(top, lp(M, dp(56)));
 
         col.addView(chips(a, "Para ti", S.cat, i -> { S.cat = i; S.save(); startFeed(); }), lp(M, W));
+        // Avatar de Binky que acompaña: uno distinto en cada visita, con frase corta.
+        avStrip = col(a);
+        col.addView(avStrip, lp(M, W));
         feedBox = new FrameLayout(a);
         col.addView(feedBox, lp(M, 0, 1));
         startFeed();
@@ -98,5 +102,9 @@ final class HomeTab extends MainActivity.Tab {
         int x = S.todayXP();
         xpTx.setText(x + " XP");
         ring.set(x / (float) S.goal);
+        if (avStrip != null) {
+            avStrip.removeAllViews();
+            avStrip.addView(Avatars.bubble(a), lpm(M, W, 16, 2, 16, 6));
+        }
     }
 }

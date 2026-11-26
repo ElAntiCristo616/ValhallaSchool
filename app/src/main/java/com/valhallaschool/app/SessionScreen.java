@@ -4,6 +4,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ final class SessionScreen extends MainActivity.Screen {
 
     private final Views.Bar bar;
     private final TextView comboTx, fbTitle, fbText, btn;
+    private final ImageView fbAvatar;
     private final LinearLayout main, foot;
     private final View divider;
     private final ScrollView sc;
@@ -73,6 +75,12 @@ final class SessionScreen extends MainActivity.Screen {
         col.addView(divider, lp(M, dp(2)));
         foot = col(a);
         foot.setPadding(dp(18), dp(16), dp(18), dp(18));
+        fbAvatar = new ImageView(a);
+        fbAvatar.setAdjustViewBounds(true);
+        fbAvatar.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        fbAvatar.setLayoutParams(lp(dp(56), dp(56)));
+        fbAvatar.setVisibility(View.GONE);
+        foot.addView(fbAvatar);
         fbTitle = tv(a, "", 20, GREEN, BLACK);
         fbText = tv(a, "", 15, TEXT, REG);
         fbText.setLineSpacing(0, 1.25f);
@@ -153,6 +161,14 @@ final class SessionScreen extends MainActivity.Screen {
         divider.setVisibility(state == 0 ? View.VISIBLE : View.INVISIBLE);
         fbTitle.setVisibility(state == 0 ? View.GONE : View.VISIBLE);
         fbText.setVisibility(state == 2 ? View.VISIBLE : View.GONE);
+        // Avatar de Binky que acompaña el feedback (rotación: uno distinto cada vez).
+        if (state == 0) {
+            fbAvatar.setVisibility(View.GONE);
+        } else {
+            android.graphics.Bitmap b = Avatars.load(a, Avatars.nextFile(), dp(160));
+            if (b != null) { fbAvatar.setImageBitmap(b); fbAvatar.setVisibility(View.VISIBLE); }
+            else fbAvatar.setVisibility(View.GONE);
+        }
     }
 
     private void setBtn(String label, int style) {

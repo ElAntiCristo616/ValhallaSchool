@@ -363,6 +363,7 @@ public final class MainActivity extends Activity implements Store.Events {
         v.setBackgroundColor(alpha(BG, 0.96f));
         v.setClickable(true);
         v.setPadding(dp(32), dp(32), dp(32), dp(32));
+        v.addView(Avatars.view(this, 96), lpm(W, W, 0, 0, 0, 4));
         v.addView(tv(this, c[0], 96, TEXT, REG));
         TextView t = tv(this, c[1], 28, TEXT, BLACK);
         t.setGravity(Gravity.CENTER);

@@ -58,6 +58,8 @@ final class Store {
     long pBits = 0; // bit = elemento*8 + posición, de aciertos
     int pCorrect, pTotal, pStreak, pBest, pLevels;
     final int[] pQuad = new int[4]; // aciertos por cuadra: Alfa, Beta, Gamma, Delta
+    /** Rotación de avatares (Avatars.java): índice del siguiente avatar (0..47). */
+    int avIdx;
 
     Events ev;
     private final File file;
@@ -120,7 +122,8 @@ final class Store {
                 .put("cat", cat).put("seed", seed).put("theme", theme).put("sound", sound ? 1 : 0)
                 .put("gems", gems).put("frozen", fr)
                 .put("pBits", pBits).put("pCorrect", pCorrect).put("pTotal", pTotal)
-                .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq);
+                .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
+                .put("avIdx", avIdx);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -159,6 +162,7 @@ final class Store {
         pBits = o.optLong("pBits");
         pCorrect = o.optInt("pCorrect"); pTotal = o.optInt("pTotal");
         pStreak = o.optInt("pStreak"); pBest = o.optInt("pBest"); pLevels = o.optInt("pLevels");
+        avIdx = o.optInt("avIdx");
         JSONArray pq = o.optJSONArray("pQuad");
         if (pq != null) for (int i = 0; i < Math.min(4, pq.length()); i++) pQuad[i] = pq.optInt(i);
         if (cat >= Data.catName.length) cat = -1;
@@ -182,7 +186,7 @@ final class Store {
         read.clear(); saved.clear(); srs.clear(); xp.clear(); met.clear(); lessons.clear(); ach.clear();
         qa = qc = perfect = best = 0; goal = 50; cat = -1;
         gems = 0; frozen.clear();
-        pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0;
+        pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0; avIdx = 0;
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
