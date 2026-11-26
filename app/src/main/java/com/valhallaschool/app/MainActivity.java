@@ -87,7 +87,7 @@ public final class MainActivity extends Activity implements Store.Events {
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         Data.load(this);
-        SupabaseAuth.init(this);
+        SupabaseAuth.INSTANCE.init(this);
         S = Store.get(this);
         S.ev = this;
         Ui.init(this, S.dark);
