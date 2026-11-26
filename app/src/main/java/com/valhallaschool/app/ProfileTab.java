@@ -124,7 +124,7 @@ final class ProfileTab extends MainActivity.Tab {
         int gi = 1;
         for (int i = 0; i < Store.GOALS.length; i++) if (Store.GOALS[i] == S.goal) gi = i;
         setting("Meta diaria", seg(a, Store.GOAL_NAMES, gi, i -> { S.setGoal(Store.GOALS[i]); a.changed(); a.dirty(); }));
-        setting("Tema", seg(a, new String[]{"Oscuro", "Claro"}, S.dark ? 0 : 1, i -> a.setTheme(i == 0)));
+        setting("Tema", themeButton());
         setting("Sonidos", seg(a, new String[]{"Sí", "No"}, S.sound ? 0 : 1, i -> { S.sound = i == 0; S.save(); }));
         content.addView(link("Exportar respaldo", BLUE, v -> a.exportBackup()), lpm(M, W, 0, 10, 0, 0));
         content.addView(link("Importar respaldo", BLUE, v -> a.importBackup()));
@@ -249,6 +249,26 @@ final class ProfileTab extends MainActivity.Tab {
             r.addView(c, lp(0, dp(136), 1));
         }
         b.addView(r, lp(M, W));
+        return b;
+    }
+
+    /** Botón desplegable del tema activo (abre el selector de 16 temas). */
+    private View themeButton() {
+        Store S = Store.I;
+        LinearLayout b = box(a);
+        LinearLayout r = row(a);
+        View dot = new View(a);
+        android.graphics.drawable.GradientDrawable od = oval(Ui.THEME_PAL[Ui.themeIndex(S.theme)][2]);
+        od.setSize(dp(26), dp(26));
+        dot.setBackground(od);
+        r.addView(dot, lp(dp(26), dp(26)));
+        TextView nm = tv(a, Ui.themeName(S.theme), 16, TEXT, MEDIUM);
+        nm.setPadding(dp(14), 0, 0, 0);
+        r.addView(nm, lp(0, W, 1));
+        r.addView(tv(a, "▾", 18, MUTED, BOLD));
+        b.addView(r);
+        ripple(b, true);
+        b.setOnClickListener(v -> a.showThemePicker());
         return b;
     }
 

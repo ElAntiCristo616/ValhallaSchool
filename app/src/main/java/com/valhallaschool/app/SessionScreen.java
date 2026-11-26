@@ -36,9 +36,6 @@ final class SessionScreen extends MainActivity.Screen {
 
     private final Views.Bar bar;
     private final TextView comboTx, fbTitle, fbText, btn;
-    private TextView heartsTx;
-    private int hearts;
-    private boolean outOfHearts;
     private final LinearLayout main, foot;
     private final View divider;
     private final ScrollView sc;
@@ -63,15 +60,6 @@ final class SessionScreen extends MainActivity.Screen {
         comboTx = tv(a, "", 14, ACCENT, BLACK);
         comboTx.setGravity(Gravity.END);
         top.addView(comboTx, lp(dp(52), W));
-        if (bonus > 0) {
-            Store S0 = Store.I;
-            hearts = 3 + S0.bonusHearts;
-            S0.bonusHearts = 0;
-            S0.save();
-            heartsTx = tv(a, heartsStr(), 14, RED, BLACK);
-            heartsTx.setGravity(Gravity.END);
-            top.addView(heartsTx, lp(dp(52), W));
-        } else hearts = 99;
         col.addView(top, lp(M, W));
 
         sc = new ScrollView(a);
@@ -154,14 +142,6 @@ final class SessionScreen extends MainActivity.Screen {
     }
 
     @Override boolean onBack() { close(); return true; }
-
-    private String heartsStr() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < hearts; i++) sb.append('♥');
-        return sb.toString();
-    }
-
-    private void updateHearts() { if (heartsTx != null) heartsTx.setText(heartsStr()); }
 
     private void updateBar() {
         bar.set(done / (float) total, GREEN);
@@ -257,7 +237,7 @@ final class SessionScreen extends MainActivity.Screen {
             case ASK: if (sel >= 0) check(); break;
             case FEEDBACK: next(); break;
             case END:
-                if (onDone != null && !outOfHearts) onDone.run();   // before back() so the tab underneath refreshes
+                if (onDone != null) onDone.run();   // before back() so the tab underneath refreshes
                 a.back();
                 break;
             default: break;
@@ -286,18 +266,12 @@ final class SessionScreen extends MainActivity.Screen {
         } else {
             combo = 0;
             missed.add(q.id);
-            if (bonus > 0) {
-                hearts--;
-                updateHearts();
-                if (hearts <= 0) outOfHearts = true;
-            }
-            if (outOfHearts) queue.clear(); else queue.add(q);
+            queue.add(q); // sin corazones: fallar solo reencola la pregunta
             Sfx.play(Sfx.BAD);
             v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-            fbTitle.setText(outOfHearts ? "¡Sin corazones!" : "Casi");
+            fbTitle.setText("Casi");
             fbTitle.setTextColor(RED);
-            fbText.setText(outOfHearts ? "Te quedaste sin corazones. Repasa y vuelve a intentarlo."
-                    : "Respuesta correcta: " + q.opts[q.answer] + (q.explain != null ? "\n\n" + q.explain : ""));
+            fbText.setText("Respuesta correcta: " + q.opts[q.answer] + (q.explain != null ? "\n\n" + q.explain : ""));
             setFoot(2);
             setBtn("Continuar", B_RED);
         }
@@ -309,8 +283,8 @@ final class SessionScreen extends MainActivity.Screen {
     private void finish() {
         Store S = Store.I;
         phase = END;
-        boolean perfect = answered > 0 && missed.isEmpty() && !outOfHearts;
-        int xp = outOfHearts ? 0 : firstOk * Store.XP_Q + bonus + (perfect ? Store.XP_PERFECT : 0);
+        boolean perfect = answered > 0 && missed.isEmpty();
+        int xp = firstOk * Store.XP_Q + bonus + (perfect ? Store.XP_PERFECT : 0);
         if (perfect) S.perfect++;
         long secs = (System.currentTimeMillis() - t0) / 1000;
         int acc = answered > 0 ? Math.round(firstOk * 100f / answered) : 100;
@@ -318,9 +292,9 @@ final class SessionScreen extends MainActivity.Screen {
         LinearLayout fin = col(a);
         fin.setGravity(Gravity.CENTER_HORIZONTAL);
         fin.setPadding(0, dp(48), 0, 0);
-        fin.addView(tv(a, outOfHearts ? "💔" : perfect ? "💎" : "🏆", 84, TEXT, REG));
-        fin.addView(tv(a, outOfHearts ? "¡Sin corazones!" : perfect ? "¡Perfecto!" : "¡Lección completada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
-        TextView p = tv(a, outOfHearts ? "Te quedaste sin corazones. Repasa y vuelve a intentarlo." :
+        fin.addView(tv(a, perfect ? "💎" : "🏆", 84, TEXT, REG));
+        fin.addView(tv(a, perfect ? "¡Perfecto!" : "¡Lección completada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
+        TextView p = tv(a,
                 missed.isEmpty() ? "Todo correcto a la primera." :
                 missed.size() + (missed.size() == 1 ? " idea" : " ideas") + " volverán en tus repasos.", 15, MUTED, REG);
         p.setGravity(Gravity.CENTER);
@@ -340,7 +314,7 @@ final class SessionScreen extends MainActivity.Screen {
         updateBar();
         Sfx.play(Sfx.WIN);
         a.confetti();
-        if (bonus > 0 && !outOfHearts) S.addGems(10 + (perfect ? 5 : 0));
+        if (bonus > 0) S.addGems(10 + (perfect ? 5 : 0));
         if (xp > 0) S.addXP(xp, true); else S.save();
         if (xp + xpRead > 0) a.toast("+" + (xp + xpRead) + " XP", true);
     }

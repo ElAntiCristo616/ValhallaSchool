@@ -26,28 +26,74 @@ final class Ui {
     static final int M = ViewGroup.LayoutParams.MATCH_PARENT, W = ViewGroup.LayoutParams.WRAP_CONTENT;
     static float density;
     static boolean dark;
-    static int BG, SURF, SURF2, LINE, TEXT, MUTED, ACCENT;
+    static int BG, SURF, SURF2, LINE, TEXT, MUTED, ACCENT, SECONDARY;
     static final int ACCENT_INK = 0xff1a1400, GREEN = 0xff58cc02, GREEN_D = 0xff46a302, RED = 0xffff4b4b, RED_D = 0xffd93838, BLUE = 0xff2aa198;
     static Typeface BLACK, BOLD, MEDIUM, REG, SERIF_B;
+
+    /* ---------------- temas (16) ---------------- */
+    /** Id, nombre y partícula de cada tema. La partícula la lee ParticleView. */
+    static final String[] THEME_IDS = {"navidad", "invierno", "sakura", "fuego", "oceano", "galaxia", "bosque",
+            "atardecer", "neon", "otono", "dulce", "lluvia", "claro", "aurora", "desierto", "medianoche"};
+    static final String[] THEME_NAMES = {"Navidad", "Invierno", "Sakura", "Fuego", "Océano", "Galaxia", "Bosque",
+            "Atardecer", "Neón", "Otoño", "Dulce", "Lluvia", "Claro", "Aurora", "Desierto", "Medianoche"};
+    /** Partículas: 0 nieve, 1 copos grandes, 2 pétalos, 3 brasas, 4 burbujas, 5 estrellas, 6 hojas/polen,
+     *  7 chispas doradas, 8 destellos, 9 hojas otoño, 10 dulces, 11 lluvia, 12 motas, 13 aurora,
+     *  14 arena, 15 fugaces. */
+    static final int[] THEME_PARTICLE = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+    /** Paleta por tema: fondo, superficie, acento, secundario, texto. */
+    static final int[][] THEME_PAL = {
+            {0xff04140e, 0xff0e3426, 0xffd9a441, 0xffcd2d32, 0xfff5efe0}, // Navidad
+            {0xff0b1626, 0xff16273e, 0xff7fb8e8, 0xffbfe0f5, 0xffeaf3fb}, // Invierno
+            {0xff2a1220, 0xff3d1b2e, 0xfff4a7c3, 0xffffd6e8, 0xfffff0f5}, // Sakura
+            {0xff1a0a06, 0xff2e130a, 0xffff6b35, 0xffffc53d, 0xfffff1e6}, // Fuego
+            {0xff06222e, 0xff0b3547, 0xff2aa198, 0xff4dd0e1, 0xffe6f7f5}, // Océano
+            {0xff0d0620, 0xff1b0f38, 0xff9b7ede, 0xffffd166, 0xfff0eafb}, // Galaxia
+            {0xff0c1f12, 0xff162e1b, 0xff7fb069, 0xffd9a441, 0xffedf5e9}, // Bosque
+            {0xff22101a, 0xff3a1b28, 0xffe87b2e, 0xfff4a259, 0xfffff0e6}, // Atardecer
+            {0xff0a0a14, 0xff14142a, 0xff00f5d4, 0xffff2e88, 0xfff2f2ff}, // Neón
+            {0xff201209, 0xff33200f, 0xffd9822b, 0xffa63d2f, 0xfffbf0dc}, // Otoño
+            {0xff2b1030, 0xff3e1a45, 0xffff8fab, 0xffffc8dd, 0xfffff0f6}, // Dulce
+            {0xff0e1b26, 0xff16283a, 0xff5b8def, 0xff7fb8e8, 0xffeaf2fa}, // Lluvia
+            {0xfff7f3e8, 0xffffffff, 0xff8a6d1b, 0xff2aa198, 0xff1f2937}, // Claro
+            {0xff061a1e, 0xff0b2e33, 0xff7ef0c1, 0xffb388ff, 0xffe6fff4}, // Aurora
+            {0xff241a0c, 0xff3a2c15, 0xffe0a458, 0xffc97b2d, 0xfffdf3dc}, // Desierto
+            {0xff050510, 0xff0e0e24, 0xff8e9bff, 0xffe8e8ff, 0xffededf7}, // Medianoche
+    };
+
+    static int themeIndex(String id) {
+        for (int i = 0; i < THEME_IDS.length; i++) if (THEME_IDS[i].equals(id)) return i;
+        return 0; // Navidad por defecto
+    }
+
+    static boolean isTheme(String id) {
+        if (id == null) return false;
+        for (String t : THEME_IDS) if (t.equals(id)) return true;
+        return false;
+    }
 
     static final int B_GREEN = 0, B_GHOST = 1, B_YELLOW = 2, B_RED = 3, B_OFF = 4, B_BLUE = 5;
 
     private Ui() {}
 
-    static void init(Context c, boolean isDark) {
+    static String themeName(String id) { return THEME_NAMES[themeIndex(id)]; }
+
+    static void init(Context c, String themeId) {
         density = c.getResources().getDisplayMetrics().density;
         BLACK = Typeface.create("sans-serif-black", Typeface.NORMAL);
         BOLD = Typeface.create("sans-serif", Typeface.BOLD);
         MEDIUM = Typeface.create("sans-serif-medium", Typeface.NORMAL);
         REG = Typeface.create("sans-serif", Typeface.NORMAL);
         SERIF_B = Typeface.create(Typeface.SERIF, Typeface.BOLD);
-        dark = isDark;
-        if (isDark) {
-            BG = 0xff04070f; SURF = 0xff0d1526; SURF2 = 0xff16233a; LINE = 0xff22304a; TEXT = 0xfff5efe0; MUTED = 0xff9aa3b2; ACCENT = 0xffd9a441;
-        } else {
-            BG = 0xfff5f1e6; SURF = 0xffffffff; SURF2 = 0xffeeead9; LINE = 0xffe0d9bd; TEXT = 0xff191920; MUTED = 0xff6c6c78; ACCENT = 0xffd9a441;
-        }
+        int[] pal = THEME_PAL[themeIndex(themeId)];
+        BG = pal[0]; SURF = pal[1]; ACCENT = pal[2]; SECONDARY = pal[3]; TEXT = pal[4];
+        SURF2 = mix(SURF, TEXT, 0.10f);
+        LINE = mix(SURF, TEXT, 0.28f);
+        MUTED = mix(TEXT, BG, 0.45f);
+        dark = !THEME_IDS[themeIndex(themeId)].equals("claro");
     }
+
+    @Deprecated
+    static void init(Context c, boolean isDark) { init(c, isDark ? "navidad" : "claro"); }
 
     static int dp(float v) { return Math.round(v * density); }
 

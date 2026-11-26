@@ -64,14 +64,15 @@ public final class MainActivity extends Activity implements Store.Events {
     }
 
     private static final int REQ_EXPORT = 1, REQ_IMPORT = 2;
-    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile};
-    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile_fill};
-    private static final String[] NAV = {"Inicio", "Minijuegos", "Retos", "Perfil"};
+    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn};
+    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn};
+    private static final String[] NAV = {"Inicio", "Minijuegos", "Retos", "Perfil", "Práctica"};
 
     Store S;
     FrameLayout root;
+    private ParticleView particles;
     private FrameLayout tabHost;
-    private final Tab[] tabs = new Tab[4];
+    private final Tab[] tabs = new Tab[5];
     int cur = -1;
     final ArrayList<Screen> stack = new ArrayList<>();
     private TextView toastV;
@@ -87,10 +88,11 @@ public final class MainActivity extends Activity implements Store.Events {
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         Data.load(this);
+        PracticeData.load(this);
         SupabaseAuth.INSTANCE.init(this);
         S = Store.get(this);
         S.ev = this;
-        Ui.init(this, S.dark);
+        Ui.init(this, S.theme);
         build();
         edgeToEdge();
         go(state != null ? state.getInt("tab", 0) : 0);
@@ -104,11 +106,13 @@ public final class MainActivity extends Activity implements Store.Events {
 
     @Override protected void onPause() {
         super.onPause();
+        if (particles != null) particles.stop();
         S.flush();
     }
 
     @Override protected void onResume() {
         super.onResume();
+        if (particles != null) particles.start();
         int d = Store.today();
         if (d != lastDay) { lastDay = d; dirty(); changed(); }
     }
@@ -150,7 +154,7 @@ public final class MainActivity extends Activity implements Store.Events {
         main.addView(line, lp(M, Math.max(1, dp(1))));
         LinearLayout nav = row(this);
         nav.setBackgroundColor(BG);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             final int idx = i;
             LinearLayout b = col(this);
             b.setGravity(Gravity.CENTER);
@@ -184,6 +188,11 @@ public final class MainActivity extends Activity implements Store.Events {
         root.addView(toastV, tl);
         setContentView(root);
 
+        // Partículas del tema: por encima del fondo, por debajo de toasts/modales.
+        particles = new ParticleView(this, S.theme);
+        root.addView(particles, root.indexOfChild(toastV), new FrameLayout.LayoutParams(M, M));
+        particles.start();
+
         root.setOnApplyWindowInsetsListener((v, in) -> {
             int l, t, r, b;
             if (Build.VERSION.SDK_INT >= 30) {
@@ -205,6 +214,7 @@ public final class MainActivity extends Activity implements Store.Events {
             case 1: return new GamesTab(this);
             case 2: return new ChallengesTab(this);
             case 3: return new ProfileTab(this);
+            case 4: return new PracticeTab(this);
             default: return new LearnTab(this);
         }
     }
@@ -220,9 +230,9 @@ public final class MainActivity extends Activity implements Store.Events {
             t.v = t.build();
             tabHost.addView(t.v, new FrameLayout.LayoutParams(M, M));
         }
-        for (int k = 0; k < 4; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
+        for (int k = 0; k < 5; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
         if (t.stale) { t.stale = false; t.refresh(); }
-        for (int k = 0; k < 4; k++) {
+        for (int k = 0; k < 5; k++) {
             navIc[k].setImageResource(k == i ? NAV_ON[k] : NAV_IC[k]);
             navIc[k].setColorFilter(k == i ? ACCENT : MUTED);
             navTx[k].setTextColor(k == i ? TEXT : MUTED);
@@ -232,7 +242,7 @@ public final class MainActivity extends Activity implements Store.Events {
 
     /** Progress changed: everything except the visible tab (when nothing covers it) must redraw on next show. */
     void dirty() {
-        for (int k = 0; k < 4; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
+        for (int k = 0; k < 5; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
     }
 
     @Override public void changed() {
@@ -416,10 +426,53 @@ public final class MainActivity extends Activity implements Store.Events {
     }
 
     /* ================= settings actions ================= */
-    void setTheme(boolean dark) {
-        S.dark = dark;
+    void setTheme(String id) {
+        if (!Ui.isTheme(id)) id = "navidad";
+        S.theme = id;
+        S.dark = !"claro".equals(id);
         S.flush();
         recreate();
+    }
+
+    /** Desplegable de temas: lista los 16 temas con muestra de color. */
+    void showThemePicker() {
+        FrameLayout m = new FrameLayout(this);
+        m.setBackgroundColor(0x8c000000);
+        m.setOnClickListener(v -> closeModal());
+        LinearLayout sheet = col(this);
+        GradientDrawable g = new GradientDrawable();
+        g.setColor(SURF);
+        float r = dp(24);
+        g.setCornerRadii(new float[]{r, r, r, r, 0, 0, 0, 0});
+        sheet.setBackground(g);
+        sheet.setClickable(true);
+        sheet.setPadding(dp(20), dp(24), dp(20), dp(20));
+        sheet.addView(tv(this, "Tema", 20, TEXT, BLACK));
+        android.widget.ScrollView sc = new android.widget.ScrollView(this);
+        LinearLayout list = col(this);
+        for (int i = 0; i < Ui.THEME_IDS.length; i++) {
+            final String id = Ui.THEME_IDS[i];
+            int[] pal = Ui.THEME_PAL[i];
+            LinearLayout row = row(this);
+            row.setPadding(dp(4), dp(10), dp(4), dp(10));
+            View dot = new View(this);
+            GradientDrawable od = oval(pal[2]);
+            od.setSize(dp(26), dp(26));
+            dot.setBackground(od);
+            row.addView(dot, lp(dp(26), dp(26)));
+            TextView nm = tv(this, Ui.THEME_NAMES[i], 16, TEXT, MEDIUM);
+            nm.setPadding(dp(14), 0, 0, 0);
+            row.addView(nm, lp(0, W, 1));
+            if (id.equals(S.theme)) row.addView(tv(this, "✓", 18, ACCENT, BLACK));
+            ripple(row, true);
+            row.setOnClickListener(v -> { closeModal(); setTheme(id); });
+            list.addView(row);
+        }
+        sc.addView(list);
+        sheet.addView(sc, lpm(M, dp(380), 0, 12, 0, 0));
+        m.addView(sheet, new FrameLayout.LayoutParams(M, W, Gravity.BOTTOM));
+        root.addView(m, root.indexOfChild(toastV), new FrameLayout.LayoutParams(M, M));
+        modalV = m;
     }
 
     void resetAll() {

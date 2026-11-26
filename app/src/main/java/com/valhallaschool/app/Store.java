@@ -48,9 +48,16 @@ final class Store {
     final HashSet<Integer> met = new HashSet<>(), frozen = new HashSet<>();
     final HashMap<String, Long> lessons = new HashMap<>(), ach = new HashMap<>();
     int qa, qc, perfect, goal = 50, best, cat = -1;
-    int gems = 0, bonusHearts = 0;
+    int gems = 0;
     long seed;
     boolean dark = true, sound = true;
+    /** Id del tema activo (ver Ui.THEME_IDS). Navidad por defecto. */
+    String theme = "navidad";
+
+    /* ---- práctica (modo Científico): contadores para los logros ---- */
+    long pBits = 0; // bit = elemento*8 + posición, de aciertos
+    int pCorrect, pTotal, pStreak, pBest, pLevels;
+    final int[] pQuad = new int[4]; // aciertos por cuadra: Alfa, Beta, Gamma, Delta
 
     Events ev;
     private final File file;
@@ -106,10 +113,14 @@ final class Store {
         for (Map.Entry<String, Long> e : ach.entrySet()) a.put(e.getKey(), e.getValue());
         JSONArray fr = new JSONArray();
         for (Integer d : frozen) fr.put(d);
+        JSONArray pq = new JSONArray();
+        for (int v : pQuad) pq.put(v);
         return o.put("srs", s).put("xp", x).put("met", m).put("lessons", l).put("ach", a)
                 .put("qa", qa).put("qc", qc).put("perfect", perfect).put("goal", goal).put("best", best)
-                .put("cat", cat).put("seed", seed).put("theme", dark ? "dark" : "light").put("sound", sound ? 1 : 0)
-                .put("gems", gems).put("bonusHearts", bonusHearts).put("frozen", fr);
+                .put("cat", cat).put("seed", seed).put("theme", theme).put("sound", sound ? 1 : 0)
+                .put("gems", gems).put("frozen", fr)
+                .put("pBits", pBits).put("pCorrect", pCorrect).put("pTotal", pTotal)
+                .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -135,12 +146,21 @@ final class Store {
         readStrLongs(o.optJSONObject("ach"), ach);
         qa = o.optInt("qa"); qc = o.optInt("qc"); perfect = o.optInt("perfect");
         goal = o.optInt("goal", 50); best = o.optInt("best"); cat = o.optInt("cat", -1);
-        gems = o.optInt("gems"); bonusHearts = o.optInt("bonusHearts");
+        gems = o.optInt("gems");
         JSONArray fr = o.optJSONArray("frozen");
         if (fr != null) for (int i = 0; i < fr.length(); i++) frozen.add(fr.optInt(i));
         seed = o.optLong("seed", seed);
-        dark = !"light".equals(o.optString("theme", "dark"));
+        String th = o.optString("theme", "navidad");
+        if (Ui.isTheme(th)) theme = th;
+        else if ("light".equals(th)) theme = "claro";
+        else theme = "navidad"; // "dark" viejo y cualquier valor desconocido
+        dark = !"claro".equals(theme);
         sound = o.optInt("sound", 1) != 0;
+        pBits = o.optLong("pBits");
+        pCorrect = o.optInt("pCorrect"); pTotal = o.optInt("pTotal");
+        pStreak = o.optInt("pStreak"); pBest = o.optInt("pBest"); pLevels = o.optInt("pLevels");
+        JSONArray pq = o.optJSONArray("pQuad");
+        if (pq != null) for (int i = 0; i < Math.min(4, pq.length()); i++) pQuad[i] = pq.optInt(i);
         if (cat >= Data.catName.length) cat = -1;
     }
 
@@ -161,7 +181,9 @@ final class Store {
     void clear() {
         read.clear(); saved.clear(); srs.clear(); xp.clear(); met.clear(); lessons.clear(); ach.clear();
         qa = qc = perfect = best = 0; goal = 50; cat = -1;
-        gems = 0; bonusHearts = 0; frozen.clear();
+        gems = 0; frozen.clear();
+        pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0;
+        for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
     /* ---------------- dates ---------------- */
@@ -224,6 +246,35 @@ final class Store {
 
     void addGems(int n) { gems += n; save(); }
 
+    /** Registra una respuesta de práctica (modo Científico). */
+    void recordPractice(boolean ok, int element, int position, int quadra) {
+        pTotal++;
+        if (ok) {
+            pCorrect++;
+            pStreak++;
+            if (pStreak > pBest) pBest = pStreak;
+            pBits |= 1L << (element * 8 + position);
+            if (quadra >= 0 && quadra < pQuad.length) pQuad[quadra]++;
+        } else {
+            pStreak = 0;
+        }
+        save();
+        checkAch();
+    }
+
+    /** Marca un nivel de práctica como completado (bit 0 = nivel 1). */
+    void completePracticeLevel(int level) {
+        if (level >= 1 && level <= PracticeData.LEVELS) {
+            pLevels |= 1 << (level - 1);
+            save();
+            checkAch();
+        }
+    }
+
+    boolean practiceLevelDone(int level) { return (pLevels & (1 << (level - 1))) != 0; }
+
+    boolean practiceLevelOpen(int level) { return level <= 1 || practiceLevelDone(level - 1); }
+
     /** @return true if this idea was not read before. */
     boolean markRead(int id, boolean quiet) {
         if (read.containsKey(id)) return false;
@@ -276,7 +327,50 @@ final class Store {
             {"q100", "🧠", "Maestro del quiz", "100 respuestas correctas"},
             {"save10", "🔖", "Coleccionista", "Guarda 10 ideas"},
             {"xp1k", "💰", "Cazador de XP", "Gana 1,000 XP"},
+            // ---- práctica (modo Científico) ----
+            {"p_first", "🕵️", "Primera pista", "Responde tu primer ejercicio de práctica"},
+            {"p10", "🔍", "Aprendiz de detective", "10 aciertos en práctica"},
+            {"p25", "🧩", "Observador", "25 aciertos en práctica"},
+            {"p50", "🔬", "Analista", "50 aciertos en práctica"},
+            {"p100", "🎯", "Experto", "100 aciertos en práctica"},
+            {"p150", "🏛️", "Maestro tipador", "150 aciertos en práctica"},
+            {"p_s3", "🔥", "En racha", "3 aciertos seguidos en práctica"},
+            {"p_s5", "⚡", "Imparable", "5 aciertos seguidos en práctica"},
+            {"p_s10", "💎", "Perfecto", "10 aciertos seguidos en práctica"},
+            {"p_l1", "🌱", "Cimientos", "Completa el Nivel 1 de práctica"},
+            {"p_l2", "🪞", "Espejo social", "Completa el Nivel 2 de práctica"},
+            {"p_l3", "💭", "Lo que se anhela", "Completa el Nivel 3 de práctica"},
+            {"p_l4", "👑", "Maestría", "Completa el Nivel 4 de práctica"},
+            {"p_f_ne", "🔮", "Domina Ne", "Acertar Ne en sus 8 posiciones"},
+            {"p_f_ni", "🕰️", "Domina Ni", "Acertar Ni en sus 8 posiciones"},
+            {"p_f_se", "⚔️", "Domina Se", "Acertar Se en sus 8 posiciones"},
+            {"p_f_si", "🍵", "Domina Si", "Acertar Si en sus 8 posiciones"},
+            {"p_f_te", "⚙️", "Domina Te", "Acertar Te en sus 8 posiciones"},
+            {"p_f_ti", "🧮", "Domina Ti", "Acertar Ti en sus 8 posiciones"},
+            {"p_f_fe", "🎭", "Domina Fe", "Acertar Fe en sus 8 posiciones"},
+            {"p_f_fi", "💞", "Domina Fi", "Acertar Fi en sus 8 posiciones"},
+            {"p_p_base", "🧱", "Domina la base", "Acertar la base en las 8 funciones"},
+            {"p_p_cre", "✨", "Domina la creativa", "Acertar la creativa en las 8 funciones"},
+            {"p_p_rol", "🎭", "Domina el rol", "Acertar el rol en las 8 funciones"},
+            {"p_p_dol", "💔", "Domina la dolorosa", "Acertar la dolorosa en las 8 funciones"},
+            {"p_p_sug", "🌱", "Domina la sugestiva", "Acertar la sugestiva en las 8 funciones"},
+            {"p_p_act", "🚀", "Domina la activación", "Acertar la activación en las 8 funciones"},
+            {"p_p_lim", "🚧", "Domina la limitativa", "Acertar la limitativa en las 8 funciones"},
+            {"p_p_fon", "🌑", "Domina el fondo", "Acertar el fondo en las 8 funciones"},
+            {"p_q_alfa", "🌸", "Alfa completa", "10 aciertos en ejercicios de Alfa"},
+            {"p_q_beta", "🌑", "Beta completa", "10 aciertos en ejercicios de Beta"},
+            {"p_q_gamma", "💰", "Gamma completa", "10 aciertos en ejercicios de Gamma"},
+            {"p_q_delta", "🌿", "Delta completa", "10 aciertos en ejercicios de Delta"},
     };
+
+    /** ¿Acertó las 8 posiciones de esa función? */
+    private boolean domFunc(int el) { return ((pBits >>> (el * 8)) & 0xFFL) == 0xFFL; }
+
+    /** ¿Acertó las 8 funciones en esa posición? */
+    private boolean domPos(int pos) {
+        for (int el = 0; el < 8; el++) if ((pBits & (1L << (el * 8 + pos))) == 0) return false;
+        return true;
+    }
 
     private boolean achOk(int i) {
         switch (i) {
@@ -296,6 +390,40 @@ final class Store {
             case 13: return qc >= 100;
             case 14: return saved.size() >= 10;
             case 15: return totalXP() >= 1000;
+            // ---- práctica ----
+            case 16: return pCorrect >= 1;
+            case 17: return pCorrect >= 10;
+            case 18: return pCorrect >= 25;
+            case 19: return pCorrect >= 50;
+            case 20: return pCorrect >= 100;
+            case 21: return pCorrect >= 150;
+            case 22: return pBest >= 3;
+            case 23: return pBest >= 5;
+            case 24: return pBest >= 10;
+            case 25: return practiceLevelDone(1);
+            case 26: return practiceLevelDone(2);
+            case 27: return practiceLevelDone(3);
+            case 28: return practiceLevelDone(4);
+            case 29: return domFunc(0);
+            case 30: return domFunc(1);
+            case 31: return domFunc(2);
+            case 32: return domFunc(3);
+            case 33: return domFunc(4);
+            case 34: return domFunc(5);
+            case 35: return domFunc(6);
+            case 36: return domFunc(7);
+            case 37: return domPos(0);
+            case 38: return domPos(1);
+            case 39: return domPos(2);
+            case 40: return domPos(3);
+            case 41: return domPos(4);
+            case 42: return domPos(5);
+            case 43: return domPos(6);
+            case 44: return domPos(7);
+            case 45: return pQuad[0] >= 10;
+            case 46: return pQuad[1] >= 10;
+            case 47: return pQuad[2] >= 10;
+            case 48: return pQuad[3] >= 10;
             default: return false;
         }
     }
