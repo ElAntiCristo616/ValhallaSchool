@@ -1,8 +1,12 @@
 package com.valhallaschool.app;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
@@ -12,25 +16,36 @@ import java.util.Random;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Partículas cayendo (o flotando) en tiempo real, una por tema, como
- * overlay por encima del fondo y por debajo de toasts/modales.
- * No intercepta toques (clickable=false). Se pausa en onPause.
+ * Fondo ambiental del tema: degradado radial sutil + partículas
+ * ambientales muy tenues y realistas. Es la CAPA DE FONDO del root
+ * (índice 0): queda DETRÁS de todo el contenido — tarjetas, textos,
+ * botones y barra de navegación — y nada se dibuja jamás por encima
+ * de ellos. El movimiento es apenas perceptible; ante la duda, más
+ * sutil. Se pausa en onPause (~20 fps, 20 partículas).
  *
  * Tipos (Ui.THEME_PARTICLE): 0 nieve, 1 copos grandes, 2 pétalos,
- * 3 brasas, 4 burbujas, 5 estrellas, 6 hojas/polen, 7 chispas,
+ * 3 brasas, 4 burbujas, 5 estrellas, 6 polen, 7 chispas doradas,
  * 8 destellos, 9 hojas de otoño, 10 dulces, 11 lluvia, 12 motas,
  * 13 aurora, 14 arena, 15 fugaces.
  */
 final class ParticleView extends View {
-    private static final int N = 60;
-    private static final long FRAME_MS = 33; // ~30 fps
+    private static final int N = 20;
+    private static final long FRAME_MS = 50; // ~20 fps: sobra para un ambiente
+    /** Alfa máxima de una partícula: apenas perceptible. */
+    private static final float A_MAX = 0.16f;
 
     private final Handler h = new Handler(Looper.getMainLooper());
     private final Random r = new Random();
     private final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint bgPaint = new Paint();
+    private final Paint linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final float[] x = new float[N], y = new float[N], vx = new float[N], vy = new float[N],
-            size = new float[N], phase = new float[N], rot = new float[N], vr = new float[N];
+            size = new float[N], phase = new float[N], rot = new float[N], vr = new float[N],
+            aBase = new float[N];
     private final int[] col = new int[N];
+    private int[] cols; // paleta del tema (col[i] es índice dentro de cols)
+    private Bitmap[] dotBmp; // punto suave pre-renderizado, uno por color de paleta
+    private RadialGradient bgGrad;
     private int kind;
     private boolean running;
     private float t;
@@ -50,6 +65,8 @@ final class ParticleView extends View {
         setClickable(false);
         setFocusable(false);
         kind = Ui.THEME_PARTICLE[Ui.themeIndex(themeId)];
+        linePaint.setStyle(Paint.Style.STROKE);
+        linePaint.setStrokeCap(Paint.Cap.ROUND);
         seed();
     }
 
@@ -73,33 +90,82 @@ final class ParticleView extends View {
         }
     }
 
+    /** Punto suave: disco con degradado radial a transparente (nunca borde duro). */
+    private Bitmap softDot(int color) {
+        Bitmap b = Bitmap.createBitmap(64, 64, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(b);
+        Paint pp = new Paint(Paint.ANTI_ALIAS_FLAG);
+        pp.setShader(new RadialGradient(32, 32, 32,
+                new int[]{color, color & 0x00ffffff}, null, Shader.TileMode.CLAMP));
+        c.drawRect(0, 0, 64, 64, pp);
+        return b;
+    }
+
     private void seed() {
         int[] cols = paletteFor(kind);
+        this.cols = cols;
+        dotBmp = new Bitmap[cols.length];
+        for (int i = 0; i < cols.length; i++) dotBmp[i] = softDot(cols[i]);
         for (int i = 0; i < N; i++) {
             x[i] = r.nextFloat();
             y[i] = r.nextFloat();
             phase[i] = r.nextFloat() * 6.28f;
             rot[i] = r.nextFloat() * 360f;
-            col[i] = cols[r.nextInt(cols.length)];
+            col[i] = r.nextInt(cols.length);
+            aBase[i] = 0.08f + r.nextFloat() * 0.08f; // 0.08–0.16
             switch (kind) {
-                case 3: // brasas: suben
-                    vx[i] = (r.nextFloat() - .5f) * 0.02f; vy[i] = -(0.05f + r.nextFloat() * 0.09f);
-                    size[i] = dp(2 + r.nextFloat() * 3); break;
-                case 4: // burbujas: suben
-                    vx[i] = (r.nextFloat() - .5f) * 0.015f; vy[i] = -(0.03f + r.nextFloat() * 0.06f);
-                    size[i] = dp(3 + r.nextFloat() * 7); break;
-                case 5: case 8: case 15: // estrellas / destellos / fugaces: fijas
-                    vx[i] = 0; vy[i] = 0; size[i] = dp(1.5f + r.nextFloat() * 2.5f); break;
-                case 11: // lluvia: cae rápido
-                    vx[i] = -0.02f; vy[i] = 0.55f + r.nextFloat() * 0.45f;
-                    size[i] = dp(10 + r.nextFloat() * 10); break;
-                case 13: // aurora: deriva horizontal lenta
-                    vx[i] = (r.nextFloat() - .5f) * 0.03f; vy[i] = (r.nextFloat() - .5f) * 0.008f;
-                    size[i] = dp(3 + r.nextFloat() * 6); break;
-                default: // caen con vaivén: nieve, pétalos, hojas, dulces, motas, arena, chispas
-                    vx[i] = (r.nextFloat() - .5f) * 0.02f; vy[i] = 0.03f + r.nextFloat() * 0.07f;
-                    size[i] = dp(3 + r.nextFloat() * 5);
-                    vr[i] = (r.nextFloat() - .5f) * 120f;
+                case 0: // nieve: copitos suaves, caída muy lenta
+                    vx[i] = (r.nextFloat() - .5f) * 0.006f; vy[i] = 0.008f + r.nextFloat() * 0.010f;
+                    size[i] = dp(1.5f + r.nextFloat() * 1.5f); break;
+                case 1: // copos grandes: algo más grandes, aún lentos
+                    vx[i] = (r.nextFloat() - .5f) * 0.005f; vy[i] = 0.006f + r.nextFloat() * 0.007f;
+                    size[i] = dp(2.5f + r.nextFloat() * 1.5f); break;
+                case 2: // pétalos: elipse rosa con vaivén y giro lento
+                    vx[i] = (r.nextFloat() - .5f) * 0.008f; vy[i] = 0.008f + r.nextFloat() * 0.008f;
+                    size[i] = dp(2f + r.nextFloat() * 1.5f); vr[i] = (r.nextFloat() - .5f) * 40f; break;
+                case 3: // brasas: suben lento, parpadeo suave
+                    vx[i] = (r.nextFloat() - .5f) * 0.006f; vy[i] = -(0.006f + r.nextFloat() * 0.008f);
+                    size[i] = dp(1.2f + r.nextFloat() * 1f); break;
+                case 4: // burbujas: aros tenues subiendo lento
+                    vx[i] = (r.nextFloat() - .5f) * 0.004f; vy[i] = -(0.006f + r.nextFloat() * 0.006f);
+                    size[i] = dp(2f + r.nextFloat() * 2.5f); break;
+                case 5: case 8: // estrellas / destellos: fijas, titilan lento
+                    vx[i] = 0; vy[i] = 0; size[i] = dp(1f + r.nextFloat() * 1f); break;
+                case 6: // polen: deriva horizontal casi quieto
+                    vx[i] = (r.nextFloat() - .5f) * 0.006f; vy[i] = 0.002f + r.nextFloat() * 0.004f;
+                    size[i] = dp(1.2f + r.nextFloat() * 1f); break;
+                case 7: // chispas doradas: polvo tenue bajando muy lento
+                    vx[i] = (r.nextFloat() - .5f) * 0.004f; vy[i] = 0.004f + r.nextFloat() * 0.006f;
+                    size[i] = dp(1f + r.nextFloat() * 1f); break;
+                case 9: // hojas de otoño: elipse suave, caída lenta con vaivén
+                    vx[i] = (r.nextFloat() - .5f) * 0.008f; vy[i] = 0.007f + r.nextFloat() * 0.007f;
+                    size[i] = dp(2f + r.nextFloat() * 1.5f); vr[i] = (r.nextFloat() - .5f) * 40f; break;
+                case 10: // dulces: confeti diminuto bajando lento
+                    vx[i] = (r.nextFloat() - .5f) * 0.006f; vy[i] = 0.008f + r.nextFloat() * 0.007f;
+                    size[i] = dp(1.5f + r.nextFloat() * 1f); break;
+                case 11: // lluvia: rayitas finas y tenues
+                    vx[i] = -0.01f; vy[i] = 0.10f + r.nextFloat() * 0.06f;
+                    size[i] = dp(8 + r.nextFloat() * 6); break; // largo de la rayita
+                case 12: // motas (Claro): polvo dorado casi quieto
+                    vx[i] = (r.nextFloat() - .5f) * 0.003f; vy[i] = 0.001f + r.nextFloat() * 0.003f;
+                    size[i] = dp(1f + r.nextFloat() * 0.8f); break;
+                case 13: // aurora: elipses alargadas tenues, deriva horizontal lenta
+                    vx[i] = (r.nextFloat() - .5f) * 0.008f; vy[i] = (r.nextFloat() - .5f) * 0.002f;
+                    size[i] = dp(3f + r.nextFloat() * 3f); break;
+                case 14: // arena: granitos finos derivando
+                    vx[i] = 0.004f + r.nextFloat() * 0.006f; vy[i] = (r.nextFloat() - .5f) * 0.002f;
+                    size[i] = dp(1f + r.nextFloat() * 1f); break;
+                default: // 15 fugaces: estrellas fijas + 2 estelas ocasionales
+                    if (i >= N - 2) {
+                        // estela: x/y = punto de partida; phase = periodo (s); rot = desfase (s)
+                        phase[i] = 14f + r.nextFloat() * 6f;
+                        rot[i] = r.nextFloat() * phase[i];
+                        x[i] = 0.1f + r.nextFloat() * 0.5f;
+                        y[i] = 0.05f + r.nextFloat() * 0.3f;
+                        size[i] = dp(26);
+                    } else {
+                        vx[i] = 0; vy[i] = 0; size[i] = dp(1f + r.nextFloat() * 1f);
+                    }
                     break;
             }
         }
@@ -119,13 +185,15 @@ final class ParticleView extends View {
     private void step() {
         float w = getWidth(), hgt = getHeight();
         if (w == 0 || hgt == 0) return;
+        float dt = FRAME_MS / 1000f;
         for (int i = 0; i < N; i++) {
+            if (kind == 15 && i >= N - 2) continue; // las estelas se calculan en onDraw
             float sway = 0;
             if (kind == 0 || kind == 1 || kind == 2 || kind == 6 || kind == 9 || kind == 10 || kind == 12 || kind == 14)
-                sway = (float) Math.sin(t * 1.5f + phase[i]) * 0.0006f;
-            x[i] += vx[i] * (FRAME_MS / 1000f) * 3f + sway;
-            y[i] += vy[i] * (FRAME_MS / 1000f) * 3f;
-            rot[i] += vr[i] * FRAME_MS / 1000f;
+                sway = (float) Math.sin(t * 0.5f + phase[i]) * 0.0004f;
+            x[i] += vx[i] * dt + sway;
+            y[i] += vy[i] * dt;
+            rot[i] += vr[i] * dt;
             if (y[i] > 1.05f) { y[i] = -0.05f; x[i] = r.nextFloat(); }
             if (y[i] < -0.05f) { y[i] = 1.05f; x[i] = r.nextFloat(); }
             if (x[i] < -0.05f) x[i] = 1.05f;
@@ -133,50 +201,93 @@ final class ParticleView extends View {
         }
     }
 
+    @Override protected void onSizeChanged(int w, int h, int oldW, int oldH) {
+        super.onSizeChanged(w, h, oldW, oldH);
+        if (w == 0 || h == 0) return;
+        // Fondo casi opaco y ambientado: centro apenas más cálido (acento al 7%),
+        // bordes apenas más oscuros. Sutil por diseño.
+        bgGrad = new RadialGradient(w * 0.5f, h * 0.38f, Math.max(w, h) * 0.85f,
+                new int[]{mix(ACCENT, BG, 0.07f), mix(0xff000000, BG, 0.08f)},
+                null, Shader.TileMode.CLAMP);
+    }
+
+    /** Alfa de la partícula i en este instante (0..1), con titileo suave si aplica. */
+    private float alphaAt(int i) {
+        float a = aBase[i];
+        if (kind == 3 || kind == 5 || kind == 7 || kind == 8 || (kind == 15 && i < N - 2))
+            a *= 0.55f + 0.45f * (float) Math.sin(t * 0.9f + phase[i]);
+        return Math.max(0.02f, Math.min(A_MAX, a));
+    }
+
     @Override protected void onDraw(Canvas c) {
         float w = getWidth(), hgt = getHeight();
         if (w == 0 || hgt == 0) return;
+        // 1) Fondo ambiental (siempre detrás de todo).
+        if (bgGrad != null) {
+            bgPaint.setShader(bgGrad);
+            c.drawRect(0, 0, w, hgt, bgPaint);
+        } else {
+            c.drawColor(BG);
+        }
+        // 2) Partículas ambientales: pequeñas, tenues, de borde suave.
         for (int i = 0; i < N; i++) {
+            float a = alphaAt(i);
+            if (kind == 15 && i >= N - 2) { drawStreak(c, i, w, hgt); continue; }
             float px = x[i] * w, py = y[i] * hgt;
-            float alpha = 1f;
-            if (kind == 5 || kind == 8 || kind == 15) // titilan
-                alpha = 0.35f + 0.65f * (0.5f + 0.5f * (float) Math.sin(t * 2.5f + phase[i]));
-            if (kind == 3) // brasas parpadean
-                alpha = 0.5f + 0.5f * (float) Math.sin(t * 6f + phase[i]);
-            p.setColor(col[i]);
-            p.setAlpha(Math.round(255 * Math.max(0.1f, Math.min(1f, alpha)) * 0.85f));
-            p.setStyle(Paint.Style.FILL);
             switch (kind) {
-                case 11: // lluvia: líneas cortas
-                    p.setStrokeWidth(dp(1.5f));
-                    c.drawLine(px, py, px + dp(2), py + size[i], p);
+                case 11: { // lluvia: rayita vertical fina y tenue
+                    linePaint.setColor(cols[col[i]]);
+                    linePaint.setStrokeWidth(dp(1f));
+                    linePaint.setAlpha(Math.round(255 * a));
+                    c.drawLine(px, py, px + dp(1.5f), py + size[i], linePaint);
                     break;
-                case 4: // burbujas: aro
-                    p.setStyle(Paint.Style.STROKE);
-                    p.setStrokeWidth(dp(1.2f));
-                    c.drawCircle(px, py, size[i], p);
+                }
+                case 4: { // burbujas: aro tenue
+                    linePaint.setColor(cols[col[i]]);
+                    linePaint.setStrokeWidth(dp(1f));
+                    linePaint.setAlpha(Math.round(255 * a * 0.8f));
+                    c.drawCircle(px, py, size[i], linePaint);
                     break;
-                case 2: case 6: case 9: // pétalos / hojas: rectángulo girado
+                }
+                case 2: case 9: case 13: { // pétalos / hojas / aurora: elipse suave girada
+                    float rx = kind == 13 ? size[i] * 2.2f : size[i] * 1.4f;
+                    float ry = kind == 13 ? size[i] * 0.7f : size[i] * 0.9f;
                     c.save();
                     c.translate(px, py);
                     c.rotate(rot[i]);
-                    c.drawRoundRect(-size[i], -size[i] * 0.6f, size[i], size[i] * 0.6f, size[i] * 0.5f, size[i] * 0.5f, p);
+                    p.setAlpha(Math.round(255 * a));
+                    c.drawBitmap(dotBmp[col[i]], null,
+                            new android.graphics.RectF(-rx, -ry, rx, ry), p);
                     c.restore();
                     break;
-                case 15: // fugaces: punto con estela (solo algunas)
-                    c.drawCircle(px, py, size[i], p);
-                    if (i % 9 == 0) {
-                        p.setStrokeWidth(dp(1.5f));
-                        c.drawLine(px, py, px - dp(22), py + dp(8), p);
-                    }
+                }
+                default: { // puntos suaves: nieve, copos, brasas, estrellas, polen,
+                           // chispas, destellos, dulces, motas, arena
+                    p.setAlpha(Math.round(255 * a));
+                    float s = size[i];
+                    c.drawBitmap(dotBmp[col[i]], null,
+                            new android.graphics.RectF(px - s, py - s, px + s, py + s), p);
                     break;
-                case 13: // aurora: puntos grandes y suaves
-                    c.drawCircle(px, py, size[i] * 1.6f, p);
-                    break;
-                default: // nieve, copos, brasas, estrellas, chispas, destellos, dulces, motas, arena
-                    c.drawCircle(px, py, size[i], p);
-                    break;
+                }
             }
         }
+    }
+
+    /** Estrella fugaz ocasional: aparece y se apaga en un ciclo largo y lento. */
+    private void drawStreak(Canvas c, int i, float w, float hgt) {
+        float period = phase[i];
+        float prog = ((t + rot[i]) % period) / period; // 0..1 en ~14–20 s
+        float a = A_MAX * 1.2f * (float) Math.pow(Math.sin(Math.PI * prog), 2);
+        if (a < 0.01f) return;
+        float px = (x[i] + prog * 0.30f) * w;
+        float py = (y[i] + prog * 0.12f) * hgt;
+        linePaint.setColor(0xffffffff);
+        linePaint.setStrokeWidth(dp(1.2f));
+        linePaint.setAlpha(Math.round(255 * a));
+        c.drawLine(px, py, px - size[i], py - size[i] * 0.35f, linePaint);
+        p.setAlpha(Math.round(255 * a));
+        float s = dp(1.5f);
+        c.drawBitmap(dotBmp[0], null,
+                new android.graphics.RectF(px - s, py - s, px + s, py + s), p);
     }
 }

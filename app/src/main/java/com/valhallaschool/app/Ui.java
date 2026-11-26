@@ -135,6 +135,21 @@ final class Ui {
         return g;
     }
 
+    /**
+     * Fondo ambiental del tema para pantallas: el mismo degradado radial sutil
+     * que dibuja ParticleView (centro apenas más cálido, bordes apenas más
+     * oscuros). Las pantallas lo usan en vez de un BG plano para que el fondo
+     * se lea ambientado en toda la app sin tapar el contenido.
+     */
+    static GradientDrawable ambientBg() {
+        GradientDrawable g = new GradientDrawable();
+        g.setGradientType(GradientDrawable.RADIAL_GRADIENT);
+        g.setGradientCenter(0.5f, 0.38f);
+        g.setGradientRadius(dp(900));
+        g.setColors(new int[]{mix(ACCENT, BG, 0.07f), mix(0xff000000, BG, 0.08f)});
+        return g;
+    }
+
     /** Face over a darker "3D" bottom edge, like Duolingo buttons. */
     static Drawable raised(int face, int edge, float rDp, float depthDp, int stroke) {
         GradientDrawable e = round(edge, rDp), f = stroke == 0 ? round(face, rDp) : round(face, rDp, stroke, 2);

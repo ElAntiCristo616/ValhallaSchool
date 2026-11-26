@@ -188,9 +188,11 @@ public final class MainActivity extends Activity implements Store.Events {
         root.addView(toastV, tl);
         setContentView(root);
 
-        // Partículas del tema: por encima del fondo, por debajo de toasts/modales.
+        // Fondo ambiental del tema: capa de fondo (índice 0), DETRÁS de todo el
+        // contenido. Nada se dibuja jamás por encima de tarjetas, textos,
+        // botones o la barra de navegación. Toasts y modales siguen por encima.
         particles = new ParticleView(this, S.theme);
-        root.addView(particles, root.indexOfChild(toastV), new FrameLayout.LayoutParams(M, M));
+        root.addView(particles, 0, new FrameLayout.LayoutParams(M, M));
         particles.start();
 
         root.setOnApplyWindowInsetsListener((v, in) -> {
@@ -276,7 +278,9 @@ public final class MainActivity extends Activity implements Store.Events {
         hideKeyboard();
         View v = s.v;
         v.setClickable(true);
-        v.setBackgroundColor(BG);
+        // Fondo ambiental del tema (degradado sutil), no un color plano:
+        // las pantallas mantienen el ambiente sin tapar las partículas del fondo.
+        v.setBackground(ambientBg());
         root.addView(v, overlayIndex(), new FrameLayout.LayoutParams(M, M));
         stack.add(s);
         DecelerateInterpolator di = new DecelerateInterpolator(2f);
