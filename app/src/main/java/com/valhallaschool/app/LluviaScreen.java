@@ -36,6 +36,7 @@ class LluviaScreen extends MiniGame {
     private ObjectAnimator fall;
     private LinearLayout fallingCard;
     private boolean fallingPaused = false;
+    private boolean cardDone = false; // true cuando la ficha ya se resolvió o la pantalla se cerró (cancel() también dispara onAnimationEnd)
     private TextView pauseBtn;
 
     static LluviaScreen start(MainActivity a) {
@@ -54,7 +55,7 @@ class LluviaScreen extends MiniGame {
         if (fall != null && fallingPaused && phase == ASK) { fall.resume(); fallingPaused = false; updatePauseBtn(); }
     }
 
-    @Override void closed() { cancelFall(); }
+    @Override void closed() { cardDone = true; cancelFall(); }
 
     private void cancelFall() {
         if (fall != null) { fall.cancel(); fall = null; }
@@ -126,6 +127,7 @@ class LluviaScreen extends MiniGame {
         }
         phase = ASK;
         chosenH = null;
+        cardDone = false;
         addCompanion();
         GamesData.Rain c = queue.get(idx);
         if (speedIdx < 2) {
@@ -187,6 +189,8 @@ class LluviaScreen extends MiniGame {
     }
 
     private void onOmission() {
+        if (cardDone) return;
+        cardDone = true;
         cancelFall();
         GamesData.Rain c = queue.get(idx);
         answered++;
@@ -226,6 +230,7 @@ class LluviaScreen extends MiniGame {
             return;
         }
         if (chosenH == null || chosenH.getTag() == null) { a.toast("Elige una opción primero, " + name() + ".", false); return; }
+        cardDone = true;
         cancelFall();
         GamesData.Rain c = queue.get(idx);
         int pick = (Integer) chosenH.getTag();
