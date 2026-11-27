@@ -133,22 +133,26 @@ abstract class MiniGame extends MainActivity.Screen {
 
     protected String name() { return Store.I.displayName(); }
 
-    /** Título de fin: humillación por nombre, nunca elogio sincero. */
+    /** Título de fin (v1.3.2, dos tonos): ganar = sarcasmo sin insultos; fallar = insulto personal. */
     private static final String[] END_GOOD = {
-            "¡Lo lograste, {name}! ¿Casualidad, cuck?",
-            "¡Pasaste, {name}! Hasta un NPC pasa a veces.",
-            "¡Bien, {name}! No te emociones, fracasado.",
+            "¡Lo lograste, {name}! Tampoco te emociones.",
+            "¡Pasaste, {name}! Qué sorpresa, la verdad.",
+            "¡Bien, {name}! No te acostumbres.",
     };
     private static final String[] END_BAD = {
-            "¡Qué desastre, {name}! ¡Hasta tu moral da pena!",
-            "¡Qué vergüenza, {name}! ¡Eres un cuck!",
-            "¡Fracasado total, {name}! ¡Ni el espejo te aguanta!",
+            "¡Qué desastre, {name}! Por eso tu ex te dejó.",
+            "¡Qué vergüenza, {name}! Hasta tu perro te mira con vergüenza.",
+            "¡Fracasado total, {name}! Ni tu mamá te salva.",
     };
 
     protected String endTitle(boolean good) {
         String[] bank = good ? END_GOOD : END_BAD;
         return bank[Quiz.R.nextInt(bank.length)].replace("{name}", name());
     }
+
+    /** Título de retroalimentación (v1.3.2): contexto del juego + cola del tono que toca. */
+    protected String winTitle(String prefix) { return prefix + " " + Companion.winTail(); }
+    protected String failTitle(String prefix) { return prefix + " " + Companion.failTail(); }
 
     /** Tarjeta de contexto (título pequeño + cuerpo). */
     protected LinearLayout card(String tag, String body) {
@@ -225,8 +229,8 @@ abstract class MiniGame extends MainActivity.Screen {
         return t;
     }
 
+    /** Solo vibración: el sonido de fallo ya lo toca Companion.react() (v1.3.2). */
     protected void hapticBad() {
-        Sfx.play(Sfx.BAD);
         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
     }
 

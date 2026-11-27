@@ -42,6 +42,10 @@ final class ProfileTab extends MainActivity.Tab {
         content.removeAllViews();
         int xp = S.totalXP(), lv = Store.level(xp), base = Store.levelBase(lv), next = Store.levelBase(lv + 1);
 
+        // v1.3.2 — el cambiador de tema va AL INICIO, hasta ARRIBA del Perfil,
+        // RESALTADO (borde dorado + fondo tintado): antes estaba escondido en Ajustes.
+        themeCard();
+
         avatarSection();
 
         LinearLayout me = row(a);
@@ -132,7 +136,6 @@ final class ProfileTab extends MainActivity.Tab {
         int gi = 1;
         for (int i = 0; i < Store.GOALS.length; i++) if (Store.GOALS[i] == S.goal) gi = i;
         setting("Meta diaria", seg(a, Store.GOAL_NAMES, gi, i -> { S.setGoal(Store.GOALS[i]); a.changed(); a.dirty(); }));
-        setting("Tema", themeButton());
         setting("Sonidos", seg(a, new String[]{"Sí", "No"}, S.sound ? 0 : 1, i -> { S.sound = i == 0; S.save(); }));
         // v1.2.6 — recordatorio diario de racha (20:00, solo si la meta no está cumplida).
         setting("Recordatorio de racha", seg(a, new String[]{"Sí", "No"}, S.remind ? 0 : 1, i -> {
@@ -423,6 +426,24 @@ final class ProfileTab extends MainActivity.Tab {
         }
         b.addView(r, lp(M, W));
         return b;
+    }
+
+    /** v1.3.2 — tarjeta de tema DESTACADA arriba del Perfil: el tema se
+     *  aplica en toda la app (lecciones, lector, hubs, juegos, Perfil). */
+    private void themeCard() {
+        Store S = Store.I;
+        content.addView(section(a, "🎨 Tema"));
+        LinearLayout card = box(a);
+        card.setBackground(round(mix(ACCENT, SURF, 0.18f), 16, ACCENT, 3));
+        card.setPadding(dp(16), dp(16), dp(16), dp(16));
+        card.addView(tv(a, "Tema actual: " + Ui.themeName(S.theme), 18, TEXT, BLACK));
+        TextView sub = tv(a, "El tema se aplica en toda la app: lecciones, juegos y perfil.", 13, MUTED2, REG);
+        sub.setLineSpacing(0, 1.3f);
+        card.addView(sub, lpm(M, W, 0, 4, 0, 12));
+        card.addView(themeButton());
+        ripple(card, true);
+        card.setOnClickListener(v -> a.showThemePicker());
+        content.addView(card, lpm(M, W, 0, 0, 0, 12));
     }
 
     /** Botón desplegable del tema activo (abre el selector de 16 temas). */

@@ -24,7 +24,6 @@ import static com.valhallaschool.app.Ui.*;
 final class SessionScreen extends MainActivity.Screen {
     private static final int LEARN = 0, ASK = 1, FEEDBACK = 2, END = 3;
     /** Título al acertar: humillación por nombre, nunca elogio sincero (orden de Remy 2026-11-27). */
-    private static final String[] PRAISE = {"¡Wow, {name}! ¿Casualidad, cuck?", "¡Milagro, {name}! Hasta un NPC acierta a veces.", "¡Por fin, {name}! ¿Copiaste, beta?", "¡Ni tú te la crees, {name}! ¡Qué asco, fracasado!", "¡Una bien, {name}! No te emociones, inútil."};
 
     private final ArrayDeque<Object> queue = new ArrayDeque<>();
     private final int total, bonus;
@@ -267,8 +266,7 @@ final class SessionScreen extends MainActivity.Screen {
         if (ok) {
             combo++;
             done++;
-            Sfx.play(Sfx.OK);
-            fbTitle.setText(PRAISE[Quiz.R.nextInt(PRAISE.length)].replace("{name}", Store.I.displayName()));
+            fbTitle.setText(Companion.winLine());
             fbTitle.setTextColor(GREEN);
             setFoot(1);
             setBtn("Continuar", B_GREEN);
@@ -276,9 +274,8 @@ final class SessionScreen extends MainActivity.Screen {
             combo = 0;
             missed.add(q.id);
             queue.add(q); // sin corazones: fallar solo reencola la pregunta
-            Sfx.play(Sfx.BAD);
             v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-            fbTitle.setText("Casi");
+            fbTitle.setText(Companion.failLine());
             fbTitle.setTextColor(RED);
             fbText.setText("Respuesta correcta: " + q.opts[q.answer] + (q.explain != null ? "\n\n" + q.explain : ""));
             setFoot(2);

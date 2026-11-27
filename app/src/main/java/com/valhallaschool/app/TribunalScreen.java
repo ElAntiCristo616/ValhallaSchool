@@ -141,8 +141,7 @@ class TribunalScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Sello correcto, " + name() + "! ¿Copiaste?");
-                Sfx.play(Sfx.OK);
+                fbTitle.setText(winTitle("¡Sello correcto, " + name() + "!"));
                 setFoot(1);
                 if (t.verdict == 1) {
                     fbText.setText("Es incorrecto. Ahora localiza el error.");
@@ -151,7 +150,7 @@ class TribunalScreen extends MiniGame {
                     finishItem();
                 }
             } else {
-                fbTitle.setText("¡Ese sello no, " + name() + "! ¿Ni leer sabes?");
+                fbTitle.setText(failTitle("¡Ese sello no, " + name() + "!"));
                 fbText.setText("El veredicto correcto es " + GamesData.TRIB_VERDICTS[t.verdict] + ". " + t.explanation);
                 hapticBad();
                 setFoot(2);
@@ -171,12 +170,11 @@ class TribunalScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Error localizado, " + name() + "! Milagro.");
+                fbTitle.setText(winTitle("¡Error localizado, " + name() + "!"));
                 fbText.setText("Categoría: " + GamesData.TRIB_CATS[t.category] + ". Ahora reformúlalo bien.");
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Ahí no está el error, " + name() + "!");
+                fbTitle.setText(failTitle("¡Ahí no está el error, " + name() + "!"));
                 fbText.setText("La categoría correcta es " + GamesData.TRIB_CATS[t.category] + ". " + t.explanation);
                 hapticBad();
                 setFoot(2);
@@ -196,12 +194,11 @@ class TribunalScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Reformulación correcta, " + name() + "! ¿Casualidad?");
+                fbTitle.setText(winTitle("¡Reformulación correcta, " + name() + "!"));
                 fbText.setText(t.explanation);
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Ni reformulando, " + name() + "!");
+                fbTitle.setText(failTitle("¡Ni reformulando, " + name() + "!"));
                 fbText.setText("La reformulación correcta es: «" + t.correction + "». " + t.explanation);
                 hapticBad();
                 setFoot(2);

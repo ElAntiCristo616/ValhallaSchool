@@ -30,7 +30,6 @@ import static com.valhallaschool.app.Ui.*;
 final class LoopScreen extends MainActivity.Screen {
     private static final int ASK = 1, FEEDBACK = 2;
     /** Título al acertar: humillación por nombre, nunca elogio sincero (orden de Remy 2026-11-27). */
-    private static final String[] PRAISE = {"¡Wow, {name}! ¿Casualidad, cuck?", "¡Milagro, {name}! Hasta un NPC acierta a veces.", "¡Por fin, {name}! ¿Copiaste, beta?", "¡Ni tú te la crees, {name}! ¡Qué asco, fracasado!", "¡Una bien, {name}! No te emociones, inútil."};
 
     /** Una carta del mazo: de teoría (Quiz.Q) o de práctica (PracticeData.Ex). */
     private static final class Card {
@@ -234,16 +233,14 @@ final class LoopScreen extends MainActivity.Screen {
             correct++;
             streak++;
             Store.I.addXP(Store.XP_Q, true);
-            Sfx.play(Sfx.OK);
-            fbTitle.setText(PRAISE[Quiz.R.nextInt(PRAISE.length)].replace("{name}", Store.I.displayName()));
+            fbTitle.setText(Companion.winLine());
             fbTitle.setTextColor(GREEN);
             setFoot(1);
             setBtn("Continuar", B_GREEN);
         } else {
             streak = 0;
-            Sfx.play(Sfx.BAD);
             v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-            fbTitle.setText("Casi");
+            fbTitle.setText(Companion.failLine());
             fbTitle.setTextColor(RED);
             setFoot(2);
             setBtn("Continuar", B_RED);

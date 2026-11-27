@@ -1,23 +1,43 @@
 package com.valhallaschool.app;
 
+import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.AudioFormat;
+import android.media.AudioManager;
 import android.media.AudioTrack;
 
-/** Tiny synthesized feedback sounds (no audio assets). */
+/**
+ * Tiny synthesized feedback sounds (no audio assets).
+ * v1.3.2 — YAY (acierto, agradable/corto) y ANGRY (fallo, buzzer grave):
+ * los toca Companion.react() en cada respuesta. Respeta el silencio del
+ * teléfono (modo silencio/vibración = sin sonido) y el ajuste de Sonidos.
+ */
 final class Sfx {
-    static final int OK = 0, BAD = 1, WIN = 2;
-    private static final AudioTrack[] tracks = new AudioTrack[3];
+    static final int OK = 0, BAD = 1, WIN = 2, YAY = 3, ANGRY = 4;
+    private static final AudioTrack[] tracks = new AudioTrack[5];
+    private static Context appCtx;
 
     private Sfx() {}
 
+    /** Se llama una vez en MainActivity.onCreate: guarda el contexto para revisar el modo de timbre. */
+    static void init(Context c) { appCtx = c.getApplicationContext(); }
+
     static void play(int kind) {
         if (Store.I == null || !Store.I.sound) return;
+        // Respeta el silencio: en modo silencio o vibración no suena nada.
+        try {
+            if (appCtx != null) {
+                AudioManager am = (AudioManager) appCtx.getSystemService(Context.AUDIO_SERVICE);
+                if (am != null && am.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) return;
+            }
+        } catch (Exception ignored) { /* sin AudioManager, suena normal */ }
         try {
             AudioTrack t = tracks[kind];
             if (t == null) {
                 if (kind == OK) t = make(new float[]{660, 880}, false, 0.22f);
                 else if (kind == BAD) t = make(new float[]{220, 180}, true, 0.07f);
+                else if (kind == YAY) t = make(new float[]{784, 1047, 1319}, false, 0.22f);
+                else if (kind == ANGRY) t = make(new float[]{160, 110, 80}, true, 0.10f);
                 else t = make(new float[]{523, 659, 784, 1047}, false, 0.22f);
                 tracks[kind] = t;
             }

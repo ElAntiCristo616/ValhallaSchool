@@ -25,6 +25,9 @@ import java.util.List;
 final class PracticeData {
     static final String[] ELEMENTS = {"Ne", "Ni", "Se", "Si", "Te", "Ti", "Fe", "Fi"};
     static final String[] POSITIONS = {"base", "creativa", "rol", "dolorosa", "sugestiva", "activación", "limitativa", "fondo"};
+    /** Nombres de posiciones para MOSTRAR (v1.3.2, nombres estándar en inglés pedidos por Remy).
+     *  POSITIONS sigue siendo el código de datos del TSV; la etiqueta visible usa este arreglo. */
+    static final String[] POSITIONS_DISPLAY = {"Base", "Creativa", "Rol", "PoLR", "Sugestiva", "Mobilizing", "Observing", "Demostrativa"};
     static final String[] QUADRAS = {"Alfa", "Beta", "Gamma", "Delta"};
     /** Nombres de nivel para la UI y los logros. */
     static final String[] LEVEL_NAMES = {"Cimientos", "Espejo social", "Lo que se anhela", "Maestría"};
@@ -38,8 +41,8 @@ final class PracticeData {
         int aEl, aPos, d1El, d1Pos, d2El, d2Pos, d3El, d3Pos;
         String justification;
 
-        /** Etiqueta de respuesta, p. ej. "[Ne rol]". */
-        String label(int el, int pos) { return "[" + ELEMENTS[el] + " " + POSITIONS[pos] + "]"; }
+        /** Etiqueta de respuesta, p. ej. "[Ne rol]". Usa el nombre visible (v1.3.2). */
+        String label(int el, int pos) { return "[" + ELEMENTS[el] + " " + POSITIONS_DISPLAY[pos] + "]"; }
         String answerLabel() { return label(aEl, aPos); }
         String kindLabel() {
             switch (kind) {

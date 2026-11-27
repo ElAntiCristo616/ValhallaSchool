@@ -40,14 +40,39 @@ final class ChallengesTab extends MainActivity.Tab {
         mission("Racha de 7 días", S.streak(), 7, "🔥");
         mission("Completa 5 lecciones", S.lessons.size(), 5, "📚");
 
-        // v1.3.1: retos que te llevan DIRECTO al juego o tarea al tocarlos.
-        content.addView(section(a, "Retos de juegos"));
-        missionLink("🌧️", "Juega 3 rondas de Lluvia", S.gameDay("lluvia"), 3, () -> a.push(LluviaScreen.start(a)));
-        missionLink("🕵️", "Resuelve un caso de Detective", S.gameDay("detective"), 1, () -> a.push(DetectiveScreen.start(a)));
-        missionLink("🧪", "Arma un modelo en el Laboratorio", S.gameDay("lab"), 1, () -> a.push(LabScreen.start(a)));
-        missionLink("🔍", "Encuentra 5 intrusos", S.gameDay("intruso"), 5, () -> a.push(IntrusoScreen.start(a)));
-        missionLink("⚖️", "Juzga 3 argumentos en el Tribunal", S.gameDay("tribunal"), 3, () -> a.push(TribunalScreen.start(a)));
-        missionLink("🧠", "Haz 10 ejercicios de Práctica", S.gameDay("practice"), 10, () -> a.go(2));
+        // v1.3.2: las tareas diarias CAMBIAN DE OBJETIVO cada día: 4 misiones
+        // rotando de un pool de 9 (los 8 juegos + Práctica), con semilla del
+        // día para que a todos les toque el mismo conjunto ese día. El progreso
+        // del día se reinicia cada día como ya hacía (gameDay por fecha).
+        content.addView(section(a, "Retos de hoy · se renuevan cada día"));
+        java.util.ArrayList<String[]> defs = new java.util.ArrayList<>();
+        defs.add(new String[]{"🌧️", "Juega 3 rondas de Lluvia", "lluvia", "3"});
+        defs.add(new String[]{"🕵️", "Resuelve un caso de Detective", "detective", "1"});
+        defs.add(new String[]{"🧪", "Arma un modelo en el Laboratorio", "lab", "1"});
+        defs.add(new String[]{"🔍", "Encuentra 5 intrusos", "intruso", "5"});
+        defs.add(new String[]{"⚖️", "Juzga 3 argumentos en el Tribunal", "tribunal", "3"});
+        defs.add(new String[]{"🧠", "Haz 10 ejercicios de Práctica", "practice", "10"});
+        defs.add(new String[]{"⚔️", "Media 2 combates en la Arena", "arena", "2"});
+        defs.add(new String[]{"🗺️", "Resuelve un acertijo de Aventura", "aventura", "1"});
+        defs.add(new String[]{"🔗", "Completa 3 encargos de Conexiones", "conexiones", "3"});
+        java.util.Collections.shuffle(defs, new java.util.Random(Store.today()));
+        for (int i = 0; i < 4; i++) {
+            String[] d = defs.get(i);
+            final String gid = d[2];
+            Runnable open;
+            switch (gid) {
+                case "lluvia": open = () -> a.push(LluviaScreen.start(a)); break;
+                case "detective": open = () -> a.push(DetectiveScreen.start(a)); break;
+                case "lab": open = () -> a.push(LabScreen.start(a)); break;
+                case "intruso": open = () -> a.push(IntrusoScreen.start(a)); break;
+                case "tribunal": open = () -> a.push(TribunalScreen.start(a)); break;
+                case "arena": open = () -> a.push(ArenaScreen.start(a)); break;
+                case "aventura": open = () -> a.push(AventuraScreen.start(a)); break;
+                case "conexiones": open = () -> a.push(ConexionesScreen.start(a)); break;
+                default: open = () -> a.go(2); break;
+            }
+            missionLink(d[0], d[1], S.gameDay(gid), Integer.parseInt(d[3]), open);
+        }
 
         content.addView(section(a, "Tienda"));
         shopItem("❄️", "Congelar racha", "Tu racha no se rompe mañana aunque no juegues", 50, () -> {

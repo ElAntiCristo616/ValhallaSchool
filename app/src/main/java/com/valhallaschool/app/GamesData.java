@@ -55,7 +55,7 @@ final class GamesData {
             {2, 5, 0, 7, 1, 6, 3, 4}, // SLE: Se Ti Ne Fi Ni Fe Si Te
             {1, 6, 3, 4, 2, 5, 0, 7}, // IEI: Ni Fe Si Te Se Ti Ne Fi
             {2, 7, 0, 5, 1, 4, 3, 6}, // SEE: Se Fi Ne Ti Ni Te Si Fe
-            {1, 4, 3, 7, 2, 6, 0, 5}, // ILI: Ni Te Si Fe Se Fi Ne Ti
+            {1, 4, 3, 6, 2, 7, 0, 5}, // ILI: Ni Te Si Fe Se Fi Ne Ti (v1.3.2: Fe/Fi en 4 y 6 estaban intercambiados)
             {4, 1, 6, 3, 7, 2, 5, 0}, // LIE: Te Ni Fe Si Fi Se Ti Ne
             {7, 2, 5, 0, 4, 1, 6, 3}, // ESI: Fi Se Ti Ne Te Ni Fe Si
             {4, 3, 6, 1, 7, 0, 5, 2}, // LSE: Te Si Fe Ni Fi Ne Ti Se
@@ -100,7 +100,7 @@ final class GamesData {
     static boolean isStrong(int pos) { return pos < 2 || pos >= 6; }
     static boolean isValued(int pos) { return pos < 2 || (pos >= 4 && pos < 6); }
     static boolean isMental(int pos) { return pos < 4; }
-    static String label(int el, int pos) { return "[" + ELEMENTS[el] + " " + POSITIONS[pos] + "]"; }
+    static String label(int el, int pos) { return "[" + ELEMENTS[el] + " " + PracticeData.POSITIONS_DISPLAY[pos] + "]"; }
     /** Nombre completo de un elemento, por índice o por letra. */
     static String elName(int el) { return ELEMENT_NAMES[el]; }
     static String elName(String el) { return ELEMENT_NAMES[PracticeData.elIdx(el)]; }
@@ -137,7 +137,8 @@ final class GamesData {
         loadIntruso(c);
         loadConexiones(c);
         loadLluvia(c);
-        loadArena(c);
+        // v1.3.2: la Arena ya no se carga de games_arena.json: ArenaGen la
+        // genera combinatoriamente (256 parejas × 14 problemáticas).
         loadAventura(c);
         loaded = true;
     }
@@ -167,9 +168,9 @@ final class GamesData {
         }
     }
 
-    /* ---- 1. Detective: 30 fragmentos en 3 expedientes ---- */
+    /* ---- 1. Detective: 60 fragmentos en 6 expedientes (v1.3.2) ---- */
     static final class Det {
-        String id; int caseId; String fragment; int aEl, d1El, d2El, d3El; String justification;
+        String id; int caseId, scene; String fragment; int aEl, d1El, d2El, d3El; String justification;
     }
 
     static final ArrayList<Det> DETECTIVE = new ArrayList<>();
@@ -181,6 +182,21 @@ final class GamesData {
                     "LSE", "IEI", "El tipo es LSE: Te base con Si creativa (avances concretos y cuidado del ambiente). IEI anticipa, pero su base es Ni, no Te.", "0"},
             {"El vecino de las zanahorias", "Un vecino compra doce kilos de zanahorias cada martes y todo el barrio sospecha. Hay pistas, pero no todas determinan un tipo: algunas frases no dicen nada tipológico.",
                     "SEI", "SLI", "Indeterminado: los datos no alcanzan. Comprar mucho de algo puede ser Si, Te o simple costumbre: ninguna frase aislada determina el tipo.", "2"},
+            {"La oficina", "Una oficina con un proyecto atrasado: alguien pide resultados medibles y otro anticipa el derrumbe. ¿Qué información se procesa en cada frase?",
+                    "LIE", "LSE", "El tipo es LIE: Te base con Ni creativa (rendimiento en el tiempo, no el ambiente físico). LSE comparte Te, pero su creativa es Si: cuida el espacio y la comodidad, no el horizonte.", "0"},
+            {"La biblioteca", "Una biblioteca de barrio: alguien juzga a las personas por su lealtad y otro anticipa quién va a triunfar. Marca el foco informacional de cada fragmento.",
+                    "EII", "IEI", "El tipo es EII: Fi base con Ne creativa (valora el vínculo y ve el potencial de las personas). IEI comparte la intuición, pero su base es Ni y su creativa Fe: anticipa el ambiente, no juzga el vínculo.", "1"},
+            {"El mercado", "Un mercado en día de fiesta: alguien ambienta el lugar con su ánimo y otro impone su presencia. ¿Qué información se está procesando en cada frase?",
+                    "ESE", "SEE", "El tipo es ESE: Fe base con Si creativa (el ambiente y el sabor del lugar). SEE comparte la sensación, pero su base es Se y su creativa Fi: impone presencia y cobra lealtades, no ambienta.", "0"},
+    };
+    /** Títulos de las 3 escenas numeradas de cada expediente (biblia §01). */
+    static final String[][] CASE_SCENES = {
+            {"Llegada al taller", "El encargo", "La revisión final"},
+            {"La mañana en la cafetería", "El pedido", "El cierre"},
+            {"El rumor del barrio", "Las entrevistas", "La contradicción"},
+            {"La reunión", "El proyecto", "La entrega"},
+            {"La sala de lectura", "El préstamo", "La devolución"},
+            {"La llegada al mercado", "El regateo", "La despedida"},
     };
 
     private static void loadDetective(Context c) {
@@ -191,12 +207,13 @@ final class GamesData {
                 if (line.isEmpty()) continue;
                 if (first) { first = false; continue; }
                 String[] f = line.split("\t", -1);
-                if (f.length != 8) continue;
+                if (f.length != 9) continue;
                 Det d = new Det();
-                d.id = f[0]; d.caseId = Integer.parseInt(f[1]); d.fragment = unquote(f[2]);
-                d.aEl = PracticeData.elIdx(f[3]); d.d1El = PracticeData.elIdx(f[4]);
-                d.d2El = PracticeData.elIdx(f[5]); d.d3El = PracticeData.elIdx(f[6]);
-                d.justification = unquote(f[7]);
+                d.id = f[0]; d.caseId = Integer.parseInt(f[1]); d.scene = Integer.parseInt(f[2]);
+                d.fragment = unquote(f[3]);
+                d.aEl = PracticeData.elIdx(f[4]); d.d1El = PracticeData.elIdx(f[5]);
+                d.d2El = PracticeData.elIdx(f[6]); d.d3El = PracticeData.elIdx(f[7]);
+                d.justification = unquote(f[8]);
                 DETECTIVE.add(d);
             }
         } catch (IOException e) {
@@ -204,10 +221,15 @@ final class GamesData {
         }
     }
 
+    /** Fragmentos de un expediente, en orden de escenas (1, 2, 3); dentro de cada escena, barajados. */
     static ArrayList<Det> detectiveOfCase(int caseId) {
         ArrayList<Det> out = new ArrayList<>();
-        for (Det d : DETECTIVE) if (d.caseId == caseId) out.add(d);
-        Collections.shuffle(out, Quiz.R);
+        for (int scene = 1; scene <= 3; scene++) {
+            ArrayList<Det> sc = new ArrayList<>();
+            for (Det d : DETECTIVE) if (d.caseId == caseId && d.scene == scene) sc.add(d);
+            Collections.shuffle(sc, Quiz.R);
+            out.addAll(sc);
+        }
         return out;
     }
 
@@ -333,7 +355,8 @@ final class GamesData {
         }
     }
 
-    /* ---- 6. Arena: 6 escenarios (JSON) ---- */
+    /* ---- 6. Arena: las clases las genera ArenaGen (v1.3.2, combinatorio);
+       ya no hay games_arena.json. ---- */
     static final class ArenaOpt {
         String text, reaction; int dt, dc, dco;
     }
@@ -346,39 +369,6 @@ final class GamesData {
         String id, title, intro, relation, endGood, endBad;
         int t1, t2; // tipos enfrentados
         ArenaTurn[] turns = new ArenaTurn[3];
-    }
-
-    static final ArrayList<Arena> ARENA = new ArrayList<>();
-
-    private static void loadArena(Context c) {
-        try {
-            JSONArray arr = new JSONArray(readJson(c, "games_arena.json"));
-            for (int i = 0; i < arr.length(); i++) {
-                JSONObject o = arr.getJSONObject(i);
-                Arena s = new Arena();
-                s.id = o.getString("id"); s.title = o.getString("title"); s.intro = o.getString("intro");
-                s.relation = o.getString("relation"); s.endGood = o.getString("endGood"); s.endBad = o.getString("endBad");
-                s.t1 = typeIdx(o.getString("t1")); s.t2 = typeIdx(o.getString("t2"));
-                JSONArray turns = o.getJSONArray("turns");
-                for (int t = 0; t < 3; t++) {
-                    JSONObject to = turns.getJSONObject(t);
-                    ArenaTurn turn = new ArenaTurn();
-                    turn.situation = to.getString("situation");
-                    JSONArray opts = to.getJSONArray("opts");
-                    for (int k = 0; k < 3; k++) {
-                        JSONObject oo = opts.getJSONObject(k);
-                        ArenaOpt op = new ArenaOpt();
-                        op.text = oo.getString("text"); op.reaction = oo.getString("reaction");
-                        op.dt = oo.getInt("dt"); op.dc = oo.getInt("dc"); op.dco = oo.getInt("dco");
-                        turn.opts[k] = op;
-                    }
-                    s.turns[t] = turn;
-                }
-                ARENA.add(s);
-            }
-        } catch (Exception e) {
-            throw new IllegalStateException("games_arena.json", e);
-        }
     }
 
     /* ---- 7. Aventura: 1 sala, 5 acertijos + puerta final (JSON) ---- */

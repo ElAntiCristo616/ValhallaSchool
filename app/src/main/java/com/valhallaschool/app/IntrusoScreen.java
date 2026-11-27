@@ -130,12 +130,11 @@ class IntrusoScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Intruso encontrado, " + name() + "! ¿Casualidad, cuck?");
+                fbTitle.setText(winTitle("¡Intruso encontrado, " + name() + "!"));
                 fbText.setText("El intruso es " + t.items[t.answer] + ". Ahora di qué comparten las otras tres.");
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Ese no era, " + name() + "! ¿Ni mirar sabes?");
+                fbTitle.setText(failTitle("¡Ese no era, " + name() + "!"));
                 fbText.setText("El intruso es " + t.items[t.answer] + ". " + t.explanation);
                 hapticBad();
                 setFoot(2);
@@ -155,12 +154,11 @@ class IntrusoScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Regla correcta, " + name() + "! Milagro, beta.");
+                fbTitle.setText(winTitle("¡Regla correcta, " + name() + "!"));
                 fbText.setText(t.explanation);
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Esa no es la regla, " + name() + "!");
+                fbTitle.setText(failTitle("¡Esa no es la regla, " + name() + "!"));
                 fbText.setText("Lo que comparten es: " + t.property + ". " + t.explanation);
                 hapticBad();
                 setFoot(2);

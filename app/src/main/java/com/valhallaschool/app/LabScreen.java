@@ -26,7 +26,7 @@ import static com.valhallaschool.app.Ui.*;
  * usan nombres y letras del Modelo A clásico.
  */
 class LabScreen extends MiniGame {
-    private static final String[] POS_NAMES = {"Base", "Creativa", "Rol", "PoLR", "Sugestiva", "Activación", "Limitativa", "Fondo"};
+    private static final String[] POS_NAMES = {"Base", "Creativa", "Rol", "PoLR", "Sugestiva", "Mobilizing", "Observing", "Demostrativa"};
     private static final String[] GRADES = {
             "Nombres", "Letras y símbolos", "Mezcla", "Solo letras",
             "Reconstrucción parcial", "Deducción por pistas", "Reparación"};
@@ -324,13 +324,12 @@ class LabScreen extends MiniGame {
             typeOk = guess.equals(type);
             reactCompanion(typeOk);
             if (typeOk) {
-                fbTitle.setText("¡Era " + type + ", " + name() + "! ¿Casualidad, cuck?");
+                fbTitle.setText(winTitle("¡Era " + type + ", " + name() + "!"));
                 fbText.setText("Base " + GamesData.elName(model[0]) + " y creativa " + GamesData.elName(model[1])
                         + ". Ahora arma el modelo completo.");
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Ni adivinando, " + name() + "!");
+                fbTitle.setText(failTitle("¡Ni adivinando, " + name() + "!"));
                 fbText.setText("Era " + type + ": base " + GamesData.elName(model[0]) + " y creativa "
                         + GamesData.elName(model[1]) + ". Ármalo de todos modos, a ver si al menos eso te sale.");
                 hapticBad();
@@ -363,16 +362,16 @@ class LabScreen extends MiniGame {
             lastOk = ok;
             answered++;
             if (ok && !tried && typeOk) { firstOk++; award("lab:" + type + ":g" + grade); }
-            if (ok) Sfx.play(Sfx.OK); else hapticBad();
+            if (!ok) hapticBad();
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Modelo correcto, " + name() + "! ¿Copiaste, beta?");
+                fbTitle.setText(winTitle("¡Modelo correcto, " + name() + "!"));
                 fbText.setText("Ego: " + modelEl(0) + " + " + modelEl(1) + " · Superego: " + modelEl(2) + " + " + modelEl(3)
                         + " · Superid: " + modelEl(4) + " + " + modelEl(5) + " · Id: " + modelEl(6) + " + " + modelEl(7) + ".");
                 setFoot(1);
             } else if (impossible) {
                 a.toast("¡Acabas de inventar el sociotipo 17!", true);
-                fbTitle.setText("¡Acabas de inventar el sociotipo 17, " + name() + "!");
+                fbTitle.setText(failTitle("¡Acabas de inventar el sociotipo 17, " + name() + "!"));
                 fbText.setText("Ese modelo no existe: con base " + GamesData.elName(model[0]) + " la sugestiva (5) tiene que ser "
                         + GamesData.elName(model[4]) + ", su dual, y el rol (3) " + GamesData.elName(model[2])
                         + ". Intercambia las fichas de las posiciones 3 y 5.");
@@ -386,7 +385,7 @@ class LabScreen extends MiniGame {
                     first = false;
                 }
                 sb.append(". Recuerda: la 5 es el dual de la base y la 6 el dual de la creativa.");
-                fbTitle.setText("¡Mal puesto, " + name() + "! ¿Ni copiar sabes?");
+                fbTitle.setText(failTitle("¡Mal puesto, " + name() + "!"));
                 fbText.setText(sb.toString());
                 setFoot(2);
                 tried = true;

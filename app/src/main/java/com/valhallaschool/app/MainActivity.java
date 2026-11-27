@@ -99,6 +99,7 @@ public final class MainActivity extends Activity implements Store.Events {
         S = Store.get(this);
         S.ev = this;
         Ui.init(this, S.theme);
+        Sfx.init(this); // v1.3.2: los sonidos respetan el modo silencio del teléfono
         build();
         edgeToEdge();
         go(state != null ? state.getInt("tab", 0) : 0);
@@ -310,8 +311,12 @@ public final class MainActivity extends Activity implements Store.Events {
         View v = s.v;
         v.setClickable(true);
         // Fondo ambiental del tema (degradado sutil), no un color plano:
-        // las pantallas mantienen el ambiente sin tapar las partículas del fondo.
-        v.setBackground(ambientBg());
+        // v1.3.2 — SEMITRANSPARENTE (alfa 235, ~92%): el tema y las
+        // partículas del fondo se ven detrás en TODAS las pantallas
+        // (lecciones, lector, hubs, juegos) sin tapar el contenido.
+        GradientDrawable bg = ambientBg();
+        bg.setAlpha(235);
+        v.setBackground(bg);
         root.addView(v, overlayIndex(), new FrameLayout.LayoutParams(M, M));
         stack.add(s);
         DecelerateInterpolator di = new DecelerateInterpolator(2f);

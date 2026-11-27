@@ -39,19 +39,20 @@ final class Avatars {
     /** Frases de la mascota (bocadillo pequeño en Inicio y Práctica). TODAS
      *  humillan al jugador por su nombre (orden de Remy 2026-11-27): NADA de
      *  elogios sinceros. {name} = nombre de usuario actual (nickname o «Sin nombre»). */
+    /** Frases de la mascota (v1.3.2): sarcasmo indiferente, SIN insultos. */
     static final String[] PHRASES = {
-            "¡Tú puedes, {name}! Un ejemplo más… a ver si no la cagas, cuck.",
-            "Ese estuvo bueno, {name}. ¿Casualidad o copiaste, NPC?",
-            "La sociónica se aprende jugando… tú, {name}, a duras penas, beta.",
-            "¡Vamos, {name}! Cada acierto suma… cuando aciertas, claro, fracasado.",
-            "Fallar también enseña, {name}: tú ya eres todo un maestro del fracaso, inútil.",
-            "¿Ya viste qué función era, {name}? Ni tú, ¿verdad? Qué asco.",
-            "Sigue así, {name}… total, peor no se puede. O sí, contigo sí, desastre.",
-            "Un tipo a la vez, {name}, sin prisa… que prisa no tienes, ¿o sí, cuck?",
-            "¡Ese ejemplo era de los difíciles, {name}! Por eso lo fallaste, NPC.",
-            "Respira y piensa en el Modelo A, {name}… si es que puedes, beta.",
-            "La práctica hace al tipador, {name}. A ti todavía te falta práctica. Mucha, inútil.",
-            "¿Otro round, {name}? Yo te acompaño… alguien tiene que reírse de ti, fracasado.",
+            "¡Tú puedes, {name}! Un ejemplo más… a ver qué sale.",
+            "Ese estuvo bueno, {name}. ¿Casualidad o suerte?",
+            "La sociónica se aprende jugando… tú, {name}, a duras penas.",
+            "¡Vamos, {name}! Cada acierto suma… cuando aciertas, claro.",
+            "Fallar también enseña, {name}: tú ya eres todo un maestro del fracaso.",
+            "¿Ya viste qué función era, {name}? Ni tú, ¿verdad?",
+            "Sigue así, {name}… total, peor no se puede. O sí, contigo sí.",
+            "Un tipo a la vez, {name}, sin prisa… que prisa no tienes, ¿o sí?",
+            "¡Ese ejemplo era de los difíciles, {name}! Por eso lo fallaste.",
+            "Respira y piensa en el Modelo A, {name}… si es que puedes.",
+            "La práctica hace al tipador, {name}. A ti todavía te falta práctica. Mucha.",
+            "¿Otro round, {name}? Yo te acompaño… alguien tiene que reírse.",
 
     };
 

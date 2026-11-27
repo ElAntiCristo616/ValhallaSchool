@@ -14,11 +14,11 @@ rain12	Función 2: fuerte y flexible, experimenta.	1	4	base	creativa	rol	doloros
 rain13	Función 3: débil, se muestra para quedar bien.	2	4	base	creativa	rol	dolorosa	La función 3 es el rol.
 rain14	Función 4: la más problemática, el punto débil.	3	4	base	creativa	rol	dolorosa	La función 4 es la dolorosa.
 rain15	La función programa del tipo.	0	4	base	creativa	rol	dolorosa	El programa es la base (1).
-rain16	Función 5: la más débil, acepta ayuda con gratitud.	0	4	sugestiva	activación	limitativa	fondo	La función 5 es la sugestiva.
-rain17	Función 6: débil pero valiosa, compara con un estándar interno.	1	4	sugestiva	activación	limitativa	fondo	La función 6 es la activación.
-rain18	Función 7: fuerte, advierte de lo que NO hay que hacer.	2	4	sugestiva	activación	limitativa	fondo	La función 7 es la limitativa.
-rain19	Función 8: fuerte pero casi inconsciente, previene en silencio.	3	4	sugestiva	activación	limitativa	fondo	La función 8 es el fondo.
-rain20	La función que pide ayuda sin crítica.	0	4	sugestiva	activación	limitativa	fondo	La sugestiva (5) acepta ayuda con gratitud.
+rain16	Función 5: la más débil, acepta ayuda con gratitud.	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 5 es la sugestiva.
+rain17	Función 6: débil pero valiosa, compara con un estándar interno.	1	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 6 es la Mobilizing.
+rain18	Función 7: fuerte, advierte de lo que NO hay que hacer.	2	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 7 es la Observing.
+rain19	Función 8: fuerte pero casi inconsciente, previene en silencio.	3	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 8 es la Demostrativa.
+rain20	La función que pide ayuda sin crítica.	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La sugestiva (5) acepta ayuda con gratitud.
 rain21	Funciones 1 y 2: lo más fuerte y consciente.	0	4	Ego	Superego	Superid	Id	Las funciones 1-2 forman el Ego.
 rain22	Funciones 3 y 4: débiles pero conscientes, incómodas.	1	4	Ego	Superego	Superid	Id	Las funciones 3-4 forman el Superego.
 rain23	Funciones 5 y 6: débiles e inconscientes, piden ayuda.	2	4	Ego	Superego	Superid	Id	Las funciones 5-6 forman el Superid.
@@ -27,5 +27,5 @@ rain25	El bloque infantil, el que consume información con gusto.	2	4	Ego	Supere
 rain26	Función 3: ¿mental o vital?	0	2	Mental	Vital	-	-	Las posiciones 1-4 son el anillo mental.
 rain27	Función 6: ¿mental o vital?	1	2	Mental	Vital	-	-	Las posiciones 5-8 son el anillo vital.
 rain28	Función 1: ¿mental o vital?	0	2	Mental	Vital	-	-	La base (1) es mental: se usa consciente.
-rain29	Función 8: ¿mental o vital?	1	2	Mental	Vital	-	-	El fondo (8) es vital: trabaja sin consciencia.
+rain29	Función 8: ¿mental o vital?	1	2	Mental	Vital	-	-	La Demostrativa (8) es vital: trabaja sin consciencia.
 rain30	Función 5: ¿mental o vital?	1	2	Mental	Vital	-	-	La sugestiva (5) es vital: pide ayuda sin darse cuenta.

@@ -201,7 +201,7 @@ class LluviaScreen extends MiniGame {
             h.setOnClickListener(null);
         }
         reactCompanion(false);
-        fbTitle.setText("¡Se te cayó, " + name() + "! ¿Ni reaccionar sabes?");
+        fbTitle.setText(failTitle("¡Se te cayó, " + name() + "!"));
         fbText.setText("Omisión: la ficha era «" + c.opts[c.answer] + "». " + c.explanation);
         hapticBad();
         phase = FEEDBACK;
@@ -245,12 +245,11 @@ class LluviaScreen extends MiniGame {
         }
         reactCompanion(ok);
         if (ok) {
-            fbTitle.setText("¡Atrapada, " + name() + "! ¿Casualidad, cuck?");
+            fbTitle.setText(winTitle("¡Atrapada, " + name() + "!"));
             fbText.setText(c.explanation);
-            Sfx.play(Sfx.OK);
             setFoot(1);
         } else {
-            fbTitle.setText("¡Mal clasificada, " + name() + "!");
+            fbTitle.setText(failTitle("¡Mal clasificada, " + name() + "!"));
             fbText.setText("Era «" + c.opts[c.answer] + "». " + c.explanation);
             hapticBad();
             setFoot(2);

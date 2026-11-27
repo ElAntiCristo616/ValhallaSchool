@@ -207,12 +207,11 @@ class AventuraScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Clave conseguida, " + name() + "! ¿Copiaste, cuck?");
+                fbTitle.setText(winTitle("¡Clave conseguida, " + name() + "!"));
                 fbText.setText("«" + curRiddle.key + "» guardada en tu inventario. " + curRiddle.explanation);
-                Sfx.play(Sfx.OK);
                 setFoot(1);
             } else {
-                fbTitle.setText("¡Esa no era, " + name() + "! ¿Ni adivinar sabes?");
+                fbTitle.setText(failTitle("¡Esa no era, " + name() + "!"));
                 fbText.setText("La respuesta es «" + curRiddle.opts[curRiddle.answer] + "». " + curRiddle.explanation);
                 hapticBad();
                 setFoot(2);
@@ -232,13 +231,12 @@ class AventuraScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡La puerta se abrió, " + name() + "! Milagro, NPC.");
+                fbTitle.setText(winTitle("¡La puerta se abrió, " + name() + "!"));
                 fbText.setText(GamesData.AVENTURA_DOOR_WHY);
-                Sfx.play(Sfx.OK);
                 setFoot(1);
                 done = 6;
             } else {
-                fbTitle.setText("¡La puerta ni se movió, " + name() + "!");
+                fbTitle.setText(failTitle("¡La puerta ni se movió, " + name() + "!"));
                 fbText.setText("La respuesta es " + GamesData.AVENTURA_DOOR_OPTS[GamesData.AVENTURA_DOOR_ANSWER] + ". " + GamesData.AVENTURA_DOOR_WHY);
                 hapticBad();
                 setFoot(2);
