@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arrastra y clasifica: Relaciones y supervision</title>
+<link rel="stylesheet" href="../../../h5p-player/styles/h5p.css">
+<link rel="stylesheet" href="../../valhalla-h5p.css">
+<script src="../../valhalla-theme.js"></script>
+</head><body>
+<div id="h5p-container"></div>
+<div id="win" hidden><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div>
+<div id="h5p-error" hidden></div>
+<script src="../../../h5p-player/main.bundle.js" charset="UTF-8"></script>
+<script>
+ValhallaTheme.apply();
+var h5p = new H5PStandalone.H5P(document.getElementById('h5p-container'), {
+  h5pJsonPath: '.',
+  librariesPath: '../../../h5p-libraries',
+  frameJs: '../../../h5p-player/frame.bundle.js',
+  frameCss: '../../../h5p-player/styles/h5p.css',
+  embedType: 'div',
+  copyright: false, export: false, embed: false, icon: false,
+  fullScreen: false
+});
+h5p.then(function () {
+  if (window.H5P && H5P.externalDispatcher) {
+    // OJO: el tipo de evento es 'xAPI' (asi lo crea H5P.XAPIEvent en el
+    // core que trae h5p-standalone); 'xapi' en minuscula no llega nunca.
+    var onXapi = function (event) {
+      var st = event && event.data && event.data.statement;
+      if (!st || !st.verb || !st.verb.id) return;
+      var verb = st.verb.id;
+      var res = st.result || {};
+      if (verb.indexOf('completed') !== -1 ||
+          (verb.indexOf('answered') !== -1 && res.success === true)) {
+        ValhallaTheme.win();
+      }
+    };
+    H5P.externalDispatcher.on('xAPI', onXapi);
+    H5P.externalDispatcher.on('xapi', onXapi);
+  }
+}).catch(function (err) {
+  var e = document.getElementById('h5p-error');
+  e.hidden = false;
+  e.textContent = 'No se pudo cargar el juego: ' + err;
+});
+</script>
+</body></html>

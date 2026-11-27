@@ -1,0 +1,20 @@
+{
+  "title": "Timer",
+  "description": "Temporizador para Memory Game. Reemplazo escrito desde cero para Valhalla School (MIT) con la misma API que usa H5P.MemoryGame; el H5P.Timer original solo existe en el core H5P, sin licencia permisiva verificable.",
+  "majorVersion": 0,
+  "minorVersion": 4,
+  "patchVersion": 0,
+  "runnable": 0,
+  "machineName": "H5P.Timer",
+  "license": "MIT",
+  "author": "Valhalla School",
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 28
+  },
+  "preloadedJs": [
+    {
+      "path": "timer.js"
+    }
+  ]
+}

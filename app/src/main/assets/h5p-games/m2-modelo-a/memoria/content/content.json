@@ -1,0 +1,210 @@
+{
+  "cards": [
+    {
+      "image": {
+        "path": "images/card-00a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Base",
+      "match": {
+        "path": "images/card-00b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Ego: funcion 1, 4D, fuerte y valiosa",
+      "description": "Ego: funcion 1, 4D, fuerte y valiosa"
+    },
+    {
+      "image": {
+        "path": "images/card-01a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Creativa",
+      "match": {
+        "path": "images/card-01b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Ego: funcion 2, 3D, fuerte y valiosa",
+      "description": "Ego: funcion 2, 3D, fuerte y valiosa"
+    },
+    {
+      "image": {
+        "path": "images/card-02a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Rol",
+      "match": {
+        "path": "images/card-02b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "SuperEgo: funcion 3, 2D, debil, puerta del anillo mental",
+      "description": "SuperEgo: funcion 3, 2D, debil, puerta del anillo mental"
+    },
+    {
+      "image": {
+        "path": "images/card-03a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Dolorosa",
+      "match": {
+        "path": "images/card-03b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "SuperEgo: funcion 4, 1D, la PoLR",
+      "description": "SuperEgo: funcion 4, 1D, la PoLR"
+    },
+    {
+      "image": {
+        "path": "images/card-04a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Sugestiva",
+      "match": {
+        "path": "images/card-04b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "SuperId: funcion 5, 1D, puerta de entrada",
+      "description": "SuperId: funcion 5, 1D, puerta de entrada"
+    },
+    {
+      "image": {
+        "path": "images/card-05a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Activación",
+      "match": {
+        "path": "images/card-05b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "SuperId: funcion 6, 2D, la movilizadora",
+      "description": "SuperId: funcion 6, 2D, la movilizadora"
+    },
+    {
+      "image": {
+        "path": "images/card-06a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Limitativa",
+      "match": {
+        "path": "images/card-06b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Id: funcion 7, 3D, fuerte, pone limites",
+      "description": "Id: funcion 7, 3D, fuerte, pone limites"
+    },
+    {
+      "image": {
+        "path": "images/card-07a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Fondo",
+      "match": {
+        "path": "images/card-07b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Id: funcion 8, 4D, fuerte, respaldo invisible",
+      "description": "Id: funcion 8, 4D, fuerte, respaldo invisible"
+    }
+  ],
+  "behaviour": {
+    "useGrid": true,
+    "allowRetry": true
+  },
+  "l10n": {
+    "cardTurns": "Turnos",
+    "timeSpent": "Tiempo",
+    "feedback": "¡Muy bien!",
+    "tryAgain": "Reintentar",
+    "closeLabel": "Cerrar",
+    "playAudio": "Reproducir audio",
+    "pauseAudio": "Pausar audio",
+    "label": "Juego de memoria. Encuentra las parejas.",
+    "labelInstructions": "Usa las flechas izquierda y derecha para moverte entre las cartas. Usa espacio o Enter para voltear una carta.",
+    "done": "Se encontraron todas las cartas.",
+    "cardPrefix": "Carta %num de %total:",
+    "cardUnturned": "Sin voltear. Toca para voltear.",
+    "cardTurned": "Volteada.",
+    "cardMatched": "¡Pareja encontrada!",
+    "cardMatchedA11y": "¡Tus cartas coinciden!",
+    "cardNotMatchedA11y": "Tus cartas no coinciden. Intenta con otras."
+  }
+}

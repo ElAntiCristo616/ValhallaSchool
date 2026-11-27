@@ -1,0 +1,269 @@
+{
+  "taskDescription": "<p>Completa las palabras con las pistas.</p>",
+  "words": [
+    {
+      "clue": "Complementacion total entre dos tipos",
+      "answer": "DUALIDAD",
+      "fixWord": true,
+      "row": 11,
+      "column": 7,
+      "orientation": "across"
+    },
+    {
+      "clue": "Cuatro tipos con valores comunes",
+      "answer": "CUADRA",
+      "fixWord": true,
+      "row": 8,
+      "column": 14,
+      "orientation": "down"
+    },
+    {
+      "clue": "Unidad de los 16 tipos",
+      "answer": "SOCION",
+      "fixWord": true,
+      "row": 8,
+      "column": 11,
+      "orientation": "down"
+    },
+    {
+      "clue": "Te y Ti",
+      "answer": "LOGICA",
+      "fixWord": true,
+      "row": 6,
+      "column": 9,
+      "orientation": "down"
+    },
+    {
+      "clue": "Cuadra de SEE, ILI, LIE y ESI",
+      "answer": "GAMMA",
+      "fixWord": true,
+      "row": 13,
+      "column": 13,
+      "orientation": "across"
+    },
+    {
+      "clue": "Cuadra de IEE, SLI, LSE y EII",
+      "answer": "DELTA",
+      "fixWord": true,
+      "row": 11,
+      "column": 7,
+      "orientation": "down"
+    },
+    {
+      "clue": "Dos duales juntos",
+      "answer": "DIADA",
+      "fixWord": true,
+      "row": 11,
+      "column": 17,
+      "orientation": "down"
+    },
+    {
+      "clue": "Fe y Fi",
+      "answer": "ETICA",
+      "fixWord": true,
+      "row": 15,
+      "column": 3,
+      "orientation": "across"
+    },
+    {
+      "clue": "Cuadra de ILE, SEI, ESE y LII",
+      "answer": "ALFA",
+      "fixWord": true,
+      "row": 6,
+      "column": 8,
+      "orientation": "across"
+    },
+    {
+      "clue": "Cuadra de EIE, LSI, SLE e IEI",
+      "answer": "BETA",
+      "fixWord": true,
+      "row": 3,
+      "column": 11,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Alfa con base Ne",
+      "answer": "ILE",
+      "fixWord": true,
+      "row": 12,
+      "column": 5,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Alfa con base Si",
+      "answer": "SEI",
+      "fixWord": true,
+      "row": 9,
+      "column": 7,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Alfa con base Fe",
+      "answer": "ESE",
+      "fixWord": true,
+      "row": 15,
+      "column": 3,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Alfa con base Ti",
+      "answer": "LII",
+      "fixWord": true,
+      "row": 10,
+      "column": 5,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Beta con base Fe",
+      "answer": "EIE",
+      "fixWord": true,
+      "row": 17,
+      "column": 3,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Beta con base Ti",
+      "answer": "LSI",
+      "fixWord": true,
+      "row": 13,
+      "column": 7,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Beta con base Se",
+      "answer": "SLE",
+      "fixWord": true,
+      "row": 4,
+      "column": 9,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Beta con base Ni",
+      "answer": "IEI",
+      "fixWord": true,
+      "row": 12,
+      "column": 17,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Gamma con base Se",
+      "answer": "SEE",
+      "fixWord": true,
+      "row": 17,
+      "column": 18,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Gamma con base Ni",
+      "answer": "ILI",
+      "fixWord": true,
+      "row": 13,
+      "column": 9,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Gamma con base Te",
+      "answer": "LIE",
+      "fixWord": true,
+      "row": 11,
+      "column": 19,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Gamma con base Fi",
+      "answer": "ESI",
+      "fixWord": true,
+      "row": 16,
+      "column": 18,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Delta con base Ne",
+      "answer": "IEE",
+      "fixWord": true,
+      "row": 15,
+      "column": 5,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Delta con base Si",
+      "answer": "SLI",
+      "fixWord": true,
+      "row": 10,
+      "column": 4,
+      "orientation": "across"
+    },
+    {
+      "clue": "Tipo Delta con base Te",
+      "answer": "LSE",
+      "fixWord": true,
+      "row": 15,
+      "column": 20,
+      "orientation": "down"
+    },
+    {
+      "clue": "Tipo Delta con base Fi",
+      "answer": "EII",
+      "fixWord": true,
+      "row": 18,
+      "column": 16,
+      "orientation": "across"
+    }
+  ],
+  "overallFeedback": {
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "¡Muy bien!"
+      }
+    ]
+  },
+  "theme": {
+    "backgroundColor": "#0e3426"
+  },
+  "behaviour": {
+    "poolSize": 26,
+    "enableInstantFeedback": false,
+    "scoreWords": true,
+    "applyPenalties": false,
+    "enableRetry": true,
+    "enableSolutionsButton": true,
+    "keepCorrectAnswers": false,
+    "addExtraMarkerForEmptyCells": false
+  },
+  "l10n": {
+    "across": "Horizontal",
+    "down": "Vertical",
+    "checkAnswer": "Comprobar",
+    "submitAnswer": "Enviar",
+    "tryAgain": "Reintentar",
+    "showSolution": "Mostrar solución",
+    "couldNotGenerateCrossword": "No se pudo generar un crucigrama con estas palabras.",
+    "couldNotGenerateCrosswordTooFewWords": "No se pudo generar un crucigrama. Se necesitan al menos dos palabras.",
+    "probematicWords": "Algunas palabras no se pudieron colocar.",
+    "extraClue": "Pista extra",
+    "closeWindow": "Cerrar ventana"
+  },
+  "a11y": {
+    "crosswordGrid": "Crucigrama. Usa las flechas para moverte y el teclado para escribir.",
+    "column": "Columna",
+    "row": "Fila",
+    "across": "Horizontal",
+    "down": "Vertical",
+    "empty": "Vacía",
+    "resultFor": "Resultado de: @clue",
+    "correct": "Correcta",
+    "wrong": "Incorrecta",
+    "point": "punto",
+    "solutionFor": "Para @clue la solución es: @solution",
+    "extraClueFor": "Abrir pista extra de @clue",
+    "letterSevenOfNine": "Letra @position de @length",
+    "lettersWord": "Palabra de @length letras",
+    "check": "Comprobar los caracteres.",
+    "submitAndcheck": "Enviar la respuesta y comprobar los caracteres.",
+    "showSolution": "Mostrar la solución.",
+    "retry": "Reintentar la tarea.",
+    "yourResult": "Tienes @score de @total puntos"
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "words": [
+    "ILE",
+    "SEI",
+    "ESE",
+    "LII",
+    "EIE",
+    "LSI",
+    "SLE",
+    "IEI",
+    "SEE",
+    "ILI",
+    "LIE",
+    "ESI",
+    "IEE",
+    "SLI",
+    "LSE",
+    "EII",
+    "ALFA",
+    "BETA",
+    "GAMMA",
+    "DELTA"
+  ],
+  "grid": [
+    "IILEWVUAMMAGCTU",
+    "FRXHIEIFIOMIUWR",
+    "HVKYYLBHEBZKMIC",
+    "GSWDSKGUSPEMUOE",
+    "IELEEHXRRIIXSNS",
+    "MSLHELQPICYEESB",
+    "IDEEIETUFZVNTCM",
+    "MTOQIRAAVXDVRYI",
+    "YUKESEDJNFOIAXX",
+    "IQYATEBFQDUJLUQ",
+    "TGELIEYFRYQATSK",
+    "PAADSLEILILZJHB",
+    "HLSCESICXPCYLII",
+    "RFYEEVEPRFIQTNG",
+    "RAYXEILWGWJMVUL"
+  ],
+  "placements": [
+    {
+      "palabra": "ILE",
+      "fila": 0,
+      "columna": 1,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "SEI",
+      "fila": 3,
+      "columna": 8,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "ESE",
+      "fila": 8,
+      "columna": 3,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "LII",
+      "fila": 12,
+      "columna": 12,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "EIE",
+      "fila": 11,
+      "columna": 6,
+      "direccion": [
+        1,
+        0
+      ]
+    },
+    {
+      "palabra": "LSI",
+      "fila": 4,
+      "columna": 2,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "SLE",
+      "fila": 12,
+      "columna": 5,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "IEI",
+      "fila": 1,
+      "columna": 6,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "SEE",
+      "fila": 5,
+      "columna": 13,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "ILI",
+      "fila": 11,
+      "columna": 7,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "LIE",
+      "fila": 14,
+      "columna": 6,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "ESI",
+      "fila": 12,
+      "columna": 4,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "IEE",
+      "fila": 6,
+      "columna": 4,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "SLI",
+      "fila": 10,
+      "columna": 13,
+      "direccion": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "palabra": "LSE",
+      "fila": 2,
+      "columna": 5,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "EII",
+      "fila": 3,
+      "columna": 10,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "ALFA",
+      "fila": 11,
+      "columna": 1,
+      "direccion": [
+        1,
+        0
+      ]
+    },
+    {
+      "palabra": "BETA",
+      "fila": 9,
+      "columna": 6,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "GAMMA",
+      "fila": 0,
+      "columna": 11,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "DELTA",
+      "fila": 3,
+      "columna": 3,
+      "direccion": [
+        1,
+        1
+      ]
+    }
+  ]
+}
