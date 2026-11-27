@@ -38,7 +38,7 @@ import java.util.Random;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Single activity. Five tabs live side by side in tabHost (kept alive, toggled by visibility so the
+ * Single activity. Four tabs live side by side in tabHost (kept alive, toggled by visibility so the
  * home feed keeps its scroll position). Book / reader / lesson screens are pushed as overlay views.
  */
 public final class MainActivity extends Activity implements Store.Events {
@@ -64,15 +64,15 @@ public final class MainActivity extends Activity implements Store.Events {
     }
 
     private static final int REQ_EXPORT = 1, REQ_IMPORT = 2;
-    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn};
-    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_explore, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn};
-    private static final String[] NAV = {"Inicio", "Minijuegos", "Retos", "Perfil", "Práctica"};
+    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn};
+    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn};
+    private static final String[] NAV = {"Inicio", "Retos", "Perfil", "Práctica"};
 
     Store S;
     FrameLayout root;
     private ParticleView particles;
     private FrameLayout tabHost;
-    private final Tab[] tabs = new Tab[5];
+    private final Tab[] tabs = new Tab[4];
     int cur = -1;
     final ArrayList<Screen> stack = new ArrayList<>();
     private TextView toastV;
@@ -80,8 +80,8 @@ public final class MainActivity extends Activity implements Store.Events {
     private boolean toastBusy;
     private final ArrayDeque<String[]> celeQ = new ArrayDeque<>();
     private View celeV, modalV;
-    private final ImageView[] navIc = new ImageView[5];
-    private final TextView[] navTx = new TextView[5];
+    private final ImageView[] navIc = new ImageView[4];
+    private final TextView[] navTx = new TextView[4];
     private View dueDot;
     private int lastDay;
 
@@ -154,7 +154,7 @@ public final class MainActivity extends Activity implements Store.Events {
         main.addView(line, lp(M, Math.max(1, dp(1))));
         LinearLayout nav = row(this);
         nav.setBackgroundColor(BG);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             final int idx = i;
             LinearLayout b = col(this);
             b.setGravity(Gravity.CENTER);
@@ -213,10 +213,9 @@ public final class MainActivity extends Activity implements Store.Events {
     /* ================= tabs ================= */
     private Tab makeTab(int i) {
         switch (i) {
-            case 1: return new GamesTab(this);
-            case 2: return new ChallengesTab(this);
-            case 3: return new ProfileTab(this);
-            case 4: return new PracticeTab(this);
+            case 1: return new ChallengesTab(this);
+            case 2: return new ProfileTab(this);
+            case 3: return new PracticeTab(this);
             default: return new LearnTab(this);
         }
     }
@@ -232,9 +231,9 @@ public final class MainActivity extends Activity implements Store.Events {
             t.v = t.build();
             tabHost.addView(t.v, new FrameLayout.LayoutParams(M, M));
         }
-        for (int k = 0; k < 5; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
+        for (int k = 0; k < 4; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
         if (t.stale) { t.stale = false; t.refresh(); }
-        for (int k = 0; k < 5; k++) {
+        for (int k = 0; k < 4; k++) {
             navIc[k].setImageResource(k == i ? NAV_ON[k] : NAV_IC[k]);
             navIc[k].setColorFilter(k == i ? ACCENT : MUTED);
             navTx[k].setTextColor(k == i ? TEXT : MUTED);
@@ -244,7 +243,7 @@ public final class MainActivity extends Activity implements Store.Events {
 
     /** Progress changed: everything except the visible tab (when nothing covers it) must redraw on next show. */
     void dirty() {
-        for (int k = 0; k < 5; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
+        for (int k = 0; k < 4; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
     }
 
     @Override public void changed() {

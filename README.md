@@ -1,11 +1,9 @@
 # Valhalla School
 
-Juego de sociónica 3 en 1: lecciones, minijuegos y retos, con registro
+Juego de sociónica: lecciones y retos, con registro
 de progreso en la nube.
 
 - **Lecciones**: camino de aprendizaje con XP, rachas y niveles.
-- **Minijuegos**: memoria, arrastrar y soltar, crucigrama y sopa de
-  letras, con el contenido de los 29 documentos de sociónica clásica.
 - **Retos**: corazones, misiones, tienda y racha, estilo Lingo.
 - **Registro**: cuentas en Supabase (proyecto Valhalla School);
   el progreso se guarda en la nube y el ranking es compartido.

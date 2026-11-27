@@ -20,9 +20,6 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Tests de conversión H5P (20 juegos)
-        run: python3 tools/tests/test_h5p_conversion.py
-
       - name: Decode keystore
         run: |
           echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > $HOME/valhalla-school.keystore

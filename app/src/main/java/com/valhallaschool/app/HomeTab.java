@@ -64,7 +64,7 @@ final class HomeTab extends MainActivity.Tab {
         LinearLayout p = ripple(row(a), true);
         p.setPadding(dp(10), 0, dp(12), 0);
         p.setBackground(round(SURF2, 17));
-        p.setOnClickListener(v -> a.go(2));
+        p.setOnClickListener(v -> a.go(1));
         return p;
     }
 
@@ -87,7 +87,7 @@ final class HomeTab extends MainActivity.Tab {
             return out;
         }, new String[]{"🎉", "Ya viste todo",
                 cat < 0 ? "Ya leíste todas las ideas. Refresca con los repasos." : "No quedan ideas sin leer en este módulo.", "Ir a Aprender"},
-                () -> a.go(2));
+                () -> a.go(1));
         feedBox.removeAllViews();
         feedBox.addView(f, new FrameLayout.LayoutParams(M, M));
     }
