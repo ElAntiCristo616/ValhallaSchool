@@ -94,10 +94,18 @@ class TribunalScreen extends MiniGame {
             opts.add(t.correction);
             List<GamesData.Trib> pool = new ArrayList<>(GamesData.TRIBUNAL);
             Collections.shuffle(pool);
+            // v1.3.5: distractores primero de la misma categoría de error (son
+            // los plausibles: hablan de lo mismo y no se descartan solos);
+            // después, de cualquier categoría. Y nunca una corrección «—» o
+            // vacía como opción (eso era el bug: 5 argumentos válidos tenían
+            // «—» y se colaba como distractor).
             for (GamesData.Trib o : pool) {
-                // v1.3.5: nunca una corrección «—» o vacía como opción (eso era el bug:
-                // 5 argumentos válidos tenían «—» y se colaba como distractor).
-                if (!o.id.equals(t.id) && isRealCorrection(o.correction) && !opts.contains(o.correction) && opts.size() < 3) opts.add(o.correction);
+                if (opts.size() >= 3) break;
+                if (!o.id.equals(t.id) && o.category == t.category && isRealCorrection(o.correction) && !opts.contains(o.correction)) opts.add(o.correction);
+            }
+            for (GamesData.Trib o : pool) {
+                if (opts.size() >= 3) break;
+                if (!o.id.equals(t.id) && isRealCorrection(o.correction) && !opts.contains(o.correction)) opts.add(o.correction);
             }
             Collections.shuffle(opts);
             optViews.clear();

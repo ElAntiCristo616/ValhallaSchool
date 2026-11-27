@@ -1,29 +1,29 @@
 id	text	answer	nOpts	opt0	opt1	opt2	opt3	explanation
-rain01	Ver la energía potencial oculta en un objeto común: lo que es capaz de hacer.	0	4	Ne	Ni	Se	Si	Ne: energía potencial del objeto, sus capacidades y su esencia.
-rain02	Leer hacia dónde va una situación en el tiempo.	1	4	Ne	Ni	Se	Si	Desarrollo en el tiempo: Ni, intuición de tiempo.
-rain03	Notar la apariencia, la fuerza y la presencia de alguien al entrar.	2	4	Ne	Ni	Se	Si	Apariencia y fuerza: Se, sensación de fuerza.
-rain04	Sentir si el cuerpo está cómodo o incómodo.	3	4	Ne	Ni	Se	Si	Estado del cuerpo: Si, sensación de bienestar.
-rain05	Imaginar lo que una idea es en esencia: sus conceptos y lo que es capaz de ser.	0	4	Ne	Ni	Se	Si	Ne: la esencia y los conceptos de una idea, su energía potencial.
-rain06	Comprobar un resultado con datos y números.	0	4	Te	Ti	Fe	Fi	Trabajo y eficacia medible: Te, lógica del trabajo.
-rain07	Ordenar un sistema para que no tenga contradicciones.	1	4	Te	Ti	Fe	Fi	Coherencia interna del sistema: Ti, lógica de sistemas.
-rain08	Mover el ánimo de un grupo con una frase.	2	4	Te	Ti	Fe	Fi	Clima emocional: Fe, ética de emociones.
-rain09	Saber a quién se quiere y a quién no, sin dudarlo.	3	4	Te	Ti	Fe	Fi	Distancia personal: Fi, ética de relaciones.
-rain10	Elegir el método más eficaz para terminar algo.	0	4	Te	Ti	Fe	Fi	El método que rinde: Te, lógica del trabajo.
-rain11	Función 1: la más fuerte y consciente.	0	4	base	creativa	rol	dolorosa	La función 1 es la base (programa).
-rain12	Función 2: fuerte y flexible, experimenta.	1	4	base	creativa	rol	dolorosa	La función 2 es la creativa.
-rain13	Función 3: débil, se muestra para quedar bien.	2	4	base	creativa	rol	dolorosa	La función 3 es el rol.
-rain14	Función 4: la más problemática, el punto débil.	3	4	base	creativa	rol	dolorosa	La función 4 es la dolorosa.
-rain15	La función programa del tipo.	0	4	base	creativa	rol	dolorosa	El programa es la base (1).
-rain16	Función 5: la más débil, acepta ayuda con gratitud.	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 5 es la sugestiva.
-rain17	Función 6: débil pero valiosa, compara con un estándar interno.	1	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 6 es la Mobilizing.
-rain18	Función 7: fuerte, advierte de lo que NO hay que hacer.	2	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 7 es la Observing.
-rain19	Función 8: fuerte pero casi inconsciente, previene en silencio.	3	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 8 es la Demostrativa.
-rain20	La función que pide ayuda sin crítica.	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La sugestiva (5) acepta ayuda con gratitud.
-rain21	Funciones 1 y 2: lo más fuerte y consciente.	0	4	Ego	Superego	Superid	Id	Las funciones 1-2 forman el Ego.
-rain22	Funciones 3 y 4: débiles pero conscientes, incómodas.	1	4	Ego	Superego	Superid	Id	Las funciones 3-4 forman el Superego.
-rain23	Funciones 5 y 6: débiles e inconscientes, piden ayuda.	2	4	Ego	Superego	Superid	Id	Las funciones 5-6 forman el Superid.
-rain24	Funciones 7 y 8: fuertes, vigilan la seguridad.	3	4	Ego	Superego	Superid	Id	Las funciones 7-8 forman el Id.
-rain25	El bloque infantil, el que consume información con gusto.	2	4	Ego	Superego	Superid	Id	El Superid (5-6) es el bloque infantil.
+rain01	Tu vecino va a tirar una silla rota. Tú la miras un rato y le dices: «esto se puede arreglar y servir como banco para el jardín». ¿Qué elemento está hablando?	0	4	Ne	Ni	Se	Si	Ne: energía potencial del objeto, sus capacidades y su esencia.
+rain02	Quedaron en verse a las seis. Son las cinco y media y ya estás intranquilo: si no sales ahora, llegas tarde, y si llegas tarde, se arruina el plan. ¿Qué elemento está hablando?	1	4	Ne	Ni	Se	Si	Desarrollo en el tiempo: Ni, intuición de tiempo.
+rain03	Entra alguien a la sala y sin que diga una palabra ya sabes si es fuerte, cómo se viste y qué lugar ocupa. ¿Qué elemento está hablando?	2	4	Ne	Ni	Se	Si	Apariencia y fuerza: Se, sensación de fuerza.
+rain04	Llevas horas sentado en esa silla y el cuerpo te dice que ya no aguanta: te duele la espalda y necesitas moverte. ¿Qué elemento está hablando?	3	4	Ne	Ni	Se	Si	Estado del cuerpo: Si, sensación de bienestar.
+rain05	Le cuentan una idea nueva y de inmediato ve qué tiene dentro, para qué sirve de verdad y en qué se podría convertir. ¿Qué elemento está hablando?	0	4	Ne	Ni	Se	Si	Ne: la esencia y los conceptos de una idea, su energía potencial.
+rain06	Le piden comprobar si un trabajo salió bien. Pide los números, compara lo que se hizo con lo que se debía hacer y decide con los datos. ¿Qué elemento está hablando?	0	4	Te	Ti	Fe	Fi	Trabajo y eficacia medible: Te, lógica del trabajo.
+rain07	Está armando las reglas de un juego y nota que dos reglas se contradicen: si una vale, la otra no puede valer. Las reordena hasta que todo encaje. ¿Qué elemento está hablando?	1	4	Te	Ti	Fe	Fi	Coherencia interna del sistema: Ti, lógica de sistemas.
+rain08	El grupo está apagado y aburrido. Dice una frase con el tono justo y de pronto todos se ríen y se animan. ¿Qué elemento está hablando?	2	4	Te	Ti	Fe	Fi	Clima emocional: Fe, ética de emociones.
+rain09	Conoce a alguien nuevo y en minutos sabe si le cae bien o mal, si le tiene confianza o si mejor mantiene su distancia. ¿Qué elemento está hablando?	3	4	Te	Ti	Fe	Fi	Distancia personal: Fi, ética de relaciones.
+rain10	Tiene que terminar un trabajo en una hora. Prueba dos formas de hacerlo, se queda con la que rinde más y la que menos esfuerzo gasta. ¿Qué elemento está hablando?	0	4	Te	Ti	Fe	Fi	El método que rinde: Te, lógica del trabajo.
+rain11	Cuando le preguntan por su tema, habla sin dudar, corrige a cualquiera que se equivoque y no se cansa de hacerlo: es su forma natural de ver el mundo. ¿Qué función está usando?	0	4	base	creativa	rol	dolorosa	La función 1 es la base (programa).
+rain12	Le ponen un problema enfrente y lo resuelve con una herramienta que maneja con soltura: la usa para producir, experimenta con ella y se enorgullece del resultado. ¿Qué función está usando?	1	4	base	creativa	rol	dolorosa	La función 2 es la creativa.
+rain13	En una reunión presume de algo que en realidad le cuesta: lo hace solo para quedar bien, lo mínimo necesario, y en cuanto puede deja de hacerlo. ¿Qué función está usando?	2	4	base	creativa	rol	dolorosa	La función 3 es el rol.
+rain14	Le piden algo en un tema que le incomoda: lo evita, se pone tenso y si tiene que hacerlo lo hace mal o se enoja. ¿Qué función está usando?	3	4	base	creativa	rol	dolorosa	La función 4 es la dolorosa.
+rain15	Es la función que nunca se apaga: la usa sin pensar, define cómo ve el mundo y todo lo demás gira alrededor de ella. ¿Qué función es?	0	4	base	creativa	rol	dolorosa	El programa es la base (1).
+rain16	Alguien le explica con calma algo que él no domina y lo recibe con gratitud: no critica, solo agradece que le ayuden en eso. ¿Qué función está usando?	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 5 es la sugestiva.
+rain17	Hay algo que valora mucho aunque le cueste: lo compara con un ideal que lleva dentro y quiere que se note que lo tiene. ¿Qué función está usando?	1	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 6 es la Mobilizing.
+rain18	Ve a alguien a punto de cometer un error que él ya cometió antes y le advierte: «por ahí no, eso no sale bien». ¿Qué función está usando?	2	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 7 es la Observing.
+rain19	Sin darse cuenta, previene un problema antes de que pase: actúa por instinto y solo después se da cuenta de lo que hizo. ¿Qué función está usando?	3	4	sugestiva	Mobilizing	Observing	Demostrativa	La función 8 es la Demostrativa.
+rain20	Le falta algo que no sabe hacer y no le da vergüenza pedirlo: acepta la ayuda tal como viene, sin criticar cómo se la dan. ¿Qué función está usando?	0	4	sugestiva	Mobilizing	Observing	Demostrativa	La sugestiva (5) acepta ayuda con gratitud.
+rain21	Son las dos funciones que usa con total seguridad y consciencia: con ellas piensa, decide y se muestra al mundo. ¿Qué bloque forman?	0	4	Ego	Superego	Superid	Id	Las funciones 1-2 forman el Ego.
+rain22	Son dos funciones débiles pero conscientes: las usa para cumplir con lo que se espera de él, aunque le incomoden. ¿Qué bloque forman?	1	4	Ego	Superego	Superid	Id	Las funciones 3-4 forman el Superego.
+rain23	Son dos funciones débiles que no controla: necesita que otros le ayuden con ellas y recibe esa ayuda con gusto. ¿Qué bloque forman?	2	4	Ego	Superego	Superid	Id	Las funciones 5-6 forman el Superid.
+rain24	Son dos funciones fuertes que trabajan en silencio: vigilan que nada salga mal y actúan sin que él se dé cuenta. ¿Qué bloque forman?	3	4	Ego	Superego	Superid	Id	Las funciones 7-8 forman el Id.
+rain25	Le dan información de ese tipo y la recibe como un niño con un dulce: la consume con gusto, pide más y no se cansa. ¿Qué bloque es?	2	4	Ego	Superego	Superid	Id	El Superid (5-6) es el bloque infantil.
 rain26	Función 3: ¿mental o vital?	0	2	Mental	Vital	-	-	Las posiciones 1-4 son el anillo mental.
 rain27	Función 6: ¿mental o vital?	1	2	Mental	Vital	-	-	Las posiciones 5-8 son el anillo vital.
 rain28	Función 1: ¿mental o vital?	0	2	Mental	Vital	-	-	La base (1) es mental: se usa consciente.

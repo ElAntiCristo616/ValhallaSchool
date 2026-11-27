@@ -154,9 +154,13 @@ class LluviaScreen extends MiniGame {
         TextView q = tv(a, "Clasifica la ficha:", 15, MUTED, REG);
         main.addView(q, lpm(M, W, 0, 0, 0, 10));
         optViews.clear();
+        // v1.3.5: las opciones se barajan en cada ficha (antes iban en el
+        // orden fijo del TSV: Ne/Ni/Se/Si y la correcta caía siempre en el
+        // mismo sitio). El tag sigue siendo el índice ORIGINAL.
+        int[] order = Quiz.shuffled(c.nOpts);
         for (int i = 0; i < c.nOpts; i++) {
-            final int ii = i;
-            TextView opt = optBtn(c.opts[i]);
+            final int ii = order[i];
+            TextView opt = optBtn(c.opts[ii]);
             LinearLayout holder = col(a);
             holder.addView(opt, lp(M, W));
             holder.setTag(ii);

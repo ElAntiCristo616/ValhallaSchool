@@ -370,11 +370,20 @@ final class GamesData {
         ArenaTurn[] turns = new ArenaTurn[3];
     }
 
-    /* ---- 7. Aventura: 1 sala, 5 acertijos + puerta final (JSON) ---- */
+    /* ---- 7. Aventura: 1 sala por cuadra, 5 acertijos + puerta final (JSON) ---- */
     static final class Riddle {
-        String point, question, key, explanation;
+        String point, question, key, explanation, quadra;
         String[] opts = new String[4];
         int answer;
+    }
+
+    /** Sala de una región: sus 5 acertijos y su puerta final. */
+    static final class Region {
+        String quadra;
+        ArrayList<Riddle> riddles = new ArrayList<>();
+        String doorQ, doorKeys, doorWhy;
+        String[] doorOpts = new String[4];
+        int doorAnswer;
     }
 
     static final ArrayList<Riddle> AVENTURA = new ArrayList<>();
@@ -382,28 +391,65 @@ final class GamesData {
     static final String[] AVENTURA_DOOR_OPTS = new String[4];
     static int AVENTURA_DOOR_ANSWER;
     static String AVENTURA_DOOR_WHY;
+    /** Las 4 regiones por cuadra (Beta, Gamma y Delta están cerradas en la
+     *  pantalla, pero su contenido ya está filtrado por su cuadra). */
+    static final java.util.LinkedHashMap<String, Region> AVENTURA_REGIONS = new java.util.LinkedHashMap<>();
+
+    /** Acertijos de una región por su cuadra (para cuando se abra). */
+    static ArrayList<Riddle> riddlesFor(String quadra) {
+        Region r = AVENTURA_REGIONS.get(quadra);
+        return r == null ? new ArrayList<Riddle>() : r.riddles;
+    }
+
+    private static Riddle readRiddle(JSONObject ro) throws org.json.JSONException {
+        Riddle r = new Riddle();
+        r.point = ro.getString("point"); r.question = ro.getString("question");
+        r.key = ro.getString("key"); r.explanation = ro.getString("explanation");
+        r.quadra = ro.optString("quadra", "");
+        JSONArray opts = ro.getJSONArray("opts");
+        for (int k = 0; k < 4; k++) r.opts[k] = opts.getString(k);
+        r.answer = ro.getInt("answer");
+        return r;
+    }
+
+    private static Region readRegion(JSONObject o, String quadra) throws org.json.JSONException {
+        Region reg = new Region();
+        reg.quadra = quadra;
+        JSONArray rs = o.getJSONArray("riddles");
+        for (int i = 0; i < rs.length(); i++) {
+            Riddle r = readRiddle(rs.getJSONObject(i));
+            // v1.3.5: filtro por cuadra — una región solo sirve acertijos de
+            // su propia cuadra; si el JSON trajera uno de otra, no entra.
+            if (quadra.equals(r.quadra)) reg.riddles.add(r);
+        }
+        JSONObject d = o.getJSONObject("door");
+        if (!quadra.equals(d.optString("quadra", quadra))) throw new IllegalStateException("games_aventura.json: puerta de " + quadra + " con cuadra distinta");
+        reg.doorQ = d.getString("question");
+        reg.doorKeys = d.getString("keys");
+        JSONArray opts = d.getJSONArray("opts");
+        for (int k = 0; k < 4; k++) reg.doorOpts[k] = opts.getString(k);
+        reg.doorAnswer = d.getInt("answer");
+        reg.doorWhy = d.getString("why");
+        return reg;
+    }
 
     private static void loadAventura(Context c) {
         try {
             JSONObject o = new JSONObject(readJson(c, "games_aventura.json"));
-            JSONArray rs = o.getJSONArray("riddles");
-            for (int i = 0; i < rs.length(); i++) {
-                JSONObject ro = rs.getJSONObject(i);
-                Riddle r = new Riddle();
-                r.point = ro.getString("point"); r.question = ro.getString("question");
-                r.key = ro.getString("key"); r.explanation = ro.getString("explanation");
-                JSONArray opts = ro.getJSONArray("opts");
-                for (int k = 0; k < 4; k++) r.opts[k] = opts.getString(k);
-                r.answer = ro.getInt("answer");
-                AVENTURA.add(r);
+            // Alfa: la región abierta (formato anterior: riddles + door en raíz).
+            Region alfa = readRegion(o, "Alfa");
+            AVENTURA.addAll(alfa.riddles);
+            AVENTURA_DOOR_Q = alfa.doorQ;
+            AVENTURA_DOOR_KEYS = alfa.doorKeys;
+            for (int k = 0; k < 4; k++) AVENTURA_DOOR_OPTS[k] = alfa.doorOpts[k];
+            AVENTURA_DOOR_ANSWER = alfa.doorAnswer;
+            AVENTURA_DOOR_WHY = alfa.doorWhy;
+            AVENTURA_REGIONS.put("Alfa", alfa);
+            // Beta, Gamma y Delta: ya filtradas por su cuadra, listas para
+            // cuando se abran (sus acertijos solo preguntan de su cuadra).
+            for (String q : new String[]{"Beta", "Gamma", "Delta"}) {
+                if (o.has(q)) AVENTURA_REGIONS.put(q, readRegion(o.getJSONObject(q), q));
             }
-            JSONObject d = o.getJSONObject("door");
-            AVENTURA_DOOR_Q = d.getString("question");
-            AVENTURA_DOOR_KEYS = d.getString("keys");
-            JSONArray opts = d.getJSONArray("opts");
-            for (int k = 0; k < 4; k++) AVENTURA_DOOR_OPTS[k] = opts.getString(k);
-            AVENTURA_DOOR_ANSWER = d.getInt("answer");
-            AVENTURA_DOOR_WHY = d.getString("why");
         } catch (Exception e) {
             throw new IllegalStateException("games_aventura.json", e);
         }

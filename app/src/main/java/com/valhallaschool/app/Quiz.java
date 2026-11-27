@@ -36,12 +36,48 @@ final class Quiz {
      *  cada opción sigue siendo su índice ORIGINAL, así la corrección
      *  (comparar el tag contra `answer`) no cambia. */
     static int[] shuffled4() {
-        int[] o = {0, 1, 2, 3};
+        return shuffled(4);
+    }
+
+    /** Permutación barajada de {0..n-1} (v1.3.5: Lluvia tiene 2 o 4 opciones). */
+    static int[] shuffled(int n) {
+        int[] o = new int[n];
+        for (int i = 0; i < n; i++) o[i] = i;
         for (int i = o.length - 1; i > 0; i--) {
             int j = R.nextInt(i + 1);
             int t = o[i]; o[i] = o[j]; o[j] = t;
         }
         return o;
+    }
+
+    /** Palabras de contenido (español) para medir parecido entre ideas. */
+    private static final Set<String> STOP_ES = new HashSet<>(Arrays.asList(("que de la el en y los las un una con por para se su es del al como mas pero sus este esta son o a lo no si ya le les mi tu nos te me yo el ella esto eso hay fue han ser sin sobre entre cuando cada tambien muy todo todos asi porque que cual quien donde hasta desde puede pueden tiene tienen esta estan era eran somos".split(" "))));
+
+    private static Set<String> wordsOf(String s) {
+        Set<String> out = new HashSet<>();
+        for (String w : s.toLowerCase(Locale.ROOT).split("[^a-záéíóúñü]+")) {
+            if (w.length() >= 3 && !STOP_ES.contains(w)) out.add(w);
+        }
+        return out;
+    }
+
+    private static int overlap(Set<String> base, int other) {
+        int n = 0;
+        for (String w : wordsOf(Data.body[other] + " " + Data.head[other])) if (base.contains(w)) n++;
+        return n;
+    }
+
+    /** Las ideas de la misma lección más parecidas a `id` (por palabras en
+     *  común): los distractores ya no son al azar, sino los vecinos que de
+     *  verdad se confunden con la correcta (v1.3.5). */
+    private static List<Integer> nearest(int id, int n) {
+        int b = Data.book(id);
+        Set<String> base = wordsOf(Data.body[id] + " " + Data.head[id]);
+        ArrayList<Integer> cands = new ArrayList<>();
+        for (int i = b * Data.PER; i < b * Data.PER + Data.PER; i++) if (i != id) cands.add(i);
+        Collections.shuffle(cands, R);
+        cands.sort((x, y) -> overlap(base, y) - overlap(base, x));
+        return new ArrayList<>(cands.subList(0, Math.min(n, cands.size())));
     }
     private static final Pattern WORD = Pattern.compile("[A-Za-z][A-Za-z'-]{3,}");
     private static final Set<String> STOP = new HashSet<>(Arrays.asList(("that this with your from into than them they their what when will have more "
@@ -69,15 +105,10 @@ final class Quiz {
         return new ArrayList<>(c.subList(0, Math.min(n, c.size())));
     }
 
-    private static List<Integer> others(int id, int n) {
-        ArrayList<Integer> l = new ArrayList<>();
-        int b = Data.book(id);
-        for (int i = b * Data.PER; i < b * Data.PER + Data.PER; i++) if (i != id) l.add(i);
-        return sample(l, n);
-    }
-
     static Q headline(int id) {
-        ArrayList<Integer> o = new ArrayList<>(others(id, 3));
+        // v1.3.5: distractores = las 3 ideas más parecidas de la misma lección
+        // (mismo tema, palabras en común), no 3 al azar que se descartan solas.
+        ArrayList<Integer> o = new ArrayList<>(nearest(id, 3));
         o.add(id);
         Collections.shuffle(o, R);
         Q q = new Q();
@@ -111,7 +142,9 @@ final class Quiz {
 
     static Q trueFalse(int id) {
         boolean truth = R.nextBoolean();
-        int other = truth ? id : others(id, 1).get(0);
+        // v1.3.5: la explicación falsa es la más parecida de la lección, no
+        // una al azar: hay que leerla de verdad para notar que no corresponde.
+        int other = truth ? id : nearest(id, 1).get(0);
         Q q = new Q();
         q.id = id;
         q.two = true;
@@ -130,11 +163,25 @@ final class Quiz {
         Matcher m = WORD.matcher(hd);
         while (m.find()) if (!STOP.contains(m.group().toLowerCase(Locale.ROOT))) cands.add(m.group());
         if (cands.isEmpty()) return headline(id);
-        Collections.sort(cands, (a, b) -> b.length() - a.length());
-        String w = R.nextFloat() < 0.6f ? cands.get(0) : cands.get(R.nextInt(cands.size()));
+        // v1.3.5: la palabra que falta se elige al azar entre las candidatas
+        // (antes, el 60% de las veces era la MÁS LARGA del titular: se delataba).
+        String w = cands.get(R.nextInt(cands.size()));
         String lw = w.toLowerCase(Locale.ROOT);
+        // v1.3.5: distractores primero de la misma lección (palabras del mismo
+        // tema, largo parecido); si no alcanzan, del resto del libro.
         ArrayList<String> pool = new ArrayList<>();
-        for (String x : wordPool()) if (!x.equals(lw) && Math.abs(x.length() - lw.length()) <= 3) pool.add(x);
+        int b = Data.book(id);
+        for (int i = b * Data.PER; i < b * Data.PER + Data.PER && i < Data.N; i++) {
+            if (i == id) continue;
+            Matcher mm = WORD.matcher(Data.head[i]);
+            while (mm.find()) {
+                String x = mm.group().toLowerCase(Locale.ROOT);
+                if (!x.equals(lw) && !STOP.contains(x) && Math.abs(x.length() - lw.length()) <= 3 && !pool.contains(x)) pool.add(x);
+            }
+        }
+        if (pool.size() < 3) {
+            for (String x : wordPool()) if (!x.equals(lw) && Math.abs(x.length() - lw.length()) <= 3 && !pool.contains(x)) pool.add(x);
+        }
         ArrayList<String> o = new ArrayList<>(sample(pool, 3));
         o.add(lw);
         Collections.shuffle(o, R);
@@ -150,7 +197,13 @@ final class Quiz {
         q.id = id;
         q.prompt = "Completa la palabra que falta";
         q.head = sb;
-        q.body = Data.body[id];
+        // v1.3.5: si el cuerpo muestra la palabra que falta, también se tapa
+        // ahí (antes el cuerpo regalaba la respuesta).
+        String body = Data.body[id];
+        if (Pattern.compile("\\b" + Pattern.quote(w) + "\\b", Pattern.CASE_INSENSITIVE).matcher(body).find()) {
+            body = Pattern.compile("\\b" + Pattern.quote(w) + "\\b", Pattern.CASE_INSENSITIVE).matcher(body).replaceAll("___");
+        }
+        q.body = body;
         q.opts = o.toArray(new String[0]);
         q.answer = o.indexOf(lw);
         return q;

@@ -1,1 +1,348 @@
-{"door":{"answer":0,"keys":"Página antigua + Llave dorada","opts":["SEI","ESE","LII","LIE"],"question":"La puerta final pide conectar a ILE con su dual. ¿Quién es?","why":"El dual de ILE es SEI: Si base con Fe creativa. La puerta se abre."},"riddles":[{"answer":0,"explanation":"Alfa valora Ne, Ti, Si y Fe.","key":"Página antigua","opts":["Ne, Ti, Si, Fe","Se, Ti, Ni, Fe","Se, Fi, Ni, Te","Ne, Fi, Si, Te"],"point":"La estantería","question":"La estantería pide los cuatro valores de Alfa. ¿Cuáles son?"},{"answer":0,"explanation":"El Ego de ILE es Ne base con Ti creativa.","key":"Llave dorada","opts":["Ne y Ti","Si y Fe","Te y Ni","Fi y Se"],"point":"El cofre","question":"El cofre pide el Ego de ILE. ¿Qué dos funciones lo forman?"},{"answer":0,"explanation":"Fe base con Si creativa es ESE.","key":"Sello de cera","opts":["ESE","EIE","SEI","LII"],"point":"El retrato","question":"El retrato muestra a alguien con Fe base y Si creativa. ¿Qué tipo es?"},{"answer":0,"explanation":"Las posiciones 5 y 6 forman el Superid.","key":"Brújula","opts":["Superid","Ego","Superego","Id"],"point":"La puerta pequeña","question":"¿Qué bloque forman las posiciones 5 y 6?"},{"answer":0,"explanation":"Beta valora Se, Ti, Ni y Fe.","key":"Mapa del soción","opts":["Beta","Alfa","Gamma","Delta"],"point":"El mapa","question":"¿Qué cuadra valora Se, Ti, Ni y Fe?"}]}
+{
+ "door": {
+  "answer": 0,
+  "keys": "Página antigua + Llave dorada",
+  "opts": [
+   "SEI",
+   "ESE",
+   "LII",
+   "LIE"
+  ],
+  "question": "La puerta final pide conectar a ILE con su dual. ¿Quién es?",
+  "why": "El dual de ILE es SEI: Si base con Fe creativa. La puerta se abre.",
+  "quadra": "Alfa"
+ },
+ "riddles": [
+  {
+   "answer": 0,
+   "explanation": "Alfa valora Ne, Ti, Si y Fe.",
+   "key": "Página antigua",
+   "opts": [
+    "Ne, Ti, Si, Fe",
+    "Se, Ti, Ni, Fe",
+    "Se, Fi, Ni, Te",
+    "Ne, Fi, Si, Te"
+   ],
+   "point": "La estantería",
+   "question": "La estantería pide los cuatro valores de Alfa. ¿Cuáles son?",
+   "quadra": "Alfa"
+  },
+  {
+   "answer": 0,
+   "explanation": "El Ego de ILE es Ne base con Ti creativa.",
+   "key": "Llave dorada",
+   "opts": [
+    "Ne y Ti",
+    "Si y Fe",
+    "Te y Ni",
+    "Fi y Se"
+   ],
+   "point": "El cofre",
+   "question": "El cofre pide el Ego de ILE. ¿Qué dos funciones lo forman?",
+   "quadra": "Alfa"
+  },
+  {
+   "answer": 0,
+   "explanation": "Fe base con Si creativa es ESE.",
+   "key": "Sello de cera",
+   "opts": [
+    "ESE",
+    "EIE",
+    "SEI",
+    "LII"
+   ],
+   "point": "El retrato",
+   "question": "El retrato muestra a alguien con Fe base y Si creativa. ¿Qué tipo es?",
+   "quadra": "Alfa"
+  },
+  {
+   "answer": 0,
+   "explanation": "Si base con Fe creativa es SEI, el dual de ILE.",
+   "key": "Brújula",
+   "opts": [
+    "SEI",
+    "ESE",
+    "EIE",
+    "LII"
+   ],
+   "point": "La puerta pequeña",
+   "question": "El espejo muestra a alguien con Si base y Fe creativa. ¿Qué tipo es?",
+   "quadra": "Alfa"
+  },
+  {
+   "answer": 0,
+   "explanation": "Ti base con Ne creativa es LII, el pensador de Alfa.",
+   "key": "Mapa del soción",
+   "opts": [
+    "LII",
+    "ILE",
+    "LSI",
+    "EIE"
+   ],
+   "point": "El mapa",
+   "question": "El mapa pide el tipo de Alfa con Ti base y Ne creativa. ¿Quién es?",
+   "quadra": "Alfa"
+  }
+ ],
+ "Beta": {
+  "riddles": [
+   {
+    "answer": 0,
+    "explanation": "Beta valora Se, Ni, Fe y Ti.",
+    "key": "Espada",
+    "opts": [
+     "Se, Ni, Fe, Ti",
+     "Ne, Ti, Si, Fe",
+     "Se, Fi, Ni, Te",
+     "Ne, Fi, Si, Te"
+    ],
+    "point": "La arena",
+    "question": "La arena pide los cuatro valores de Beta. ¿Cuáles son?",
+    "quadra": "Beta"
+   },
+   {
+    "answer": 0,
+    "explanation": "El Ego de SLE es Se base con Ti creativa.",
+    "key": "Corona",
+    "opts": [
+     "Se y Ti",
+     "Ni y Fe",
+     "Te y Ni",
+     "Fi y Se"
+    ],
+    "point": "El trono",
+    "question": "El trono pide el Ego de SLE. ¿Qué dos funciones lo forman?",
+    "quadra": "Beta"
+   },
+   {
+    "answer": 0,
+    "explanation": "Ni base con Fe creativa es IEI, el dual de SLE.",
+    "key": "Máscara",
+    "opts": [
+     "IEI",
+     "EIE",
+     "ILI",
+     "SEI"
+    ],
+    "point": "El espejo",
+    "question": "El espejo muestra a alguien con Ni base y Fe creativa. ¿Qué tipo es?",
+    "quadra": "Beta"
+   },
+   {
+    "answer": 0,
+    "explanation": "El dual de LSI es EIE: Fe base con Ni creativa cubre el Superid de LSI (Fe, Ni).",
+    "key": "Yunque",
+    "opts": [
+     "EIE",
+     "IEI",
+     "ESE",
+     "LII"
+    ],
+    "point": "La forja",
+    "question": "¿Quién es el dual de LSI?",
+    "quadra": "Beta"
+   },
+   {
+    "answer": 0,
+    "explanation": "Fe base con Ni creativa es EIE.",
+    "key": "Antorcha",
+    "opts": [
+     "EIE",
+     "ESE",
+     "IEI",
+     "SEI"
+    ],
+    "point": "La hoguera",
+    "question": "La hoguera pide el tipo de Beta con Fe base y Ni creativa. ¿Quién es?",
+    "quadra": "Beta"
+   }
+  ],
+  "door": {
+   "answer": 0,
+   "keys": "Espada + Corona",
+   "opts": [
+    "IEI",
+    "EIE",
+    "SEI",
+    "ILI"
+   ],
+   "question": "La puerta final pide conectar a SLE con su dual. ¿Quién es?",
+   "why": "El dual de SLE es IEI: Ni base con Fe creativa. La puerta se abre.",
+   "quadra": "Beta"
+  }
+ },
+ "Gamma": {
+  "riddles": [
+   {
+    "answer": 0,
+    "explanation": "Gamma valora Se, Ni, Te y Fi.",
+    "key": "Moneda",
+    "opts": [
+     "Se, Ni, Te, Fi",
+     "Ne, Ti, Si, Fe",
+     "Se, Ti, Ni, Fe",
+     "Ne, Fi, Si, Te"
+    ],
+    "point": "El mercado",
+    "question": "El mercado pide los cuatro valores de Gamma. ¿Cuáles son?",
+    "quadra": "Gamma"
+   },
+   {
+    "answer": 0,
+    "explanation": "El Ego de LIE es Te base con Ni creativa.",
+    "key": "Pesa",
+    "opts": [
+     "Te y Ni",
+     "Se y Fi",
+     "Ni y Te",
+     "Fi y Se"
+    ],
+    "point": "La balanza",
+    "question": "La balanza pide el Ego de LIE. ¿Qué dos funciones lo forman?",
+    "quadra": "Gamma"
+   },
+   {
+    "answer": 0,
+    "explanation": "Fi base con Se creativa es ESI, el dual de LIE.",
+    "key": "Sello",
+    "opts": [
+     "ESI",
+     "SEE",
+     "EII",
+     "SEI"
+    ],
+    "point": "El retrato",
+    "question": "El retrato muestra a alguien con Fi base y Se creativa. ¿Qué tipo es?",
+    "quadra": "Gamma"
+   },
+   {
+    "answer": 0,
+    "explanation": "El dual de ILI es SEE: Se base con Fi creativa cubre el Superid de ILI (Se, Fi).",
+    "key": "Lente",
+    "opts": [
+     "SEE",
+     "ESI",
+     "IEI",
+     "SLE"
+    ],
+    "point": "El faro",
+    "question": "¿Quién es el dual de ILI?",
+    "quadra": "Gamma"
+   },
+   {
+    "answer": 0,
+    "explanation": "Ni base con Te creativa es ILI.",
+    "key": "Llave de plata",
+    "opts": [
+     "ILI",
+     "IEI",
+     "LIE",
+     "IEE"
+    ],
+    "point": "El cofre",
+    "question": "El cofre pide el tipo de Gamma con Ni base y Te creativa. ¿Quién es?",
+    "quadra": "Gamma"
+   }
+  ],
+  "door": {
+   "answer": 0,
+   "keys": "Moneda + Pesa",
+   "opts": [
+    "ILI",
+    "IEI",
+    "ESI",
+    "SLE"
+   ],
+   "question": "La puerta final pide conectar a SEE con su dual. ¿Quién es?",
+   "why": "El dual de SEE es ILI: Ni base con Te creativa. La puerta se abre.",
+   "quadra": "Gamma"
+  }
+ },
+ "Delta": {
+  "riddles": [
+   {
+    "answer": 0,
+    "explanation": "Delta valora Ne, Si, Te y Fi.",
+    "key": "Semilla",
+    "opts": [
+     "Ne, Si, Te, Fi",
+     "Ne, Ti, Si, Fe",
+     "Se, Ni, Te, Fi",
+     "Se, Ti, Ni, Fe"
+    ],
+    "point": "El jardín",
+    "question": "El jardín pide los cuatro valores de Delta. ¿Cuáles son?",
+    "quadra": "Delta"
+   },
+   {
+    "answer": 0,
+    "explanation": "El Ego de SLI es Si base con Te creativa.",
+    "key": "Martillo",
+    "opts": [
+     "Si y Te",
+     "Ne y Fi",
+     "Te y Si",
+     "Fi y Ne"
+    ],
+    "point": "El taller",
+    "question": "El taller pide el Ego de SLI. ¿Qué dos funciones lo forman?",
+    "quadra": "Delta"
+   },
+   {
+    "answer": 0,
+    "explanation": "Fi base con Ne creativa es EII, el dual de LSE.",
+    "key": "Pincel",
+    "opts": [
+     "EII",
+     "IEE",
+     "ESI",
+     "SEI"
+    ],
+    "point": "El cuadro",
+    "question": "El cuadro muestra a alguien con Fi base y Ne creativa. ¿Qué tipo es?",
+    "quadra": "Delta"
+   },
+   {
+    "answer": 0,
+    "explanation": "El dual de IEE es SLI: Si base con Te creativa cubre el Superid de IEE (Si, Te).",
+    "key": "Cántaro",
+    "opts": [
+     "SLI",
+     "LSE",
+     "SEI",
+     "ESE"
+    ],
+    "point": "El río",
+    "question": "¿Quién es el dual de IEE?",
+    "quadra": "Delta"
+   },
+   {
+    "answer": 0,
+    "explanation": "Te base con Si creativa es LSE.",
+    "key": "Tronco",
+    "opts": [
+     "LSE",
+     "SLI",
+     "LIE",
+     "LII"
+    ],
+    "point": "La cabaña",
+    "question": "La cabaña pide el tipo de Delta con Te base y Si creativa. ¿Quién es?",
+    "quadra": "Delta"
+   }
+  ],
+  "door": {
+   "answer": 0,
+   "keys": "Semilla + Martillo",
+   "opts": [
+    "SLI",
+    "LSE",
+    "SEI",
+    "ESE"
+   ],
+   "question": "La puerta final pide conectar a IEE con su dual. ¿Quién es?",
+   "why": "El dual de IEE es SLI: Si base con Te creativa. La puerta se abre.",
+   "quadra": "Delta"
+  }
+ }
+}
