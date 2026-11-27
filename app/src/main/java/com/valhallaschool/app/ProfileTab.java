@@ -21,6 +21,8 @@ import static com.valhallaschool.app.Ui.*;
 final class ProfileTab extends MainActivity.Tab {
     private LinearLayout content;
     private ScrollView sc;
+    /** v1.2.3 — la cuadrícula de los 48 avatares sale colapsada por defecto. */
+    private boolean avatarsOpen = false;
 
     ProfileTab(MainActivity a) { super(a); }
 
@@ -137,9 +139,7 @@ final class ProfileTab extends MainActivity.Tab {
         content.addView(link("Borrar todo el progreso", RED, v -> a.ask("¿Borrar todo?",
                 "Esto borra el historial, las ideas guardadas, el XP, las rachas y las lecciones. Exporta un respaldo primero si quieres conservarlo.",
                 "Borrar", a::resetAll, true)));
-        TextView foot = tv(a, Data.NB + " lecciones · " + Data.N + " ideas · sin internet", 12, MUTED, REG);
-        foot.setGravity(Gravity.CENTER);
-        content.addView(foot, lpm(M, W, 0, 24, 0, 0));
+        // v1.2.3 — el pie «sin internet» se quitó por completo: sobraba.
 
         content.addView(section(a, "Créditos"));
         LinearLayout cr = box(a);
@@ -187,8 +187,14 @@ final class ProfileTab extends MainActivity.Tab {
         sub.setLineSpacing(0, 1.3f);
         card.addView(sub, lpm(M, W, 0, 10, 0, 0));
 
-        TextView gl = tv(a, "Elige tu personaje (48 avatares)", 13, MUTED, REG);
-        card.addView(gl, lpm(M, W, 0, 18, 0, 10));
+        TextView toggle = tv(a, avatarsOpen ? "Ocultar avatares ▴" : "Elige tu personaje · 48 avatares ▾", 14, ACCENT, BLACK);
+        toggle.setGravity(Gravity.CENTER);
+        toggle.setBackground(round(SURF2, 12, LINE, 1));
+        toggle.setPadding(dp(14), dp(12), dp(14), dp(12));
+        toggle.setOnClickListener(v -> { avatarsOpen = !avatarsOpen; refresh(); });
+        ripple(toggle, true);
+        card.addView(toggle, lpm(M, W, 0, 18, 0, 10));
+        if (avatarsOpen) {
         for (int r = 0; r < 12; r++) {
             LinearLayout row = row(a);
             for (int c = 0; c < 4; c++) {
@@ -218,6 +224,7 @@ final class ProfileTab extends MainActivity.Tab {
             }
             card.addView(row, lp(M, W));
         }
+        } // fin del desplegable de avatares
 
         TextView tl2 = tv(a, "Tu type", 13, MUTED, REG);
         card.addView(tl2, lpm(M, W, 0, 10, 0, 10));
@@ -243,7 +250,7 @@ final class ProfileTab extends MainActivity.Tab {
         TextView nl = tv(a, "Nickname", 13, MUTED, REG);
         card.addView(nl, lpm(M, W, 0, 10, 0, 6));
         EditText ne = new EditText(a);
-        ne.setHint("Remy");
+        ne.setHint("Sin nombre");
         ne.setHintTextColor(MUTED);
         ne.setTextColor(TEXT);
         ne.setTextSize(16);
@@ -276,7 +283,6 @@ final class ProfileTab extends MainActivity.Tab {
             box.addView(tv(a, "Tu progreso se guarda en la nube.", 13, MUTED, REG), lpm(M, W, 0, 4, 0, 10));
             box.addView(link("Cerrar sesión", RED, v -> { SupabaseAuth.INSTANCE.signOut(); refresh(); }));
             content.addView(box, lpm(M, W, 0, 0, 0, 12));
-            rankingBox();
         } else {
             EditText em = new EditText(a);
             em.setHint("Correo");
@@ -307,6 +313,22 @@ final class ProfileTab extends MainActivity.Tab {
             box.addView(bs, lp(M, W));
             content.addView(box, lpm(M, W, 0, 0, 0, 12));
         }
+        // v1.2.3 — el Ranking se ve SIEMPRE: con sesión, el ranking normal;
+        // sin sesión, una tarjeta que explica que la nube necesita cuenta.
+        if (SupabaseAuth.INSTANCE.isSignedIn()) rankingBox();
+        else rankingNoSession(box);
+    }
+
+    /** Ranking sin sesión: explica que la nube y el ranking necesitan cuenta. */
+    private void rankingNoSession(final View accountBox) {
+        content.addView(section(a, "Ranking"));
+        LinearLayout box = box(a);
+        box.addView(tv(a, "Sin cuenta no hay ranking.", 16, TEXT, BLACK));
+        TextView t = tv(a, "Tu progreso se guarda en este teléfono, pero el ranking y la nube necesitan cuenta. Crea tu cuenta o entra para que tu XP aparezca en el ranking.", 13, MUTED, REG);
+        t.setLineSpacing(0, 1.3f);
+        box.addView(t, lpm(M, W, 0, 6, 0, 10));
+        box.addView(btn(a, "Crear cuenta o entrar", B_YELLOW, v -> sc.post(() -> sc.smoothScrollTo(0, accountBox.getTop()))), lp(M, W));
+        content.addView(box, lpm(M, W, 0, 0, 0, 12));
     }
 
     private void authGo(String email, String pass, boolean signup, TextView st) {
@@ -322,6 +344,13 @@ final class ProfileTab extends MainActivity.Tab {
                 if (err == null) {
                     a.toast("¡Bienvenido a Valhalla School!", false);
                     refresh();
+                    // v1.2.3 — espejo en la nube al entrar: antes, al iniciar sesión
+                    // nada se subía hasta terminar otra lección, así que el ranking
+                    // no te veía. Ahora tu XP y nivel se suben de inmediato.
+                    try {
+                        Store S = Store.I;
+                        GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), S.displayName(), (v, e2) -> {});
+                    } catch (Exception ignored) { /* la nube es espejo, no bloquea */ }
                 } else {
                     st.setText(err.getMessage() != null ? err.getMessage() : "Error al entrar.");
                     st.setTextColor(RED);

@@ -4,7 +4,6 @@ import android.graphics.drawable.GradientDrawable;
 import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -37,10 +36,11 @@ final class SessionScreen extends MainActivity.Screen {
 
     private final Views.Bar bar;
     private final TextView comboTx, fbTitle, fbText, btn;
-    private final ImageView fbAvatar;
     private final LinearLayout main, foot;
     private final View divider;
     private final ScrollView sc;
+    /** Acompañante inmersivo (v1.2.3): también en las lecciones normales. */
+    private Companion companion;
 
     SessionScreen(MainActivity a, List<Integer> learn, List<Quiz.Q> qs, int bonus, Runnable onDone) {
         super(a);
@@ -75,12 +75,6 @@ final class SessionScreen extends MainActivity.Screen {
         col.addView(divider, lp(M, dp(2)));
         foot = col(a);
         foot.setPadding(dp(18), dp(16), dp(18), dp(18));
-        fbAvatar = new ImageView(a);
-        fbAvatar.setAdjustViewBounds(true);
-        fbAvatar.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        fbAvatar.setLayoutParams(lp(dp(56), dp(56)));
-        fbAvatar.setVisibility(View.GONE);
-        foot.addView(fbAvatar);
         fbTitle = tv(a, "", 20, GREEN, BLACK);
         fbText = tv(a, "", 15, TEXT, REG);
         fbText.setLineSpacing(0, 1.25f);
@@ -135,9 +129,9 @@ final class SessionScreen extends MainActivity.Screen {
             if (SupabaseAuth.INSTANCE.isSignedIn()) {
                 GameProgressSync.INSTANCE.upsertProgress(module, b, S.todayXP(), S.streak(), 3, S.gems, true,
                         (v, e) -> {});
-                SupabaseAuth.Session sess = SupabaseAuth.INSTANCE.currentSession();
-                String email = sess != null ? sess.getEmail() : null;
-                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), email,
+                // v1.2.3 — el nombre del ranking es el nickname («Sin nombre» si
+                // no escribió uno); antes se mandaba el correo.
+                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), S.displayName(),
                         (v, e) -> {});
             }
         } catch (Exception ignored) { /* la nube es espejo, no bloquea */ }
@@ -161,14 +155,6 @@ final class SessionScreen extends MainActivity.Screen {
         divider.setVisibility(state == 0 ? View.VISIBLE : View.INVISIBLE);
         fbTitle.setVisibility(state == 0 ? View.GONE : View.VISIBLE);
         fbText.setVisibility(state == 2 ? View.VISIBLE : View.GONE);
-        // Avatar de Binky que acompaña el feedback (rotación: uno distinto cada vez).
-        if (state == 0) {
-            fbAvatar.setVisibility(View.GONE);
-        } else {
-            android.graphics.Bitmap b = Avatars.load(a, Avatars.nextFile(), dp(160));
-            if (b != null) { fbAvatar.setImageBitmap(b); fbAvatar.setVisibility(View.VISIBLE); }
-            else fbAvatar.setVisibility(View.GONE);
-        }
     }
 
     private void setBtn(String label, int style) {
@@ -183,6 +169,11 @@ final class SessionScreen extends MainActivity.Screen {
         main.removeAllViews();
         item = queue.poll();
         if (item == null) { finish(); return; }
+        // Acompañante inmersivo (v1.2.3): personaje GRANDE que anima en cada
+        // tarjeta de la lección, igual que en práctica (mismo Companion).
+        companion = new Companion(a);
+        main.addView(companion.root(), lpm(M, W, 0, 0, 0, 4));
+        companion.next();
         if (item instanceof Integer) {
             phase = LEARN;
             int id = (Integer) item;
@@ -264,6 +255,7 @@ final class SessionScreen extends MainActivity.Screen {
         Store S = Store.I;
         Quiz.Q q = (Quiz.Q) item;
         boolean ok = sel == q.answer;
+        if (companion != null) companion.react(ok);
         for (int k = 0; k < opts.length; k++) optStyle(opts[k], k == q.answer ? 2 : (k == sel && !ok) ? 3 : 0);
         if (graded.add(q.id)) {
             S.srsGrade(q.id, ok);

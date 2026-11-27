@@ -316,10 +316,9 @@ final class PracticeScreen extends MainActivity.Screen {
             if (SupabaseAuth.INSTANCE.isSignedIn()) {
                 GameProgressSync.INSTANCE.upsertProgress(6, level, S.todayXP(), S.streak(), 3, S.gems, completed,
                         (v, e) -> {});
-                SupabaseAuth.Session sess = SupabaseAuth.INSTANCE.currentSession();
-                String email = sess != null ? sess.getEmail() : null;
-                String name = S.nickname != null && !S.nickname.trim().isEmpty() ? S.nickname.trim() : email;
-                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), name,
+                // v1.2.3 — el nombre del ranking es el nickname («Sin nombre» si
+                // no escribió uno); antes se mandaba el correo como fallback.
+                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), S.displayName(),
                         (v, e) -> {});
             }
         } catch (Exception ignored) { /* la nube es espejo, no bloquea */ }

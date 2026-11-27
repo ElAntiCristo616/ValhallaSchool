@@ -18,6 +18,11 @@ final class ReaderScreen extends MainActivity.Screen {
         bar.addView(one(tv(a, title, 16, TEXT, BOLD)), lpm(0, W, 6, 0, 0, 0));
         ((LinearLayout.LayoutParams) bar.getChildAt(1).getLayoutParams()).weight = 1;
         col.addView(bar, lp(M, W));
+        // Acompañante inmersivo (v1.2.3): también al leer ideas — te acompaña
+        // con ánimos mientras lees (aquí no hay respuestas, así que no reacciona).
+        Companion companion = new Companion(a);
+        col.addView(companion.root(), lpm(M, W, 0, 0, 0, 4));
+        companion.next();
         final int[] p = {0};
         Feed f = new Feed(a, n -> {
             int e = Math.min(ids.size(), p[0] + n);

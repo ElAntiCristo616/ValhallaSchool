@@ -204,9 +204,14 @@ final class Store {
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
-    /** Nombre que usan los personajes para animarte (tu nickname, o «Remy»). */
+    /** ¿El usuario escribió un nickname propio (distinto del valor por defecto)? */
+    boolean hasCustomNickname() {
+        return nickname != null && !nickname.trim().isEmpty();
+    }
+
+    /** Nombre que se muestra por defecto («Sin nombre» si no escribió uno). */
     String displayName() {
-        return nickname != null && !nickname.trim().isEmpty() ? nickname.trim() : "Remy";
+        return hasCustomNickname() ? nickname.trim() : "Sin nombre";
     }
 
     /* ---------------- dates ---------------- */
