@@ -15,6 +15,10 @@ deletrean la palabra en la rejilla, imagenes de memoria presentes,
 h5p.json con la libreria principal correcta y dependencias que existen
 en assets/h5p-libraries/, y que no hay texto GPL en lo empaquetado.
 
+Sin la carpeta fuente (en CI, donde content/ no esta en el repo), verifica
+solo el contenido generado contra los conteos esperados de EXPECTED y la
+consistencia interna; con la fuente presente compara ademas contra ella.
+
 Uso: python3 tools/tests/test_h5p_conversion.py [--content ...] [--root .]
 """
 import json
@@ -67,14 +71,25 @@ def test_memoria(mod, data):
     gdir = os.path.join(GAMES, mod, "memoria")
     content = load(os.path.join(gdir, "content", "content.json"))
     cards = content["cards"]
-    check(len(cards) == len(data["memoria"]["pares"]) == EXPECTED[mod]["memoria"],
+    check(len(cards) == EXPECTED[mod]["memoria"],
           f"{mod}/memoria: {len(cards)} cartas, esperadas {EXPECTED[mod]['memoria']}")
-    for i, ((term, defi), card) in enumerate(
-            zip(data["memoria"]["pares"], cards)):
-        check(card.get("imageAlt") == term,
-              f"{mod}/memoria carta {i}: imageAlt {card.get('imageAlt')!r} != {term!r}")
-        check(card.get("matchAlt") == defi,
-              f"{mod}/memoria carta {i}: matchAlt != definicion")
+    if data is not None:
+        check(len(cards) == len(data["memoria"]["pares"]),
+              f"{mod}/memoria: {len(cards)} cartas != fuente "
+              f"{len(data['memoria']['pares'])}")
+    pairs = data["memoria"]["pares"] if data is not None else [None] * len(cards)
+    for i, (pair, card) in enumerate(zip(pairs, cards)):
+        if pair is not None:
+            term, defi = pair
+            check(card.get("imageAlt") == term,
+                  f"{mod}/memoria carta {i}: imageAlt {card.get('imageAlt')!r} != {term!r}")
+            check(card.get("matchAlt") == defi,
+                  f"{mod}/memoria carta {i}: matchAlt != definicion")
+        else:
+            check(bool(card.get("imageAlt")),
+                  f"{mod}/memoria carta {i}: imageAlt vacío")
+            check(bool(card.get("matchAlt")),
+                  f"{mod}/memoria carta {i}: matchAlt vacío")
         for key in ("image", "match"):
             img = card.get(key, {})
             check(img.get("path", "").startswith("images/card-"),
@@ -94,27 +109,45 @@ def test_arrastrar(mod, data):
     content = load(os.path.join(gdir, "content", "content.json"))
     task = content["question"]["task"]
     items, zonas = EXPECTED[mod]["arrastrar"]
-    check(len(task["elements"]) == len(data["arrastrar"]["items"]) == items,
+    check(len(task["elements"]) == items,
           f"{mod}/arrastrar: {len(task['elements'])} items, esperados {items}")
-    check(len(task["dropZones"]) == len(data["arrastrar"]["zonas"]) == zonas,
+    check(len(task["dropZones"]) == zonas,
           f"{mod}/arrastrar: {len(task['dropZones'])} zonas, esperadas {zonas}")
     zone_names = [z["label"] for z in task["dropZones"]]
-    check(zone_names == data["arrastrar"]["zonas"],
-          f"{mod}/arrastrar: nombres de zona distintos de games.json")
-    for j, (it, el) in enumerate(zip(data["arrastrar"]["items"],
-                                     task["elements"])):
+    if data is not None:
+        check(len(task["elements"]) == len(data["arrastrar"]["items"]),
+              f"{mod}/arrastrar: {len(task['elements'])} items != fuente "
+              f"{len(data['arrastrar']['items'])}")
+        check(len(task["dropZones"]) == len(data["arrastrar"]["zonas"]),
+              f"{mod}/arrastrar: {len(task['dropZones'])} zonas != fuente "
+              f"{len(data['arrastrar']['zonas'])}")
+        check(zone_names == data["arrastrar"]["zonas"],
+              f"{mod}/arrastrar: nombres de zona distintos de games.json")
+    for j, el in enumerate(task["elements"]):
         check(el["type"]["library"] == "H5P.AdvancedText 1.1",
               f"{mod}/arrastrar item {j}: libreria {el['type']['library']}")
-        check(it["texto"] in el["type"]["params"]["text"],
-              f"{mod}/arrastrar item {j}: texto {it['texto']!r} no esta en el elemento")
-        check(el["dropZones"] == [str(zone_names.index(it["zona"]))],
-              f"{mod}/arrastrar item {j}: dropZones {el['dropZones']} "
-              f"!= zona {it['zona']!r}")
         check(0 <= el["x"] <= 100 and 0 <= el["y"] <= 100,
               f"{mod}/arrastrar item {j}: coordenadas fuera de 0-100")
+        if data is not None:
+            it = data["arrastrar"]["items"][j]
+            check(it["texto"] in el["type"]["params"]["text"],
+                  f"{mod}/arrastrar item {j}: texto {it['texto']!r} no esta en el elemento")
+            check(el["dropZones"] == [str(zone_names.index(it["zona"]))],
+                  f"{mod}/arrastrar item {j}: dropZones {el['dropZones']} "
+                  f"!= zona {it['zona']!r}")
+        else:
+            check(bool(el["type"]["params"].get("text")),
+                  f"{mod}/arrastrar item {j}: texto vacío")
+            check(all(z in [str(i) for i in range(len(zone_names))]
+                      for z in el["dropZones"]),
+                  f"{mod}/arrastrar item {j}: dropZones fuera de rango")
     for i, z in enumerate(task["dropZones"]):
-        want = [str(j) for j, it in enumerate(data["arrastrar"]["items"])
-                if it["zona"] == z["label"]]
+        if data is not None:
+            want = [str(j) for j, it in enumerate(data["arrastrar"]["items"])
+                    if it["zona"] == z["label"]]
+        else:
+            want = [str(j) for j, el in enumerate(task["elements"])
+                    if str(i) in el["dropZones"]]
         check(sorted(z["correctElements"]) == sorted(want),
               f"{mod}/arrastrar zona {i}: correctElements != items de la zona")
         check(0 <= z["x"] <= 100 and 0 <= z["y"] <= 100,
@@ -130,13 +163,18 @@ def test_crucigrama(mod, data):
     gdir = os.path.join(GAMES, mod, "crucigrama")
     content = load(os.path.join(gdir, "content", "content.json"))
     words = content["words"]
-    check(len(words) == len(data["crucigrama"]["palabras"])
-          == EXPECTED[mod]["crucigrama"],
+    check(len(words) == EXPECTED[mod]["crucigrama"],
           f"{mod}/crucigrama: {len(words)} palabras, esperadas "
           f"{EXPECTED[mod]['crucigrama']}")
-    grid = data["crucigrama"]["cuadricula"]
-    src = {(u["palabra"].upper(), u["pista"]): u
-           for u in data["crucigrama"]["ubicaciones"]}
+    src = None
+    grid = None
+    if data is not None:
+        check(len(words) == len(data["crucigrama"]["palabras"]),
+              f"{mod}/crucigrama: {len(words)} palabras != fuente "
+              f"{len(data['crucigrama']['palabras'])}")
+        grid = data["crucigrama"]["cuadricula"]
+        src = {(u["palabra"].upper(), u["pista"]): u
+               for u in data["crucigrama"]["ubicaciones"]}
     for w in words:
         check(re.fullmatch(r"[A-Z]+", w["answer"]) is not None,
               f"{mod}/crucigrama: respuesta no normalizada a MAYUSCULAS: "
@@ -145,6 +183,8 @@ def test_crucigrama(mod, data):
               f"{mod}/crucigrama: orientation invalida {w['orientation']!r}")
         check(w["fixWord"] is True,
               f"{mod}/crucigrama: fixWord no es true en {w['answer']}")
+        if src is None:
+            continue
         u = src.get((w["answer"], w["clue"]))
         check(u is not None,
               f"{mod}/crucigrama: palabra {w['answer']!r} sin ubicacion fuente")
@@ -172,15 +212,22 @@ def test_sopa(mod, data):
     gdir = os.path.join(GAMES, mod, "sopa")
     content = load(os.path.join(gdir, "content", "content.json"))
     p = content
-    check(len(p["words"]) == len(data["sopa"]["palabras"])
-          == EXPECTED[mod]["sopa"],
+    check(len(p["words"]) == EXPECTED[mod]["sopa"],
           f"{mod}/sopa: {len(p['words'])} palabras, esperadas "
           f"{EXPECTED[mod]['sopa']}")
-    check([w.upper() for w in data["sopa"]["palabras"]] == p["words"],
-          f"{mod}/sopa: palabras generadas != fuente en MAYUSCULAS")
-    grid = p["grid"]
-    check(grid == [r.upper() for r in data["sopa"]["cuadricula"]],
-          f"{mod}/sopa: rejilla generada != fuente en MAYUSCULAS")
+    if data is not None:
+        check(len(p["words"]) == len(data["sopa"]["palabras"]),
+              f"{mod}/sopa: {len(p['words'])} palabras != fuente "
+              f"{len(data['sopa']['palabras'])}")
+        check([w.upper() for w in data["sopa"]["palabras"]] == p["words"],
+              f"{mod}/sopa: palabras generadas != fuente en MAYUSCULAS")
+        grid = p["grid"]
+        check(grid == [r.upper() for r in data["sopa"]["cuadricula"]],
+              f"{mod}/sopa: rejilla generada != fuente en MAYUSCULAS")
+    else:
+        check(all(w == w.upper() for w in p["words"]),
+              f"{mod}/sopa: palabras no en MAYUSCULAS")
+        grid = p["grid"]
     for u in p["placements"]:
         w, (dr, dc) = u["palabra"], u["direccion"]
         spelled = "".join(
@@ -249,19 +296,30 @@ def main():
                             "h5p-libraries")
     totals = {"memoria": 0, "arrastrar": 0, "crucigrama": 0, "sopa": 0}
     for mod in MODULOS:
-        with open(os.path.join(content, mod, "games.json"),
-                  encoding="utf-8") as f:
-            data = json.load(f)
+        src = os.path.join(content, mod, "games.json")
+        if os.path.isfile(src):
+            with open(src, encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            print(f"AVISO: sin fuente {src}; verificando solo el contenido "
+                  f"generado contra los conteos esperados.")
+            data = None
         test_memoria(mod, data)
         test_arrastrar(mod, data)
         test_crucigrama(mod, data)
         test_sopa(mod, data)
         for game in ("memoria", "arrastrar", "crucigrama"):
             test_deps(mod, game)
-        totals["memoria"] += len(data["memoria"]["pares"])
-        totals["arrastrar"] += len(data["arrastrar"]["items"])
-        totals["crucigrama"] += len(data["crucigrama"]["palabras"])
-        totals["sopa"] += len(data["sopa"]["palabras"])
+        if data is not None:
+            totals["memoria"] += len(data["memoria"]["pares"])
+            totals["arrastrar"] += len(data["arrastrar"]["items"])
+            totals["crucigrama"] += len(data["crucigrama"]["palabras"])
+            totals["sopa"] += len(data["sopa"]["palabras"])
+        else:
+            totals["memoria"] += EXPECTED[mod]["memoria"]
+            totals["arrastrar"] += EXPECTED[mod]["arrastrar"][0]
+            totals["crucigrama"] += EXPECTED[mod]["crucigrama"]
+            totals["sopa"] += EXPECTED[mod]["sopa"]
     check(totals == {"memoria": 53, "arrastrar": 58,
                      "crucigrama": 100, "sopa": 95},
           f"Totales {totals} != 53/58/100/95")
