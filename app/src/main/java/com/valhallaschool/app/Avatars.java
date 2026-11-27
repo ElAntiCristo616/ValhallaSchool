@@ -36,19 +36,22 @@ final class Avatars {
         for (String t : TYPES) for (int v = 1; v <= 3; v++) FILES[k++] = t + "_Avatar" + v + ".png";
     }
 
+    /** Frases de la mascota (bocadillo pequeño en Inicio y Práctica). TODO
+     *  sarcasmo, burla o insulto, como el acompañante: NADA de elogios
+     *  sinceros. {name} = nombre de usuario actual (nickname o «Sin nombre»). */
     static final String[] PHRASES = {
-            "¡Tú puedes! Un ejemplo más.",
-            "Ese estuvo bueno. ¿El siguiente?",
-            "La sociónica se aprende jugando.",
-            "¡Vamos! Cada acierto suma.",
-            "Fallar también enseña: así se aprende.",
-            "¿Ya viste qué función era?",
-            "Sigue así, vas muy bien.",
-            "Un tipo a la vez, sin prisa.",
-            "¡Ese ejemplo era de los difíciles!",
-            "Respira y piensa en el Modelo A.",
-            "La práctica hace al tipador.",
-            "¿Otro round? Yo te acompaño.",
+            "¡Tú puedes, {name}! Un ejemplo más… a ver si no la cagas.",
+            "Ese estuvo bueno. ¿Casualidad o copiaste?",
+            "La sociónica se aprende jugando… tú, a duras penas.",
+            "¡Vamos, {name}! Cada acierto suma… cuando aciertas.",
+            "Fallar también enseña: tú ya eres todo un maestro.",
+            "¿Ya viste qué función era? Ni tú, ¿verdad?",
+            "Sigue así, {name}… total, peor no se puede.",
+            "Un tipo a la vez, sin prisa… que prisa no tienes, ¿o sí?",
+            "¡Ese ejemplo era de los difíciles! Por eso lo fallaste.",
+            "Respira y piensa en el Modelo A, {name}… si es que puedes.",
+            "La práctica hace al tipador. A ti todavía te falta práctica.",
+            "¿Otro round, {name}? Yo te acompaño… alguien tiene que reírse.",
     };
 
     private Avatars() {}
@@ -111,7 +114,7 @@ final class Avatars {
     static LinearLayout bubble(Context c) {
         LinearLayout r = row(c);
         r.addView(view(c, 56), lp(dp(56), dp(56)));
-        TextView t = tv(c, PHRASES[Quiz.R.nextInt(PHRASES.length)], 14, TEXT, REG);
+        TextView t = tv(c, PHRASES[Quiz.R.nextInt(PHRASES.length)].replace("{name}", Store.I.displayName()), 14, TEXT, REG);
         t.setBackground(round(SURF, 16, LINE, 1));
         t.setPadding(dp(14), dp(10), dp(14), dp(10));
         t.setLineSpacing(0, 1.25f);

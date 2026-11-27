@@ -27,7 +27,8 @@ import static com.valhallaschool.app.Ui.*;
  */
 final class LoopScreen extends MainActivity.Screen {
     private static final int ASK = 1, FEEDBACK = 2;
-    private static final String[] PRAISE = {"¡Bien!", "¡Correcto!", "¡Muy bien!", "¡Genial!", "¡Exacto!"};
+    /** Título al acertar: sarcasmo, nunca elogio sincero (como el acompañante). */
+    private static final String[] PRAISE = {"¡Wow!", "¿Casualidad?", "¡Milagro!", "¡Por fin!", "¡Ni tú te la crees!"};
 
     /** Una carta del mazo: de teoría (Quiz.Q) o de práctica (PracticeData.Ex). */
     private static final class Card {

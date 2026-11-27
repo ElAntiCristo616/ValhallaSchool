@@ -23,7 +23,8 @@ import static com.valhallaschool.app.Ui.*;
  */
 final class SessionScreen extends MainActivity.Screen {
     private static final int LEARN = 0, ASK = 1, FEEDBACK = 2, END = 3;
-    private static final String[] PRAISE = {"¡Bien!", "¡Correcto!", "¡Muy bien!", "¡Genial!", "¡Exacto!"};
+    /** Título al acertar: sarcasmo, nunca elogio sincero (como el acompañante). */
+    private static final String[] PRAISE = {"¡Wow!", "¿Casualidad?", "¡Milagro!", "¡Por fin!", "¡Ni tú te la crees!"};
 
     private final ArrayDeque<Object> queue = new ArrayDeque<>();
     private final int total, bonus;
@@ -301,7 +302,7 @@ final class SessionScreen extends MainActivity.Screen {
         fin.setGravity(Gravity.CENTER_HORIZONTAL);
         fin.setPadding(0, dp(48), 0, 0);
         fin.addView(tv(a, perfect ? "💎" : "🏆", 84, TEXT, REG));
-        fin.addView(tv(a, perfect ? "¡Perfecto!" : "¡Lección completada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
+        fin.addView(tv(a, perfect ? "¡Perfecto! ¿Casualidad?" : "¡Lección completada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
         TextView p = tv(a,
                 missed.isEmpty() ? "Todo correcto a la primera." :
                 missed.size() + (missed.size() == 1 ? " idea" : " ideas") + " volverán en tus repasos.", 15, MUTED, REG);

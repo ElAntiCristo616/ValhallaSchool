@@ -27,7 +27,8 @@ import static com.valhallaschool.app.Ui.*;
  */
 final class PracticeScreen extends MainActivity.Screen {
     private static final int ASK = 1, FEEDBACK = 2, END = 3;
-    private static final String[] PRAISE = {"¡Bien!", "¡Correcto!", "¡Muy bien!", "¡Genial!", "¡Exacto!"};
+    /** Título al acertar: sarcasmo, nunca elogio sincero (como el acompañante). */
+    private static final String[] PRAISE = {"¡Wow!", "¿Casualidad?", "¡Milagro!", "¡Por fin!", "¡Ni tú te la crees!"};
 
     private final ArrayDeque<PracticeData.Ex> queue = new ArrayDeque<>();
     private final int level, total;
@@ -252,7 +253,7 @@ final class PracticeScreen extends MainActivity.Screen {
         fin.setPadding(0, dp(48), 0, 0);
         fin.addView(Avatars.view(a, 120), lpm(W, W, 0, 0, 0, 4));
         fin.addView(tv(a, perfect ? "💎" : levelDone ? "🏆" : "🎯", 84, TEXT, REG));
-        fin.addView(tv(a, perfect ? "¡Perfecto!" : levelDone ? "¡Nivel " + level + " completado!" : "¡Ronda terminada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
+        fin.addView(tv(a, perfect ? "¡Perfecto! ¿Casualidad?" : levelDone ? "¡Nivel " + level + " completado!" : "¡Ronda terminada!", 28, ACCENT, BLACK), lpm(W, W, 0, 10, 0, 0));
         TextView p = tv(a, levelDone
                 ? (level < PracticeData.LEVELS
                         ? "Acertaste " + firstOk + " de 10 a la primera. Nivel " + (level + 1) + " desbloqueado."
