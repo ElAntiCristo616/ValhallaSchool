@@ -35,6 +35,7 @@ final class PracticeScreen extends MainActivity.Screen {
     private final long t0 = System.currentTimeMillis();
     private int done, combo, firstOk, answered, sel = -1, phase;
     private PracticeData.Ex item;
+    private Companion companion;
     private String[] labels;
     private int answerIdx;
     private TextView[] opts;
@@ -129,6 +130,11 @@ final class PracticeScreen extends MainActivity.Screen {
         phase = ASK;
         sel = -1;
 
+        // Acompañante inmersivo (v1.2.2): personaje GRANDE que anima en cada ejercicio.
+        companion = new Companion(a);
+        main.addView(companion.root(), lpm(M, W, 0, 0, 0, 4));
+        companion.next();
+
         main.addView(tv(a, "¿Qué función en qué posición muestra esto?", 22, TEXT, BLACK), lpm(M, W, 0, 6, 0, 16));
         LinearLayout ctx = col(a);
         ctx.setBackground(round(SURF, 18, LINE, 2));
@@ -195,6 +201,7 @@ final class PracticeScreen extends MainActivity.Screen {
     private void check() {
         Store S = Store.I;
         boolean ok = sel == answerIdx;
+        if (companion != null) companion.react(ok);
         for (int k = 0; k < opts.length; k++) optStyle(opts[k], k == answerIdx ? 2 : (k == sel && !ok) ? 3 : 0);
         boolean firstTry = tried.add(item.id);
         if (firstTry) {
@@ -311,7 +318,8 @@ final class PracticeScreen extends MainActivity.Screen {
                         (v, e) -> {});
                 SupabaseAuth.Session sess = SupabaseAuth.INSTANCE.currentSession();
                 String email = sess != null ? sess.getEmail() : null;
-                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), email,
+                String name = S.nickname != null && !S.nickname.trim().isEmpty() ? S.nickname.trim() : email;
+                GameProgressSync.INSTANCE.submitScore(S.totalXP(), Store.level(S.totalXP()), name,
                         (v, e) -> {});
             }
         } catch (Exception ignored) { /* la nube es espejo, no bloquea */ }

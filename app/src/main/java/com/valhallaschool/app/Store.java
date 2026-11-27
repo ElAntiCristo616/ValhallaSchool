@@ -61,6 +61,11 @@ final class Store {
     /** Rotación de avatares (Avatars.java): índice del siguiente avatar (0..47). */
     int avIdx;
 
+    /** Perfil personalizado (v1.2.2): nickname, avatar elegido (índice 0..47) y type. */
+    String nickname = "";
+    int myAvatar;
+    String myType = "";
+
     Events ev;
     private final File file;
     private final Handler main = new Handler(Looper.getMainLooper());
@@ -123,7 +128,8 @@ final class Store {
                 .put("gems", gems).put("frozen", fr)
                 .put("pBits", pBits).put("pCorrect", pCorrect).put("pTotal", pTotal)
                 .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
-                .put("avIdx", avIdx);
+                .put("avIdx", avIdx)
+                .put("nickname", nickname).put("myAvatar", myAvatar).put("myType", myType);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -163,6 +169,13 @@ final class Store {
         pCorrect = o.optInt("pCorrect"); pTotal = o.optInt("pTotal");
         pStreak = o.optInt("pStreak"); pBest = o.optInt("pBest"); pLevels = o.optInt("pLevels");
         avIdx = o.optInt("avIdx");
+        nickname = o.optString("nickname", "");
+        myAvatar = o.optInt("myAvatar", 0);
+        if (myAvatar < 0 || myAvatar >= Avatars.FILES.length) myAvatar = 0;
+        myType = o.optString("myType", "");
+        boolean okType = false;
+        for (String t : Avatars.TYPES) if (t.equals(myType)) { okType = true; break; }
+        if (!okType) myType = "";
         JSONArray pq = o.optJSONArray("pQuad");
         if (pq != null) for (int i = 0; i < Math.min(4, pq.length()); i++) pQuad[i] = pq.optInt(i);
         if (cat >= Data.catName.length) cat = -1;
@@ -187,7 +200,13 @@ final class Store {
         qa = qc = perfect = best = 0; goal = 50; cat = -1;
         gems = 0; frozen.clear();
         pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0; avIdx = 0;
+        nickname = ""; myAvatar = 0; myType = "";
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
+    }
+
+    /** Nombre que usan los personajes para animarte (tu nickname, o «Remy»). */
+    String displayName() {
+        return nickname != null && !nickname.trim().isEmpty() ? nickname.trim() : "Remy";
     }
 
     /* ---------------- dates ---------------- */

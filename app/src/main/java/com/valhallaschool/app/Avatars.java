@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 
 import static com.valhallaschool.app.Ui.*;
 
@@ -80,6 +81,18 @@ final class Avatars {
         } catch (IOException e) {
             return null;
         }
+    }
+
+    /** Miniaturas (128px) con caché, para la cuadrícula de 48 del Perfil. */
+    private static final HashMap<String, Bitmap> THUMBS = new HashMap<>();
+
+    static Bitmap thumb(Context c, String file) {
+        Bitmap b = THUMBS.get(file);
+        if (b == null) {
+            b = load(c, file, dp(128));
+            if (b != null) THUMBS.put(file, b);
+        }
+        return b;
     }
 
     /** ImageView cuadrado con el siguiente avatar de la rotación. Si no carga, queda oculta. */

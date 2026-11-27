@@ -1,8 +1,12 @@
 package com.valhallaschool.app;
 
+import android.graphics.Bitmap;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -35,6 +39,8 @@ final class ProfileTab extends MainActivity.Tab {
         Store S = Store.I;
         content.removeAllViews();
         int xp = S.totalXP(), lv = Store.level(xp), base = Store.levelBase(lv), next = Store.levelBase(lv + 1);
+
+        avatarSection();
 
         LinearLayout me = row(a);
         TextView av = tv(a, String.valueOf(lv), 28, ACCENT_INK, BLACK);
@@ -142,6 +148,121 @@ final class ProfileTab extends MainActivity.Tab {
         cr2.setLineSpacing(0, 1.3f);
         cr.addView(cr2, lpm(M, W, 0, 6, 0, 0));
         content.addView(cr);
+    }
+
+    /** Orden de las fichas de type como en el mockup aprobado (por cuadras). */
+    private static final String[] TYPE_ORDER = {"ILE", "LII", "ESE", "SEI", "EIE",
+            "IEI", "SLE", "LSI", "SEE", "ESI",
+            "LSE", "SLI", "IEE", "EII", "LIE",
+            "ILI"};
+
+    /** v1.2.2 — Mi avatar: personaje + nickname + type, guardados en Store. */
+    private void avatarSection() {
+        Store S = Store.I;
+        content.addView(section(a, "Mi avatar"));
+        LinearLayout card = box(a);
+        card.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        ImageView iv = new ImageView(a);
+        Bitmap b = Avatars.load(a, Avatars.FILES[S.myAvatar], dp(256));
+        if (b != null) {
+            iv.setImageBitmap(b);
+            iv.setAdjustViewBounds(true);
+            iv.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        }
+        card.addView(iv, lpm(dp(130), dp(130), 0, 0, 0, 8));
+
+        TextView nick = tv(a, S.displayName(), 24, TEXT, BLACK);
+        nick.setGravity(Gravity.CENTER);
+        card.addView(nick, lp(M, W));
+
+        TextView pill = tv(a, S.myType.isEmpty() ? "SIN TYPE" : S.myType + " · Mi type", 15, ACCENT_INK, BLACK);
+        pill.setGravity(Gravity.CENTER);
+        pill.setBackground(round(ACCENT, 20));
+        pill.setPadding(dp(16), dp(6), dp(16), dp(8));
+        card.addView(pill, lpm(W, W, 0, 10, 0, 0));
+
+        TextView sub = tv(a, "Tu avatar y tu type se ven en el ranking y cuando te animan los personajes.", 13, MUTED, REG);
+        sub.setGravity(Gravity.CENTER);
+        sub.setLineSpacing(0, 1.3f);
+        card.addView(sub, lpm(M, W, 0, 10, 0, 0));
+
+        TextView gl = tv(a, "Elige tu personaje (48 avatares)", 13, MUTED, REG);
+        card.addView(gl, lpm(M, W, 0, 18, 0, 10));
+        for (int r = 0; r < 12; r++) {
+            LinearLayout row = row(a);
+            for (int c = 0; c < 4; c++) {
+                int idx = r * 4 + c;
+                boolean sel = idx == S.myAvatar;
+                LinearLayout cell = col(a);
+                cell.setGravity(Gravity.CENTER_HORIZONTAL);
+                cell.setBackground(round(SURF2, 14, sel ? ACCENT : LINE, sel ? 3 : 1));
+                cell.setPadding(dp(4), dp(6), dp(4), dp(6));
+                ImageView th = new ImageView(a);
+                Bitmap tb = Avatars.thumb(a, Avatars.FILES[idx]);
+                if (tb != null) {
+                    th.setImageBitmap(tb);
+                    th.setAdjustViewBounds(true);
+                    th.setScaleType(ImageView.ScaleType.FIT_CENTER);
+                }
+                cell.addView(th, lp(M, dp(64)));
+                TextView tl = tv(a, Avatars.FILES[idx].substring(0, 3), 11, MUTED, REG);
+                tl.setGravity(Gravity.CENTER);
+                cell.addView(tl, lpm(M, W, 0, 2, 0, 0));
+                final int fi = idx;
+                cell.setOnClickListener(v -> { S.myAvatar = fi; S.save(); refresh(); });
+                ripple(cell, true);
+                LinearLayout.LayoutParams p = lpm(0, W, c == 0 ? 0 : 8, 0, 0, 8);
+                p.weight = 1;
+                row.addView(cell, p);
+            }
+            card.addView(row, lp(M, W));
+        }
+
+        TextView tl2 = tv(a, "Tu type", 13, MUTED, REG);
+        card.addView(tl2, lpm(M, W, 0, 10, 0, 10));
+        for (int r = 0; r < 4; r++) {
+            LinearLayout row = row(a);
+            for (int c = 0; c < 4; c++) {
+                String t = TYPE_ORDER[r * 4 + c];
+                boolean sel = t.equals(S.myType);
+                TextView chip = tv(a, t, 14, sel ? ACCENT_INK : TEXT, BLACK);
+                chip.setGravity(Gravity.CENTER);
+                chip.setBackground(sel ? round(ACCENT, 20) : round(SURF2, 20, LINE, 1));
+                chip.setPadding(dp(10), dp(10), dp(10), dp(10));
+                final String ft = t;
+                chip.setOnClickListener(v -> { S.myType = ft; S.save(); refresh(); });
+                ripple(chip, true);
+                LinearLayout.LayoutParams p = lpm(0, W, c == 0 ? 0 : 8, 0, 0, 8);
+                p.weight = 1;
+                row.addView(chip, p);
+            }
+            card.addView(row, lp(M, W));
+        }
+
+        TextView nl = tv(a, "Nickname", 13, MUTED, REG);
+        card.addView(nl, lpm(M, W, 0, 10, 0, 6));
+        EditText ne = new EditText(a);
+        ne.setHint("Remy");
+        ne.setHintTextColor(MUTED);
+        ne.setTextColor(TEXT);
+        ne.setTextSize(16);
+        ne.setSingleLine(true);
+        ne.setText(S.nickname);
+        ne.setBackground(round(SURF2, 12, LINE, 1));
+        ne.setPadding(dp(14), dp(12), dp(14), dp(12));
+        ne.addTextChangedListener(new TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int st, int c, int a2) {}
+            @Override public void onTextChanged(CharSequence s, int st, int b, int c) {}
+            @Override public void afterTextChanged(Editable s) {
+                S.nickname = s.toString().trim();
+                S.save();
+                nick.setText(S.displayName());
+            }
+        });
+        card.addView(ne, lp(M, W));
+
+        content.addView(card, lpm(M, W, 0, 0, 0, 12));
     }
 
     /** Cuenta de Valhalla School (Supabase) + ranking. */

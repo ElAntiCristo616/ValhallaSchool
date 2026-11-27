@@ -70,6 +70,7 @@ final class LoopScreen extends MainActivity.Screen {
     private final ArrayDeque<Card> deck = new ArrayDeque<>();
     private int asked, correct, streak, sel = -1, phase;
     private Card item;
+    private Companion companion;
     private TextView[] opts;
 
     private final TextView countTx, fbTitle, fbText, btn;
@@ -162,6 +163,11 @@ final class LoopScreen extends MainActivity.Screen {
         phase = ASK;
         sel = -1;
 
+        // Acompañante inmersivo (v1.2.2): personaje GRANDE que anima en cada carta.
+        companion = new Companion(a);
+        main.addView(companion.root(), lpm(M, W, 0, 0, 0, 4));
+        companion.next();
+
         main.addView(tv(a, item.title, 22, TEXT, BLACK), lpm(M, W, 0, 6, 0, 16));
         LinearLayout ctx = col(a);
         ctx.setBackground(round(SURF, 18, LINE, 2));
@@ -217,6 +223,7 @@ final class LoopScreen extends MainActivity.Screen {
     /** Sin Store, sin nube, sin logros: solo bien/mal y la explicación. */
     private void check() {
         boolean ok = sel == item.answer;
+        if (companion != null) companion.react(ok);
         for (int k = 0; k < opts.length; k++) optStyle(opts[k], k == item.answer ? 2 : (k == sel && !ok) ? 3 : 0);
         asked++;
         if (ok) {
