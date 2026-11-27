@@ -52,7 +52,7 @@ final class ProfileTab extends MainActivity.Tab {
         LinearLayout mc = col(a);
         mc.setPadding(dp(16), 0, 0, 0);
         mc.addView(tv(a, "Nivel " + lv, 22, TEXT, BLACK));
-        mc.addView(tv(a, (xp - base) + " / " + (next - base) + " XP para el nivel " + (lv + 1), 14, MUTED, REG), lpm(M, W, 0, 3, 0, 0));
+        mc.addView(tv(a, (xp - base) + " / " + (next - base) + " XP para el nivel " + (lv + 1), 14, MUTED2, REG), lpm(M, W, 0, 3, 0, 0));
         mc.addView(new Views.Bar(a).set((xp - base) / (float) (next - base), ACCENT), lpm(M, dp(8), 0, 8, 0, 0));
         me.addView(mc, lp(0, W, 1));
         content.addView(me, lpm(M, W, 0, 4, 0, 18));
@@ -61,8 +61,8 @@ final class ProfileTab extends MainActivity.Tab {
 
         LinearLayout lib = box(a);
         LinearLayout lr = row(a);
-        lr.addView(tv(a, "Progreso", 13, MUTED, BOLD), lp(0, W, 1));
-        lr.addView(tv(a, S.read.size() + " / " + Data.N + " ideas", 13, MUTED, BOLD));
+        lr.addView(tv(a, "Progreso", 13, MUTED2, BOLD), lp(0, W, 1));
+        lr.addView(tv(a, S.read.size() + " / " + Data.N + " ideas", 13, MUTED2, BOLD));
         lib.addView(lr);
         lib.addView(new Views.Bar(a).set(S.read.size() / (float) Data.N, GREEN), lpm(M, dp(14), 0, 10, 0, 0));
         content.addView(lib, lpm(M, W, 0, 0, 0, 12));
@@ -93,7 +93,7 @@ final class ProfileTab extends MainActivity.Tab {
             row.setPadding(0, dp(6), 0, dp(6));
             row.addView(one(tv(a, Data.catName[c], 14, TEXT, MEDIUM)), lp(dp(122), W));
             row.addView(new Views.Bar(a).set(r / (float) tot, Data.catColor[c]), lp(0, dp(6), 1));
-            TextView n = tv(a, r + "/" + tot, 12, MUTED, REG);
+            TextView n = tv(a, r + "/" + tot, 12, MUTED2, REG);
             n.setGravity(Gravity.END);
             row.addView(n, lp(dp(56), W));
             topics.addView(row);
@@ -117,10 +117,10 @@ final class ProfileTab extends MainActivity.Tab {
                 TextView ic = tv(a, ac[1], 30, TEXT, REG);
                 ic.setAlpha(on ? 1f : 0.25f);
                 bd.addView(ic);
-                TextView nm = tv(a, ac[2], 12, on ? TEXT : MUTED, BLACK);
+                TextView nm = tv(a, ac[2], 12, on ? TEXT : MUTED2, BLACK);
                 nm.setGravity(Gravity.CENTER);
                 bd.addView(nm, lpm(W, W, 0, 6, 0, 0));
-                TextView ds = tv(a, ac[3], 11, MUTED, REG);
+                TextView ds = tv(a, ac[3], 11, MUTED2, REG);
                 ds.setGravity(Gravity.CENTER);
                 bd.addView(ds, lpm(W, W, 0, 2, 0, 0));
                 r.addView(bd, p);
@@ -134,6 +134,14 @@ final class ProfileTab extends MainActivity.Tab {
         setting("Meta diaria", seg(a, Store.GOAL_NAMES, gi, i -> { S.setGoal(Store.GOALS[i]); a.changed(); a.dirty(); }));
         setting("Tema", themeButton());
         setting("Sonidos", seg(a, new String[]{"Sí", "No"}, S.sound ? 0 : 1, i -> { S.sound = i == 0; S.save(); }));
+        // v1.2.6 — recordatorio diario de racha (20:00, solo si la meta no está cumplida).
+        setting("Recordatorio de racha", seg(a, new String[]{"Sí", "No"}, S.remind ? 0 : 1, i -> {
+            S.remind = i == 0;
+            S.save();
+            if (S.remind) { StreakReminder.schedule(a); S.remindAsked = false; S.save(); a.askNotificationPermission(); }
+            else StreakReminder.cancel(a);
+            a.changed(); a.dirty();
+        }));
         content.addView(link("Exportar respaldo", BLUE, v -> a.exportBackup()), lpm(M, W, 0, 10, 0, 0));
         content.addView(link("Importar respaldo", BLUE, v -> a.importBackup()));
         content.addView(link("Borrar todo el progreso", RED, v -> a.ask("¿Borrar todo?",
@@ -144,7 +152,7 @@ final class ProfileTab extends MainActivity.Tab {
         content.addView(section(a, "Créditos"));
         LinearLayout cr = box(a);
         cr.addView(tv(a, "Avatares de los 16 tipos sociónicos por Binky (@binkybee_art)", 14, TEXT, REG));
-        TextView cr2 = tv(a, "Uso libre con su permiso. ¿Hiciste algo con ellos? Escríbele: binkybeemail@gmail.com", 13, MUTED, REG);
+        TextView cr2 = tv(a, "Uso libre con su permiso. ¿Hiciste algo con ellos? Escríbele: binkybeemail@gmail.com", 13, MUTED2, REG);
         cr2.setLineSpacing(0, 1.3f);
         cr.addView(cr2, lpm(M, W, 0, 6, 0, 0));
         content.addView(cr);
@@ -178,16 +186,19 @@ final class ProfileTab extends MainActivity.Tab {
 
         TextView pill = tv(a, S.myType.isEmpty() ? "SIN TYPE" : S.myType + " · Mi type", 15, ACCENT_INK, BLACK);
         pill.setGravity(Gravity.CENTER);
-        pill.setBackground(round(ACCENT, 20));
+        // v1.2.6 — dorado fijo + tinta oscura: 8.2:1 en los 16 temas.
+        pill.setBackground(round(GOLD, 20));
         pill.setPadding(dp(16), dp(6), dp(16), dp(8));
         card.addView(pill, lpm(W, W, 0, 10, 0, 0));
 
-        TextView sub = tv(a, "Tu avatar y tu type se ven en el ranking y cuando te animan los personajes.", 13, MUTED, REG);
+        TextView sub = tv(a, "Tu avatar y tu type se ven en el ranking y cuando te animan los personajes.", 13, MUTED2, REG);
         sub.setGravity(Gravity.CENTER);
         sub.setLineSpacing(0, 1.3f);
         card.addView(sub, lpm(M, W, 0, 10, 0, 0));
 
-        TextView toggle = tv(a, avatarsOpen ? "Ocultar avatares ▴" : "Elige tu personaje · 48 avatares ▾", 14, ACCENT, BLACK);
+        // v1.2.6 — texto del botón en TEXT (el acento del tema sobre SURF2
+        // quedaba en 3.1:1 en Océano/Lluvia; TEXT da ≥8.9:1 en los 16 temas).
+        TextView toggle = tv(a, avatarsOpen ? "Ocultar avatares ▴" : "Elige tu personaje · 48 avatares ▾", 14, TEXT, BLACK);
         toggle.setGravity(Gravity.CENTER);
         toggle.setBackground(round(SURF2, 12, LINE, 1));
         toggle.setPadding(dp(14), dp(12), dp(14), dp(12));
@@ -212,7 +223,7 @@ final class ProfileTab extends MainActivity.Tab {
                     th.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 }
                 cell.addView(th, lp(M, dp(64)));
-                TextView tl = tv(a, Avatars.FILES[idx].substring(0, 3), 11, MUTED, REG);
+                TextView tl = tv(a, Avatars.FILES[idx].substring(0, 3), 11, MUTED2, REG);
                 tl.setGravity(Gravity.CENTER);
                 cell.addView(tl, lpm(M, W, 0, 2, 0, 0));
                 final int fi = idx;
@@ -226,16 +237,20 @@ final class ProfileTab extends MainActivity.Tab {
         }
         } // fin del desplegable de avatares
 
-        TextView tl2 = tv(a, "Tu type", 13, MUTED, REG);
+        TextView tl2 = tv(a, "Tu type", 13, MUTED2, REG);
         card.addView(tl2, lpm(M, W, 0, 10, 0, 10));
         for (int r = 0; r < 4; r++) {
             LinearLayout row = row(a);
             for (int c = 0; c < 4; c++) {
                 String t = TYPE_ORDER[r * 4 + c];
                 boolean sel = t.equals(S.myType);
-                TextView chip = tv(a, t, 14, sel ? ACCENT_INK : TEXT, BLACK);
+                // v1.2.6 — chips de type legibles en los 16 temas: sin seleccionar,
+                // texto DORADO sobre superficie oscura (≥4.0:1); seleccionado,
+                // fondo dorado con tinta oscura (8.2:1). Antes era texto blanco
+                // sobre píldora casi blanca (1.2:1, no se leía nada).
+                TextView chip = tv(a, t, 14, sel ? ACCENT_INK : GOLD_TXT, BLACK);
                 chip.setGravity(Gravity.CENTER);
-                chip.setBackground(sel ? round(ACCENT, 20) : round(SURF2, 20, LINE, 1));
+                chip.setBackground(sel ? round(GOLD, 20) : round(SURF2, 20, LINE, 1));
                 chip.setPadding(dp(10), dp(10), dp(10), dp(10));
                 final String ft = t;
                 chip.setOnClickListener(v -> { S.myType = ft; S.save(); refresh(); });
@@ -247,11 +262,11 @@ final class ProfileTab extends MainActivity.Tab {
             card.addView(row, lp(M, W));
         }
 
-        TextView nl = tv(a, "Nickname", 13, MUTED, REG);
+        TextView nl = tv(a, "Nickname", 13, MUTED2, REG);
         card.addView(nl, lpm(M, W, 0, 10, 0, 6));
         EditText ne = new EditText(a);
         ne.setHint("Sin nombre");
-        ne.setHintTextColor(MUTED);
+        ne.setHintTextColor(MUTED2);
         ne.setTextColor(TEXT);
         ne.setTextSize(16);
         ne.setSingleLine(true);
@@ -280,13 +295,13 @@ final class ProfileTab extends MainActivity.Tab {
             SupabaseAuth.Session s = SupabaseAuth.INSTANCE.currentSession();
             String email = s != null && s.getEmail() != null ? s.getEmail() : "Conectado";
             box.addView(tv(a, email, 16, TEXT, BLACK));
-            box.addView(tv(a, "Tu progreso se guarda en la nube.", 13, MUTED, REG), lpm(M, W, 0, 4, 0, 10));
+            box.addView(tv(a, "Tu progreso se guarda en la nube.", 13, MUTED2, REG), lpm(M, W, 0, 4, 0, 10));
             box.addView(link("Cerrar sesión", RED, v -> { SupabaseAuth.INSTANCE.signOut(); refresh(); }));
             content.addView(box, lpm(M, W, 0, 0, 0, 12));
         } else {
             EditText em = new EditText(a);
             em.setHint("Correo");
-            em.setHintTextColor(MUTED);
+            em.setHintTextColor(MUTED2);
             em.setTextColor(TEXT);
             em.setTextSize(16);
             em.setSingleLine(true);
@@ -295,7 +310,7 @@ final class ProfileTab extends MainActivity.Tab {
             box.addView(em, lp(M, W));
             EditText pw = new EditText(a);
             pw.setHint("Contraseña (mín. 6 caracteres)");
-            pw.setHintTextColor(MUTED);
+            pw.setHintTextColor(MUTED2);
             pw.setTextColor(TEXT);
             pw.setTextSize(16);
             pw.setSingleLine(true);
@@ -303,7 +318,7 @@ final class ProfileTab extends MainActivity.Tab {
             pw.setBackground(round(SURF2, 12, LINE, 1));
             pw.setPadding(dp(14), dp(12), dp(14), dp(12));
             box.addView(pw, lpm(M, W, 0, 10, 0, 0));
-            TextView st = tv(a, "Crea tu cuenta o entra: tu progreso se guarda en la nube.", 13, MUTED, REG);
+            TextView st = tv(a, "Crea tu cuenta o entra: tu progreso se guarda en la nube.", 13, MUTED2, REG);
             box.addView(st, lpm(M, W, 0, 10, 0, 10));
             LinearLayout bs = row(a);
             bs.addView(btn(a, "Crear cuenta", B_YELLOW, v -> authGo(em.getText().toString().trim(), pw.getText().toString(), true, st)), lp(0, W, 1));
@@ -324,7 +339,7 @@ final class ProfileTab extends MainActivity.Tab {
         content.addView(section(a, "Ranking"));
         LinearLayout box = box(a);
         box.addView(tv(a, "Sin cuenta no hay ranking.", 16, TEXT, BLACK));
-        TextView t = tv(a, "Tu progreso se guarda en este teléfono, pero el ranking y la nube necesitan cuenta. Crea tu cuenta o entra para que tu XP aparezca en el ranking.", 13, MUTED, REG);
+        TextView t = tv(a, "Tu progreso se guarda en este teléfono, pero el ranking y la nube necesitan cuenta. Crea tu cuenta o entra para que tu XP aparezca en el ranking.", 13, MUTED2, REG);
         t.setLineSpacing(0, 1.3f);
         box.addView(t, lpm(M, W, 0, 6, 0, 10));
         box.addView(btn(a, "Crear cuenta o entrar", B_YELLOW, v -> sc.post(() -> sc.smoothScrollTo(0, accountBox.getTop()))), lp(M, W));
@@ -338,7 +353,7 @@ final class ProfileTab extends MainActivity.Tab {
             return;
         }
         st.setText("Conectando…");
-        st.setTextColor(MUTED);
+        st.setTextColor(MUTED2);
         Callback<SupabaseAuth.Session> cb = (session, err) -> {
             a.runOnUiThread(() -> {
                 if (err == null) {
@@ -364,13 +379,13 @@ final class ProfileTab extends MainActivity.Tab {
     private void rankingBox() {
         content.addView(section(a, "Ranking"));
         LinearLayout box = box(a);
-        box.addView(tv(a, "Cargando ranking…", 14, MUTED, REG));
+        box.addView(tv(a, "Cargando ranking…", 14, MUTED2, REG));
         content.addView(box, lpm(M, W, 0, 0, 0, 12));
         GameProgressSync.INSTANCE.fetchLeaderboard(10, (list, err) -> {
             a.runOnUiThread(() -> {
                 box.removeAllViews();
                 if (err != null || list == null || list.isEmpty()) {
-                    box.addView(tv(a, "Aún no hay ranking. ¡Sé el primero!", 14, MUTED, REG));
+                    box.addView(tv(a, "Aún no hay ranking. ¡Sé el primero!", 14, MUTED2, REG));
                     return;
                 }
                 int i = 1;
@@ -380,7 +395,7 @@ final class ProfileTab extends MainActivity.Tab {
                     LinearLayout r = row(a);
                     r.addView(tv(a, "#" + i, 14, ACCENT, BLACK), lp(dp(36), W));
                     r.addView(one(tv(a, name, 14, TEXT, MEDIUM)), lp(0, W, 1));
-                    r.addView(tv(a, e.getTotalXp() + " XP · Nv " + e.getLevel(), 13, MUTED, REG));
+                    r.addView(tv(a, e.getTotalXp() + " XP · Nv " + e.getLevel(), 13, MUTED2, REG));
                     box.addView(r, lpm(M, W, 0, 6, 0, 6));
                     i++;
                 }
@@ -403,7 +418,7 @@ final class ProfileTab extends MainActivity.Tab {
             View bar = new View(a);
             bar.setBackground(round(S.met.contains(d) ? GREEN : v > 0 ? ACCENT : LINE, 5));
             c.addView(bar, lp(dp(26), Math.max(dp(4), Math.round(dp(100) * v / (float) mx))));
-            c.addView(tv(a, LocalDate.ofEpochDay(d).getDayOfWeek().getDisplayName(TextStyle.NARROW, Locale.getDefault()), 11, MUTED, BOLD), lpm(W, W, 0, 6, 0, 0));
+            c.addView(tv(a, LocalDate.ofEpochDay(d).getDayOfWeek().getDisplayName(TextStyle.NARROW, Locale.getDefault()), 11, MUTED2, BOLD), lpm(W, W, 0, 6, 0, 0));
             r.addView(c, lp(0, dp(136), 1));
         }
         b.addView(r, lp(M, W));
@@ -423,7 +438,7 @@ final class ProfileTab extends MainActivity.Tab {
         TextView nm = tv(a, Ui.themeName(S.theme), 16, TEXT, MEDIUM);
         nm.setPadding(dp(14), 0, 0, 0);
         r.addView(nm, lp(0, W, 1));
-        r.addView(tv(a, "▾", 18, MUTED, BOLD));
+        r.addView(tv(a, "▾", 18, MUTED2, BOLD));
         b.addView(r);
         ripple(b, true);
         b.setOnClickListener(v -> a.showThemePicker());

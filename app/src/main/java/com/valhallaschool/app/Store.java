@@ -51,6 +51,8 @@ final class Store {
     int gems = 0;
     long seed;
     boolean dark = true, sound = true;
+    /** Recordatorio diario de racha (v1.2.6): aviso a las 20:00 si la meta no está cumplida. */
+    boolean remind = true, remindAsked = false;
     /** Id del tema activo (ver Ui.THEME_IDS). Navidad por defecto. */
     String theme = "navidad";
 
@@ -125,6 +127,7 @@ final class Store {
         return o.put("srs", s).put("xp", x).put("met", m).put("lessons", l).put("ach", a)
                 .put("qa", qa).put("qc", qc).put("perfect", perfect).put("goal", goal).put("best", best)
                 .put("cat", cat).put("seed", seed).put("theme", theme).put("sound", sound ? 1 : 0)
+                .put("remind", remind ? 1 : 0).put("remindAsked", remindAsked ? 1 : 0)
                 .put("gems", gems).put("frozen", fr)
                 .put("pBits", pBits).put("pCorrect", pCorrect).put("pTotal", pTotal)
                 .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
@@ -165,6 +168,8 @@ final class Store {
         else theme = "navidad"; // "dark" viejo y cualquier valor desconocido
         dark = !"claro".equals(theme);
         sound = o.optInt("sound", 1) != 0;
+        remind = o.optInt("remind", 1) != 0;
+        remindAsked = o.optInt("remindAsked", 0) != 0;
         pBits = o.optLong("pBits");
         pCorrect = o.optInt("pCorrect"); pTotal = o.optInt("pTotal");
         pStreak = o.optInt("pStreak"); pBest = o.optInt("pBest"); pLevels = o.optInt("pLevels");

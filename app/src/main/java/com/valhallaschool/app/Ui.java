@@ -26,8 +26,10 @@ final class Ui {
     static final int M = ViewGroup.LayoutParams.MATCH_PARENT, W = ViewGroup.LayoutParams.WRAP_CONTENT;
     static float density;
     static boolean dark;
-    static int BG, SURF, SURF2, LINE, TEXT, MUTED, ACCENT, SECONDARY;
+    static int BG, SURF, SURF2, LINE, TEXT, MUTED, MUTED2, ACCENT, SECONDARY, GOLD_TXT;
     static final int ACCENT_INK = 0xff1a1400, GREEN = 0xff58cc02, GREEN_D = 0xff46a302, RED = 0xffff4b4b, RED_D = 0xffd93838, BLUE = 0xff2aa198;
+    /** Dorado fijo de la marca (chips de type, píldora de type). En el tema claro se usa el dorado oscuro. */
+    static final int GOLD = 0xffd9a441, GOLD_DARK = 0xff8a6d1b;
     static Typeface BLACK, BOLD, MEDIUM, REG, SERIF_B;
 
     /* ---------------- temas (16) ---------------- */
@@ -86,10 +88,19 @@ final class Ui {
         SERIF_B = Typeface.create(Typeface.SERIF, Typeface.BOLD);
         int[] pal = THEME_PAL[themeIndex(themeId)];
         BG = pal[0]; SURF = pal[1]; ACCENT = pal[2]; SECONDARY = pal[3]; TEXT = pal[4];
-        SURF2 = mix(SURF, TEXT, 0.10f);
-        LINE = mix(SURF, TEXT, 0.28f);
+        // v1.2.6 — los pesos estaban invertidos (SURF2 salía 90% texto: píldoras
+        // casi blancas con texto blanco, contraste 1.2:1). Ahora SURF2 es la
+        // superficie apenas aclarada hacia el texto y LINE un borde visible.
+        SURF2 = mix(SURF, TEXT, 0.90f);
+        LINE = mix(SURF, TEXT, 0.72f);
         MUTED = mix(TEXT, BG, 0.45f);
+        // v1.2.6 — texto secundario BRILLANTE (contraste ≥4.5:1 en los 16 temas):
+        // etiquetas y textos secundarios de Perfil lo usan en vez de MUTED.
+        MUTED2 = mix(TEXT, BG, 0.70f);
         dark = !THEME_IDS[themeIndex(themeId)].equals("claro");
+        // Texto dorado de los chips de type: dorado vivo en temas oscuros,
+        // dorado oscuro del tema en Claro (el dorado vivo no se lee sobre claro).
+        GOLD_TXT = dark ? GOLD : GOLD_DARK;
     }
 
     @Deprecated
@@ -257,7 +268,7 @@ final class Ui {
 
     /* ---------------- section header ---------------- */
     static TextView section(Context c, String s) {
-        TextView t = tv(c, s.toUpperCase(Locale.ROOT), 13, MUTED, BLACK);
+        TextView t = tv(c, s.toUpperCase(Locale.ROOT), 13, MUTED2, BLACK);
         t.setLetterSpacing(0.08f);
         t.setPadding(0, dp(22), 0, dp(12));
         return t;
@@ -313,7 +324,7 @@ final class Ui {
 
     private static void chipStyle(TextView t, boolean on) {
         t.setBackground(on ? round(TEXT, 17) : round(0, 17, LINE, 1));
-        t.setTextColor(on ? BG : MUTED);
+        t.setTextColor(on ? BG : MUTED2);
     }
 
     /* ---------------- segmented control ---------------- */
@@ -340,6 +351,6 @@ final class Ui {
 
     private static void segStyle(TextView t, boolean on) {
         t.setBackground(on ? round(SURF, 10) : null);
-        t.setTextColor(on ? TEXT : MUTED);
+        t.setTextColor(on ? TEXT : MUTED2);
     }
 }

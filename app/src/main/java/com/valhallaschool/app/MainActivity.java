@@ -1,7 +1,9 @@
 package com.valhallaschool.app;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Insets;
@@ -97,6 +99,30 @@ public final class MainActivity extends Activity implements Store.Events {
         edgeToEdge();
         go(state != null ? state.getInt("tab", 0) : 0);
         lastDay = Store.today();
+        // v1.2.6 — recordatorio diario de racha (20:00, solo si falta la meta).
+        StreakReminder.createChannel(this);
+        if (S.remind) StreakReminder.schedule(this);
+        if (S.remind) askNotificationPermission();
+    }
+
+    private static final int REQ_NOTIFY = 9001;
+
+    /** Pide el permiso de notificaciones (Android 13+) una sola vez; si lo niega, no se insiste. */
+    void askNotificationPermission() {
+        if (Build.VERSION.SDK_INT < 33) return;
+        if (S.remindAsked) return;
+        S.remindAsked = true;
+        S.save();
+        if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQ_NOTIFY);
+        }
+    }
+
+    @Override public void onRequestPermissionsResult(int code, String[] perms, int[] grants) {
+        super.onRequestPermissionsResult(code, perms, grants);
+        if (code == REQ_NOTIFY && grants.length > 0 && grants[0] != PackageManager.PERMISSION_GRANTED) {
+            toast("Activa las notificaciones en Ajustes del teléfono si quieres que te avise de tu racha.", false);
+        }
     }
 
     @Override protected void onSaveInstanceState(Bundle out) {

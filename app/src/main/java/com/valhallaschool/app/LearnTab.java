@@ -70,7 +70,7 @@ final class LearnTab extends MainActivity.Tab {
         LinearLayout t = col(c);
         t.setPadding(dp(9), 0, 0, 0);
         t.addView(one(tv(c, value, 20, TEXT, BLACK)));
-        t.addView(one(tv(c, label, 12, MUTED, MEDIUM)), lpm(W, W, 0, 2, 0, 0));
+        t.addView(one(tv(c, label, 12, MUTED2, MEDIUM)), lpm(W, W, 0, 2, 0, 0));
         s.addView(t, lp(0, W, 1));
         return s;
     }
