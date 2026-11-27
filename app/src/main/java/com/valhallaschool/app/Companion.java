@@ -27,9 +27,9 @@ import static com.valhallaschool.app.Ui.*;
  * protegidos (nada de raza, género, religión ni discapacidad).
  */
 final class Companion {
-    /** Ánimo antes de responder. {name} = nickname del perfil. Si no escribió
-     *  nickname, se usan las variantes SIN nombre (CHEER_NN): nunca se dice
-     *  «Sin nombre» en las frases, solo se omite el nombre. */
+    /** Ánimo antes de responder. {name} = nombre de usuario actual: el nickname
+     *  si escribió uno, o «Sin nombre» si no (Store.displayName() siempre).
+     *  El acompañante SIEMPRE dice el nombre, como pidió Remy. */
     static final String[] CHEER = {
             "¡Tú puedes, {name}! ¡Tú sí sabes! 💪",
             "¡Vamos, {name}, que esta la sacas!",
@@ -49,26 +49,6 @@ final class Companion {
             "¿Otra ronda, {name}? ¡Claro que sí!",
     };
 
-    /** Mismas frases de ánimo, SIN nombre (cuando no hay nickname propio). */
-    static final String[] CHEER_NN = {
-            "¡Tú puedes! ¡Tú sí sabes! 💪",
-            "¡Vamos, que esta la sacas!",
-            "Respira… y piensa en el Modelo A.",
-            "¡Esta es tuya! Yo te creo.",
-            "¡Dale! ¿Qué función será?",
-            "Tú ya sabes esto. ¡Confía!",
-            "¡Vamos por otra! No pares.",
-            "¿Listo? ¡A darle!",
-            "¡Tú puedes con esto y con más!",
-            "Piensa como tipador. ¡Tú eres tipador!",
-            "¡Otra más! Cada una te hace más fuerte.",
-            "¡Ánimo! Yo te acompaño.",
-            "Mira bien la frase… la respuesta está ahí.",
-            "¡Tú sí sabes! ¡Demuéstralo!",
-            "¡Vamos! ¡Que nadie te pare!",
-            "¿Otra ronda? ¡Claro que sí!",
-    };
-
     /** Celebración al acertar. */
     static final String[] CELEBRATE = {
             "¡Esooo! ¡Qué crack!",
@@ -81,22 +61,6 @@ final class Companion {
             "¡Eso es! ¡Nadie te para!",
             "¡Perfecto! ¡Me encanta verte así!",
             "¡Increíble, {name}! ¡Qué nivel!",
-            "¡Sí señor! ¡Esa era!",
-            "¡Brutal! ¡Otra, otra!",
-    };
-
-    /** Misma celebración, SIN nombre (cuando no hay nickname propio). */
-    static final String[] CELEBRATE_NN = {
-            "¡Esooo! ¡Qué crack!",
-            "¡Lo sabías! ¡Yo lo sabía!",
-            "¡Imparable!",
-            "¡Qué bárbaro! ¡Otra así!",
-            "¡Exacto! ¡Eres una máquina!",
-            "¡Boom! ¡Directo al blanco!",
-            "¡Genial! ¡Sigue así!",
-            "¡Eso es! ¡Nadie te para!",
-            "¡Perfecto! ¡Me encanta verte así!",
-            "¡Increíble! ¡Qué nivel!",
             "¡Sí señor! ¡Esa era!",
             "¡Brutal! ¡Otra, otra!",
     };
@@ -119,28 +83,6 @@ final class Companion {
             "¡Eso estuvo feo. Muy feo!",
             "¡Qué mierda de respuesta, {name}!",
             "¡Joder, {name}! ¡Concéntrate!",
-            "¡De pena ajena! ¡Hasta el teléfono se avergonzó!",
-            "¡Horrible! ¡Ni el azar te quiere!",
-    };
-
-    /** Misma decepción, SIN nombre (cuando no hay nickname propio). */
-    static final String[] SCOLD_NN = {
-            "¡Qué vergüenza!",
-            "¡Patético! ¡Ni con suerte!",
-            "¡Hasta mi abuela lo sabía!",
-            "¡Eres un desastre!",
-            "¡Qué oso! ¡Ni para eso!",
-            "¡Terrible! ¡Vuélvelo a intentar, a ver si ahora sí!",
-            "¡Ay, no! ¿Qué fue eso?",
-            "¡Pésimo! ¡Pésimo!",
-            "¡Vergüenza ajena! ¡Hasta yo me sonrojé!",
-            "¡Ese error me dolió hasta a mí!",
-            "¡Ni adivinando le atinas!",
-            "¡Qué barbaridad!",
-            "¡Me das pena… y eso que soy un dibujo!",
-            "¡Eso estuvo feo. Muy feo!",
-            "¡Qué mierda de respuesta!",
-            "¡Joder! ¡Concéntrate!",
             "¡De pena ajena! ¡Hasta el teléfono se avergonzó!",
             "¡Horrible! ¡Ni el azar te quiere!",
     };
@@ -278,20 +220,17 @@ final class Companion {
 
     private String name() { return Store.I.displayName(); }
 
-    /** Si no hay nickname propio, usa las variantes SIN nombre (nunca «Sin nombre» en la frase). */
+    /** El acompañante SIEMPRE dice el nombre de usuario actual (nickname o «Sin nombre»). */
     private String cheer() {
-        String[] arr = Store.I.hasCustomNickname() ? CHEER : CHEER_NN;
-        int i = Quiz.R.nextInt(arr.length); if (i == lastCheer) i = (i + 1) % arr.length; lastCheer = i;
-        return arr[i].replace("{name}", name());
+        int i = Quiz.R.nextInt(CHEER.length); if (i == lastCheer) i = (i + 1) % CHEER.length; lastCheer = i;
+        return CHEER[i].replace("{name}", name());
     }
     private String celebrate() {
-        String[] arr = Store.I.hasCustomNickname() ? CELEBRATE : CELEBRATE_NN;
-        int i = Quiz.R.nextInt(arr.length); if (i == lastCeleb) i = (i + 1) % arr.length; lastCeleb = i;
-        return arr[i].replace("{name}", name());
+        int i = Quiz.R.nextInt(CELEBRATE.length); if (i == lastCeleb) i = (i + 1) % CELEBRATE.length; lastCeleb = i;
+        return CELEBRATE[i].replace("{name}", name());
     }
     private String scold() {
-        String[] arr = Store.I.hasCustomNickname() ? SCOLD : SCOLD_NN;
-        int i = Quiz.R.nextInt(arr.length); if (i == lastScold) i = (i + 1) % arr.length; lastScold = i;
-        return arr[i].replace("{name}", name());
+        int i = Quiz.R.nextInt(SCOLD.length); if (i == lastScold) i = (i + 1) % SCOLD.length; lastScold = i;
+        return SCOLD[i].replace("{name}", name());
     }
 }
