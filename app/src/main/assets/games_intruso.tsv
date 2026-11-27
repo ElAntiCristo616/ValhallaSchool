@@ -1,31 +1,39 @@
-id	kind	item0	item1	item2	item3	answer	rule	property	explanation
-int01	cuadra	ILE	SEI	ESE	LIE	3	¿Quién no pertenece a la cuadra Alfa?	Los otros tres valoran Ne, Ti, Si y Fe.	ILE, SEI y ESE son Alfa; LIE es Gamma (valora Se, Fi, Ni y Te).
-int02	cuadra	EIE	LSI	SLE	ILI	3	¿Quién no pertenece a la cuadra Beta?	Los otros tres valoran Se, Ti, Ni y Fe.	EIE, LSI y SLE son Beta; ILI es Gamma.
-int03	cuadra	SEE	ILI	LIE	EII	3	¿Quién no pertenece a la cuadra Gamma?	Los otros tres valoran Se, Fi, Ni y Te.	SEE, ILI y LIE son Gamma; EII es Delta.
-int04	cuadra	LSE	EII	IEE	ESE	3	¿Quién no pertenece a la cuadra Delta?	Los otros tres valoran Ne, Fi, Si y Te.	LSE, EII y IEE son Delta; ESE es Alfa.
-int05	cuadra	LII	ESE	SEI	SLE	3	¿Quién no pertenece a la cuadra Alfa?	Los otros tres valoran Ne, Ti, Si y Fe.	LII, ESE y SEI son Alfa; SLE es Beta.
-int06	cuadra	IEI	EIE	LSI	LIE	3	¿Quién no pertenece a la cuadra Beta?	Los otros tres valoran Se, Ti, Ni y Fe.	IEI, EIE y LSI son Beta; LIE es Gamma.
-int07	cuadra	ESI	SEE	ILI	IEE	3	¿Quién no pertenece a la cuadra Gamma?	Los otros tres valoran Se, Fi, Ni y Te.	ESI, SEE y ILI son Gamma; IEE es Delta.
-int08	cuadra	SLI	LSE	EII	IEI	3	¿Quién no pertenece a la cuadra Delta?	Los otros tres valoran Ne, Fi, Si y Te.	SLI, LSE y EII son Delta; IEI es Beta.
-int09	elemento	Ne	Ti	Si	Te	3	¿Qué elemento no es valor de Alfa?	Ne, Ti y Si son valores de Alfa.	Alfa valora Ne, Ti, Si y Fe; Te no es valor de Alfa.
-int10	elemento	Se	Ti	Ni	Ne	3	¿Qué elemento no es valor de Beta?	Se, Ti y Ni son valores de Beta.	Beta valora Se, Ti, Ni y Fe; Ne no es valor de Beta.
-int11	elemento	Se	Fi	Ni	Si	3	¿Qué elemento no es valor de Gamma?	Se, Fi y Ni son valores de Gamma.	Gamma valora Se, Fi, Ni y Te; Si no es valor de Gamma.
-int12	elemento	Ne	Fi	Si	Fe	3	¿Qué elemento no es valor de Delta?	Ne, Fi y Si son valores de Delta.	Delta valora Ne, Fi, Si y Te; Fe no es valor de Delta.
-int13	elemento	Ne	Ni	Se	Te	3	¿Qué elemento no es irracional?	Ne, Ni y Se son irracionales (percepción).	Ne, Ni y Se son funciones de percepción; Te es racional (juicio).
-int14	elemento	Ti	Fi	Te	Se	3	¿Qué elemento no es racional?	Ti, Fi y Te son racionales (juicio).	Ti, Fi y Te son funciones de juicio; Se es irracional (percepción).
-int15	posicion	[Ne base]	[Ti base]	[Se base]	[Si rol]	3	¿Qué función no es base?	Las otras tres son funciones base.	Ne, Ti y Se están en posición 1; Si está en rol (3).
-int16	posicion	[Fe creativa]	[Si creativa]	[Ne creativa]	[Te sugestiva]	3	¿Qué función no es creativa?	Las otras tres son creativas.	Fe, Si y Ne están en posición 2; Te está en sugestiva (5).
-int17	posicion	[Fi dolorosa]	[Ne dolorosa]	[Ti rol]	[Se dolorosa]	2	¿Qué función no es dolorosa?	Las otras tres son dolorosas.	Fi, Ne y Se están en posición 4; Ti está en rol (3).
-int18	posicion	[Si sugestiva]	[Fe sugestiva]	[Te Mobilizing]	[Ni sugestiva]	2	¿Qué función no es sugestiva?	Las otras tres son sugestivas.	Si, Fe y Ni están en posición 5; Te está en Mobilizing (6).
-int19	posicion	[Ni Demostrativa]	[Te Demostrativa]	[Fi Observing]	[Se Demostrativa]	2	¿Qué función no es Demostrativa?	Las otras tres son Demostrativa.	Ni, Te y Se están en posición 8; Fi está en Observing (7).
-int20	bloque	[Ne base]	[Ti creativa]	[Fe base]	[Si sugestiva]	3	¿Qué función no es del Ego?	Las otras tres son Ego (base o creativa).	Ne, Ti y Fe son Ego (1-2); Si sugestiva es Superid (5).
-int21	bloque	[Se rol]	[Fi dolorosa]	[Ti rol]	[Ne Demostrativa]	3	¿Qué función no es del Superego?	Las otras tres son Superego (rol o dolorosa).	Se, Fi y Ti son Superego (3-4); Ne Demostrativa es Id (8).
-int22	bloque	[Si sugestiva]	[Fe Mobilizing]	[Te sugestiva]	[Ni Observing]	3	¿Qué función no es del Superid?	Las otras tres son Superid (sugestiva o Mobilizing).	Si, Fe y Te son Superid (5-6); Ni Observing es Id (7).
-int23	bloque	[Ni Observing]	[Te Demostrativa]	[Se Observing]	[Fi base]	3	¿Qué función no es del Id?	Las otras tres son Id (Observing o Demostrativa).	Ni, Te y Se son Id (7-8); Fi base es Ego (1).
-int24	anillo	[Ne base]	[Ti rol]	[Fi dolorosa]	[Si sugestiva]	3	¿Qué función no es del anillo mental?	Las otras tres son mentales (posiciones 1-4).	Ne, Ti y Fi son mentales; Si sugestiva es vital (5).
-int25	anillo	[Si sugestiva]	[Fe Mobilizing]	[Ni Observing]	[Ne base]	3	¿Qué función no es del anillo vital?	Las otras tres son vitales (posiciones 5-8).	Si, Fe y Ni son vitales; Ne base es mental (1).
-int26	anillo	[Te Demostrativa]	[Si sugestiva]	[Fe Mobilizing]	[Ti creativa]	3	¿Qué función no es del anillo vital?	Las otras tres son vitales (posiciones 5-8).	Te, Si y Fe son vitales; Ti creativa es mental (2).
-int27	valor	[Ne base]	[Ti creativa]	[Si sugestiva]	[Se rol]	3	¿Qué función no es valiosa para Alfa?	Ne, Ti y Si son valores de Alfa.	En Alfa, Ne, Ti, Si y Fe son valiosas; Se rol no lo es.
-int28	valor	[Se base]	[Fi creativa]	[Ni sugestiva]	[Ne rol]	3	¿Qué función no es valiosa para Gamma?	Se, Fi y Ni son valores de Gamma.	En Gamma, Se, Fi, Ni y Te son valiosas; Ne rol no lo es.
-int29	fuerza	[Ne base]	[Ti creativa]	[Ni Observing]	[Se rol]	3	¿Qué función no es fuerte?	Ne, Ti y Ni son fuertes (posiciones 1, 2, 7 u 8).	Ne base, Ti creativa y Ni Observing son fuertes; Se rol es débil (3).
-int30	fuerza	[Fi dolorosa]	[Ne rol]	[Te sugestiva]	[Si base]	3	¿Qué función no es débil?	Fi, Ne y Te son débiles (posiciones 3, 4, 5 o 6).	Fi dolorosa, Ne rol y Te sugestiva son débiles; Si base es fuerte (1).
+id	kind	item0	item1	item2	item3	answer	rule	property	explanation	diff
+int01	cuadra	ILE	SEI	ESE	LIE	3	¿Quién no pertenece a la cuadra Alfa?	Los otros tres valoran Ne, Ti, Si y Fe.	ILE, SEI y ESE son Alfa; LIE es Gamma (valora Se, Fi, Ni y Te).	0
+int02	cuadra	EIE	LSI	SLE	ILI	3	¿Quién no pertenece a la cuadra Beta?	Los otros tres valoran Se, Ti, Ni y Fe.	EIE, LSI y SLE son Beta; ILI es Gamma.	0
+int03	cuadra	SEE	ILI	LIE	EII	3	¿Quién no pertenece a la cuadra Gamma?	Los otros tres valoran Se, Fi, Ni y Te.	SEE, ILI y LIE son Gamma; EII es Delta.	0
+int04	cuadra	LSE	EII	IEE	ESE	3	¿Quién no pertenece a la cuadra Delta?	Los otros tres valoran Ne, Fi, Si y Te.	LSE, EII y IEE son Delta; ESE es Alfa.	0
+int05	cuadra	LII	ESE	SEI	SLE	3	¿Quién no pertenece a la cuadra Alfa?	Los otros tres valoran Ne, Ti, Si y Fe.	LII, ESE y SEI son Alfa; SLE es Beta.	0
+int06	cuadra	IEI	EIE	LSI	LIE	3	¿Quién no pertenece a la cuadra Beta?	Los otros tres valoran Se, Ti, Ni y Fe.	IEI, EIE y LSI son Beta; LIE es Gamma.	0
+int07	cuadra	ESI	SEE	ILI	IEE	3	¿Quién no pertenece a la cuadra Gamma?	Los otros tres valoran Se, Fi, Ni y Te.	ESI, SEE y ILI son Gamma; IEE es Delta.	0
+int08	cuadra	SLI	LSE	EII	IEI	3	¿Quién no pertenece a la cuadra Delta?	Los otros tres valoran Ne, Fi, Si y Te.	SLI, LSE y EII son Delta; IEI es Beta.	0
+int09	elemento	Ne	Ti	Si	Te	3	¿Qué elemento no es valor de Alfa?	Ne, Ti y Si son valores de Alfa.	Alfa valora Ne, Ti, Si y Fe; Te no es valor de Alfa.	0
+int10	elemento	Se	Ti	Ni	Ne	3	¿Qué elemento no es valor de Beta?	Se, Ti y Ni son valores de Beta.	Beta valora Se, Ti, Ni y Fe; Ne no es valor de Beta.	0
+int11	elemento	Se	Fi	Ni	Si	3	¿Qué elemento no es valor de Gamma?	Se, Fi y Ni son valores de Gamma.	Gamma valora Se, Fi, Ni y Te; Si no es valor de Gamma.	0
+int12	elemento	Ne	Fi	Si	Fe	3	¿Qué elemento no es valor de Delta?	Ne, Fi y Si son valores de Delta.	Delta valora Ne, Fi, Si y Te; Fe no es valor de Delta.	0
+int13	elemento	Ne	Ni	Se	Te	3	¿Qué elemento no es irracional?	Ne, Ni y Se son irracionales (percepción).	Ne, Ni y Se son funciones de percepción; Te es racional (juicio).	0
+int14	elemento	Ti	Fi	Te	Se	3	¿Qué elemento no es racional?	Ti, Fi y Te son racionales (juicio).	Ti, Fi y Te son funciones de juicio; Se es irracional (percepción).	0
+int20	bloque	[Ne base]	[Ti creativa]	[Fe base]	[Si sugestiva]	3	¿Qué función no es del Ego?	Las otras tres son Ego (base o creativa).	Ne, Ti y Fe son Ego (1-2); Si sugestiva es Superid (5).	0
+int21	bloque	[Se rol]	[Fi dolorosa]	[Ti rol]	[Ne Demostrativa]	3	¿Qué función no es del Superego?	Las otras tres son Superego (rol o dolorosa).	Se, Fi y Ti son Superego (3-4); Ne Demostrativa es Id (8).	0
+int22	bloque	[Si sugestiva]	[Fe Mobilizing]	[Te sugestiva]	[Ni Observing]	3	¿Qué función no es del Superid?	Las otras tres son Superid (sugestiva o Mobilizing).	Si, Fe y Te son Superid (5-6); Ni Observing es Id (7).	0
+int23	bloque	[Ni Observing]	[Te Demostrativa]	[Se Observing]	[Fi base]	3	¿Qué función no es del Id?	Las otras tres son Id (Observing o Demostrativa).	Ni, Te y Se son Id (7-8); Fi base es Ego (1).	0
+int24	anillo	[Ne base]	[Ti rol]	[Fi dolorosa]	[Si sugestiva]	3	¿Qué función no es del anillo mental?	Las otras tres son mentales (posiciones 1-4).	Ne, Ti y Fi son mentales; Si sugestiva es vital (5).	0
+int25	anillo	[Si sugestiva]	[Fe Mobilizing]	[Ni Observing]	[Ne base]	3	¿Qué función no es del anillo vital?	Las otras tres son vitales (posiciones 5-8).	Si, Fe y Ni son vitales; Ne base es mental (1).	0
+int26	anillo	[Te Demostrativa]	[Si sugestiva]	[Fe Mobilizing]	[Ti creativa]	3	¿Qué función no es del anillo vital?	Las otras tres son vitales (posiciones 5-8).	Te, Si y Fe son vitales; Ti creativa es mental (2).	0
+int27	valor	[Ne base]	[Ti creativa]	[Si sugestiva]	[Se rol]	3	¿Qué función no es valiosa para Alfa?	Ne, Ti y Si son valores de Alfa.	En Alfa, Ne, Ti, Si y Fe son valiosas; Se rol no lo es.	0
+int28	valor	[Se base]	[Fi creativa]	[Ni sugestiva]	[Ne rol]	3	¿Qué función no es valiosa para Gamma?	Se, Fi y Ni son valores de Gamma.	En Gamma, Se, Fi, Ni y Te son valiosas; Ne rol no lo es.	0
+int29	fuerza	[Ne base]	[Ti creativa]	[Ni Observing]	[Se rol]	3	¿Qué función no es fuerte?	Ne, Ti y Ni son fuertes (posiciones 1, 2, 7 u 8).	Ne base, Ti creativa y Ni Observing son fuertes; Se rol es débil (3).	0
+int30	fuerza	[Fi dolorosa]	[Ne rol]	[Te sugestiva]	[Si base]	3	¿Qué función no es débil?	Fi, Ne y Te son débiles (posiciones 3, 4, 5 o 6).	Fi dolorosa, Ne rol y Te sugestiva son débiles; Si base es fuerte (1).	0
+int31	cuadra	ILE	SEI	LII	SLE	3	¿Quién no pertenece a la cuadra Alfa?	Los otros tres valoran Ne, Ti, Si y Fe.	ILE, SEI y LII son Alfa; SLE es Beta (valora Se, Ti, Ni y Fe).	1
+int32	elemento	Se	Fi	Te	Ne	3	¿Qué elemento no es valor de Gamma?	Se, Fi y Te son valores de Gamma.	Gamma valora Se, Fi, Ni y Te; Ne no es valor de Gamma.	1
+int33	bloque	[Te base]	[Ni creativa]	[Se base]	[Fi sugestiva]	3	¿Qué función no es del Ego?	Las otras tres son Ego (base o creativa).	Te, Ni y Se son Ego (1-2); Fi sugestiva es Superid (5).	1
+int34	anillo	[Se Observing]	[Fi Demostrativa]	[Te base]	[Ni Mobilizing]	2	¿Qué función no es del anillo vital?	Las otras tres son vitales (posiciones 5-8).	Se, Fi y Ni son vitales; Te base es mental (1).	2
+int35	fuerza	[Ti Observing]	[Ne creativa]	[Si Demostrativa]	[Fe dolorosa]	3	¿Qué función no es fuerte?	Ti, Ne y Si son fuertes (posiciones 1, 2, 7 u 8).	Ti Observing (7), Ne creativa (2) y Si Demostrativa (8) son fuertes; Fe dolorosa es débil (4).	2
+int36	relacion	ILE–SEI	ESE–LII	EIE–LSI	ILE–ESE	3	¿Qué pareja NO es dual?	Las otras tres parejas son duales.	ILE–SEI, ESE–LII y EIE–LSI son duales: la base de uno es la sugestiva del otro. ILE–ESE es activación, no dualidad.	1
+int37	relacion	ESE–ILI	LII–SEE	EIE–SLI	ESE–SEI	3	¿Qué pareja NO es de conflicto?	Las otras tres parejas son conflictores.	ESE–ILI, LII–SEE y EIE–SLI son conflictores: la base de uno pisa la dolorosa del otro. ESE–SEI es espejo, no conflicto.	1
+int38	relacion	ILE–LII	ESE–SEI	EIE–IEI	ILE–SEI	3	¿Qué pareja NO es de espejo?	Las otras tres parejas son de espejo.	ILE–LII, ESE–SEI y EIE–IEI son espejos: mismo Ego al revés. ILE–SEI es dualidad, no espejo.	1
+int39	relacion	ESE–ILE	LII–SEI	EIE–SLE	ESE–LII	3	¿Qué pareja NO es de activación?	Las otras tres parejas son de activación.	ESE–ILE, LII–SEI y EIE–SLE son activaciones: se animan en ráfagas cortas. ESE–LII es dualidad, no activación.	1
+int40	relacion	SEI	LII	ESE	LIE	3	¿Qué tipo NO es dual de un tipo de Alfa?	Los otros tres son duales de tipos de Alfa.	SEI es dual de ILE, LII es dual de ESE y ESE es dual de LII (todos Alfa). LIE es dual de ESI, que es Gamma.	2
+int41	relacion	ILE → LSI	SEI → EIE	ESE → SLI	LSI → ILE	3	¿En qué pareja la supervisión NO va en esa dirección?	En las otras tres, el primer tipo supervisa al segundo.	ILE supervisa a LSI, SEI supervisa a EIE y ESE supervisa a SLI. En cambio, LSI es supervisado por ILE: la flecha va al revés.	2
+int42	relacion	ILE–SEI	ESE–LII	EIE–LSI	ILE–SLI	3	¿Qué pareja es semidual entre tres duales?	Las otras tres parejas son duales y no semiduales.	ILE–SEI, ESE–LII y EIE–LSI son duales: base y sugestiva se cubren por los dos lados. ILE–SLI es semidual: encaja solo una parte.	2
+int43	relacion	SEI–SLI	LII–LSI	EIE–ESE	SEI–LSE	3	¿Qué pareja NO es de afinidad?	Las otras tres parejas son de afinidad.	SEI–SLI, LII–LSI y EIE–ESE son afinidades: comparten las funciones fuertes. SEI–LSE es supervisión: LSE supervisa a SEI.	3

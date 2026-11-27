@@ -142,10 +142,18 @@ class ArenaScreen extends MiniGame {
         String correct = GamesData.REL_NAMES[GamesData.REL[sc.t1][sc.t2]];
         List<String> opts = new ArrayList<>();
         opts.add(correct);
-        List<String> pool = new ArrayList<>();
-        for (String r : GamesData.REL_NAMES) pool.add(r);
-        Collections.shuffle(pool);
-        for (String r : pool) if (!r.equals(correct) && opts.size() < 4) opts.add(r);
+        // v1.3.6: con dificultad >=1 los distractores son las 3 relaciones
+        // más confundibles con la correcta, no 3 al azar.
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        if (d >= 1) {
+            for (String r : ArenaGen.confusableNames(GamesData.REL[sc.t1][sc.t2])) opts.add(r);
+        } else {
+            List<String> pool = new ArrayList<>();
+            for (String r : GamesData.REL_NAMES) pool.add(r);
+            Collections.shuffle(pool);
+            for (String r : pool) if (!r.equals(correct) && opts.size() < 4) opts.add(r);
+        }
         Collections.shuffle(opts);
         optViews.clear();
         for (String r : opts) {
@@ -237,7 +245,14 @@ class ArenaScreen extends MiniGame {
                 h.setOnClickListener(null);
             }
             reactCompanion(good);
-            fbTitle.setText(good ? winTitle("¡Mediación decente, " + name() + "!") : failTitle("¡Peor no se podía, " + name() + "!"));
+            // v1.3.6: la casi-correcta (near-miss) no es buena, pero tampoco
+            // es un error obvio: el título es «¡Casi!» y la reacción explica
+            // el detalle fino en que falla.
+            if (o.near) {
+                fbTitle.setText("¡Casi, " + name() + "!");
+            } else {
+                fbTitle.setText(good ? winTitle("¡Mediación decente, " + name() + "!") : failTitle("¡Peor no se podía, " + name() + "!"));
+            }
             fbText.setText(o.reaction);
             if (!good) hapticBad();
             phase = FEEDBACK;

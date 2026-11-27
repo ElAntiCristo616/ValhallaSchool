@@ -1,8 +1,10 @@
 package com.valhallaschool.app;
 
+import android.view.Gravity;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import static com.valhallaschool.app.Ui.*;
@@ -38,20 +40,50 @@ final class GamesTab extends MainActivity.Tab {
         intro.setLineSpacing(0, 1.3f);
         content.addView(intro, lpm(M, W, 0, 0, 0, 16));
 
+        // v1.3.6: UN SOLO switch de dificultad, arriba de todo: cada toque
+        // sube un nivel (Normal → Difícil → Experto → Imposible → Normal).
+        // El Switch en sí no es clicable; toda la fila captura el toque.
+        int d = Store.I.difficulty;
+        LinearLayout diffRow = box(a);
+        LinearLayout diffR = row(a);
+        diffR.setGravity(Gravity.CENTER_VERTICAL);
+        LinearLayout diffTxt = col(a);
+        diffTxt.addView(tv(a, "🔥 MÁS DIFÍCIL", 17, TEXT, BLACK));
+        String diffSub = d >= 3
+                ? "Dificultad: Imposible. Toca para volver a Normal."
+                : "Dificultad: " + Store.DIFF_NAMES[d] + ". ¿Lo quieres más difícil? Toca el switch para subir de nivel.";
+        TextView diffSubV = tv(a, diffSub, 14, MUTED, REG);
+        diffSubV.setLineSpacing(0, 1.3f);
+        diffTxt.addView(diffSubV, lpm(M, W, 0, 4, 0, 0));
+        diffR.addView(diffTxt, lp(0, W, 1));
+        Switch sw = new Switch(a);
+        sw.setChecked(d > 0);
+        sw.setClickable(false);
+        sw.setFocusable(false);
+        diffR.addView(sw, lp(W, W));
+        diffRow.addView(diffR, lp(M, W));
+        diffRow.setOnClickListener(v -> {
+            int nd = (Store.I.difficulty + 1) % 4;
+            Store.I.setDifficulty(nd);
+            a.toast("Dificultad: " + Store.DIFF_NAMES[nd], false);
+            refresh();
+        });
+        content.addView(diffRow, lpm(M, W, 0, 0, 0, 12));
+
         // Intruso arriba y diferenciado: tarjeta ancha con acento dorado.
         featured("🔍", "Encuentra al intruso",
-                "30 conjuntos: encuentra al que no pertenece y di por qué. Cuadras, elementos, posiciones, bloques, anillos y más.",
+                "38 conjuntos: encuentra al que no pertenece y di por qué. Cuadras, elementos, relaciones, bloques, anillos y más.",
                 "intruso");
 
         // Los otros 7 en cuadrícula de 2 columnas, tarjetas cuadradas.
         String[][] g = {
                 {"🕵️", "Detective sociónico", "Investiga 3 expedientes: marca evidencias, lanza hipótesis y cierra el caso.", "detective"},
                 {"🧪", "Laboratorio del Modelo A", "Arma los 16 modelos del Modelo A en 8 ranuras. 7 grados, con tostadora.", "lab"},
-                {"⚖️", "Tribunal tipológico", "Juzga 20 argumentos: sella, localiza el error y reformula. Sin piedad.", "tribunal"},
-                {"🔗", "Conexiones intertipo", "12 encargos para armar parejas y equipos con la matriz 16×16.", "conexiones"},
+                {"⚖️", "Tribunal tipológico", "Juzga 30 argumentos: sella, localiza el error y reformula. Sin piedad.", "tribunal"},
+                {"🔗", "Conexiones intertipo", "20 encargos para armar parejas y equipos con la matriz 16×16.", "conexiones"},
                 {"🥊", "Arena sociónica", "Media 6 discusiones cotidianas sin que explote la tensión.", "arena"},
-                {"🗺️", "Aventura por las cuadras", "Explora la Biblioteca de Alfa: 5 acertijos, claves y la puerta final.", "aventura"},
-                {"🌧️", "Lluvia informacional", "Clasifica 30 fichas antes de que caigan: elementos, posiciones y bloques.", "lluvia"},
+                {"🗺️", "Aventura por las cuadras", "Explora la Biblioteca de Alfa: 9 acertijos, claves y la puerta final.", "aventura"},
+                {"🌧️", "Lluvia informacional", "Clasifica 48 fichas antes de que caigan: elementos, posiciones y bloques.", "lluvia"},
         };
         for (int i = 0; i < g.length; i += 2) {
             LinearLayout r = row(a);

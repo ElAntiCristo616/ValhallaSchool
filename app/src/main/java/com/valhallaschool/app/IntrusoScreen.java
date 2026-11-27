@@ -10,10 +10,11 @@ import java.util.List;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Encuentra al intruso (v1.3.0): 30 conjuntos revisados. De 4 fichas, una
+ * Encuentra al intruso (v1.3.6): 38 conjuntos revisados. De 4 fichas, una
  * no pertenece; después hay que nombrar la propiedad que comparten las
  * otras tres. Se aceptan reglas alternativas válidas: la propiedad
- * correcta está escrita explícitamente en cada conjunto.
+ * correcta está escrita explícitamente en cada conjunto. La dificultad
+ * global filtra el banco por `diff` (los 25 de siempre son diff 0).
  */
 class IntrusoScreen extends MiniGame {
     private final List<GamesData.Intr> queue = new ArrayList<>();
@@ -31,7 +32,13 @@ class IntrusoScreen extends MiniGame {
 
     private IntrusoScreen(MainActivity a) {
         super(a, "intruso", 10);
-        List<GamesData.Intr> all = new ArrayList<>(GamesData.INTRUSO);
+        // v1.3.6: el nivel de dificultad filtra el banco por `diff`
+        // (Normal = solo los 25 de siempre; Difícil/Experto/Imposible suman los nuevos).
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        List<GamesData.Intr> all = new ArrayList<>();
+        for (GamesData.Intr x : GamesData.INTRUSO) if (x.diff <= d) all.add(x);
+        if (all.size() < 10) all = new ArrayList<>(GamesData.INTRUSO); // guarda: nunca menos de 10
         Collections.shuffle(all);
         queue.addAll(all.subList(0, 10));
     }

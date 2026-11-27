@@ -12,12 +12,12 @@ import java.util.List;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Conexiones intertipo (v1.3.0): 12 encargos iniciales con la matriz 16×16
+ * Conexiones intertipo (v1.3.6): 20 encargos iniciales con la matriz 16×16
  * validada, más un modo libre para explorar cualquier pareja. La dualidad
  * NO es solución universal: cada encargo pide lo que el objetivo necesita,
  * y las direcciones de beneficio y supervisión se respetan (el benefactor
  * ayuda sin que el otro lo note; el supervisor marca errores que el
- * supervisado acepta).
+ * supervisado acepta). La dificultad global filtra el banco por `diff`.
  */
 class ConexionesScreen extends MiniGame {
     private int mode = 0; // 0 elegir, 1 encargos, 2 matriz
@@ -36,9 +36,23 @@ class ConexionesScreen extends MiniGame {
 
     private ConexionesScreen(MainActivity a) {
         super(a, "conexiones", 6);
-        List<GamesData.Conn> all = new ArrayList<>(GamesData.CONEXIONES);
+        // v1.3.6: el nivel de dificultad filtra el banco por `diff`.
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        List<GamesData.Conn> all = new ArrayList<>();
+        for (GamesData.Conn c : GamesData.CONEXIONES) if (c.diff <= d) all.add(c);
+        if (all.size() < 6) all = new ArrayList<>(GamesData.CONEXIONES); // guarda: nunca menos de 6
         Collections.shuffle(all);
         queue.addAll(all.subList(0, 6));
+    }
+
+    /** Tamaño del pool de encargos en el nivel actual (para el texto del modo). */
+    private static int poolSize() {
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        int n = 0;
+        for (GamesData.Conn c : GamesData.CONEXIONES) if (c.diff <= d) n++;
+        return n;
     }
 
     /** Descripción completa de la relación (v1.3.5: ya no es una frase, es una
@@ -99,7 +113,7 @@ class ConexionesScreen extends MiniGame {
             main.addView(card("CONEXIONES INTERTIPO", "La matriz 16×16 del Modelo A: 14 relaciones. "
                     + "En los encargos elige la pareja correcta según el objetivo; en la matriz explora libremente."), lpm(M, W, 0, 10, 0, 12));
             optViews.clear();
-            String[][] modes = {{"Encargos", "12 casos reales: elige quién trabaja con quién"}, {"Matriz 16×16", "Explora cualquier pareja y ve su relación"}};
+            String[][] modes = {{"Encargos", poolSize() + " casos reales: elige quién trabaja con quién"}, {"Matriz 16×16", "Explora cualquier pareja y ve su relación"}};
             for (int m = 0; m < 2; m++) {
                 final int mm = m + 1;
                 TextView opt = optBtn(modes[m][0] + "\n" + modes[m][1]);

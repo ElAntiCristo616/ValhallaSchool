@@ -14,11 +14,13 @@ import java.util.List;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Lluvia informacional (v1.3.0): 30 fichas revisadas en 6 rondas de 5.
+ * Lluvia informacional (v1.3.6): 48 fichas revisadas en 6 rondas de 5.
  * Las fichas caen y hay que clasificarlas antes de que toquen el suelo;
  * si una cae sin respuesta, es omisión (se explica, no se falla en
  * automático). Dos velocidades + modo estático con el MISMO banco. La
- * caída se pausa al perder el foco (o con el botón ⏸).
+ * caída se pausa al perder el foco (o con el botón ⏸). La dificultad
+ * global filtra cada ronda por `diff` (cada ronda tiene 5 de Normal
+ * y 1 de cada nivel más duro).
  */
 class LluviaScreen extends MiniGame {
     private static final String[] ROUNDS = {
@@ -218,10 +220,18 @@ class LluviaScreen extends MiniGame {
         if (phase == END) { a.back(); return; }
         if (stage == 0) {
             if (roundIdx < 0 || speedIdx < 0) { a.toast("Elige ronda y velocidad, " + name() + ".", false); return; }
+            // v1.3.6: el pool es la ronda con diff <= nivel, barajado, 5 fichas.
+            int d = 0;
+            try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
             queue = new ArrayList<>();
-            int from = roundIdx * 5;
-            for (int i = from; i < from + 5 && i < GamesData.LLUVIA.size(); i++) queue.add(GamesData.LLUVIA.get(i));
+            for (GamesData.Rain x : GamesData.LLUVIA) if (x.round == roundIdx && x.diff <= d) queue.add(x);
+            if (queue.size() < 5) { // guarda: si el pool quedara corto, la ronda de siempre
+                queue.clear();
+                int from = roundIdx * 5;
+                for (int i = from; i < from + 5 && i < GamesData.LLUVIA.size(); i++) queue.add(GamesData.LLUVIA.get(i));
+            }
             Collections.shuffle(queue);
+            queue = new ArrayList<>(queue.subList(0, 5));
             idx = 0;
             stage = 1;
             next();

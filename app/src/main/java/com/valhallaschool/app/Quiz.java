@@ -79,6 +79,23 @@ final class Quiz {
         cands.sort((x, y) -> overlap(base, y) - overlap(base, x));
         return new ArrayList<>(cands.subList(0, Math.min(n, cands.size())));
     }
+
+    /** v1.3.6: las ideas más parecidas a `id` de TODO el libro (470 ideas),
+     *  no solo de la misma lección: para Experto e Imposible. */
+    private static List<Integer> nearestAll(int id, int n) {
+        Set<String> base = wordsOf(Data.body[id] + " " + Data.head[id]);
+        ArrayList<Integer> cands = new ArrayList<>();
+        for (int i = 0; i < Data.N; i++) if (i != id) cands.add(i);
+        Collections.shuffle(cands, R);
+        cands.sort((x, y) -> overlap(base, y) - overlap(base, x));
+        return new ArrayList<>(cands.subList(0, Math.min(n, cands.size())));
+    }
+
+    /** Nivel global de dificultad (v1.3.6): en tests unitarios sin Android,
+     *  Store puede no estar inicializado: se protege con try/catch. */
+    private static int diff() {
+        try { return Store.I == null ? 0 : Store.I.difficulty; } catch (Exception e) { return 0; }
+    }
     private static final Pattern WORD = Pattern.compile("[A-Za-z][A-Za-z'-]{3,}");
     private static final Set<String> STOP = new HashSet<>(Arrays.asList(("that this with your from into than them they their what when will have more "
             + "less over only just about make makes does dont doesnt every other others before after where which while being been very much most some").split(" ")));
@@ -108,7 +125,8 @@ final class Quiz {
     static Q headline(int id) {
         // v1.3.5: distractores = las 3 ideas más parecidas de la misma lección
         // (mismo tema, palabras en común), no 3 al azar que se descartan solas.
-        ArrayList<Integer> o = new ArrayList<>(nearest(id, 3));
+        // v1.3.6: con dificultad 2-3, las 3 más parecidas de TODO el libro.
+        ArrayList<Integer> o = new ArrayList<>(diff() >= 2 ? nearestAll(id, 3) : nearest(id, 3));
         o.add(id);
         Collections.shuffle(o, R);
         Q q = new Q();
@@ -144,7 +162,8 @@ final class Quiz {
         boolean truth = R.nextBoolean();
         // v1.3.5: la explicación falsa es la más parecida de la lección, no
         // una al azar: hay que leerla de verdad para notar que no corresponde.
-        int other = truth ? id : nearest(id, 1).get(0);
+        // v1.3.6: con dificultad 3, la falsa es la más parecida de TODO el libro.
+        int other = truth ? id : (diff() >= 3 ? nearestAll(id, 1).get(0) : nearest(id, 1).get(0));
         Q q = new Q();
         q.id = id;
         q.two = true;
@@ -169,6 +188,11 @@ final class Quiz {
         String lw = w.toLowerCase(Locale.ROOT);
         // v1.3.5: distractores primero de la misma lección (palabras del mismo
         // tema, largo parecido); si no alcanzan, del resto del libro.
+        // v1.3.6: el tope de largo es 3 (Normal/Difícil), 2 (Experto) o 1
+        // (Imposible); en Imposible el pool es primero solo de la misma
+        // lección y solo se amplía al resto del libro si no hay 3, y si
+        // aun así no hay, se relaja a 3 como siempre.
+        int cap = diff() >= 3 ? 1 : diff() == 2 ? 2 : 3;
         ArrayList<String> pool = new ArrayList<>();
         int b = Data.book(id);
         for (int i = b * Data.PER; i < b * Data.PER + Data.PER && i < Data.N; i++) {
@@ -176,8 +200,11 @@ final class Quiz {
             Matcher mm = WORD.matcher(Data.head[i]);
             while (mm.find()) {
                 String x = mm.group().toLowerCase(Locale.ROOT);
-                if (!x.equals(lw) && !STOP.contains(x) && Math.abs(x.length() - lw.length()) <= 3 && !pool.contains(x)) pool.add(x);
+                if (!x.equals(lw) && !STOP.contains(x) && Math.abs(x.length() - lw.length()) <= cap && !pool.contains(x)) pool.add(x);
             }
+        }
+        if (pool.size() < 3) {
+            for (String x : wordPool()) if (!x.equals(lw) && Math.abs(x.length() - lw.length()) <= cap && !pool.contains(x)) pool.add(x);
         }
         if (pool.size() < 3) {
             for (String x : wordPool()) if (!x.equals(lw) && Math.abs(x.length() - lw.length()) <= 3 && !pool.contains(x)) pool.add(x);

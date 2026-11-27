@@ -37,6 +37,15 @@ class AventuraScreen extends MiniGame {
         }
     }
 
+    /** Acertijos visibles en el nivel actual (v1.3.6: diff <= dificultad). */
+    private List<GamesData.Riddle> visibleRiddles() {
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        List<GamesData.Riddle> out = new ArrayList<>();
+        for (GamesData.Riddle r : GamesData.AVENTURA) if (r.diff <= d) out.add(r);
+        return out;
+    }
+
     private boolean riddleDone(GamesData.Riddle r) {
         return Store.I.gamesXp.contains("adv:" + r.point);
     }
@@ -79,12 +88,15 @@ class AventuraScreen extends MiniGame {
         if (stage == 1) {
             phase = ASK;
             addCompanion();
-            main.addView(card("BIBLIOTECA DE ALFA", "Cinco puntos esconden un acertijo cada uno. "
+            // v1.3.6: solo se listan los acertijos del nivel (diff <= dificultad);
+            // el texto y el contador usan el total visible, no el total del banco.
+            List<GamesData.Riddle> vis = visibleRiddles();
+            main.addView(card("BIBLIOTECA DE ALFA", vis.size() + " puntos esconden un acertijo cada uno. "
                     + "Resuélvelos y guarda las claves en tu inventario. La puerta final necesita 2 claves."), lpm(M, W, 0, 10, 0, 12));
             TextView inv = tv(a, "🎒 Inventario: " + (keys.isEmpty() ? "vacío" : String.join(", ", keys)), 15, ACCENT, MEDIUM);
             main.addView(inv, lpm(M, W, 0, 0, 0, 12));
             optViews.clear();
-            for (GamesData.Riddle r : GamesData.AVENTURA) {
+            for (GamesData.Riddle r : vis) {
                 boolean doneR = riddleDone(r);
                 TextView opt = optBtn((doneR ? "✓ " : "") + r.point + "\n" + (doneR ? "Resuelto — clave: " + r.key : "Un acertijo te espera"));
                 if (doneR) opt.setAlpha(0.6f);
@@ -115,7 +127,10 @@ class AventuraScreen extends MiniGame {
             main.addView(doorH, lpm(M, W, 0, 0, 0, 10));
             optViews.add(doorH);
             setBtn("Investigar", B_OFF);
-            comboTx.setText("Claves: " + keys.size() + "/5");
+            // Claves conseguidas entre los acertijos visibles (no del banco entero).
+            int got = 0;
+            for (GamesData.Riddle r : vis) if (riddleDone(r)) got++;
+            comboTx.setText("Claves: " + got + "/" + vis.size());
             return;
         }
         if (stage == 2) {

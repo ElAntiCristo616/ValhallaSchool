@@ -101,11 +101,19 @@ class LabScreen extends MiniGame {
             addCompanion();
             main.addView(card("LABORATORIO DEL MODELO A", "Arma los 16 modelos clásicos, posición por posición. "
                     + "Toca una ficha y luego una ranura; también puedes arrastrar la ficha con una pulsación larga."), lpm(M, W, 0, 10, 0, 12));
+            // v1.3.6: la dificultad global limita los grados que se ofrecen.
+            int dd = 0;
+            try { dd = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+            int minGrade = dd <= 0 ? 1 : dd == 1 ? 3 : dd == 2 ? 5 : 7;
+            String note = dd >= 3
+                    ? "Dificultad Imposible: solo grado 7."
+                    : "Dificultad " + Store.DIFF_NAMES[dd] + ": grados " + minGrade + "–7.";
+            main.addView(tv(a, note, 14, ACCENT, MEDIUM), lpm(M, W, 0, 0, 0, 12));
             TextView q = tv(a, "¿Qué grado quieres practicar?", 17, TEXT, MEDIUM);
             main.addView(q, lpm(M, W, 0, 0, 0, 12));
             optViews.clear();
             chosenH = null;
-            for (int g = 0; g < 7; g++) {
+            for (int g = minGrade - 1; g < 7; g++) {
                 TextView opt = optBtn((g + 1) + ". " + GRADES[g] + "\n" + GRADE_DESC[g]);
                 final int gg = g + 1;
                 LinearLayout holder = col(a);
@@ -125,14 +133,37 @@ class LabScreen extends MiniGame {
         if (stage == 1) {
             phase = ASK;
             addCompanion();
-            main.addView(card("DEDUCCIÓN POR PISTAS", "Pista 1: la función base es " + GamesData.elName(model[0])
+            // v1.3.6: con dificultad >=2 solo se muestra la pista 1 (la base), no base+creativa.
+            int dd = 0;
+            try { dd = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+            String pistas = dd >= 2
+                    ? "Pista 1: la función base es " + GamesData.elName(model[0])
+                    + ".\n¿Qué tipo es?"
+                    : "Pista 1: la función base es " + GamesData.elName(model[0])
                     + ".\nPista 2: la función creativa es " + GamesData.elName(model[1])
-                    + ".\n¿Qué tipo es?"), lpm(M, W, 0, 10, 0, 12));
+                    + ".\n¿Qué tipo es?";
+            main.addView(card("DEDUCCIÓN POR PISTAS", pistas), lpm(M, W, 0, 10, 0, 12));
             List<String> opts = new ArrayList<>();
             opts.add(type);
             List<String> pool = new ArrayList<>();
-            for (String t : GamesData.TYPES) pool.add(t);
-            Collections.shuffle(pool);
+            if (dd >= 2) {
+                // v1.3.6: distractores cercanos: tipos que comparten la base o la
+                // creativa de la respuesta en su Ego (mismo elemento en base o creativa).
+                for (String t : GamesData.TYPES) {
+                    if (t.equals(type)) continue;
+                    int[] m = GamesData.MODELS[GamesData.typeIdx(t)];
+                    if (m[0] == model[0] || m[1] == model[1] || m[0] == model[1] || m[1] == model[0]) pool.add(t);
+                }
+                Collections.shuffle(pool);
+                // Si los cercanos no alcanzan, completa con el resto (no debería pasar).
+                List<String> rest = new ArrayList<>();
+                for (String t : GamesData.TYPES) if (!t.equals(type) && !pool.contains(t)) rest.add(t);
+                Collections.shuffle(rest);
+                pool.addAll(rest);
+            } else {
+                for (String t : GamesData.TYPES) pool.add(t);
+                Collections.shuffle(pool);
+            }
             for (String t : pool) if (!t.equals(type) && opts.size() < 4) opts.add(t);
             Collections.shuffle(opts);
             optViews.clear();

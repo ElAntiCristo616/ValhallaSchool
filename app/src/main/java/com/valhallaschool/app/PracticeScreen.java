@@ -47,8 +47,28 @@ final class PracticeScreen extends MainActivity.Screen {
     private final ScrollView sc;
 
     static void start(MainActivity a, int level) {
-        List<PracticeData.Ex> pool = PracticeData.ofLevel(level);
+        // v1.3.6: la dificultad global mezcla ejercicios del nivel siguiente:
+        // Normal = 10 del nivel; Difícil = 7 + 3 del nivel+1; Experto = 5 + 5;
+        // Imposible = 10 del nivel 4 (Maestría). Si el nivel+1 no existe o está
+        // vacío, se usa solo el nivel elegido.
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        List<PracticeData.Ex> cur = PracticeData.ofLevel(level);
+        List<PracticeData.Ex> next = level < PracticeData.LEVELS ? PracticeData.ofLevel(level + 1) : new ArrayList<PracticeData.Ex>();
+        ArrayList<PracticeData.Ex> pool = new ArrayList<>();
+        if (d <= 0 || next.isEmpty()) {
+            pool.addAll(cur);
+        } else if (d == 1) {
+            pool.addAll(cur.subList(0, Math.min(7, cur.size())));
+            pool.addAll(next.subList(0, Math.min(3, next.size())));
+        } else if (d == 2) {
+            pool.addAll(cur.subList(0, Math.min(5, cur.size())));
+            pool.addAll(next.subList(0, Math.min(5, next.size())));
+        } else {
+            pool.addAll(level >= PracticeData.LEVELS ? cur : PracticeData.ofLevel(PracticeData.LEVELS));
+        }
         if (pool.isEmpty()) { a.toast("Aún no hay ejercicios en este nivel", false); return; }
+        Collections.shuffle(pool, Quiz.R);
         a.push(new PracticeScreen(a, level, new ArrayList<>(pool.subList(0, Math.min(10, pool.size())))));
     }
 

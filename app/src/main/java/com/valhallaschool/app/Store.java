@@ -39,6 +39,9 @@ final class Store {
     static final int[] SRS_DAYS = {1, 3, 7, 16, 35, 80};
     static final int[] GOALS = {20, 50, 100, 200};
     static final String[] GOAL_NAMES = {"Tranquilo", "Regular", "En serio", "Intenso"};
+    /** Nivel global de dificultad de los juegos (v1.3.6): 0 Normal, 1 Difícil, 2 Experto, 3 Imposible. */
+    static final String[] DIFF_NAMES = {"Normal", "Difícil", "Experto", "Imposible"};
+    int difficulty;
 
     static Store I;
 
@@ -148,7 +151,8 @@ final class Store {
                 .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
                 .put("avIdx", avIdx)
                 .put("nickname", nickname).put("myAvatar", myAvatar).put("myType", myType)
-                .put("gamesXp", gx).put("gameBest", gb).put("gameDay", gd);
+                .put("gamesXp", gx).put("gameBest", gb).put("gameDay", gd)
+                .put("difficulty", difficulty);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -205,6 +209,8 @@ final class Store {
         if (gb != null) for (Iterator<String> it = gb.keys(); it.hasNext(); ) { String k = it.next(); gameBest.put(k, gb.optInt(k)); }
         JSONObject gd = o.optJSONObject("gameDay");
         if (gd != null) for (Iterator<String> it = gd.keys(); it.hasNext(); ) { String k = it.next(); gameDay.put(k, gd.optInt(k)); }
+        difficulty = o.optInt("difficulty", 0);
+        if (difficulty < 0 || difficulty > 3) difficulty = 0;
         if (cat >= Data.catName.length) cat = -1;
     }
 
@@ -229,6 +235,7 @@ final class Store {
         pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0; avIdx = 0;
         nickname = ""; myAvatar = 0; myType = "";
         gamesXp.clear(); gameBest.clear(); gameDay.clear();
+        difficulty = 0;
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
@@ -396,6 +403,12 @@ final class Store {
         goal = g;
         int d = today();
         if (xpOn(d) >= goal && !met.contains(d)) { met.add(d); best = Math.max(best, streak()); }
+        save();
+    }
+
+    /** Nivel global de dificultad de los juegos (v1.3.6): 0..3, se acota al leer y al poner. */
+    void setDifficulty(int d) {
+        difficulty = d < 0 ? 0 : d > 3 ? 3 : d;
         save();
     }
 

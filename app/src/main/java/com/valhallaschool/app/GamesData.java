@@ -232,11 +232,12 @@ final class GamesData {
         return out;
     }
 
-    /* ---- 3. Tribunal: 20 argumentos ---- */
+    /* ---- 3. Tribunal: 30 argumentos (v1.3.6: la columna 7 es `diff`) ---- */
     static final class Trib {
         String id, argument, correction, explanation;
         int verdict; // 0 válido, 1 incorrecto, 2 insuficiente
         int category; // 0 estereotipo, 1 conducta≠elemento, 2 posición sin evidencia, 3 contradicción, 4 bloques/anillos, 5 sin error
+        int diff; // 0 Normal, 1 Difícil, 2 Experto, 3 Imposible
     }
 
     static final ArrayList<Trib> TRIBUNAL = new ArrayList<>();
@@ -256,7 +257,10 @@ final class GamesData {
                 Trib t = new Trib();
                 t.id = f[0]; t.argument = unquote(f[1]); t.verdict = Integer.parseInt(f[2]);
                 t.category = Integer.parseInt(f[3]); t.correction = unquote(f[4]); t.explanation = unquote(f[5]);
-                // f[6] reservado
+                // v1.3.6: la columna 7 es la dificultad (0-3); «x» vieja = 0.
+                t.diff = 0;
+                try { t.diff = Integer.parseInt(f[6].trim()); } catch (Exception ignored) { /* «x» o vacío = 0 */ }
+                if (t.diff < 0 || t.diff > 3) t.diff = 0;
                 TRIBUNAL.add(t);
             }
         } catch (IOException e) {
@@ -264,11 +268,12 @@ final class GamesData {
         }
     }
 
-    /* ---- 4. Intruso: 30 conjuntos ---- */
+    /* ---- 4. Intruso: 38 conjuntos (v1.3.6: sin `posicion`, con `relacion` y `diff`) ---- */
     static final class Intr {
         String id, kind, rule, property, explanation;
         String[] items = new String[4];
         int answer;
+        int diff; // 0 Normal, 1 Difícil, 2 Experto, 3 Imposible
     }
 
     static final ArrayList<Intr> INTRUSO = new ArrayList<>();
@@ -281,12 +286,17 @@ final class GamesData {
                 if (line.isEmpty()) continue;
                 if (first) { first = false; continue; }
                 String[] f = line.split("\t", -1);
-                if (f.length != 10) continue;
+                if (f.length != 10 && f.length != 11) continue;
                 Intr x = new Intr();
                 x.id = f[0]; x.kind = f[1];
                 for (int i = 0; i < 4; i++) x.items[i] = f[2 + i];
                 x.answer = Integer.parseInt(f[6]); x.rule = unquote(f[7]);
                 x.property = unquote(f[8]); x.explanation = unquote(f[9]);
+                x.diff = 0;
+                if (f.length == 11) {
+                    try { x.diff = Integer.parseInt(f[10].trim()); } catch (Exception ignored) { /* vacío = 0 */ }
+                    if (x.diff < 0 || x.diff > 3) x.diff = 0;
+                }
                 INTRUSO.add(x);
             }
         } catch (IOException e) {
@@ -294,11 +304,12 @@ final class GamesData {
         }
     }
 
-    /* ---- 5. Conexiones: 12 encargos ---- */
+    /* ---- 5. Conexiones: 20 encargos (v1.3.6: columna 11 `diff`) ---- */
     static final class Conn {
         String id, client, goal, explanation;
         int hired, answer;
         int[] cands = new int[4];
+        int diff; // 0 Normal, 1 Difícil, 2 Experto, 3 Imposible
     }
 
     static final ArrayList<Conn> CONEXIONES = new ArrayList<>();
@@ -311,12 +322,17 @@ final class GamesData {
                 if (line.isEmpty()) continue;
                 if (first) { first = false; continue; }
                 String[] f = line.split("\t", -1);
-                if (f.length != 10) continue;
+                if (f.length != 10 && f.length != 11) continue;
                 Conn x = new Conn();
                 x.id = f[0]; x.client = unquote(f[1]); x.goal = unquote(f[2]);
                 x.hired = typeIdx(f[3]);
                 for (int i = 0; i < 4; i++) x.cands[i] = typeIdx(f[4 + i]);
                 x.answer = Integer.parseInt(f[8]); x.explanation = unquote(f[9]);
+                x.diff = 0;
+                if (f.length == 11) {
+                    try { x.diff = Integer.parseInt(f[10].trim()); } catch (Exception ignored) { /* vacío = 0 */ }
+                    if (x.diff < 0 || x.diff > 3) x.diff = 0;
+                }
                 CONEXIONES.add(x);
             }
         } catch (IOException e) {
@@ -324,11 +340,12 @@ final class GamesData {
         }
     }
 
-    /* ---- 8. Lluvia: 30 fichas en 6 rondas ---- */
+    /* ---- 8. Lluvia: 48 fichas en 6 rondas (v1.3.6: columnas `round` y `diff`) ---- */
     static final class Rain {
         String id, text, explanation;
         String[] opts = new String[4];
         int answer, nOpts;
+        int round, diff; // ronda 0-5, dificultad 0-3
     }
 
     static final ArrayList<Rain> LLUVIA = new ArrayList<>();
@@ -341,12 +358,21 @@ final class GamesData {
                 if (line.isEmpty()) continue;
                 if (first) { first = false; continue; }
                 String[] f = line.split("\t", -1);
-                if (f.length != 9) continue;
+                if (f.length != 9 && f.length != 11) continue;
                 Rain x = new Rain();
                 x.id = f[0]; x.text = unquote(f[1]); x.answer = Integer.parseInt(f[2]);
                 x.nOpts = Integer.parseInt(f[3]);
                 for (int i = 0; i < 4; i++) x.opts[i] = f[4 + i];
                 x.explanation = unquote(f[8]);
+                // v1.3.6: round/diff explícitos si están; si no, round = posición/5 y diff = 0.
+                x.round = LLUVIA.size() / 5;
+                x.diff = 0;
+                if (f.length == 11) {
+                    try { x.round = Integer.parseInt(f[9].trim()); } catch (Exception ignored) { /* se queda el de posición */ }
+                    try { x.diff = Integer.parseInt(f[10].trim()); } catch (Exception ignored) { /* 0 */ }
+                    if (x.round < 0 || x.round > 5) x.round = LLUVIA.size() / 5;
+                    if (x.diff < 0 || x.diff > 3) x.diff = 0;
+                }
                 LLUVIA.add(x);
             }
         } catch (IOException e) {
@@ -358,6 +384,7 @@ final class GamesData {
        ya no hay games_arena.json. ---- */
     static final class ArenaOpt {
         String text, reaction; int dt, dc, dco;
+        boolean near; // v1.3.6: casi-correcta (dificultad >=2): parece buena pero falla en un detalle fino
     }
 
     static final class ArenaTurn {
@@ -370,11 +397,12 @@ final class GamesData {
         ArenaTurn[] turns = new ArenaTurn[3];
     }
 
-    /* ---- 7. Aventura: 1 sala por cuadra, 5 acertijos + puerta final (JSON) ---- */
+    /* ---- 7. Aventura: 1 sala por cuadra, 9 acertijos + puerta final (JSON, v1.3.6) ---- */
     static final class Riddle {
         String point, question, key, explanation, quadra;
         String[] opts = new String[4];
         int answer;
+        int diff; // 0 Normal, 1 Difícil, 2 Experto, 3 Imposible
     }
 
     /** Sala de una región: sus 5 acertijos y su puerta final. */
@@ -406,6 +434,8 @@ final class GamesData {
         r.point = ro.getString("point"); r.question = ro.getString("question");
         r.key = ro.getString("key"); r.explanation = ro.getString("explanation");
         r.quadra = ro.optString("quadra", "");
+        r.diff = ro.optInt("diff", 0);
+        if (r.diff < 0 || r.diff > 3) r.diff = 0;
         JSONArray opts = ro.getJSONArray("opts");
         for (int k = 0; k < 4; k++) r.opts[k] = opts.getString(k);
         r.answer = ro.getInt("answer");

@@ -82,6 +82,66 @@
    "point": "El mapa",
    "question": "El mapa pide el tipo de Alfa con Ti base y Ne creativa. ¿Quién es?",
    "quadra": "Alfa"
+  },
+  {
+   "answer": 0,
+   "explanation": "En ESE, la sugestiva (5) es Ti: necesita que le den estructuras claras.",
+   "key": "Vela",
+   "opts": [
+    "Ti",
+    "Ne",
+    "Fi",
+    "Se"
+   ],
+   "point": "La lámpara",
+   "question": "La lámpara pide la sugestiva de ESE. ¿Qué función es?",
+   "quadra": "Alfa",
+   "diff": 1
+  },
+  {
+   "answer": 0,
+   "explanation": "El dual de LII es ESE: Fe base con Si creativa cubre el Superid de LII (Fe, Si).",
+   "key": "Hilo dorado",
+   "opts": [
+    "ESE",
+    "SEI",
+    "ILE",
+    "EIE"
+   ],
+   "point": "El tapiz",
+   "question": "El tapiz pide el dual de LII. ¿Quién es?",
+   "quadra": "Alfa",
+   "diff": 1
+  },
+  {
+   "answer": 0,
+   "explanation": "En LII la dolorosa (4) es Se y la sugestiva (5) es Fe: solo LII cumple las dos.",
+   "key": "Fragmento",
+   "opts": [
+    "LII",
+    "ILE",
+    "ESE",
+    "SEI"
+   ],
+   "point": "El espejo roto",
+   "question": "El espejo roto pide el tipo de Alfa cuya dolorosa es Se y cuya sugestiva es Fe. ¿Quién es?",
+   "quadra": "Alfa",
+   "diff": 2
+  },
+  {
+   "answer": 0,
+   "explanation": "ILE supervisa a LSI: su Ne base pisa la dolorosa de LSI (Ne). ILE es el único tipo de Alfa que supervisa a LSI.",
+   "key": "Página prohibida",
+   "opts": [
+    "ILE",
+    "SEI",
+    "ESE",
+    "LII"
+   ],
+   "point": "El grimorio",
+   "question": "El grimorio pide el tipo de Alfa que supervisa a LSI. ¿Quién es?",
+   "quadra": "Alfa",
+   "diff": 3
   }
  ],
  "Beta": {

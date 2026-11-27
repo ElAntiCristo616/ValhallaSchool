@@ -127,11 +127,13 @@ class DetectiveScreen extends MiniGame {
         if (intro) {
             phase = ASK;
             addCompanion();
-            main.addView(card("CÓMO SE INVESTIGA", "1 · Lee la escena: cada expediente tiene 3 escenas numeradas, en orden.\n"
+            String howto = "1 · Lee la escena: cada expediente tiene 3 escenas numeradas, en orden.\n"
                     + "2 · En cada fragmento marca qué elemento está hablando (Ne, Ni, Se, Si, Te, Ti, Fe, Fi).\n"
                     + "3 · Tu hipótesis provisional aparece arriba: cámbiala cuando quieras.\n"
-                    + "4 · Al final concluye: qué tipo es el sospechoso, o «Indeterminado» si los datos no alcanzan.\n"
-                    + "Si no sabes por dónde empezar, toca 💡 Pista: primero te dice en qué escena está, luego qué mirar, luego el contraste."), lpm(M, W, 0, 10, 0, 12));
+                    + "4 · Al final concluye: qué tipo es el sospechoso, o «Indeterminado» si los datos no alcanzan."
+                    // v1.3.6: en Imposible no hay pistas, así que no se ofrecen.
+                    + (maxHints() > 0 ? "\nSi no sabes por dónde empezar, toca 💡 Pista: primero te dice en qué escena está, luego qué mirar, luego el contraste." : "");
+            main.addView(card("CÓMO SE INVESTIGA", howto), lpm(M, W, 0, 10, 0, 12));
             setBtn("Empezar la investigación", B_GREEN);
             return;
         }
@@ -160,13 +162,19 @@ class DetectiveScreen extends MiniGame {
             hypTx = tv(a, "Hipótesis provisional: —", 14, MUTED, REG);
             main.addView(hypTx, lpm(M, W, 0, 0, 0, 10));
             // Pistas escalonadas (biblia §01): escena → fragmento → contraste.
-            hintBtn = tv(a, "💡 Pista (0/3)", 15, BLUE, MEDIUM);
-            hintBtn.setGravity(Gravity.CENTER);
-            hintBtn.setBackground(round(SURF2, 12, LINE, 1));
-            hintBtn.setPadding(dp(14), dp(12), dp(14), dp(12));
-            hintBtn.setOnClickListener(v -> showHint());
-            ripple(hintBtn, true);
-            main.addView(hintBtn, lpm(M, W, 0, 0, 0, 8));
+            // v1.3.6: en Imposible no hay pistas (el botón no se muestra).
+            int maxH = maxHints();
+            if (maxH > 0) {
+                hintBtn = tv(a, "💡 Pista (0/" + maxH + ")", 15, BLUE, MEDIUM);
+                hintBtn.setGravity(Gravity.CENTER);
+                hintBtn.setBackground(round(SURF2, 12, LINE, 1));
+                hintBtn.setPadding(dp(14), dp(12), dp(14), dp(12));
+                hintBtn.setOnClickListener(v -> showHint());
+                ripple(hintBtn, true);
+                main.addView(hintBtn, lpm(M, W, 0, 0, 0, 8));
+            } else {
+                hintBtn = null;
+            }
             hintTx = tv(a, "", 15, TEXT, REG);
             hintTx.setLineSpacing(0, 1.3f);
             hintTx.setVisibility(android.view.View.GONE);
@@ -236,7 +244,8 @@ class DetectiveScreen extends MiniGame {
     }
 
     private void showHint() {
-        if (hintLevel >= 3) return;
+        int maxH = maxHints();
+        if (hintLevel >= maxH) return;
         hintLevel++;
         int el = PracticeData.elIdx(cur.answer);
         String txt;
@@ -250,7 +259,7 @@ class DetectiveScreen extends MiniGame {
         }
         hintTx.setText(txt);
         hintTx.setVisibility(android.view.View.VISIBLE);
-        hintBtn.setText("💡 Pista (" + hintLevel + "/3)" + (hintLevel >= 3 ? " · ya está todo" : ""));
+        if (hintBtn != null) hintBtn.setText("💡 Pista (" + hintLevel + "/" + maxH + ")" + (hintLevel >= maxH ? " · ya está todo" : ""));
     }
 
     private void pickElement(LinearLayout holder, String el) {
@@ -272,6 +281,13 @@ class DetectiveScreen extends MiniGame {
 
     private String correctConclusion() {
         return caseAnswer == 2 ? "Indeterminado" : caseAnswer == 0 ? caseAnsA : caseAnsB;
+    }
+
+    /** Pistas escalonadas por dificultad global (v1.3.6): Normal 3, Difícil 2, Experto 1, Imposible 0. */
+    private static int maxHints() {
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        return d <= 0 ? 3 : d == 1 ? 2 : d == 2 ? 1 : 0;
     }
 
     @Override protected void onBtn() {

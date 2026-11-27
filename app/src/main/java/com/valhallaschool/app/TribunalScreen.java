@@ -10,10 +10,11 @@ import java.util.List;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Tribunal tipológico (v1.3.0): 20 argumentos revisados. El jugador pone el
+ * Tribunal tipológico (v1.3.6): 30 argumentos revisados. El jugador pone el
  * sello (válido / incorrecto / insuficiente); si es incorrecto, localiza el
  * error, lo clasifica en una de 6 categorías y elige la reformulación
  * correcta. Puntaje por argumento: veredicto 40 + categoría 30 + corrección 30.
+ * La dificultad global filtra el banco por `diff`.
  */
 class TribunalScreen extends MiniGame {
     private final List<GamesData.Trib> queue = new ArrayList<>();
@@ -31,7 +32,12 @@ class TribunalScreen extends MiniGame {
 
     private TribunalScreen(MainActivity a) {
         super(a, "tribunal", 5);
-        List<GamesData.Trib> all = new ArrayList<>(GamesData.TRIBUNAL);
+        // v1.3.6: el nivel de dificultad filtra el banco por `diff`.
+        int d = 0;
+        try { d = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
+        List<GamesData.Trib> all = new ArrayList<>();
+        for (GamesData.Trib t : GamesData.TRIBUNAL) if (t.diff <= d) all.add(t);
+        if (all.size() < 5) all = new ArrayList<>(GamesData.TRIBUNAL); // guarda: nunca menos de 5
         Collections.shuffle(all);
         queue.addAll(all.subList(0, 5));
     }
