@@ -19,9 +19,11 @@ import static com.valhallaschool.app.Ui.*;
  * Loop: modo infinito, teoría + práctica revueltas al azar (~50/50).
  * El mazo se rebaraja solo cuando se agota: no hay fin, no hay niveles.
  *
- * SIN recompensas: no llama a addXP, addGems ni checkAch; no toca
- * S.qa/S.qc (para no contaminar «Maestro del quiz»); no sincroniza a
- * la nube; no guarda nada en Store. Solo correcto/incorrecto +
+ * Aporta a la racha diaria (v1.2.5): cada acierto suma 10 XP (Store.XP_Q,
+ * como Práctica) a la meta diaria, así jugar Loop marca el día como
+ * cumplido y mantiene la racha. SIN gemas, SIN logros nuevos por Loop,
+ * SIN qa/qc (para no contaminar «Maestro del quiz»), SIN nube; no
+ * guarda nada más en Store. Solo correcto/incorrecto +
  * explicación/justificación. Fallar NO reencola: la carta se va y
  * viene otra nueva.
  */
@@ -221,7 +223,8 @@ final class LoopScreen extends MainActivity.Screen {
         }
     }
 
-    /** Sin Store, sin nube, sin logros: solo bien/mal y la explicación. */
+    /** Aporta a la racha diaria (v1.2.5): 10 XP por acierto, como Práctica.
+     *  Sin gemas, sin qa/qc, sin nube. Solo bien/mal y la explicación. */
     private void check() {
         boolean ok = sel == item.answer;
         if (companion != null) companion.react(ok);
@@ -230,6 +233,7 @@ final class LoopScreen extends MainActivity.Screen {
         if (ok) {
             correct++;
             streak++;
+            Store.I.addXP(Store.XP_Q, true);
             Sfx.play(Sfx.OK);
             fbTitle.setText(PRAISE[Quiz.R.nextInt(PRAISE.length)]);
             fbTitle.setTextColor(GREEN);
