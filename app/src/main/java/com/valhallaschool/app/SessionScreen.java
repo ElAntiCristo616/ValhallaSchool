@@ -24,7 +24,7 @@ import static com.valhallaschool.app.Ui.*;
 final class SessionScreen extends MainActivity.Screen {
     private static final int LEARN = 0, ASK = 1, FEEDBACK = 2, END = 3;
     /** Título al acertar: humillación por nombre, nunca elogio sincero (orden de Remy 2026-11-27). */
-    private static final String[] PRAISE = {"¡Wow, {name}! ¿Casualidad?", "¡Milagro, {name}!", "¡Por fin, {name}! ¿Copiaste?", "¡Ni tú te la crees, {name}!", "¡Una bien, {name}! No te emociones."};
+    private static final String[] PRAISE = {"¡Wow, {name}! ¿Casualidad, cuck?", "¡Milagro, {name}! Hasta un NPC acierta a veces.", "¡Por fin, {name}! ¿Copiaste, beta?", "¡Ni tú te la crees, {name}! ¡Qué asco, fracasado!", "¡Una bien, {name}! No te emociones, inútil."};
 
     private final ArrayDeque<Object> queue = new ArrayDeque<>();
     private final int total, bonus;

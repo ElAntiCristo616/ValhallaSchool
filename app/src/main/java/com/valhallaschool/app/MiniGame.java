@@ -134,9 +134,20 @@ abstract class MiniGame extends MainActivity.Screen {
     protected String name() { return Store.I.displayName(); }
 
     /** Título de fin: humillación por nombre, nunca elogio sincero. */
+    private static final String[] END_GOOD = {
+            "¡Lo lograste, {name}! ¿Casualidad, cuck?",
+            "¡Pasaste, {name}! Hasta un NPC pasa a veces.",
+            "¡Bien, {name}! No te emociones, fracasado.",
+    };
+    private static final String[] END_BAD = {
+            "¡Qué desastre, {name}! ¡Hasta tu moral da pena!",
+            "¡Qué vergüenza, {name}! ¡Eres un cuck!",
+            "¡Fracasado total, {name}! ¡Ni el espejo te aguanta!",
+    };
+
     protected String endTitle(boolean good) {
-        return good ? "¡Lo lograste, " + name() + "! ¿Casualidad?"
-                : "¡Qué desastre, " + name() + "!";
+        String[] bank = good ? END_GOOD : END_BAD;
+        return bank[Quiz.R.nextInt(bank.length)].replace("{name}", name());
     }
 
     /** Tarjeta de contexto (título pequeño + cuerpo). */
@@ -158,6 +169,9 @@ abstract class MiniGame extends MainActivity.Screen {
     /** Pantalla final: XP ganado, precisión y tiempo; guarda el mejor puntaje. */
     protected void finish(String subtitle) {
         phase = END;
+        // v1.3.1: la sesión terminada cuenta para la misión de Retos de hoy.
+        // Intruso y Tribunal cuentan por ítem (en su finishItem), no por sesión.
+        if (!gameId.equals("intruso") && !gameId.equals("tribunal")) Store.I.bumpGameDay(gameId);
         int acc = answered > 0 ? Math.round(firstOk * 100f / answered) : 100;
         boolean good = acc >= 70;
         long secs = (System.currentTimeMillis() - t0) / 1000;

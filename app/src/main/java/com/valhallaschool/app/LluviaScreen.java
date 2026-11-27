@@ -245,7 +245,7 @@ class LluviaScreen extends MiniGame {
         }
         reactCompanion(ok);
         if (ok) {
-            fbTitle.setText("¡Atrapada, " + name() + "! ¿Casualidad?");
+            fbTitle.setText("¡Atrapada, " + name() + "! ¿Casualidad, cuck?");
             fbText.setText(c.explanation);
             Sfx.play(Sfx.OK);
             setFoot(1);

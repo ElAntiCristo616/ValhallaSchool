@@ -68,9 +68,10 @@ public final class MainActivity extends Activity implements Store.Events {
     }
 
     private static final int REQ_EXPORT = 1, REQ_IMPORT = 2;
-    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn, R.drawable.ic_games};
-    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn, R.drawable.ic_games};
-    private static final String[] NAV = {"Inicio", "Retos", "Perfil", "Práctica", "Juegos"};
+    // v1.3.1: Perfil al final (antes era la 3ª pestaña, en el centro).
+    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_trophy, R.drawable.ic_learn, R.drawable.ic_games, R.drawable.ic_profile};
+    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_trophy, R.drawable.ic_learn, R.drawable.ic_games, R.drawable.ic_profile_fill};
+    private static final String[] NAV = {"Inicio", "Retos", "Práctica", "Juegos", "Perfil"};
 
     Store S;
     FrameLayout root;
@@ -244,9 +245,9 @@ public final class MainActivity extends Activity implements Store.Events {
     private Tab makeTab(int i) {
         switch (i) {
             case 1: return new ChallengesTab(this);
-            case 2: return new ProfileTab(this);
-            case 3: return new PracticeTab(this);
-            case 4: return new GamesTab(this);
+            case 2: return new PracticeTab(this);
+            case 3: return new GamesTab(this);
+            case 4: return new ProfileTab(this);
             default: return new LearnTab(this);
         }
     }

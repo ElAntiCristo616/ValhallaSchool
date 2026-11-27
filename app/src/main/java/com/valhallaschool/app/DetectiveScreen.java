@@ -210,7 +210,7 @@ class DetectiveScreen extends MiniGame {
                 optStyle(o, hEl.equals(cur.answer) ? 2 : h == chosen ? 3 : 0);
                 h.setOnClickListener(null);
             }
-            fbTitle.setText(ok ? "¡Acertaste, " + name() + "! ¿Copiaste?" : "¡Te equivocaste, " + name() + "!");
+            fbTitle.setText(ok ? "¡Acertaste, " + name() + "! ¿Copiaste, cuck?" : "¡Te equivocaste, " + name() + "!");
             fbText.setText(cur.just);
             reactCompanion(ok);
             if (ok) Sfx.play(Sfx.OK); else hapticBad();
@@ -229,7 +229,7 @@ class DetectiveScreen extends MiniGame {
                 optStyle(o, hAns.equals(correctConclusion()) ? 2 : h == chosen ? 3 : 0);
                 h.setOnClickListener(null);
             }
-            fbTitle.setText(ok ? "¡Caso resuelto, " + name() + "! Milagro." : "¡Ni el caso lo cerraste, " + name() + "!");
+            fbTitle.setText(ok ? "¡Caso resuelto, " + name() + "! Milagro, NPC." : "¡Ni el caso lo cerraste, " + name() + "!");
             fbText.setText(caseExpl);
             reactCompanion(ok);
             if (ok) Sfx.play(Sfx.OK); else hapticBad();

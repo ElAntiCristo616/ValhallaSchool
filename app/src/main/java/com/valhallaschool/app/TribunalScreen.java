@@ -216,5 +216,6 @@ class TribunalScreen extends MiniGame {
     private void finishItem() {
         answered++;
         if (itemPerfect) { firstOk++; award("trib:" + cur().id); }
+        Store.I.bumpGameDay("tribunal"); // v1.3.1: cada argumento cuenta para la misión de Retos
     }
 }

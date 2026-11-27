@@ -130,7 +130,7 @@ class IntrusoScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Intruso encontrado, " + name() + "! ¿Casualidad?");
+                fbTitle.setText("¡Intruso encontrado, " + name() + "! ¿Casualidad, cuck?");
                 fbText.setText("El intruso es " + t.items[t.answer] + ". Ahora di qué comparten las otras tres.");
                 Sfx.play(Sfx.OK);
                 setFoot(1);
@@ -155,7 +155,7 @@ class IntrusoScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Regla correcta, " + name() + "! Milagro.");
+                fbTitle.setText("¡Regla correcta, " + name() + "! Milagro, beta.");
                 fbText.setText(t.explanation);
                 Sfx.play(Sfx.OK);
                 setFoot(1);
@@ -175,5 +175,6 @@ class IntrusoScreen extends MiniGame {
     private void finishItem() {
         answered++;
         if (itemPerfect) { firstOk++; award("int:" + cur().id); }
+        Store.I.bumpGameDay("intruso"); // v1.3.1: cada conjunto cuenta para la misión de Retos
     }
 }

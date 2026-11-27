@@ -324,7 +324,7 @@ class LabScreen extends MiniGame {
             typeOk = guess.equals(type);
             reactCompanion(typeOk);
             if (typeOk) {
-                fbTitle.setText("¡Era " + type + ", " + name() + "! ¿Casualidad?");
+                fbTitle.setText("¡Era " + type + ", " + name() + "! ¿Casualidad, cuck?");
                 fbText.setText("Base " + GamesData.elName(model[0]) + " y creativa " + GamesData.elName(model[1])
                         + ". Ahora arma el modelo completo.");
                 Sfx.play(Sfx.OK);
@@ -366,7 +366,7 @@ class LabScreen extends MiniGame {
             if (ok) Sfx.play(Sfx.OK); else hapticBad();
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Modelo correcto, " + name() + "! ¿Copiaste?");
+                fbTitle.setText("¡Modelo correcto, " + name() + "! ¿Copiaste, beta?");
                 fbText.setText("Ego: " + modelEl(0) + " + " + modelEl(1) + " · Superego: " + modelEl(2) + " + " + modelEl(3)
                         + " · Superid: " + modelEl(4) + " + " + modelEl(5) + " · Id: " + modelEl(6) + " + " + modelEl(7) + ".");
                 setFoot(1);

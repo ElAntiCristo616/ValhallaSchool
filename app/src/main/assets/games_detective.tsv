@@ -1,31 +1,31 @@
 id	case	fragment	answer	d1	d2	d3	justification
-det01	1	¿Y si usamos estas piezas viejas para hacer algo que nadie ha hecho?	Ne	Ti	Se	Ni	Busca usos nuevos de lo que hay: el foco está en las posibilidades, no en lo que la pieza es ahora (Ne).
-det02	1	Antes de armar nada, dime qué método usas y cómo compruebas que funciona.	Te	Ti	Se	Fi	Pide un método verificable y resultados medibles: hechos y eficacia (Te).
+det01	1	¿Y si usamos estas piezas viejas para hacer algo que nadie ha hecho?	Ne	Ti	Se	Ni	Busca lo que la pieza es capaz de ser: su contenido interno y su esencia, no lo que es ahora (Ne).
+det02	1	Antes de armar nada, dime qué método usas y cómo compruebas que funciona.	Te	Ti	Se	Fi	Pide un método de acción verificable y resultados medibles: trabajo y eficiencia (Te).
 det03	1	Esto se siente frío y áspero; el material no está en buen estado.	Si	Se	Fi	Ni	Percibe el estado físico del material y cómo se siente al tocarlo (Si).
 det04	1	Si lo montamos así, la estructura se cae en una semana: el peso no cuadra.	Ti	Te	Se	Ne	Analiza la coherencia interna del sistema: proporciones y estructura (Ti).
 det05	1	Tráeme la pieza ya, que el cliente está esperando en la puerta.	Se	Si	Te	Fe	Presiona por el objeto aquí y ahora: fuerza y presencia en el momento (Se).
-det06	1	No me importa el taller si te está costando la salud; tú vales más que esto.	Fi	Fe	Si	Te	Valora a la persona por encima del trabajo: la distancia y el aprecio personal (Fi).
+det06	1	No me importa el taller si te está costando la salud; tú vales más que esto.	Fi	Fe	Si	Te	Valora a la persona por encima del trabajo: lo que necesita y la relación con ella (Fi).
 det07	1	El ambiente está tenso; si seguimos así, alguien va a explotar.	Fe	Fi	Ni	Se	Lee el clima emocional del grupo en este momento (Fe).
 det08	1	En dos años este taller ya no existirá si no cambiamos de giro.	Ni	Ne	Te	Ti	Anticipa el desarrollo en el tiempo: hacia dónde va esto (Ni).
-det09	1	¿Qué otras cosas podría ser esto si lo miramos al revés?	Ne	Ni	Se	Ti	Explora qué más podría ser el objeto: posibilidades alternativas (Ne).
-det10	1	El presupuesto no da: cada peso tiene que rendir el doble.	Te	Ti	Fi	Se	Se fija en los números y en que el recurso rinda: eficacia medible (Te).
-det11	2	¿Me pasas los números de ventas de ayer? Necesito datos, no impresiones.	Te	Ti	Ne	Fi	Pide hechos concretos y medibles, no opiniones (Te).
+det09	1	¿Qué otras cosas podría ser esto si lo miramos al revés?	Ne	Ni	Se	Ti	Explora lo que el objeto es en esencia: su contenido interno y lo que es capaz de ser (Ne).
+det10	1	El presupuesto no da: cada peso tiene que rendir el doble.	Te	Ti	Fi	Se	Se fija en los números y en que el recurso rinda: trabajo y eficiencia (Te).
+det11	2	¿Me pasas los números de ventas de ayer? Necesito datos, no impresiones.	Te	Ti	Ne	Fi	Pide hechos y métodos concretos y medibles, no opiniones (Te).
 det12	2	Si seguimos con este menú, en diciembre ya no vendrá nadie: la gente se aburre.	Ni	Ne	Fi	Te	Proyecta la tendencia en el tiempo: lo que pasará si nada cambia (Ni).
 det13	2	Mira cómo tiembla la taza: el café está demasiado caliente para agarrarlo así.	Si	Se	Ni	Te	Nota la temperatura y cómo se siente al tacto (Si).
 det14	2	La regla es clara: primero se cobra, luego se sirve. Sin excepciones.	Ti	Te	Fi	Se	Aplica una regla general sin excepciones: orden y sistema (Ti).
 det15	2	¡Ya basta de vueltas! Siéntense o se van: la mesa es para clientes.	Se	Te	Fe	Si	Impone presencia y ocupa el espacio aquí y ahora (Se).
 det16	2	No me gusta cómo le hablaste al mesero; se fue triste.	Fi	Fe	Si	Ni	Se fija en cómo quedó la relación con el mesero: el trato personal (Fi).
 det17	2	Se nota que hoy todos están de buen humor: hasta la música suena distinto.	Fe	Fi	Ni	Se	Lee el ánimo colectivo del lugar (Fe).
-det18	2	¿Y si ponemos una mesa para leer y otra para jugar? La cafetería podría ser dos lugares.	Ne	Ni	Se	Ti	Ve posibilidades nuevas para el mismo espacio (Ne).
+det18	2	¿Y si ponemos una mesa para leer y otra para jugar? La cafetería podría ser dos lugares.	Ne	Ni	Se	Ti	Ve lo que el espacio es capaz de ser: otro contenido, otra esencia (Ne).
 det19	2	El pedido llegó incompleto: faltan dos tazas y un plato, y eso ya es la tercera vez.	Te	Ti	Se	Fi	Cuenta hechos y repeticiones: lo que falta y cuántas veces (Te).
 det20	2	No me fío de ese proveedor: cada vez promete y cada vez falla.	Fi	Fe	Ni	Te	Desconfía por el historial de la relación: lo que ha hecho antes (Fi).
 det21	3	Compra doce kilos de zanahorias cada martes, sin falta.	Si	Te	Se	Ni	Una rutina ligada a las necesidades del cuerpo y del hogar (Si).
 det22	3	Dice que las zanahorias son para el restaurante, pero nadie ha visto el restaurante.	Ti	Te	Ne	Fi	Detecta que el relato no cuadra: contradicción lógica (Ti).
 det23	3	El vecino sonríe y saluda a todos; nadie sospecha de él.	Fe	Fi	Se	Ni	Maneja el ambiente con los vecinos: cae bien y no levanta sospechas (Fe).
 det24	3	Si sigue así, en un año tendrá zanahorias hasta en el techo.	Ni	Ne	Si	Te	Proyecta la rutina hacia el futuro (Ni).
-det25	3	¿Y si las zanahorias son para algo que no nos imaginamos?	Ne	Ni	Se	Ti	Abre posibilidades nuevas sobre lo mismo (Ne).
+det25	3	¿Y si las zanahorias son para algo que no nos imaginamos?	Ne	Ni	Se	Ti	Ve lo que las zanahorias son capaces de ser: su contenido y su esencia (Ne).
 det26	3	Ayer lo vi cargando las bolsas con una sola mano, como si nada.	Se	Si	Te	Fe	Fuerza física y presencia en el acto (Se).
 det27	3	No me cae bien: algo en su forma de mirar me incomoda.	Fi	Fe	Ni	Se	Una reacción personal de distancia: no le gusta cómo lo mira (Fi).
-det28	3	El precio de la zanahoria subió y él ni se inmutó: sigue comprando igual.	Te	Ti	Fi	Ne	El costo no cambia su decisión: importan los hechos, no el precio (Te).
+det28	3	El precio de la zanahoria subió y él ni se inmutó: sigue comprando igual.	Te	Ti	Fi	Ne	El costo no cambia su decisión: importan los hechos y la eficiencia, no el precio (Te).
 det29	3	El barrio entero habla de él, pero nadie sabe nada seguro.	Fe	Fi	Ni	Se	El rumor mueve el ambiente de todo el barrio (Fe).
 det30	3	Si el restaurante existe, ¿por qué nunca huele a comida en su casa?	Ti	Te	Ne	Fi	Busca la coherencia del relato: si fuera verdad, habría señales (Ti).

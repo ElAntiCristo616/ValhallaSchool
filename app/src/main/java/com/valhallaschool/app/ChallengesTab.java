@@ -40,6 +40,15 @@ final class ChallengesTab extends MainActivity.Tab {
         mission("Racha de 7 días", S.streak(), 7, "🔥");
         mission("Completa 5 lecciones", S.lessons.size(), 5, "📚");
 
+        // v1.3.1: retos que te llevan DIRECTO al juego o tarea al tocarlos.
+        content.addView(section(a, "Retos de juegos"));
+        missionLink("🌧️", "Juega 3 rondas de Lluvia", S.gameDay("lluvia"), 3, () -> a.push(LluviaScreen.start(a)));
+        missionLink("🕵️", "Resuelve un caso de Detective", S.gameDay("detective"), 1, () -> a.push(DetectiveScreen.start(a)));
+        missionLink("🧪", "Arma un modelo en el Laboratorio", S.gameDay("lab"), 1, () -> a.push(LabScreen.start(a)));
+        missionLink("🔍", "Encuentra 5 intrusos", S.gameDay("intruso"), 5, () -> a.push(IntrusoScreen.start(a)));
+        missionLink("⚖️", "Juzga 3 argumentos en el Tribunal", S.gameDay("tribunal"), 3, () -> a.push(TribunalScreen.start(a)));
+        missionLink("🧠", "Haz 10 ejercicios de Práctica", S.gameDay("practice"), 10, () -> a.go(2));
+
         content.addView(section(a, "Tienda"));
         shopItem("❄️", "Congelar racha", "Tu racha no se rompe mañana aunque no juegues", 50, () -> {
             S.frozen.add(Store.today() + 1);
@@ -59,6 +68,23 @@ final class ChallengesTab extends MainActivity.Tab {
         if (done) r.addView(tv(a, "✓", 18, ACCENT, BLACK));
         b.addView(r);
         b.addView(new Views.Bar(a).set(Math.min(1f, cur / (float) goal), done ? ACCENT : BLUE), lpm(M, dp(8), 0, 10, 0, 0));
+        content.addView(b, lpm(M, W, 0, 0, 0, 10));
+    }
+
+    /** Misión con navegación directa: toda la tarjeta es un botón que abre su juego o tarea. */
+    private void missionLink(String ico, String name, int cur, int goal, Runnable open) {
+        boolean done = cur >= goal;
+        LinearLayout b = box(a);
+        LinearLayout r = row(a);
+        r.addView(tv(a, ico, 22, TEXT, REG));
+        TextView t = tv(a, name + " · " + Math.min(cur, goal) + "/" + goal, 15, done ? ACCENT : TEXT, done ? BLACK : MEDIUM);
+        t.setPadding(dp(12), 0, 0, 0);
+        r.addView(t, lp(0, W, 1));
+        if (done) r.addView(tv(a, "✓", 18, ACCENT, BLACK));
+        r.addView(tv(a, "›", 22, done ? ACCENT : MUTED, BLACK));
+        b.addView(r);
+        b.addView(new Views.Bar(a).set(Math.min(1f, cur / (float) goal), done ? ACCENT : BLUE), lpm(M, dp(8), 0, 10, 0, 0));
+        b.setOnClickListener(v -> open.run());
         content.addView(b, lpm(M, W, 0, 0, 0, 10));
     }
 

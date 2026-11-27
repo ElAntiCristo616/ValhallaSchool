@@ -207,7 +207,7 @@ class AventuraScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡Clave conseguida, " + name() + "! ¿Copiaste?");
+                fbTitle.setText("¡Clave conseguida, " + name() + "! ¿Copiaste, cuck?");
                 fbText.setText("«" + curRiddle.key + "» guardada en tu inventario. " + curRiddle.explanation);
                 Sfx.play(Sfx.OK);
                 setFoot(1);
@@ -232,7 +232,7 @@ class AventuraScreen extends MiniGame {
             }
             reactCompanion(ok);
             if (ok) {
-                fbTitle.setText("¡La puerta se abrió, " + name() + "! Milagro.");
+                fbTitle.setText("¡La puerta se abrió, " + name() + "! Milagro, NPC.");
                 fbText.setText(GamesData.AVENTURA_DOOR_WHY);
                 Sfx.play(Sfx.OK);
                 setFoot(1);

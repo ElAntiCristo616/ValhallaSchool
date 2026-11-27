@@ -73,6 +73,9 @@ final class Store {
     final HashSet<String> gamesXp = new HashSet<>();
     /** Mejor puntuación por juego (id de juego → mejor puntaje 0..100). */
     final HashMap<String, Integer> gameBest = new HashMap<>();
+    /** Progreso de hoy por juego/tarea (clave "dia:id" → veces hechas hoy).
+        v1.3.1: alimenta las misiones de Retos con navegación directa. */
+    final HashMap<String, Integer> gameDay = new HashMap<>();
 
     Events ev;
     private final File file;
@@ -134,6 +137,8 @@ final class Store {
         for (String id : gamesXp) gx.put(id);
         JSONObject gb = new JSONObject();
         for (Map.Entry<String, Integer> e : gameBest.entrySet()) gb.put(e.getKey(), e.getValue());
+        JSONObject gd = new JSONObject();
+        for (Map.Entry<String, Integer> e : gameDay.entrySet()) gd.put(e.getKey(), e.getValue());
         return o.put("srs", s).put("xp", x).put("met", m).put("lessons", l).put("ach", a)
                 .put("qa", qa).put("qc", qc).put("perfect", perfect).put("goal", goal).put("best", best)
                 .put("cat", cat).put("seed", seed).put("theme", theme).put("sound", sound ? 1 : 0)
@@ -143,7 +148,7 @@ final class Store {
                 .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
                 .put("avIdx", avIdx)
                 .put("nickname", nickname).put("myAvatar", myAvatar).put("myType", myType)
-                .put("gamesXp", gx).put("gameBest", gb);
+                .put("gamesXp", gx).put("gameBest", gb).put("gameDay", gd);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -198,6 +203,8 @@ final class Store {
         if (gx != null) for (int i = 0; i < gx.length(); i++) gamesXp.add(gx.optString(i));
         JSONObject gb = o.optJSONObject("gameBest");
         if (gb != null) for (Iterator<String> it = gb.keys(); it.hasNext(); ) { String k = it.next(); gameBest.put(k, gb.optInt(k)); }
+        JSONObject gd = o.optJSONObject("gameDay");
+        if (gd != null) for (Iterator<String> it = gd.keys(); it.hasNext(); ) { String k = it.next(); gameDay.put(k, gd.optInt(k)); }
         if (cat >= Data.catName.length) cat = -1;
     }
 
@@ -221,7 +228,7 @@ final class Store {
         gems = 0; frozen.clear();
         pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0; avIdx = 0;
         nickname = ""; myAvatar = 0; myType = "";
-        gamesXp.clear(); gameBest.clear();
+        gamesXp.clear(); gameBest.clear(); gameDay.clear();
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
@@ -314,12 +321,27 @@ final class Store {
         return v == null ? 0 : v;
     }
 
+    /** Veces que se hizo la tarea/juego `id` HOY (para las misiones de Retos). */
+    int gameDay(String id) {
+        Integer v = gameDay.get(today() + ":" + id);
+        return v == null ? 0 : v;
+    }
+
+    /** Suma una unidad de la tarea/juego `id` al día de hoy. */
+    void bumpGameDay(String id) {
+        String k = today() + ":" + id;
+        Integer v = gameDay.get(k);
+        gameDay.put(k, v == null ? 1 : v + 1);
+        save();
+    }
+
     /** Registra una respuesta de práctica (modo Científico). */
     void recordPractice(boolean ok, int element, int position, int quadra) {
         pTotal++;
         if (ok) {
             pCorrect++;
             pStreak++;
+            bumpGameDay("practice"); // v1.3.1: cuenta para la misión de Práctica de Retos
             if (pStreak > pBest) pBest = pStreak;
             pBits |= 1L << (element * 8 + position);
             if (quadra >= 0 && quadra < pQuad.length) pQuad[quadra]++;

@@ -1,14 +1,14 @@
 id	text	answer	nOpts	opt0	opt1	opt2	opt3	explanation
-rain01	Ver posibilidades nuevas en un objeto común.	0	4	Ne	Ni	Se	Si	Posibilidades: Ne, intuición de posibilidades.
+rain01	Ver la energía potencial oculta en un objeto común: lo que es capaz de hacer.	0	4	Ne	Ni	Se	Si	Ne: energía potencial del objeto, sus capacidades y su esencia.
 rain02	Leer hacia dónde va una situación en el tiempo.	1	4	Ne	Ni	Se	Si	Desarrollo en el tiempo: Ni, intuición de tiempo.
-rain03	Notar la fuerza y la presencia de alguien al entrar.	2	4	Ne	Ni	Se	Si	Fuerza y presencia: Se, sensación de fuerza.
+rain03	Notar la apariencia, la fuerza y la presencia de alguien al entrar.	2	4	Ne	Ni	Se	Si	Apariencia y fuerza: Se, sensación de fuerza.
 rain04	Sentir si el cuerpo está cómodo o incómodo.	3	4	Ne	Ni	Se	Si	Estado del cuerpo: Si, sensación de bienestar.
-rain05	Imaginar qué más podría ser una idea.	0	4	Ne	Ni	Se	Si	Qué más podría ser: Ne, posibilidades.
-rain06	Comprobar un resultado con datos y números.	0	4	Te	Ti	Fe	Fi	Hechos y eficacia medible: Te, lógica de hechos.
+rain05	Imaginar lo que una idea es en esencia: sus conceptos y lo que es capaz de ser.	0	4	Ne	Ni	Se	Si	Ne: la esencia y los conceptos de una idea, su energía potencial.
+rain06	Comprobar un resultado con datos y números.	0	4	Te	Ti	Fe	Fi	Trabajo y eficacia medible: Te, lógica del trabajo.
 rain07	Ordenar un sistema para que no tenga contradicciones.	1	4	Te	Ti	Fe	Fi	Coherencia interna del sistema: Ti, lógica de sistemas.
 rain08	Mover el ánimo de un grupo con una frase.	2	4	Te	Ti	Fe	Fi	Clima emocional: Fe, ética de emociones.
 rain09	Saber a quién se quiere y a quién no, sin dudarlo.	3	4	Te	Ti	Fe	Fi	Distancia personal: Fi, ética de relaciones.
-rain10	Elegir el método más eficaz para terminar algo.	0	4	Te	Ti	Fe	Fi	El método que rinde: Te, lógica de hechos.
+rain10	Elegir el método más eficaz para terminar algo.	0	4	Te	Ti	Fe	Fi	El método que rinde: Te, lógica del trabajo.
 rain11	Función 1: la más fuerte y consciente.	0	4	base	creativa	rol	dolorosa	La función 1 es la base (programa).
 rain12	Función 2: fuerte y flexible, experimenta.	1	4	base	creativa	rol	dolorosa	La función 2 es la creativa.
 rain13	Función 3: débil, se muestra para quedar bien.	2	4	base	creativa	rol	dolorosa	La función 3 es el rol.

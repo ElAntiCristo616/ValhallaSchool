@@ -31,9 +31,9 @@ final class GamesData {
     static final String[] QUADRA_NAMES = {"Alfa", "Beta", "Gamma", "Delta"};
     /** Nombres completos clásicos de los 8 elementos (español). */
     static final String[] ELEMENT_NAMES = {
-            "Intuición de posibilidades", "Intuición de tiempo",
+            "Intuición de energía potencial", "Intuición de tiempo",
             "Sensación de fuerza", "Sensación de bienestar",
-            "Lógica de hechos", "Lógica de sistemas",
+            "Lógica del trabajo", "Lógica de sistemas",
             "Ética de emociones", "Ética de relaciones"};
 
     /** Orden de la matriz canónica (Wikisocion). */

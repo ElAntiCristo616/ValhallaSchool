@@ -229,7 +229,7 @@ class ArenaScreen extends MiniGame {
                 h.setOnClickListener(null);
             }
             reactCompanion(good);
-            fbTitle.setText(good ? "¡Buena mediación, " + name() + "! ¿Casualidad?" : "¡Peor no se podía, " + name() + "!");
+            fbTitle.setText(good ? "¡Mediación decente, " + name() + "! ¿Casualidad, cuck?" : "¡Peor no se podía, " + name() + "!");
             fbText.setText(o.reaction);
             if (good) Sfx.play(Sfx.OK); else hapticBad();
             phase = FEEDBACK;
@@ -249,7 +249,7 @@ class ArenaScreen extends MiniGame {
                 h.setOnClickListener(null);
             }
             reactCompanion(good);
-            fbTitle.setText(good ? "¡Recuperada, " + name() + "! Milagro." : "¡Ni recuperando, " + name() + "!");
+            fbTitle.setText(good ? "¡Recuperada, " + name() + "! Milagro, NPC." : "¡Ni recuperando, " + name() + "!");
             fbText.setText(good ? "Silencio, repetición, y la discusión vuelve a su cauce. Tensión -30, comprensión +10."
                     : "Subir la voz nunca recupera nada. Tensión +10, comprensión -10.");
             if (good) Sfx.play(Sfx.OK); else hapticBad();
@@ -270,7 +270,7 @@ class ArenaScreen extends MiniGame {
                 h.setOnClickListener(null);
             }
             reactCompanion(ok);
-            fbTitle.setText(ok ? "¡Teoría correcta, " + name() + "! ¿Copiaste?" : "¡Ni la teoría, " + name() + "!");
+            fbTitle.setText(ok ? "¡Teoría correcta, " + name() + "! ¿Copiaste, beta?" : "¡Ni la teoría, " + name() + "!");
             fbText.setText(ok ? tName(sc.t1) + " y " + tName(sc.t2) + " tienen relación de " + correct + ". "
                     + ConexionesScreen.relDesc(GamesData.REL[sc.t1][sc.t2], tName(sc.t1), tName(sc.t2))
                     : "La relación correcta es " + correct + ".");

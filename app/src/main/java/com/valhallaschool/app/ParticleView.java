@@ -21,7 +21,9 @@ import static com.valhallaschool.app.Ui.*;
  * (índice 0): queda DETRÁS de todo el contenido — tarjetas, textos,
  * botones y barra de navegación — y nada se dibuja jamás por encima
  * de ellos. El movimiento es apenas perceptible; ante la duda, más
- * sutil. Se pausa en onPause (~20 fps, 20 partículas).
+ * sutil. Se pausa en onPause (~20 fps, 50 partículas con tamaños
+ * variados y 5 glows grandes y suaves para que el fondo no se vea
+ * plano, v1.3.1).
  *
  * Tipos (Ui.THEME_PARTICLE): 0 nieve, 1 copos grandes, 2 pétalos,
  * 3 brasas, 4 burbujas, 5 estrellas, 6 polen, 7 chispas doradas,
@@ -29,7 +31,7 @@ import static com.valhallaschool.app.Ui.*;
  * 13 aurora, 14 arena, 15 fugaces.
  */
 final class ParticleView extends View {
-    private static final int N = 20;
+    private static final int N = 50; // v1.3.1: 2.5x más partículas (antes 20)
     private static final long FRAME_MS = 50; // ~20 fps: sobra para un ambiente
     /** Alfa máxima de una partícula: apenas perceptible. */
     private static final float A_MAX = 0.16f;
@@ -45,7 +47,7 @@ final class ParticleView extends View {
     private final int[] col = new int[N];
     private int[] cols; // paleta del tema (col[i] es índice dentro de cols)
     private Bitmap[] dotBmp; // punto suave pre-renderizado, uno por color de paleta
-    private RadialGradient bgGrad;
+    private RadialGradient bgGrad, bgGlow1, bgGlow2;
     private int kind;
     private boolean running;
     private float t;
@@ -168,6 +170,13 @@ final class ParticleView extends View {
                     }
                     break;
             }
+            // Variedad de tamaño y profundidad (v1.3.1): cada partícula
+            // entre 0.6x y 1.7x su tamaño base, y 1 de cada 10 es un glow
+            // grande y suave (2.2x, alfa a la mitad) para que el fondo
+            // no se vea como un tono sólido plano. El alfa máximo no
+            // cambia: el fondo sigue igual de opaco.
+            size[i] *= 0.6f + r.nextFloat() * 1.1f;
+            if (i % 10 == 4) { size[i] *= 2.2f; aBase[i] *= 0.55f; }
         }
     }
 
@@ -209,6 +218,15 @@ final class ParticleView extends View {
         bgGrad = new RadialGradient(w * 0.5f, h * 0.38f, Math.max(w, h) * 0.85f,
                 new int[]{mix(ACCENT, BG, 0.07f), mix(0xff000000, BG, 0.08f)},
                 null, Shader.TileMode.CLAMP);
+        // v1.3.1: dos brillos sutiles extra para matar el tono sólido plano:
+        // azul frío abajo a la izquierda (5%) y acento cálido arriba a la
+        // derecha (4%). El fondo sigue igual de opaco.
+        bgGlow1 = new RadialGradient(w * 0.12f, h * 0.92f, Math.max(w, h) * 0.6f,
+                new int[]{mix(BLUE, BG, 0.05f), BG},
+                null, Shader.TileMode.CLAMP);
+        bgGlow2 = new RadialGradient(w * 0.92f, h * 0.08f, Math.max(w, h) * 0.55f,
+                new int[]{mix(ACCENT, BG, 0.04f), BG},
+                null, Shader.TileMode.CLAMP);
     }
 
     /** Alfa de la partícula i en este instante (0..1), con titileo suave si aplica. */
@@ -226,6 +244,8 @@ final class ParticleView extends View {
         if (bgGrad != null) {
             bgPaint.setShader(bgGrad);
             c.drawRect(0, 0, w, hgt, bgPaint);
+            if (bgGlow1 != null) { bgPaint.setShader(bgGlow1); c.drawRect(0, 0, w, hgt, bgPaint); }
+            if (bgGlow2 != null) { bgPaint.setShader(bgGlow2); c.drawRect(0, 0, w, hgt, bgPaint); }
         } else {
             c.drawColor(BG);
         }

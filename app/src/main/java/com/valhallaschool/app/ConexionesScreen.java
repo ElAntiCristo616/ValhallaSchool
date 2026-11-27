@@ -220,7 +220,7 @@ class ConexionesScreen extends MiniGame {
         reactCompanion(ok);
         String rel = GamesData.relName(c.hired, pick);
         if (ok) {
-            fbTitle.setText("¡Encargo correcto, " + name() + "! ¿Copiaste?");
+            fbTitle.setText("¡Encargo correcto, " + name() + "! ¿Copiaste, beta?");
             fbText.setText(GamesData.TYPES[c.hired] + " → " + GamesData.TYPES[pick] + ": " + rel + ". " + c.explanation);
             Sfx.play(Sfx.OK);
             setFoot(1);
