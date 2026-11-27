@@ -38,6 +38,11 @@ class TribunalScreen extends MiniGame {
 
     private GamesData.Trib cur() { return queue.get(idx); }
 
+    /** Corrección real: texto con contenido, nunca el placeholder «—» ni vacío. */
+    private static boolean isRealCorrection(String c) {
+        return c != null && !c.trim().isEmpty() && !c.trim().equals("—");
+    }
+
     @Override protected void next() {
         main.removeAllViews();
         setFoot(0);
@@ -90,7 +95,9 @@ class TribunalScreen extends MiniGame {
             List<GamesData.Trib> pool = new ArrayList<>(GamesData.TRIBUNAL);
             Collections.shuffle(pool);
             for (GamesData.Trib o : pool) {
-                if (!o.id.equals(t.id) && !opts.contains(o.correction) && opts.size() < 3) opts.add(o.correction);
+                // v1.3.5: nunca una corrección «—» o vacía como opción (eso era el bug:
+                // 5 argumentos válidos tenían «—» y se colaba como distractor).
+                if (!o.id.equals(t.id) && isRealCorrection(o.correction) && !opts.contains(o.correction) && opts.size() < 3) opts.add(o.correction);
             }
             Collections.shuffle(opts);
             optViews.clear();
