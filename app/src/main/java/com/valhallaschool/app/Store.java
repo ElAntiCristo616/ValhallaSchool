@@ -68,6 +68,12 @@ final class Store {
     int myAvatar;
     String myType = "";
 
+    /* ---- minijuegos (v1.3.0): XP solo la primera vez por ítem ---- */
+    /** Ids de ítems de minijuego que YA dieron sus 10 XP (un ítem no repite XP). */
+    final HashSet<String> gamesXp = new HashSet<>();
+    /** Mejor puntuación por juego (id de juego → mejor puntaje 0..100). */
+    final HashMap<String, Integer> gameBest = new HashMap<>();
+
     Events ev;
     private final File file;
     private final Handler main = new Handler(Looper.getMainLooper());
@@ -124,6 +130,10 @@ final class Store {
         for (Integer d : frozen) fr.put(d);
         JSONArray pq = new JSONArray();
         for (int v : pQuad) pq.put(v);
+        JSONArray gx = new JSONArray();
+        for (String id : gamesXp) gx.put(id);
+        JSONObject gb = new JSONObject();
+        for (Map.Entry<String, Integer> e : gameBest.entrySet()) gb.put(e.getKey(), e.getValue());
         return o.put("srs", s).put("xp", x).put("met", m).put("lessons", l).put("ach", a)
                 .put("qa", qa).put("qc", qc).put("perfect", perfect).put("goal", goal).put("best", best)
                 .put("cat", cat).put("seed", seed).put("theme", theme).put("sound", sound ? 1 : 0)
@@ -132,7 +142,8 @@ final class Store {
                 .put("pBits", pBits).put("pCorrect", pCorrect).put("pTotal", pTotal)
                 .put("pStreak", pStreak).put("pBest", pBest).put("pLevels", pLevels).put("pQuad", pq)
                 .put("avIdx", avIdx)
-                .put("nickname", nickname).put("myAvatar", myAvatar).put("myType", myType);
+                .put("nickname", nickname).put("myAvatar", myAvatar).put("myType", myType)
+                .put("gamesXp", gx).put("gameBest", gb);
     }
 
     private static JSONObject longs(HashMap<Integer, Long> map) throws JSONException {
@@ -183,6 +194,10 @@ final class Store {
         if (!okType) myType = "";
         JSONArray pq = o.optJSONArray("pQuad");
         if (pq != null) for (int i = 0; i < Math.min(4, pq.length()); i++) pQuad[i] = pq.optInt(i);
+        JSONArray gx = o.optJSONArray("gamesXp");
+        if (gx != null) for (int i = 0; i < gx.length(); i++) gamesXp.add(gx.optString(i));
+        JSONObject gb = o.optJSONObject("gameBest");
+        if (gb != null) for (Iterator<String> it = gb.keys(); it.hasNext(); ) { String k = it.next(); gameBest.put(k, gb.optInt(k)); }
         if (cat >= Data.catName.length) cat = -1;
     }
 
@@ -206,6 +221,7 @@ final class Store {
         gems = 0; frozen.clear();
         pBits = 0; pCorrect = pTotal = pStreak = pBest = pLevels = 0; avIdx = 0;
         nickname = ""; myAvatar = 0; myType = "";
+        gamesXp.clear(); gameBest.clear();
         for (int i = 0; i < pQuad.length; i++) pQuad[i] = 0;
     }
 
@@ -278,6 +294,25 @@ final class Store {
     }
 
     void addGems(int n) { gems += n; save(); }
+
+    /** Minijuegos (v1.3.0): +10 XP a la meta diaria la PRIMERA vez que se acierta un ítem.
+     *  @return true si era la primera vez (se dio XP), false si el ítem ya había dado XP. */
+    boolean awardGameXP(String itemId) {
+        if (!gamesXp.add(itemId)) return false;
+        addXP(XP_Q, true);
+        return true;
+    }
+
+    /** Guarda la mejor puntuación de un minijuego (0..100). */
+    void setGameBest(String gameId, int score) {
+        Integer cur = gameBest.get(gameId);
+        if (cur == null || score > cur) { gameBest.put(gameId, score); save(); }
+    }
+
+    int gameBest(String gameId) {
+        Integer v = gameBest.get(gameId);
+        return v == null ? 0 : v;
+    }
 
     /** Registra una respuesta de práctica (modo Científico). */
     void recordPractice(boolean ok, int element, int position, int quadra) {

@@ -36,22 +36,22 @@ final class Avatars {
         for (String t : TYPES) for (int v = 1; v <= 3; v++) FILES[k++] = t + "_Avatar" + v + ".png";
     }
 
-    /** Frases de la mascota (bocadillo pequeño en Inicio y Práctica). TODO
-     *  sarcasmo, burla o insulto, como el acompañante: NADA de elogios
-     *  sinceros. {name} = nombre de usuario actual (nickname o «Sin nombre»). */
+    /** Frases de la mascota (bocadillo pequeño en Inicio y Práctica). TODAS
+     *  humillan al jugador por su nombre (orden de Remy 2026-11-27): NADA de
+     *  elogios sinceros. {name} = nombre de usuario actual (nickname o «Sin nombre»). */
     static final String[] PHRASES = {
             "¡Tú puedes, {name}! Un ejemplo más… a ver si no la cagas.",
-            "Ese estuvo bueno. ¿Casualidad o copiaste?",
-            "La sociónica se aprende jugando… tú, a duras penas.",
-            "¡Vamos, {name}! Cada acierto suma… cuando aciertas.",
-            "Fallar también enseña: tú ya eres todo un maestro.",
-            "¿Ya viste qué función era? Ni tú, ¿verdad?",
-            "Sigue así, {name}… total, peor no se puede.",
-            "Un tipo a la vez, sin prisa… que prisa no tienes, ¿o sí?",
-            "¡Ese ejemplo era de los difíciles! Por eso lo fallaste.",
+            "Ese estuvo bueno, {name}. ¿Casualidad o copiaste?",
+            "La sociónica se aprende jugando… tú, {name}, a duras penas.",
+            "¡Vamos, {name}! Cada acierto suma… cuando aciertas, claro.",
+            "Fallar también enseña, {name}: tú ya eres todo un maestro del fracaso.",
+            "¿Ya viste qué función era, {name}? Ni tú, ¿verdad?",
+            "Sigue así, {name}… total, peor no se puede. O sí, contigo sí.",
+            "Un tipo a la vez, {name}, sin prisa… que prisa no tienes, ¿o sí?",
+            "¡Ese ejemplo era de los difíciles, {name}! Por eso lo fallaste.",
             "Respira y piensa en el Modelo A, {name}… si es que puedes.",
-            "La práctica hace al tipador. A ti todavía te falta práctica.",
-            "¿Otro round, {name}? Yo te acompaño… alguien tiene que reírse.",
+            "La práctica hace al tipador, {name}. A ti todavía te falta práctica. Mucha.",
+            "¿Otro round, {name}? Yo te acompaño… alguien tiene que reírse de ti.",
     };
 
     private Avatars() {}

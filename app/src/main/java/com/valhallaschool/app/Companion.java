@@ -22,91 +22,92 @@ import static com.valhallaschool.app.Ui.*;
  * repetir hasta agotarla) y se mueve SIEMPRE: rebote suave en bucle,
  * saludo al aparecer, celebración al acertar y decepción al fallar.
  *
- * Las frases de decepción son a propósito feas y burlonas (coach que te
- * regaña, pedido por Remy): van contra el jugador, nunca contra grupos
- * protegidos (nada de raza, género, religión ni discapacidad).
- * Y TODO lo que dice el personaje es sarcasmo, burla o insulto: los ánimos
- * y las celebraciones son sarcásticos, NUNCA elogios sinceros (pedido por
- * Remy). Si una frase suena a elogio de verdad, está mal: es sarcasmo.
+ * TODAS las frases humillan al jugador USANDO SU NOMBRE (nickname o «Sin
+ * nombre»): ánimos, celebraciones y decepciones (orden de Remy 2026-11-27:
+ * «hay que humillar al usuario»; la regla del documento «nunca humilla al
+ * usuario» quedó ignorada por orden suya). Cero elogios sinceros, cero
+ * sarcasmo suave. Nunca contra grupos protegidos (nada de raza, género,
+ * religión, discapacidad ni orientación): la humillación es solo contra el
+ * jugador, que lo pidió así.
  */
 final class Companion {
-    /** Ánimo SARCÁSTICO antes de responder. Nada de elogios sinceros. */
+    /** Ánimo: humillación por nombre ANTES de responder. Cero elogios sinceros, cero sarcasmo suave (orden de Remy 2026-11-27). */
     static final String[] CHEER = {
-            "¡Vamos, {name}, a ver si esta vez no la cagas!",
-            "Respira, {name}… que pensar no te va a matar. Creo.",
-            "¡Esta es tuya, {name}! O eso dicen… ya veremos.",
-            "¡Dale, {name}! ¿Qué función será? A ver si le atinas a una.",
-            "Tú ya sabes esto, {name}… o eso crees tú.",
-            "¡Vamos por otra, {name}! A ver cuánto aguantas.",
-            "¿Listo, {name}? ¡A darle! No prometo nada.",
-            "¡Tú puedes con esto, {name}! Bueno, eso espero.",
-            "Piensa como tipador, {name}… si es que puedes pensar.",
-            "¡Otra más, {name}! A ver si esta no la arruinas.",
-            "¡Ánimo, {name}! Yo te acompaño… alguien tiene que reírse.",
+            "¡Vamos, {name}, a ver si no la cagas como siempre!",
+            "Respira, {name}… que pensar no te va a matar. O sí, quién sabe.",
+            "¡Esta es tuya, {name}! O eso dicen los que no te conocen.",
+            "¡Dale, {name}! ¿Qué función será? Apuesto a que la fallas.",
+            "Tú ya sabes esto, {name}… o eso crees tú, pobre.",
+            "¡Vamos por otra, {name}! A ver cuánto aguantas sin llorar.",
+            "¿Listo, {name}? ¡A darle! No prometo que no des pena.",
+            "¡Tú puedes con esto, {name}! Bueno, eso dicen. Yo no lo creo.",
+            "Piensa como tipador, {name}… si es que puedes pensar, claro.",
+            "¡Otra más, {name}! A ver si esta no la arruinas como las demás.",
+            "¡Ánimo, {name}! Yo te acompaño… alguien tiene que reírse de ti.",
             "Mira bien la frase, {name}… aunque ni mirando la vas a sacar.",
-            "¡Tú sí sabes, {name}! ¿O no? Ya ni sé.",
-            "¡Vamos, {name}! ¡Que nadie te pare! Bueno, tú mismo te paras.",
-            "¿Otra ronda, {name}? ¡Claro que sí! Total, fallar es gratis.",
-            "¡Tú puedes, {name}! ¡Tú sí sabes!… ¿o no?",
+            "¡Tú sí sabes, {name}! ¿O no? Ya ni sé, me da igual.",
+            "¡Vamos, {name}! ¡Que nadie te pare! Bueno, tú mismo te paras solo.",
+            "¿Otra ronda, {name}? ¡Claro que sí! Total, fallar es gratis y tú eres experto.",
+            "¡Tú puedes, {name}! ¡Tú sí sabes!… ¿o no? Ay, qué triste.",
     };
 
-    /** Celebración SARCÁSTICA al acertar. Nada de elogios sinceros. */
+    /** Celebración HUMILLANTE al acertar: burla por nombre, nunca elogio sincero (orden de Remy 2026-11-27). */
     static final String[] CELEBRATE = {
-            "¡Wow, acertaste una! ¿Casualidad?",
-            "¡Hasta tú la sabías, qué milagro!",
-            "¡Bravo! ¿Te dolió pensar?",
-            "¡Mira nada más, hasta acertaste!",
-            "¡Qué suerte tienes hoy, {name}!",
-            "¡Una bien! No te acostumbres.",
-            "¡Vaya, hasta tú puedes con esta!",
-            "¡Wow, acertaste! ¿Casualidad o copiaste?",
-            "¡Imparable, {name}! Bueno, por esta vez.",
-            "¡Genial, {name}! ¿Seguro que no fue suerte?",
-            "¡Increíble, {name}! ¡Hasta tú la sacaste!",
-            "¡Sí señor! ¡Esa era! Ni tú te la crees.",
+            "¡Hasta tú la sabías, {name}! ¿Casualidad o copiaste?",
+            "¡Una bien, {name}! No te acostumbres, que fue suerte.",
+            "¡Wow, acertaste una, {name}! ¿Te dolió pensar?",
+            "¡Mira nada más, {name}, hasta acertaste! Qué milagro.",
+            "¡Qué suerte tienes hoy, {name}! Mañana se te acaba.",
+            "¡Vaya, hasta tú puedes con esta, {name}! No me lo creo.",
+            "¡Wow, acertaste, {name}! ¿Casualidad o copiaste, eh?",
+            "¡Imparable, {name}! Bueno, por esta vez. No te emociones.",
+            "¡Genial, {name}! ¿Seguro que no fue suerte? Yo digo que sí.",
+            "¡Increíble, {name}! ¡Hasta tú la sacaste! Ni tú te la crees.",
+            "¡Sí señor, {name}! ¡Esa era! Ni tú te la crees, ¿verdad?",
+            "¡Bravo, {name}! Una bien de cada cien, qué promedio tan triste.",
     };
 
-    /** Decepción al fallar: feas y burlonas, contra el jugador, nunca contra grupos protegidos. */
+    /** Decepción al fallar: humillación por nombre, contra el jugador, nunca contra grupos protegidos (orden de Remy 2026-11-27). */
     static final String[] SCOLD = {
             "¡Qué vergüenza, {name}!",
-            "¡Patético! ¡Ni con suerte!",
-            "¡Hasta mi abuela lo sabía!",
+            "¡Patético, {name}! ¡Ni con suerte!",
+            "¡Hasta mi abuela lo sabía, {name}, y eso que es un dibujo!",
             "¡Eres un desastre, {name}!",
-            "¡Qué oso! ¡Ni para eso!",
-            "¡Terrible! ¡Vuélvelo a intentar, a ver si ahora sí no la cagas!",
-            "¡Ay, no! ¿Qué fue eso?",
+            "¡Qué oso, {name}! ¡Ni para eso sirves!",
+            "¡Terrible, {name}! ¡Vuélvelo a intentar, a ver si ahora sí no la cagas!",
+            "¡Ay, no, {name}! ¿Qué fue eso? ¡Qué horror!",
             "¡Pésimo, {name}! ¡Pésimo!",
-            "¡Vergüenza ajena! ¡Hasta yo me sonrojé!",
-            "¡Ese error me dolió hasta a mí!",
-            "¡Ni adivinando le atinas!",
+            "¡Vergüenza ajena, {name}! ¡Hasta yo me sonrojé!",
+            "¡Ese error me dolió hasta a mí, {name}!",
+            "¡Ni adivinando le atinas, {name}!",
             "¡Qué barbaridad, {name}!",
-            "¡Me das pena… y eso que soy un dibujo!",
-            "¡Eso estuvo feo. Muy feo!",
+            "¡Me das pena, {name}… y eso que soy un dibujo!",
+            "¡Eso estuvo feo, {name}! ¡Muy feo!",
             "¡Qué mierda de respuesta, {name}!",
             "¡Joder, {name}! ¡Concéntrate, si es que puedes!",
-            "¡De pena ajena! ¡Hasta el teléfono se avergonzó!",
-            "¡Horrible! ¡Ni el azar te quiere!",
+            "¡De pena ajena, {name}! ¡Hasta el teléfono se avergonzó!",
+            "¡Horrible, {name}! ¡Ni el azar te quiere!",
             "¡Eres un inútil, {name}!",
-            "¡Qué asco de respuesta!",
+            "¡Qué asco de respuesta, {name}!",
             "¡Das pena ajena, {name}!",
-            "¡Eres la vergüenza de Valhalla!",
+            "¡Eres la vergüenza de Valhalla, {name}!",
             "¡Ni tu mamá te salva, {name}!",
             "¡Vuelve a la primaria, {name}!",
-            "¡Con ese cerebro ni para adivinar!",
+            "¡Con ese cerebro ni para adivinar, {name}!",
             "¡Basura, {name}!",
-            "¡Hasta un niño lo sabía y tú no!",
-            "¡Qué forma de fallar, da lástima verte!",
+            "¡Hasta un niño lo sabía y tú no, {name}!",
+            "¡Qué forma de fallar, {name}, da lástima verte!",
             "¡Esto no es para ti, {name}!",
-            "¡Mejor deja la teoría, esto no es lo tuyo!",
+            "¡Mejor deja la teoría, {name}, esto no es lo tuyo!",
             "¡Dedícate a otra cosa, {name}, la sociónica no es para ti!",
             "¡Ríndete, {name}, nunca vas a entender esto!",
             "¿Para qué sigues, {name}? ¡Esto no es lo tuyo!",
-            "¡Deja de intentarlo, no naciste para esto!",
+            "¡Deja de intentarlo, {name}, no naciste para esto!",
             "¡Tu nombre es vergüenza, {name}!",
-            "¡Eres una vergüenza para tu familia!",
+            "¡Eres una vergüenza para tu familia, {name}!",
             "¡Tu familia se avergüenza de ti, {name}!",
-            "¡Con ese nombre deberías cambiarte el apellido!",
-            "¡Qué vergüenza, tu familia te ve fallando así!",
+            "¡Con ese nombre deberías cambiarte el apellido, {name}!",
+            "¡Qué vergüenza, {name}, tu familia te ve fallando así!",
     };
 
     /** Baraja de los 48 (en memoria, por sesión): sin repetir hasta agotarla. */

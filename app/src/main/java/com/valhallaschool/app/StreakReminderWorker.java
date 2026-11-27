@@ -12,9 +12,9 @@ import androidx.work.WorkerParameters;
 public final class StreakReminderWorker extends Worker {
 
     private static final String[] TEXTS = {
-            "¡Tu racha se muere hoy si no juegas, %s! ¿Vas a dejar que se rompa?",
-            "¿En serio vas a dejar morir tu racha hoy, %s? ¡Ni una lección!",
-            "%s, tu racha lleva todo el día esperándote… y tú aquí, sin jugar. ¡Muévete!",
+            "¡Tu racha se muere hoy si no juegas, %s! ¿Vas a dejar que se rompa, inútil?",
+            "¿En serio vas a dejar morir tu racha hoy, %s? ¡Ni una lección, qué vergüenza!",
+            "%s, tu racha lleva todo el día esperándote… y tú aquí, sin jugar. ¡Muévete, desastre!",
     };
 
     public StreakReminderWorker(Context context, WorkerParameters params) {

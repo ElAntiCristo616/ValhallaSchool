@@ -23,8 +23,8 @@ import static com.valhallaschool.app.Ui.*;
  */
 final class SessionScreen extends MainActivity.Screen {
     private static final int LEARN = 0, ASK = 1, FEEDBACK = 2, END = 3;
-    /** Título al acertar: sarcasmo, nunca elogio sincero (como el acompañante). */
-    private static final String[] PRAISE = {"¡Wow!", "¿Casualidad?", "¡Milagro!", "¡Por fin!", "¡Ni tú te la crees!"};
+    /** Título al acertar: humillación por nombre, nunca elogio sincero (orden de Remy 2026-11-27). */
+    private static final String[] PRAISE = {"¡Wow, {name}! ¿Casualidad?", "¡Milagro, {name}!", "¡Por fin, {name}! ¿Copiaste?", "¡Ni tú te la crees, {name}!", "¡Una bien, {name}! No te emociones."};
 
     private final ArrayDeque<Object> queue = new ArrayDeque<>();
     private final int total, bonus;
@@ -268,7 +268,7 @@ final class SessionScreen extends MainActivity.Screen {
             combo++;
             done++;
             Sfx.play(Sfx.OK);
-            fbTitle.setText(PRAISE[Quiz.R.nextInt(PRAISE.length)]);
+            fbTitle.setText(PRAISE[Quiz.R.nextInt(PRAISE.length)].replace("{name}", Store.I.displayName()));
             fbTitle.setTextColor(GREEN);
             setFoot(1);
             setBtn("Continuar", B_GREEN);

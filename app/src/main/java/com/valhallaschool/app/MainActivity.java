@@ -61,20 +61,22 @@ public final class MainActivity extends Activity implements Store.Events {
         Screen(MainActivity a) { this.a = a; }
         void resume() {}
         void closed() {}
+        /** Called when the activity loses focus (v1.3.0: Lluvia pauses the fall). */
+        void paused() {}
         /** @return true if the screen handled back itself. */
         boolean onBack() { return false; }
     }
 
     private static final int REQ_EXPORT = 1, REQ_IMPORT = 2;
-    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn};
-    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn};
-    private static final String[] NAV = {"Inicio", "Retos", "Perfil", "Práctica"};
+    private static final int[] NAV_IC = {R.drawable.ic_home, R.drawable.ic_trophy, R.drawable.ic_profile, R.drawable.ic_learn, R.drawable.ic_games};
+    private static final int[] NAV_ON = {R.drawable.ic_home_fill, R.drawable.ic_trophy, R.drawable.ic_profile_fill, R.drawable.ic_learn, R.drawable.ic_games};
+    private static final String[] NAV = {"Inicio", "Retos", "Perfil", "Práctica", "Juegos"};
 
     Store S;
     FrameLayout root;
     private ParticleView particles;
     private FrameLayout tabHost;
-    private final Tab[] tabs = new Tab[4];
+    private final Tab[] tabs = new Tab[5];
     int cur = -1;
     final ArrayList<Screen> stack = new ArrayList<>();
     private TextView toastV;
@@ -82,8 +84,8 @@ public final class MainActivity extends Activity implements Store.Events {
     private boolean toastBusy;
     private final ArrayDeque<String[]> celeQ = new ArrayDeque<>();
     private View celeV, modalV;
-    private final ImageView[] navIc = new ImageView[4];
-    private final TextView[] navTx = new TextView[4];
+    private final ImageView[] navIc = new ImageView[5];
+    private final TextView[] navTx = new TextView[5];
     private View dueDot;
     private int lastDay;
 
@@ -91,6 +93,7 @@ public final class MainActivity extends Activity implements Store.Events {
         super.onCreate(state);
         Data.load(this);
         PracticeData.load(this);
+        GamesData.load(this);
         SupabaseAuth.INSTANCE.init(this);
         S = Store.get(this);
         S.ev = this;
@@ -133,6 +136,7 @@ public final class MainActivity extends Activity implements Store.Events {
     @Override protected void onPause() {
         super.onPause();
         if (particles != null) particles.stop();
+        if (!stack.isEmpty()) stack.get(stack.size() - 1).paused();
         S.flush();
     }
 
@@ -180,7 +184,7 @@ public final class MainActivity extends Activity implements Store.Events {
         main.addView(line, lp(M, Math.max(1, dp(1))));
         LinearLayout nav = row(this);
         nav.setBackgroundColor(BG);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             final int idx = i;
             LinearLayout b = col(this);
             b.setGravity(Gravity.CENTER);
@@ -242,6 +246,7 @@ public final class MainActivity extends Activity implements Store.Events {
             case 1: return new ChallengesTab(this);
             case 2: return new ProfileTab(this);
             case 3: return new PracticeTab(this);
+            case 4: return new GamesTab(this);
             default: return new LearnTab(this);
         }
     }
@@ -257,9 +262,9 @@ public final class MainActivity extends Activity implements Store.Events {
             t.v = t.build();
             tabHost.addView(t.v, new FrameLayout.LayoutParams(M, M));
         }
-        for (int k = 0; k < 4; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
+        for (int k = 0; k < 5; k++) if (tabs[k] != null) tabs[k].v.setVisibility(k == i ? View.VISIBLE : View.GONE);
         if (t.stale) { t.stale = false; t.refresh(); }
-        for (int k = 0; k < 4; k++) {
+        for (int k = 0; k < 5; k++) {
             navIc[k].setImageResource(k == i ? NAV_ON[k] : NAV_IC[k]);
             navIc[k].setColorFilter(k == i ? ACCENT : MUTED);
             navTx[k].setTextColor(k == i ? TEXT : MUTED);
@@ -269,7 +274,7 @@ public final class MainActivity extends Activity implements Store.Events {
 
     /** Progress changed: everything except the visible tab (when nothing covers it) must redraw on next show. */
     void dirty() {
-        for (int k = 0; k < 4; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
+        for (int k = 0; k < 5; k++) if (tabs[k] != null && (k != cur || !stack.isEmpty())) tabs[k].stale = true;
     }
 
     @Override public void changed() {
