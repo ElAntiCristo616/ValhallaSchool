@@ -25,44 +25,45 @@ import static com.valhallaschool.app.Ui.*;
  * Las frases de decepción son a propósito feas y burlonas (coach que te
  * regaña, pedido por Remy): van contra el jugador, nunca contra grupos
  * protegidos (nada de raza, género, religión ni discapacidad).
+ * Y TODO lo que dice el personaje es sarcasmo, burla o insulto: los ánimos
+ * y las celebraciones son sarcásticos, NUNCA elogios sinceros (pedido por
+ * Remy). Si una frase suena a elogio de verdad, está mal: es sarcasmo.
  */
 final class Companion {
-    /** Ánimo antes de responder. {name} = nombre de usuario actual: el nickname
-     *  si escribió uno, o «Sin nombre» si no (Store.displayName() siempre).
-     *  El acompañante SIEMPRE dice el nombre, como pidió Remy. */
+    /** Ánimo SARCÁSTICO antes de responder. Nada de elogios sinceros. */
     static final String[] CHEER = {
-            "¡Tú puedes, {name}! ¡Tú sí sabes! 💪",
-            "¡Vamos, {name}, que esta la sacas!",
-            "Respira… y piensa en el Modelo A, {name}.",
-            "¡Esta es tuya, {name}! Yo te creo.",
-            "¡Dale, {name}! ¿Qué función será?",
-            "Tú ya sabes esto, {name}. ¡Confía!",
-            "¡Vamos por otra, {name}! No pares.",
-            "¿Listo, {name}? ¡A darle!",
-            "¡Tú puedes con esto y con más, {name}!",
-            "Piensa como tipador, {name}. ¡Tú eres tipador!",
-            "¡Otra más, {name}! Cada una te hace más fuerte.",
-            "¡Ánimo, {name}! Yo te acompaño.",
-            "Mira bien la frase, {name}… la respuesta está ahí.",
-            "¡Tú sí sabes, {name}! ¡Demuéstralo!",
-            "¡Vamos, {name}! ¡Que nadie te pare!",
-            "¿Otra ronda, {name}? ¡Claro que sí!",
+            "¡Vamos, {name}, a ver si esta vez no la cagas!",
+            "Respira, {name}… que pensar no te va a matar. Creo.",
+            "¡Esta es tuya, {name}! O eso dicen… ya veremos.",
+            "¡Dale, {name}! ¿Qué función será? A ver si le atinas a una.",
+            "Tú ya sabes esto, {name}… o eso crees tú.",
+            "¡Vamos por otra, {name}! A ver cuánto aguantas.",
+            "¿Listo, {name}? ¡A darle! No prometo nada.",
+            "¡Tú puedes con esto, {name}! Bueno, eso espero.",
+            "Piensa como tipador, {name}… si es que puedes pensar.",
+            "¡Otra más, {name}! A ver si esta no la arruinas.",
+            "¡Ánimo, {name}! Yo te acompaño… alguien tiene que reírse.",
+            "Mira bien la frase, {name}… aunque ni mirando la vas a sacar.",
+            "¡Tú sí sabes, {name}! ¿O no? Ya ni sé.",
+            "¡Vamos, {name}! ¡Que nadie te pare! Bueno, tú mismo te paras.",
+            "¿Otra ronda, {name}? ¡Claro que sí! Total, fallar es gratis.",
+            "¡Tú puedes, {name}! ¡Tú sí sabes!… ¿o no?",
     };
 
-    /** Celebración al acertar. */
+    /** Celebración SARCÁSTICA al acertar. Nada de elogios sinceros. */
     static final String[] CELEBRATE = {
-            "¡Esooo! ¡Qué crack!",
-            "¡Lo sabías! ¡Yo lo sabía!",
-            "¡Imparable, {name}!",
-            "¡Qué bárbaro! ¡Otra así!",
-            "¡Exacto! ¡Eres una máquina!",
-            "¡Boom! ¡Directo al blanco!",
-            "¡Genial, {name}! ¡Sigue así!",
-            "¡Eso es! ¡Nadie te para!",
-            "¡Perfecto! ¡Me encanta verte así!",
-            "¡Increíble, {name}! ¡Qué nivel!",
-            "¡Sí señor! ¡Esa era!",
-            "¡Brutal! ¡Otra, otra!",
+            "¡Wow, acertaste una! ¿Casualidad?",
+            "¡Hasta tú la sabías, qué milagro!",
+            "¡Bravo! ¿Te dolió pensar?",
+            "¡Mira nada más, hasta acertaste!",
+            "¡Qué suerte tienes hoy, {name}!",
+            "¡Una bien! No te acostumbres.",
+            "¡Vaya, hasta tú puedes con esta!",
+            "¡Wow, acertaste! ¿Casualidad o copiaste?",
+            "¡Imparable, {name}! Bueno, por esta vez.",
+            "¡Genial, {name}! ¿Seguro que no fue suerte?",
+            "¡Increíble, {name}! ¡Hasta tú la sacaste!",
+            "¡Sí señor! ¡Esa era! Ni tú te la crees.",
     };
 
     /** Decepción al fallar: feas y burlonas, contra el jugador, nunca contra grupos protegidos. */
@@ -72,7 +73,7 @@ final class Companion {
             "¡Hasta mi abuela lo sabía!",
             "¡Eres un desastre, {name}!",
             "¡Qué oso! ¡Ni para eso!",
-            "¡Terrible! ¡Vuélvelo a intentar, a ver si ahora sí!",
+            "¡Terrible! ¡Vuélvelo a intentar, a ver si ahora sí no la cagas!",
             "¡Ay, no! ¿Qué fue eso?",
             "¡Pésimo, {name}! ¡Pésimo!",
             "¡Vergüenza ajena! ¡Hasta yo me sonrojé!",
@@ -82,7 +83,7 @@ final class Companion {
             "¡Me das pena… y eso que soy un dibujo!",
             "¡Eso estuvo feo. Muy feo!",
             "¡Qué mierda de respuesta, {name}!",
-            "¡Joder, {name}! ¡Concéntrate!",
+            "¡Joder, {name}! ¡Concéntrate, si es que puedes!",
             "¡De pena ajena! ¡Hasta el teléfono se avergonzó!",
             "¡Horrible! ¡Ni el azar te quiere!",
             "¡Eres un inútil, {name}!",
