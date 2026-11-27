@@ -5,8 +5,25 @@ Valhalla School es un fork de Stash, de safwanpp
 (https://github.com/safwanpp/stash), bajo licencia MIT. El aviso de
 copyright original se conserva en el archivo LICENSE.
 
-Minijuegos H5P: los juegos usan el formato H5P. El reproductor
-h5p-standalone es de Tunapanda (MIT). Tipos de contenido H5P:
-Memory Game de Joubel AS (MIT), Drag Question de Joubel AS (MIT),
-Crossword de Oliver Tacke (MIT). La sopa de letras es un juego propio
-de Valhalla School (HTML/JS, MIT). Ver content/H5P-LICENSES.md.
+Minijuegos H5P (v1.2.0): los juegos usan el formato H5P y corren offline
+con el reproductor h5p-standalone 3.8.2 de Tunapanda (MIT, Copyright (c)
+2015 Tunapanda). Tipos de contenido H5P (todos MIT):
+Memory Game 1.3.53 de Joubel AS (Copyright (c) 2014 Joubel AS),
+Drag Question 1.15.37 de Joubel AS (Copyright (c) 2012-2014 Joubel AS),
+Crossword 0.7.6 de Oliver Tacke / Language Training Center GmbH
+(Copyright (c) 2020). Dependencias empaquetadas (todas MIT):
+H5P.AdvancedText 1.1.21, H5P.Question 1.5.57, H5P.JoubelUI 1.3.46,
+H5P.Components 1.0.102, H5P.Image 1.1.33, H5P.Transition 1.0.4,
+H5P.FontIcons 1.0.6 (Joubel AS), FontAwesome 4.5.4 (Dave Gandy),
+jQuery UI 1.10.4 (jQuery Foundation), h5p-lib-controls 0.0.17
+(Copyright (c) 2017 H5P, incluido en el build de Drag Question).
+H5P.Timer 0.4 es un reemplazo escrito desde cero para Valhalla School
+(MIT, ver tools/h5p_timer.js): el original solo existe en el core H5P,
+sin licencia permisiva verificable. La lista completa esta en
+app/src/main/assets/h5p-libraries/LIBRARIES.md. Ver
+content/H5P-LICENSES.md.
+
+La sopa de letras es un juego propio de Valhalla School (HTML/JS, MIT);
+su seleccion por arrastre sigue el patron de wordsearch.js de
+Pixel-Arcade de Hossam Magdy Balaha (MIT, Copyright (c) 2026).
+No se usa Find the Words (GPL-3.0) ni ningun componente GPL/AGPL/LGPL.

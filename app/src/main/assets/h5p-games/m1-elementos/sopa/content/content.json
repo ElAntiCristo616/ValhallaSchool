@@ -1,0 +1,225 @@
+{
+  "words": [
+    "NE",
+    "NI",
+    "SE",
+    "SI",
+    "FE",
+    "FI",
+    "TE",
+    "TI",
+    "NOVEDAD",
+    "PELIGRO",
+    "CONFORT",
+    "PERDON",
+    "TALENTO",
+    "GASTO",
+    "MALESTAR",
+    "CONCILIACION",
+    "CONDENA",
+    "CONSTANCIA",
+    "INTERDEPENDENCIA",
+    "INDEPENDENCIA"
+  ],
+  "grid": [
+    "ASMALESTARLJYMONR",
+    "XEXAICNATSNOCRTZT",
+    "HCONCILIACIONPNHI",
+    "ENPAMKVVZMXFAOEET",
+    "FRAMSSVACUNEIOLFB",
+    "IMKGOKKYMIYNCIACP",
+    "AXRBLHUCYUBYNATHG",
+    "AINTERDEPENDENCIA",
+    "NODREPPTECHEDPVDS",
+    "DGOWIEYCLOOFNTTXW",
+    "DAYFLJODSNTAEJSVM",
+    "MWDIGNCSWFSUPHDWY",
+    "JVGEDITZDOAZESZTI",
+    "BRLEVRSENRGVDELCQ",
+    "OUNKAONPTTDNNLNUF",
+    "OAWENFNXQUITIZRIY",
+    "PONXSIKHCIOHYOSNT"
+  ],
+  "placements": [
+    {
+      "palabra": "NE",
+      "fila": 14,
+      "columna": 14,
+      "direccion": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "palabra": "NI",
+      "fila": 16,
+      "columna": 15,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "SE",
+      "fila": 0,
+      "columna": 1,
+      "direccion": [
+        1,
+        0
+      ]
+    },
+    {
+      "palabra": "SI",
+      "fila": 13,
+      "columna": 6,
+      "direccion": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "palabra": "FE",
+      "fila": 4,
+      "columna": 0,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "FI",
+      "fila": 14,
+      "columna": 16,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "TE",
+      "fila": 14,
+      "columna": 8,
+      "direccion": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "palabra": "TI",
+      "fila": 12,
+      "columna": 15,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "NOVEDAD",
+      "fila": 15,
+      "columna": 6,
+      "direccion": [
+        -1,
+        -1
+      ]
+    },
+    {
+      "palabra": "PELIGRO",
+      "fila": 8,
+      "columna": 6,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "CONFORT",
+      "fila": 8,
+      "columna": 9,
+      "direccion": [
+        1,
+        0
+      ]
+    },
+    {
+      "palabra": "PERDON",
+      "fila": 8,
+      "columna": 5,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "TALENTO",
+      "fila": 6,
+      "columna": 14,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "GASTO",
+      "fila": 13,
+      "columna": 10,
+      "direccion": [
+        -1,
+        0
+      ]
+    },
+    {
+      "palabra": "MALESTAR",
+      "fila": 0,
+      "columna": 2,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "CONCILIACION",
+      "fila": 2,
+      "columna": 1,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "CONDENA",
+      "fila": 9,
+      "columna": 7,
+      "direccion": [
+        1,
+        -1
+      ]
+    },
+    {
+      "palabra": "CONSTANCIA",
+      "fila": 1,
+      "columna": 12,
+      "direccion": [
+        0,
+        -1
+      ]
+    },
+    {
+      "palabra": "INTERDEPENDENCIA",
+      "fila": 7,
+      "columna": 1,
+      "direccion": [
+        0,
+        1
+      ]
+    },
+    {
+      "palabra": "INDEPENDENCIA",
+      "fila": 15,
+      "columna": 12,
+      "direccion": [
+        -1,
+        0
+      ]
+    }
+  ]
+}

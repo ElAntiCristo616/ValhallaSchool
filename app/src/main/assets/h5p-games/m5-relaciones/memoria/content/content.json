@@ -1,0 +1,164 @@
+{
+  "cards": [
+    {
+      "image": {
+        "path": "images/card-00a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Dualidad",
+      "match": {
+        "path": "images/card-00b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Complementacion total entre dos tipos",
+      "description": "Complementacion total entre dos tipos"
+    },
+    {
+      "image": {
+        "path": "images/card-01a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Supervision",
+      "match": {
+        "path": "images/card-01b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Revision en una sola direccion",
+      "description": "Revision en una sola direccion"
+    },
+    {
+      "image": {
+        "path": "images/card-02a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Activacion",
+      "match": {
+        "path": "images/card-02b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Induce energia sin complementar",
+      "description": "Induce energia sin complementar"
+    },
+    {
+      "image": {
+        "path": "images/card-03a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Conflicto",
+      "match": {
+        "path": "images/card-03b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Desgaste permanente sin complementacion",
+      "description": "Desgaste permanente sin complementacion"
+    },
+    {
+      "image": {
+        "path": "images/card-04a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Solicitud",
+      "match": {
+        "path": "images/card-04b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Beneficio en una sola direccion",
+      "description": "Beneficio en una sola direccion"
+    },
+    {
+      "image": {
+        "path": "images/card-05a.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "imageAlt": "Diada",
+      "match": {
+        "path": "images/card-05b.png",
+        "mime": "image/png",
+        "width": 600,
+        "height": 600,
+        "copyright": {
+          "license": "U"
+        }
+      },
+      "matchAlt": "Dos duales juntos, mas que la suma",
+      "description": "Dos duales juntos, mas que la suma"
+    }
+  ],
+  "behaviour": {
+    "useGrid": true,
+    "allowRetry": true
+  },
+  "l10n": {
+    "cardTurns": "Turnos",
+    "timeSpent": "Tiempo",
+    "feedback": "¡Muy bien!",
+    "tryAgain": "Reintentar",
+    "closeLabel": "Cerrar",
+    "playAudio": "Reproducir audio",
+    "pauseAudio": "Pausar audio",
+    "label": "Juego de memoria. Encuentra las parejas.",
+    "labelInstructions": "Usa las flechas izquierda y derecha para moverte entre las cartas. Usa espacio o Enter para voltear una carta.",
+    "done": "Se encontraron todas las cartas.",
+    "cardPrefix": "Carta %num de %total:",
+    "cardUnturned": "Sin voltear. Toca para voltear.",
+    "cardTurned": "Volteada.",
+    "cardMatched": "¡Pareja encontrada!",
+    "cardMatchedA11y": "¡Tus cartas coinciden!",
+    "cardNotMatchedA11y": "Tus cartas no coinciden. Intenta con otras."
+  }
+}

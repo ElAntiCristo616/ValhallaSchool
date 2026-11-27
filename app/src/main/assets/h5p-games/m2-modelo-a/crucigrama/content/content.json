@@ -1,0 +1,181 @@
+{
+  "taskDescription": "<p>Completa las palabras con las pistas.</p>",
+  "words": [
+    {
+      "clue": "Funcion 6, la movilizadora",
+      "answer": "ACTIVACION",
+      "fixWord": true,
+      "row": 9,
+      "column": 4,
+      "orientation": "across"
+    },
+    {
+      "clue": "Funcion 7 del Modelo A",
+      "answer": "LIMITATIVA",
+      "fixWord": true,
+      "row": 4,
+      "column": 4,
+      "orientation": "down"
+    },
+    {
+      "clue": "Funcion 5 del Modelo A",
+      "answer": "SUGESTIVA",
+      "fixWord": true,
+      "row": 3,
+      "column": 7,
+      "orientation": "down"
+    },
+    {
+      "clue": "Funcion 2 del Modelo A",
+      "answer": "CREATIVA",
+      "fixWord": true,
+      "row": 2,
+      "column": 9,
+      "orientation": "down"
+    },
+    {
+      "clue": "Funcion 4 del Modelo A, la PoLR",
+      "answer": "DOLOROSA",
+      "fixWord": true,
+      "row": 4,
+      "column": 12,
+      "orientation": "down"
+    },
+    {
+      "clue": "Bloque de las funciones 3 y 4",
+      "answer": "SUPEREGO",
+      "fixWord": true,
+      "row": 1,
+      "column": 16,
+      "orientation": "down"
+    },
+    {
+      "clue": "Cada posicion del Modelo A",
+      "answer": "FUNCION",
+      "fixWord": true,
+      "row": 3,
+      "column": 2,
+      "orientation": "down"
+    },
+    {
+      "clue": "Bloque de las funciones 5 y 6",
+      "answer": "SUPERID",
+      "fixWord": true,
+      "row": 4,
+      "column": 6,
+      "orientation": "across"
+    },
+    {
+      "clue": "Anillo consciente, funciones 1 a 4",
+      "answer": "MENTAL",
+      "fixWord": true,
+      "row": 10,
+      "column": 17,
+      "orientation": "down"
+    },
+    {
+      "clue": "Funcion 8 del Modelo A",
+      "answer": "FONDO",
+      "fixWord": true,
+      "row": 13,
+      "column": 15,
+      "orientation": "down"
+    },
+    {
+      "clue": "Anillo inconsciente, funciones 5 a 8",
+      "answer": "VITAL",
+      "fixWord": true,
+      "row": 13,
+      "column": 1,
+      "orientation": "across"
+    },
+    {
+      "clue": "Funcion 1 del Modelo A",
+      "answer": "BASE",
+      "fixWord": true,
+      "row": 11,
+      "column": 11,
+      "orientation": "across"
+    },
+    {
+      "clue": "Funcion 3 del Modelo A",
+      "answer": "ROL",
+      "fixWord": true,
+      "row": 7,
+      "column": 11,
+      "orientation": "across"
+    },
+    {
+      "clue": "Bloque de las funciones 1 y 2",
+      "answer": "EGO",
+      "fixWord": true,
+      "row": 7,
+      "column": 15,
+      "orientation": "across"
+    },
+    {
+      "clue": "Bloque de las funciones 7 y 8",
+      "answer": "ID",
+      "fixWord": true,
+      "row": 16,
+      "column": 14,
+      "orientation": "across"
+    }
+  ],
+  "overallFeedback": {
+    "overallFeedback": [
+      {
+        "from": 0,
+        "to": 100,
+        "feedback": "¡Muy bien!"
+      }
+    ]
+  },
+  "theme": {
+    "backgroundColor": "#0e3426"
+  },
+  "behaviour": {
+    "poolSize": 15,
+    "enableInstantFeedback": false,
+    "scoreWords": true,
+    "applyPenalties": false,
+    "enableRetry": true,
+    "enableSolutionsButton": true,
+    "keepCorrectAnswers": false,
+    "addExtraMarkerForEmptyCells": false
+  },
+  "l10n": {
+    "across": "Horizontal",
+    "down": "Vertical",
+    "checkAnswer": "Comprobar",
+    "submitAnswer": "Enviar",
+    "tryAgain": "Reintentar",
+    "showSolution": "Mostrar solución",
+    "couldNotGenerateCrossword": "No se pudo generar un crucigrama con estas palabras.",
+    "couldNotGenerateCrosswordTooFewWords": "No se pudo generar un crucigrama. Se necesitan al menos dos palabras.",
+    "probematicWords": "Algunas palabras no se pudieron colocar.",
+    "extraClue": "Pista extra",
+    "closeWindow": "Cerrar ventana"
+  },
+  "a11y": {
+    "crosswordGrid": "Crucigrama. Usa las flechas para moverte y el teclado para escribir.",
+    "column": "Columna",
+    "row": "Fila",
+    "across": "Horizontal",
+    "down": "Vertical",
+    "empty": "Vacía",
+    "resultFor": "Resultado de: @clue",
+    "correct": "Correcta",
+    "wrong": "Incorrecta",
+    "point": "punto",
+    "solutionFor": "Para @clue la solución es: @solution",
+    "extraClueFor": "Abrir pista extra de @clue",
+    "letterSevenOfNine": "Letra @position de @length",
+    "lettersWord": "Palabra de @length letras",
+    "check": "Comprobar los caracteres.",
+    "submitAndcheck": "Enviar la respuesta y comprobar los caracteres.",
+    "showSolution": "Mostrar la solución.",
+    "retry": "Reintentar la tarea.",
+    "yourResult": "Tienes @score de @total puntos"
+  }
+}

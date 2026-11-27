@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sopa de letras: Dicotomias de Reinin</title>
+<link rel="stylesheet" href="../../valhalla-h5p.css">
+<script src="../../valhalla-theme.js"></script>
+</head><body>
+<h1>Sopa de letras: Dicotomias de Reinin</h1>
+<p class="sub">Encuentra las palabras escondidas.</p>
+<div id="ws-grid"></div>
+<h3>Palabras por encontrar</h3>
+<ul id="ws-words"></ul>
+<p class="muted" id="ws-status">Arrastra el dedo desde la primera letra hasta la última de cada palabra.</p>
+<div id="win" hidden><b>¡Completado! 🎉</b><br><span>+10 XP ganados</span></div>
+<script>
+ValhallaTheme.apply();
+var GRID = ["LZHLINTROTIMIACNAM", "AOOVISICEDAGWTETTD", "NCDERECHAATTXADESD", "OIERRVOODTSWZCEOIE", "IGXOADMAFAIIATNRVS", "CETOCOPTSRNNDITIIP", "ATREIVOSPCETRCECTR", "RAANOISIROGEEOQOCE", "ORTDNTIVETORICEEUO", "BTIOAATIVSXRUIMSRC", "SSMGLRITIIEOQMOTTU", "TEIEEAVASRKGZATASP", "IWANGLIGOAJAINITNA", "NSLIRCSERIOTNIVIOD", "AWYSEETNPIJIVDICCO", "DVFTVDAWTXHVDJSOSW", "ONOAPRACTICOUBTMYK", "OSOICIUJDEMOCRATAS"];
+var WORDS = ["ESTATICO", "DINAMICO", "POSITIVISTA", "NEGATIVISTA", "TACTICO", "ESTRATEGICO", "DEMOCRATA", "ARISTOCRATA", "JUICIOSO", "DECISIVO", "ALEGRE", "SERIO", "EXTRATIMIA", "INTROTIMIA", "INTERROGATIVO", "DECLARATIVO", "TEORICO", "PRACTICO", "EXOGENISTA", "ENDOGENISTA", "CONSTRUCTIVISTA", "EMOTIVISTA", "IZQUIERDA", "DERECHA", "RACIONAL", "IRRACIONAL", "CEDENTE", "OBSTINADO", "DESPREOCUPADO", "PREVISOR"];
+var PLACEMENTS = [{"palabra": "ESTATICO", "fila": 8, "columna": 15, "direccion": [1, 0]}, {"palabra": "DINAMICO", "fila": 14, "columna": 13, "direccion": [-1, 0]}, {"palabra": "POSITIVISTA", "fila": 5, "columna": 6, "direccion": [1, 0]}, {"palabra": "NEGATIVISTA", "fila": 14, "columna": 7, "direccion": [-1, 0]}, {"palabra": "TACTICO", "fila": 1, "columna": 13, "direccion": [1, 0]}, {"palabra": "ESTRATEGICO", "fila": 11, "columna": 1, "direccion": [-1, 0]}, {"palabra": "DEMOCRATA", "fila": 17, "columna": 8, "direccion": [0, 1]}, {"palabra": "ARISTOCRATA", "fila": 12, "columna": 9, "direccion": [-1, 0]}, {"palabra": "JUICIOSO", "fila": 17, "columna": 7, "direccion": [0, -1]}, {"palabra": "DECISIVO", "fila": 1, "columna": 9, "direccion": [0, -1]}, {"palabra": "ALEGRE", "fila": 9, "columna": 4, "direccion": [1, 0]}, {"palabra": "SERIO", "fila": 13, "columna": 6, "direccion": [0, 1]}, {"palabra": "EXTRATIMIA", "fila": 3, "columna": 2, "direccion": [1, 0]}, {"palabra": "INTROTIMIA", "fila": 0, "columna": 4, "direccion": [0, 1]}, {"palabra": "INTERROGATIVO", "fila": 4, "columna": 11, "direccion": [1, 0]}, {"palabra": "DECLARATIVO", "fila": 15, "columna": 5, "direccion": [-1, 0]}, {"palabra": "TEORICO", "fila": 1, "columna": 15, "direccion": [1, 0]}, {"palabra": "PRACTICO", "fila": 16, "columna": 4, "direccion": [0, 1]}, {"palabra": "EXOGENISTA", "fila": 10, "columna": 10, "direccion": [-1, 0]}, {"palabra": "ENDOGENISTA", "fila": 6, "columna": 3, "direccion": [1, 0]}, {"palabra": "CONSTRUCTIVISTA", "fila": 14, "columna": 16, "direccion": [-1, 0]}, {"palabra": "EMOTIVISTA", "fila": 8, "columna": 14, "direccion": [1, 0]}, {"palabra": "IZQUIERDA", "fila": 12, "columna": 12, "direccion": [-1, 0]}, {"palabra": "DERECHA", "fila": 2, "columna": 2, "direccion": [0, 1]}, {"palabra": "RACIONAL", "fila": 7, "columna": 0, "direccion": [-1, 0]}, {"palabra": "IRRACIONAL", "fila": 1, "columna": 4, "direccion": [1, 0]}, {"palabra": "CEDENTE", "fila": 0, "columna": 14, "direccion": [1, 0]}, {"palabra": "OBSTINADO", "fila": 8, "columna": 0, "direccion": [1, 0]}, {"palabra": "DESPREOCUPADO", "fila": 2, "columna": 17, "direccion": [1, 0]}, {"palabra": "PREVISOR", "fila": 6, "columna": 8, "direccion": [1, 0]}];
+(function () {
+  var R = GRID.length, C = GRID[0].length;
+  var gridEl = document.getElementById('ws-grid');
+  gridEl.style.gridTemplateColumns = 'repeat(' + C + ', 1fr)';
+  var cells = {}, found = new Set(), start = null, dragging = false;
+  for (var r = 0; r < R; r++) for (var c = 0; c < C; c++) {
+    var d = document.createElement('div');
+    d.className = 'ws-cell'; d.textContent = GRID[r][c];
+    d.dataset.r = r; d.dataset.c = c;
+    cells[r + ',' + c] = d; gridEl.appendChild(d);
+  }
+  var listEl = document.getElementById('ws-words');
+  WORDS.forEach(function (w) {
+    var li = document.createElement('li');
+    li.dataset.w = w; li.textContent = w; listEl.appendChild(li);
+  });
+  function cellsBetween(a, b) {
+    var dr = b.r - a.r, dc = b.c - a.c;
+    var adr = Math.abs(dr), adc = Math.abs(dc);
+    if (adr !== 0 && adc !== 0 && adr !== adc) return null;
+    var len = Math.max(adr, adc) + 1;
+    var sr = dr === 0 ? 0 : dr / adr, sc = dc === 0 ? 0 : dc / adc;
+    var out = [];
+    for (var k = 0; k < len; k++) out.push({r: a.r + sr * k, c: a.c + sc * k});
+    return out;
+  }
+  function clearSel() {
+    Object.keys(cells).forEach(function (k) {
+      if (!cells[k].classList.contains('found')) cells[k].classList.remove('sel');
+    });
+  }
+  function markSel(list) {
+    clearSel();
+    (list || []).forEach(function (p) {
+      var cell = cells[p.r + ',' + p.c];
+      if (cell && !cell.classList.contains('found')) cell.classList.add('sel');
+    });
+  }
+  function evaluate(a, b) {
+    var list = cellsBetween(a, b);
+    if (!list) return false;
+    var word = list.map(function (p) { return GRID[p.r][p.c]; }).join('');
+    var rev = word.split('').reverse().join('');
+    var hit = null, fwd = true;
+    PLACEMENTS.forEach(function (u) {
+      var dr = u.direccion[0], dc = u.direccion[1];
+      if (u.palabra === word && u.fila === a.r && u.columna === a.c) { hit = u; fwd = true; }
+      if (u.palabra === rev && u.fila === b.r && u.columna === b.c) { hit = u; fwd = false; }
+    });
+    if (!hit || found.has(hit.palabra)) return false;
+    found.add(hit.palabra);
+    list.forEach(function (p) {
+      var cell = cells[p.r + ',' + p.c];
+      cell.classList.remove('sel'); cell.classList.add('found');
+    });
+    var li = listEl.querySelector('li[data-w="' + hit.palabra + '"]');
+    if (li) li.classList.add('done');
+    document.getElementById('ws-status').textContent =
+      'Encontradas: ' + found.size + ' / ' + WORDS.length;
+    if (found.size === WORDS.length) ValhallaTheme.win();
+    return true;
+  }
+  function cellFromPoint(x, y) {
+    var el = document.elementFromPoint(x, y);
+    if (!el || !el.classList.contains('ws-cell')) return null;
+    return {r: +el.dataset.r, c: +el.dataset.c};
+  }
+  gridEl.addEventListener('pointerdown', function (e) {
+    var p = cellFromPoint(e.clientX, e.clientY);
+    if (!p) return;
+    e.preventDefault();
+    start = p; dragging = false; markSel([p]);
+  });
+  gridEl.addEventListener('pointermove', function (e) {
+    if (!start) return;
+    var p = cellFromPoint(e.clientX, e.clientY);
+    if (!p) return;
+    if (p.r !== start.r || p.c !== start.c) dragging = true;
+    if (dragging) markSel(cellsBetween(start, p));
+  });
+  gridEl.addEventListener('pointerup', function (e) {
+    if (!start) return;
+    var p = cellFromPoint(e.clientX, e.clientY) || start;
+    if (dragging) {
+      evaluate(start, p);
+    } else if (window.__wsPending) {
+      var a = window.__wsPending; window.__wsPending = null;
+      evaluate(a, p);
+    } else {
+      window.__wsPending = p;
+      markSel([p]);
+      document.getElementById('ws-status').textContent =
+        'Ahora toca la última letra de la palabra.';
+      start = null;
+      return;
+    }
+    start = null; dragging = false; clearSel();
+  });
+  gridEl.addEventListener('pointercancel', function () {
+    start = null; dragging = false; clearSel();
+  });
+})();
+</script>
+</body></html>
