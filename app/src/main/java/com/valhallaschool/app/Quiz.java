@@ -30,6 +30,19 @@ final class Quiz {
     }
 
     static final Random R = new Random();
+
+    /** Permutación barajada de {0,1,2,3} para mostrar 4 opciones en orden
+     *  aleatorio (v1.3.4: la correcta ya no es siempre la primera). El tag de
+     *  cada opción sigue siendo su índice ORIGINAL, así la corrección
+     *  (comparar el tag contra `answer`) no cambia. */
+    static int[] shuffled4() {
+        int[] o = {0, 1, 2, 3};
+        for (int i = o.length - 1; i > 0; i--) {
+            int j = R.nextInt(i + 1);
+            int t = o[i]; o[i] = o[j]; o[j] = t;
+        }
+        return o;
+    }
     private static final Pattern WORD = Pattern.compile("[A-Za-z][A-Za-z'-]{3,}");
     private static final Set<String> STOP = new HashSet<>(Arrays.asList(("that this with your from into than them they their what when will have more "
             + "less over only just about make makes does dont doesnt every other others before after where which while being been very much most some").split(" ")));

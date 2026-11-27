@@ -104,7 +104,12 @@ class ConexionesScreen extends MiniGame {
         TextView q = tv(a, "¿A quién le encargas el trabajo?", 17, TEXT, MEDIUM);
         main.addView(q, lpm(M, W, 0, 0, 0, 12));
         optViews.clear();
-        for (int ci : c.cands) {
+        // v1.3.4: los 4 candidatos se barajan en cada encargo (en el banco el
+        // correcto era el primero en 10 de 12 encargos); el tag sigue siendo
+        // el índice de tipo, así `pick == c.cands[c.answer]` sigue bien.
+        int[] order = Quiz.shuffled4();
+        for (int k = 0; k < 4; k++) {
+            int ci = c.cands[order[k]];
             String cand = GamesData.TYPES[ci];
             TextView opt = optBtn(cand + "  ·  " + GamesData.QUADRA_NAMES[GamesData.QUADRA[ci]]);
             LinearLayout holder = col(a);

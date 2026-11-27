@@ -56,9 +56,13 @@ class IntrusoScreen extends MiniGame {
             TextView q = tv(a, "¿Cuál es el intruso?", 17, TEXT, MEDIUM);
             main.addView(q, lpm(M, W, 0, 0, 0, 12));
             optViews.clear();
+            // v1.3.4: los 4 ítems se barajan en cada presentación (en el banco el
+            // intruso era el último en 27 de 30 conjuntos); el tag sigue siendo
+            // el índice ORIGINAL, así `pick == t.answer` sigue bien.
+            int[] order = Quiz.shuffled4();
             for (int i = 0; i < 4; i++) {
-                final int ii = i;
-                TextView opt = optBtn(t.items[i]);
+                final int ii = order[i];
+                TextView opt = optBtn(t.items[ii]);
                 LinearLayout holder = col(a);
                 holder.addView(opt, lp(M, W));
                 holder.setTag(ii);

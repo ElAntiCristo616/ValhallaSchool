@@ -123,9 +123,12 @@ class AventuraScreen extends MiniGame {
             addCompanion();
             main.addView(card(curRiddle.point.toUpperCase(java.util.Locale.ROOT), curRiddle.question), lpm(M, W, 0, 10, 0, 12));
             optViews.clear();
+            // v1.3.4: las opciones se barajan en cada presentación; el tag sigue
+            // siendo el índice ORIGINAL, así `i == curRiddle.answer` sigue bien.
+            int[] order = Quiz.shuffled4();
             for (int i = 0; i < 4; i++) {
-                final int ii = i;
-                TextView opt = optBtn(curRiddle.opts[i]);
+                final int ii = order[i];
+                TextView opt = optBtn(curRiddle.opts[ii]);
                 LinearLayout holder = col(a);
                 holder.addView(opt, lp(M, W));
                 holder.setTag(ii);
@@ -145,9 +148,12 @@ class AventuraScreen extends MiniGame {
         addCompanion();
         main.addView(card("🚪 PUERTA FINAL", GamesData.AVENTURA_DOOR_Q), lpm(M, W, 0, 10, 0, 12));
         optViews.clear();
+        // v1.3.4: la puerta final también baraja sus opciones (antes la correcta
+        // era siempre la primera); el tag sigue siendo el índice original.
+        int[] order = Quiz.shuffled4();
         for (int i = 0; i < 4; i++) {
-            final int ii = i;
-            TextView opt = optBtn(GamesData.AVENTURA_DOOR_OPTS[i]);
+            final int ii = order[i];
+            TextView opt = optBtn(GamesData.AVENTURA_DOOR_OPTS[ii]);
             LinearLayout holder = col(a);
             holder.addView(opt, lp(M, W));
             holder.setTag(ii);
