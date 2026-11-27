@@ -168,7 +168,9 @@ final class GamesData {
         }
     }
 
-    /* ---- 1. Detective: 60 fragmentos en 6 expedientes (v1.3.2) ---- */
+    /* ---- 1. Detective: 50 fragmentos en 5 expedientes (v1.3.3: se eliminó
+       «El taller reutilizado»; los casos son 0..4, igual que el índice del
+       selector — antes el TSV era 1..6 y el Expediente 1 cargaba 0 fragmentos) ---- */
     static final class Det {
         String id; int caseId, scene; String fragment; int aEl, d1El, d2El, d3El; String justification;
     }
@@ -176,8 +178,6 @@ final class GamesData {
     static final ArrayList<Det> DETECTIVE = new ArrayList<>();
     /** Expedientes: título, introducción, tipo A, tipo B, explicación de cierre, respuesta de cierre (0 tipo A, 1 tipo B, 2 indeterminado). */
     static final String[][] CASES = {
-            {"El taller reutilizado", "Un taller de barrio: alguien propone reutilizar piezas viejas para fines nuevos y otro pide un método con resultados verificables. Marca el foco informacional de cada fragmento.",
-                    "ILE", "IEE", "El tipo es ILE: Ne base con Ti creativa (reutilizar con sistema). IEE comparte Ne, pero su creativa es Fi, no Ti.", "0"},
             {"La cafetería", "Una cafetería con una solicitud práctica: alguien pide lo concreto y otro anticipa problemas que nadie ha visto. ¿Qué información se está procesando en cada frase?",
                     "LSE", "IEI", "El tipo es LSE: Te base con Si creativa (avances concretos y cuidado del ambiente). IEI anticipa, pero su base es Ni, no Te.", "0"},
             {"El vecino de las zanahorias", "Un vecino compra doce kilos de zanahorias cada martes y todo el barrio sospecha. Hay pistas, pero no todas determinan un tipo: algunas frases no dicen nada tipológico.",
@@ -191,7 +191,6 @@ final class GamesData {
     };
     /** Títulos de las 3 escenas numeradas de cada expediente (biblia §01). */
     static final String[][] CASE_SCENES = {
-            {"Llegada al taller", "El encargo", "La revisión final"},
             {"La mañana en la cafetería", "El pedido", "El cierre"},
             {"El rumor del barrio", "Las entrevistas", "La contradicción"},
             {"La reunión", "El proyecto", "La entrega"},

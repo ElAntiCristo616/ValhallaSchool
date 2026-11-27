@@ -176,7 +176,7 @@ abstract class MiniGame extends MainActivity.Screen {
         // v1.3.1: la sesión terminada cuenta para la misión de Retos de hoy.
         // Intruso y Tribunal cuentan por ítem (en su finishItem), no por sesión.
         if (!gameId.equals("intruso") && !gameId.equals("tribunal")) Store.I.bumpGameDay(gameId);
-        int acc = answered > 0 ? Math.round(firstOk * 100f / answered) : 100;
+        int acc = answered > 0 ? Math.round(firstOk * 100f / answered) : 0; // v1.3.3: con 0 respuestas la precisión es 0%, nunca 100%
         boolean good = acc >= 70;
         long secs = (System.currentTimeMillis() - t0) / 1000;
 

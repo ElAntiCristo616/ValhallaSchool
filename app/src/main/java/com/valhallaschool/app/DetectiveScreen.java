@@ -11,8 +11,9 @@ import java.util.List;
 import static com.valhallaschool.app.Ui.*;
 
 /**
- * Detective sociónico (v1.3.2, rehecho según la biblia §01): 60 fragmentos
- * de evidencia en 6 expedientes con 3 escenas numeradas cada uno. Cada caso
+ * Detective sociónico (v1.3.3): 50 fragmentos de evidencia en 5 expedientes
+ * con 3 escenas numeradas cada uno. (v1.3.2 tenía 6; se eliminó «El taller
+ * reutilizado» porque el desfase de índices lo dejaba con 0 fragmentos.) Cada caso
  * abre con una explicación breve de QUÉ hay que hacer; las pistas son
  * escalonadas (escena relevante → fragmento destacado → contraste);
  * el expediente (pistas/hipótesis/notas) se consulta en cualquier momento.
@@ -99,7 +100,7 @@ class DetectiveScreen extends MiniGame {
         if (picking) {
             phase = ASK;
             addCompanion();
-            main.addView(card("DETECTIVE SOCIÓNICO", "Seis expedientes, sesenta fragmentos de evidencia. "
+            main.addView(card("DETECTIVE SOCIÓNICO", "Cinco expedientes, cincuenta fragmentos de evidencia. "
                     + "Marca en cada fragmento qué elemento está hablando y cierra el caso con tu conclusión."), lpm(M, W, 0, 10, 0, 12));
             TextView q = tv(a, "¿Qué expediente abres?", 17, TEXT, MEDIUM);
             main.addView(q, lpm(M, W, 0, 0, 0, 12));
@@ -132,6 +133,16 @@ class DetectiveScreen extends MiniGame {
                     + "4 · Al final concluye: qué tipo es el sospechoso, o «Indeterminado» si los datos no alcanzan.\n"
                     + "Si no sabes por dónde empezar, toca 💡 Pista: primero te dice en qué escena está, luego qué mirar, luego el contraste."), lpm(M, W, 0, 10, 0, 12));
             setBtn("Empezar la investigación", B_GREEN);
+            return;
+        }
+        // Guarda v1.3.3: un expediente nunca puede saltar a la conclusión con
+        // 0 fragmentos (era el bug del Expediente 1: «0 de 0» y 100%). Si por
+        // lo que sea la cola quedó vacía, error y vuelta al selector.
+        if (!picking && !intro && queue.isEmpty()) {
+            phase = ASK;
+            addCompanion();
+            main.addView(card("EXPEDIENTE VACÍO", "Este expediente no cargó ningún fragmento, así que no se puede concluir nada. Vuelve y elige otro expediente."), lpm(M, W, 0, 10, 0, 12));
+            setBtn("Volver a expedientes", B_GREEN);
             return;
         }
         if (step < queue.size()) {
@@ -268,6 +279,13 @@ class DetectiveScreen extends MiniGame {
         if (picking) {
             if (!picked || chosenH == null || chosenH.getTag() == null) { a.toast("Elige un expediente primero, " + name() + ".", false); return; }
             setCase((Integer) chosenH.getTag());
+            if (queue.isEmpty()) {
+                a.toast("Ese expediente no cargó fragmentos, " + name() + ". Elige otro.", false);
+                picked = false;
+                chosenH = null;
+                next();
+                return;
+            }
             picking = false;
             intro = true;
             step = 0;
@@ -279,6 +297,14 @@ class DetectiveScreen extends MiniGame {
         }
         if (intro) {
             intro = false;
+            next();
+            return;
+        }
+        // Guarda v1.3.3: si se está mostrando el error de expediente vacío,
+        // el botón vuelve al selector de expedientes.
+        if (!picking && !intro && queue.isEmpty()) {
+            picking = true;
+            step = 0;
             next();
             return;
         }
