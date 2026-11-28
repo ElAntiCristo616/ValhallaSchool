@@ -15,7 +15,9 @@ import static com.valhallaschool.app.Ui.*;
  * con 3 escenas numeradas cada uno. (v1.3.2 tenía 6; se eliminó «El taller
  * reutilizado» porque el desfase de índices lo dejaba con 0 fragmentos.) Cada caso
  * abre con una explicación breve de QUÉ hay que hacer; las pistas son
- * escalonadas (escena relevante → fragmento destacado → contraste);
+ * escalonadas (pregunta para hacerse → descartar dos → quedan dos
+ * candidatos) y NUNCA regalan la respuesta: no nombran el elemento, no
+ * dan su definición ni la justificación del fragmento (v1.3.7);
  * el expediente (pistas/hipótesis/notas) se consulta en cualquier momento.
  * Mecánica intacta: marcar fragmentos como evidencia, hipótesis provisional,
  * conclusión con justificación; «Indeterminado» es válido si faltan datos.
@@ -28,16 +30,34 @@ class DetectiveScreen extends MiniGame {
         List<String> opts;
     }
 
-    /** Qué mide cada elemento (PDF de Elementos SCS): base de las pistas escalonadas. */
-    private static final String[] EL_HINTS = {
-            "la energía potencial, la esencia y lo que algo es capaz de ser", // Ne
-            "el tiempo, la secuencia y si queda tiempo", // Ni
-            "la apariencia, la fuerza y la voluntad", // Se
-            "el presente, las sensaciones y el bienestar", // Si
-            "el trabajo, la eficiencia y los métodos", // Te
-            "las estructuras, las jerarquías y los sistemas", // Ti
-            "las emociones, el ánimo y la excitación", // Fe
-            "las relaciones, la atracción o repulsión y la distancia entre personas", // Fi
+    /**
+     * Tablas para construir acercamientos (v1.3.7): las pistas viejas
+     * regalaban la respuesta (nombraban el elemento, daban su definición
+     * y la justificación). Las nuevas solo acercan: una pregunta, un
+     * descarte y un par de candidatos. Índices de elementos: Ne 0, Ni 1,
+     * Se 2, Si 3, Te 4, Ti 5, Fe 6, Fi 7.
+     */
+    /** Eje de cada elemento: 0 intuición, 1 sensación, 2 lógica, 3 ética. */
+    private static final int[] EL_AXIS = {0, 0, 1, 1, 2, 2, 3, 3};
+    private static final String[] AXIS_NAMES = {"intuición", "sensación", "lógica", "ética"};
+    /** ¿El elemento mira hacia fuera (explícito) o hacia dentro (implícito)? */
+    private static final boolean[] EL_EXPLICIT = {true, false, true, false, true, false, true, false};
+    /** ¿Lo que describe se queda igual (estático) o cambia (dinámico)? */
+    private static final boolean[] EL_STATIC = {true, false, true, false, false, true, false, true};
+    /** Palabra de categoría de cada elemento: solo sirve para DESCARTAR, nunca nombra el elemento. */
+    private static final String[] EL_CAT = {
+            "el del potencial", "el del tiempo", "el de la apariencia", "el del bienestar",
+            "el del trabajo", "el de las estructuras", "el de las emociones", "el de las relaciones"};
+    /** Pista corta para contrastar dos candidatos: qué mira cada uno (una cláusula, no la definición). */
+    private static final String[] EL_CUE = {
+            "mira en qué se puede convertir algo", // Ne
+            "mira cómo va a cambiar algo con el tiempo", // Ni
+            "mira cómo se ve algo y qué fuerza tiene", // Se
+            "mira cómo se siente algo por dentro", // Si
+            "mira cómo se hace el trabajo", // Te
+            "mira cómo se ordena todo en un sistema", // Ti
+            "mira cómo se siente la gente", // Fe
+            "mira cómo se llevan las personas entre sí", // Fi
     };
 
     private final List<Frag> queue = new ArrayList<>();
@@ -54,6 +74,8 @@ class DetectiveScreen extends MiniGame {
     private final List<LinearLayout> optViews = new ArrayList<>();
     private TextView hypTx, hintTx, hintBtn, fileTx, fileBtn;
     private int hintLevel = 0;
+    /** v1.3.7: compañero del escalón 3 y los dos descartados del escalón 2 (índices de elemento, -1 si no hay). */
+    private int hintPartner = -1, hintOut1 = -1, hintOut2 = -1;
     private boolean showFile = false;
     private final List<String> marked = new ArrayList<>();
 
@@ -132,7 +154,8 @@ class DetectiveScreen extends MiniGame {
                     + "3 · Tu hipótesis provisional aparece arriba: cámbiala cuando quieras.\n"
                     + "4 · Al final concluye: qué tipo es el sospechoso, o «Indeterminado» si los datos no alcanzan."
                     // v1.3.6: en Imposible no hay pistas, así que no se ofrecen.
-                    + (maxHints() > 0 ? "\nSi no sabes por dónde empezar, toca 💡 Pista: primero te dice en qué escena está, luego qué mirar, luego el contraste." : "");
+                    // v1.3.7: las pistas acercan sin regalar: pregunta, descarte y dos candidatos.
+                    + (maxHints() > 0 ? "\nSi no sabes por dónde empezar, toca 💡 Pista: primero una pregunta para hacerte, luego descarta dos, luego te deja con dos candidatos. Nunca te dice la respuesta." : "");
             main.addView(card("CÓMO SE INVESTIGA", howto), lpm(M, W, 0, 10, 0, 12));
             setBtn("Empezar la investigación", B_GREEN);
             return;
@@ -151,6 +174,7 @@ class DetectiveScreen extends MiniGame {
             phase = ASK;
             cur = queue.get(step);
             hintLevel = 0;
+            hintPartner = -1; hintOut1 = -1; hintOut2 = -1;
             addCompanion();
             LinearLayout c = card("EXPEDIENTE " + (caseId + 1) + " · " + caseTitle.toUpperCase(java.util.Locale.ROOT), caseIntro);
             main.addView(c, lpm(M, W, 0, 10, 0, 12));
@@ -243,23 +267,81 @@ class DetectiveScreen extends MiniGame {
         return b.toString().trim();
     }
 
+    /**
+     * Acercamientos no generosos (v1.3.7). Escalón 1: una pregunta para
+     * hacerse (nunca nombra el elemento). Escalón 2: descarta dos
+     * distractores por su categoría (nunca la correcta). Escalón 3: deja
+     * dos candidatos — la correcta y su compañero — con una pista corta
+     * cada uno, en orden aleatorio; todavía hay que elegir. La cantidad
+     * por dificultad se queda (Normal 3, Difícil 2, Experto 1, Imposible 0).
+     */
     private void showHint() {
         int maxH = maxHints();
         if (hintLevel >= maxH) return;
         hintLevel++;
-        int el = PracticeData.elIdx(cur.answer);
+        int ans = PracticeData.elIdx(cur.answer);
         String txt;
         if (hintLevel == 1) {
-            txt = "Pista 1 — La pista está en esta escena (Escena " + cur.scene + "): alguien procesa información de "
-                    + cur.answer + " (" + GamesData.elName(cur.answer) + "). Pregúntate qué está midiendo.";
+            // Compañero: el distractor que comparte eje con la correcta, si lo
+            // hay (el confundible); si no, el primer distractor. Los otros dos
+            // son los que descarta el escalón 2.
+            int partner = -1;
+            for (String o : cur.opts) {
+                int e = PracticeData.elIdx(o);
+                if (e != ans && EL_AXIS[e] == EL_AXIS[ans]) { partner = e; break; }
+            }
+            if (partner < 0) {
+                for (String o : cur.opts) {
+                    int e = PracticeData.elIdx(o);
+                    if (e != ans) { partner = e; break; }
+                }
+            }
+            hintPartner = partner;
+            int n = 0;
+            for (String o : cur.opts) {
+                int e = PracticeData.elIdx(o);
+                if (e != ans && e != partner) {
+                    if (n == 0) hintOut1 = e; else hintOut2 = e;
+                    n++;
+                }
+            }
+            txt = "Pista 1 — " + hintQ1();
         } else if (hintLevel == 2) {
-            txt = "Pista 2 — Fíjate en: " + EL_HINTS[el] + ".";
+            txt = "Pista 2 — Descarta dos: no es " + EL_CAT[hintOut1] + " ni " + EL_CAT[hintOut2] + ".";
         } else {
-            txt = "Pista 3 — " + cur.just;
+            // Los dos candidatos en orden aleatorio: el que acierte el orden
+            // por costumbre, pierde.
+            String a = EL_CUE[ans], b = EL_CUE[hintPartner];
+            boolean swap = Math.random() < 0.5;
+            String first = swap ? b : a, second = swap ? a : b;
+            String axisBit = EL_AXIS[ans] == EL_AXIS[hintPartner]
+                    ? "Los dos son de " + AXIS_NAMES[EL_AXIS[ans]] + ": "
+                    : "";
+            txt = "Pista 3 — " + axisBit + "quedan dos: uno " + first + " y el otro " + second
+                    + ". ¿Cuál dice el fragmento?";
         }
         hintTx.setText(txt);
         hintTx.setVisibility(android.view.View.VISIBLE);
         if (hintBtn != null) hintBtn.setText("💡 Pista (" + hintLevel + "/" + maxH + ")" + (hintLevel >= maxH ? " · ya está todo" : ""));
+    }
+
+    /**
+     * Pregunta del escalón 1: sobre una dimensión en la que la correcta
+     * comparte grupo con al menos otra opción, para que la pregunta sola
+     * nunca identifique la respuesta. Si ningún lado tiene pareja, solo
+     * queda un consejo de lectura (sin contenido).
+     */
+    private String hintQ1() {
+        int ans = PracticeData.elIdx(cur.answer);
+        int expCount = 0, statCount = 0;
+        for (String o : cur.opts) {
+            int e = PracticeData.elIdx(o);
+            if (EL_EXPLICIT[e] == EL_EXPLICIT[ans]) expCount++;
+            if (EL_STATIC[e] == EL_STATIC[ans]) statCount++;
+        }
+        if (expCount >= 2) return "Pregúntate: ¿la persona está mirando algo de fuera — lo que se ve, se hace o se dice — o algo de dentro — lo que se siente o se percibe por dentro?";
+        if (statCount >= 2) return "Pregúntate: ¿lo que describe se queda igual, o está cambiando? ¿Es una foto o una película?";
+        return "Lee el fragmento otra vez despacio: ¿qué está HACIENDO la persona? Fíjate en el verbo, no en el tema.";
     }
 
     private void pickElement(LinearLayout holder, String el) {

@@ -36,7 +36,7 @@ class LabScreen extends MiniGame {
             "Mitad nombres, mitad letras",
             "Solo las letras: Ne, Ni, Se, Si, Te, Ti, Fe, Fi",
             "4 posiciones ya puestas, completa las otras 4",
-            "Adivina el tipo por 2 pistas y luego arma su modelo",
+            "Adivina el tipo por acercamientos (sin que te regalen nada) y luego arma su modelo",
             "Un modelo imposible: encuentra el error y arréglalo"};
 
     private int grade = 0; // 0 = elegir grado, 1..7
@@ -91,6 +91,46 @@ class LabScreen extends MiniGame {
 
     private String modelEl(int pos) { return GamesData.ELEMENTS[model[pos]]; }
 
+    /**
+     * Acercamientos del grado 6 (v1.3.7). Pista 1: los dos ejes del Ego
+     * (quedan 4 tipos). Pista 2: descarta dos cuadras — la otra cuadra de
+     * esta combinación de ejes y una ajena — y quedan los 2 tipos de la
+     * cuadra correcta: todavía hay que elegir cuál de los dos manda.
+     * Nunca se nombra el elemento, la posición ni el tipo.
+     */
+    private String labHints(int dd) {
+        // El Ego mezcla siempre un elemento de percepción (Ne/Ni/Se/Si) con
+        // uno de juicio (Te/Ti/Fe/Fi).
+        int percEl = -1, judEl = -1;
+        for (int k = 0; k < 2; k++) {
+            int e = model[k];
+            if (e <= 3) percEl = e; else judEl = e;
+        }
+        String percAxis = (percEl <= 1) ? "intuición" : "sensación";
+        String judAxis = (judEl <= 5) ? "lógica" : "ética";
+        String p1 = "Pista 1: su Ego mezcla " + percAxis + " y " + judAxis + ". ¿Cuál de las dos manda?";
+        if (dd >= 2) return p1 + "\n¿Qué tipo es?";
+        int myQ = GamesData.QUADRA[GamesData.typeIdx(type)];
+        ArrayList<Integer> comboQ = new ArrayList<>();
+        for (int t = 0; t < 16; t++) {
+            int[] mm = GamesData.MODELS[t];
+            int p = -1, j = -1;
+            for (int k = 0; k < 2; k++) { int e = mm[k]; if (e <= 3) p = e; else j = e; }
+            String pa = (p <= 1) ? "intuición" : "sensación";
+            String ja = (j <= 5) ? "lógica" : "ética";
+            if (pa.equals(percAxis) && ja.equals(judAxis)) {
+                int q = GamesData.QUADRA[t];
+                if (!comboQ.contains(q)) comboQ.add(q);
+            }
+        }
+        int otherQ = comboQ.get(0) == myQ ? comboQ.get(1) : comboQ.get(0);
+        int extraQ = -1;
+        for (int q = 0; q < 4; q++) if (q != myQ && q != otherQ) { extraQ = q; break; }
+        String p2 = "Pista 2: no es de la cuadra " + GamesData.QUADRA_NAMES[otherQ]
+                + " ni de la cuadra " + GamesData.QUADRA_NAMES[extraQ] + ".";
+        return p1 + "\n" + p2 + "\n¿Qué tipo es?";
+    }
+
     @Override protected void next() {
         main.removeAllViews();
         setFoot(0);
@@ -133,15 +173,15 @@ class LabScreen extends MiniGame {
         if (stage == 1) {
             phase = ASK;
             addCompanion();
-            // v1.3.6: con dificultad >=2 solo se muestra la pista 1 (la base), no base+creativa.
+            // v1.3.7: acercamientos, no regalos. Antes la Pista 1 nombraba la
+            // base y la Pista 2 la creativa (con eso el tipo quedaba dado).
+            // Ahora Pista 1 = los dos ejes del Ego (quedan 4 tipos) y Pista 2
+            // = descarta dos cuadras (quedan 2 tipos y hay que elegir cuál
+            // manda). Nunca se nombra el elemento, la posición ni el tipo.
+            // v1.3.6: con dificultad >=2 solo se muestra la pista 1.
             int dd = 0;
             try { dd = Store.I == null ? 0 : Store.I.difficulty; } catch (Exception ignored) { /* sin Store = Normal */ }
-            String pistas = dd >= 2
-                    ? "Pista 1: la función base es " + GamesData.elName(model[0])
-                    + ".\n¿Qué tipo es?"
-                    : "Pista 1: la función base es " + GamesData.elName(model[0])
-                    + ".\nPista 2: la función creativa es " + GamesData.elName(model[1])
-                    + ".\n¿Qué tipo es?";
+            String pistas = labHints(dd);
             main.addView(card("DEDUCCIÓN POR PISTAS", pistas), lpm(M, W, 0, 10, 0, 12));
             List<String> opts = new ArrayList<>();
             opts.add(type);
