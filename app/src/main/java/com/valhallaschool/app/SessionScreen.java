@@ -192,20 +192,24 @@ final class SessionScreen extends MainActivity.Screen {
         sel = -1;
         Quiz.Q q = (Quiz.Q) item;
         main.addView(tv(a, q.prompt, 22, TEXT, BLACK), lpm(M, W, 0, 6, 0, 16));
-        LinearLayout ctx = col(a);
-        ctx.setBackground(round(SURF, 18, LINE, 2));
-        ctx.setPadding(dp(16), dp(16), dp(16), dp(16));
-        if (q.head != null) {
-            TextView h = tv(a, q.head, 19, TEXT, BOLD);
-            h.setLineSpacing(0, 1.15f);
-            ctx.addView(h, lpm(M, W, 0, 0, 0, q.body != null ? 8 : 0));
+        // v1.3.6 fase 2: las preguntas nuevas son prompt-only (head y body
+        // nulos): no se muestra la tarjeta de contexto vacía.
+        if (q.head != null || q.body != null) {
+            LinearLayout ctx = col(a);
+            ctx.setBackground(round(SURF, 18, LINE, 2));
+            ctx.setPadding(dp(16), dp(16), dp(16), dp(16));
+            if (q.head != null) {
+                TextView h = tv(a, q.head, 19, TEXT, BOLD);
+                h.setLineSpacing(0, 1.15f);
+                ctx.addView(h, lpm(M, W, 0, 0, 0, q.body != null ? 8 : 0));
+            }
+            if (q.body != null) {
+                TextView bd = tv(a, q.body, 17, mix(TEXT, BG, 0.85f), REG);
+                bd.setLineSpacing(0, 1.3f);
+                ctx.addView(bd);
+            }
+            main.addView(ctx, lpm(M, W, 0, 0, 0, 18));
         }
-        if (q.body != null) {
-            TextView bd = tv(a, q.body, 17, mix(TEXT, BG, 0.85f), REG);
-            bd.setLineSpacing(0, 1.3f);
-            ctx.addView(bd);
-        }
-        main.addView(ctx, lpm(M, W, 0, 0, 0, 18));
         LinearLayout ol = q.two ? row(a) : col(a);
         opts = new TextView[q.opts.length];
         for (int i = 0; i < q.opts.length; i++) {

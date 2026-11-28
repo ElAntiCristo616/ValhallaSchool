@@ -130,17 +130,17 @@ final class ArenaGen {
                     "Proponer que {A} se encargue de su parte fuerte y {B} de la suya, sin meterse en lo del otro."},
             {"Hacer {P} en ráfagas cortas: veinte minutos cada uno y un descanso entre medias.",
                     "Repartir roles claros para {P} y parar antes de que se agoten."},
-            {"Acordar primero el objetivo de {P} y luego dejar que cada uno use su método.",
+            {"Acordar primero el objetivo de {P} y luego dejar que cada uno lo haga a su manera.",
                     "Pedirles que digan el objetivo en voz alta antes de discutir el cómo."},
             {"Darle a cada uno su terreno en {P}: mismo gusto, distinto lugar.",
                     "Que {A} y {B} hagan su parte de {P} por separado y luego la junten."},
-            {"Usar la parte de {P} en la que sí se entienden y dejar el resto para después.",
-                    "Preguntar en qué parte de {P} están de acuerdo y empezar por ahí."},
+            {"Usar la zona de {P} en la que sí se entienden y dejar el resto para después.",
+                    "Preguntar en qué zona de {P} están de acuerdo y empezar por ahí."},
             {"Mantener {P} ligero: resolver lo práctico y no convertirlo en debate serio.",
                     "Proponer una solución rápida para {P} y no cavar más hondo."},
             {"Poner reglas formales para {P} y que cada uno se mantenga en su papel.",
                     "Tratar {P} como un trámite: sin comentarios personales, solo lo necesario."},
-            {"Poner una regla clara para {P} y que un tercero decida, sin tocar el punto débil de nadie.",
+            {"Poner una regla clara para {P} y que un tercero decida, sin tocar lo que a cada uno le duele.",
                     "Separarlos un momento y que cada uno diga qué necesita sin criticar al otro."},
             {"Nombrar la diferencia en voz alta: «ustedes suenan igual pero quieren cosas distintas».",
                     "Pedirle a cada uno que diga qué quiere de {P} con sus propias palabras."},
@@ -148,7 +148,7 @@ final class ArenaGen {
                     "Ponerle un límite de tiempo a {P}: cinco minutos y se acabó."},
             {"Repartir {P} por competencia: que lo haga quien lo hace mejor y punto.",
                     "Mantener {P} en lo práctico: números, fechas y nada de sentimientos."},
-            {"Que {A} ofrezca ayuda concreta para {P} y {B} la acepte sin dar explicaciones.",
+            {"Que {A} ofrezca lo concreto que sirve para {P} y {B} lo acepte sin dar explicaciones.",
                     "Pedirle a {A} que diga exactamente qué puede hacer por {P} y que {B} elija."},
             {"Que {B} acepte lo concreto que sirve de {P} y agradezca sin más.",
                     "Preguntarle a {B} qué parte de la ayuda le sirve y dejar el resto."},
@@ -160,47 +160,47 @@ final class ArenaGen {
 
     /** Errores CLÁSICOS por relación (2 por relación): la respuesta que empeora justo esa dinámica. */
     private static final String[][] MISTAKE = {
-            {"Decirles que si los dos ven lo mismo, uno de los dos sobra.",
+            {"Decirles que si los dos ven lo mismo en {P}, uno de los dos sobra.",
                     "Ponerlos a competir por ver quién resuelve {P} mejor."},
-            {"Decirle a {A} que haga todo solo porque «tú puedes».",
-                    "Esperar que {B} piense como {A} y criticarlo cuando no lo hace."},
+            {"Decirle a {A} que haga {P} todo solo porque «tú puedes».",
+                    "Esperar que {B} piense como {A} en {P} y criticarlo cuando no lo hace."},
             {"Ponerlos a resolver {P} sin parar hasta que terminen.",
-                    "Decirles que si se cansan es porque no quieren de verdad."},
-            {"Dejar que {A} corrija el método de {B} en plena acción.",
+                    "Decirles que si se cansan con {P} es porque no quieren de verdad."},
+            {"Dejar que {A} corrija el método de {B} para {P} en plena acción.",
                     "Decirles que discutan el cómo de {P} hasta que uno gane."},
             {"Comparar delante de todos quién hace mejor {P}.",
                     "Ponerlos a pelear por el mismo nicho de {P}."},
-            {"Exigirle a {B} que entienda a {A} en todo, sin excepciones.",
-                    "Decirles que si no se entienden es porque no se esfuerzan."},
+            {"Exigirle a {B} que entienda a {A} en todo lo de {P}, sin excepciones.",
+                    "Decirles que si no se entienden en {P} es porque no se esfuerzan."},
             {"Convertir {P} en un debate serio y profundo hasta romperlo.",
                     "Cavar en lo que cada uno siente de verdad por {P}."},
-            {"Hacer un comentario personal sobre {A} delante de {B}.",
+            {"Hacer un comentario personal sobre {A} delante de {B} por lo de {P}.",
                     "Forzarlos a acercarse y a confiar en {P}."},
-            {"Decirle a {A} que su forma de hacer las cosas es un desastre.",
-                    "Recordarles a los dos sus peores errores frente a todos."},
-            {"Asumir que están de acuerdo porque suenan igual.",
-                    "Decirle a {B} que copie a {A} porque «es lo mismo»."},
+            {"Decirle a {A} que su forma de hacer {P} es un desastre.",
+                    "Recordarles a los dos sus peores errores en {P} frente a todos."},
+            {"Asumir que están de acuerdo en {P} porque suenan igual.",
+                    "Decirle a {B} que copie a {A} en {P} porque «es lo mismo»."},
             {"Ponerlos a discutir {P} con emociones hasta que se agoten.",
                     "Decirles que hablen de sus sentimientos sobre {P}."},
             {"Meter sentimientos en {P}: «¿no te importa nada?».",
-                    "Decirle a {A} que {B} no lo respeta."},
-            {"Exigirle a {B} que agradezca la ayuda de {A} como se debe.",
-                    "Decirle a {B} que sin {A} no es nadie."},
-            {"Decirle a {B} que rechace la ayuda con desprecio.",
+                    "Decirle a {A} que {B} no lo respeta en {P}."},
+            {"Exigirle a {B} que agradezca la ayuda de {A} en {P} como se debe.",
+                    "Decirle a {B} que sin {A} no es nadie en {P}."},
+            {"Decirle a {B} que rechace la ayuda para {P} con desprecio.",
                     "Criticar delante de todos cómo {A} ayuda en {P}."},
-            {"Dejar que {A} le explique a {B} todo lo que hace mal, en público.",
-                    "Decirle a {B} que si no aguanta la crítica es porque es débil."},
-            {"Decirle a {B} que devuelva la crítica con la misma fuerza.",
-                    "Poner a {B} a la defensiva: «¿por qué siempre te equivocas?»."},
+            {"Dejar que {A} le explique a {B} todo lo que hace mal en {P}, en público.",
+                    "Decirle a {B} que si no aguanta la crítica sobre {P} es porque es débil."},
+            {"Decirle a {B} que devuelva la crítica sobre {P} con la misma fuerza.",
+                    "Poner a {B} a la defensiva por {P}: «¿por qué siempre te equivocas?»."},
     };
 
     /** Escucha genérica (neutral): calma un poco, no resuelve. */
     private static final String[] NEUTRAL = {
-            "Decirles que se calmen y respiren un momento.",
-            "Preguntar a cada uno qué pasó, sin interrumpir.",
-            "Proponer una pausa de cinco minutos.",
-            "Repetir lo que cada uno dijo para que se oigan.",
-            "Preguntar qué acuerdo les parecería justo a los dos.",
+            "Decirles que se calmen y respiren un momento antes de seguir con {P}.",
+            "Preguntar a cada uno qué pasó con {P}, sin interrumpir.",
+            "Proponer una pausa de cinco minutos en {P}.",
+            "Repetir lo que cada uno dijo de {P} para que se oigan.",
+            "Preguntar qué acuerdo sobre {P} les parecería justo a los dos.",
     };
 
     /**
@@ -212,13 +212,13 @@ final class ArenaGen {
      */
     private static final String[][] END_GOOD = {
             // 0 Identidad
-            {"Acuerdo: {A} y {B} descubren que piensan exactamente igual sobre {P}, así que se reparten el trabajo por turnos y terminan antes de lo previsto, cada uno convencido de que la idea fue suya. Puro {R}.",
+            {"Acuerdo: {A} y {B} descubren que piensan exactamente igual sobre {P}, así que se reparten el trabajo por turnos y terminan antes de lo previsto, cada uno convencido de que la idea fue suya. Puro acuerdo.",
                     "Acuerdo: {A} le dice a {B} lo que haría él y {B} asiente porque es justo lo que pensaba; {P} se resuelve en silencio, sin que nadie tenga que explicarle nada al otro."},
             // 1 Dualidad
             {"Acuerdo: {A} hace su parte fuerte sin que nadie se lo pida y {B} recibe la ayuda con gratitud; {P} se resuelve solo, como si los dos hubieran nacido para eso.",
-                    "Acuerdo: {B} le pide a {A} justo lo que {A} sabe dar y {A} se lo da sin dramas; {P} queda resuelto y los dos terminan más seguros que antes. {R} funcionando como debe."},
+                    "Acuerdo: {B} le pide a {A} justo lo que {A} sabe dar y {A} se lo da sin dramas; {P} queda resuelto y los dos terminan más seguros que antes. Todo funcionando como debe."},
             // 2 Activación
-            {"Acuerdo: {A} y {B} resuelven {P} en una ráfaga de veinte minutos, con roles claros, y paran antes de agotarse: energía corta, resultado completo. {R} en su mejor forma.",
+            {"Acuerdo: {A} y {B} resuelven {P} en una ráfaga de veinte minutos, con roles claros, y paran antes de agotarse: energía corta, resultado completo. En su mejor forma.",
                     "Acuerdo: {A} anima a {B}, {B} anima a {A}, y {P} se resuelve entre los dos antes de que a ninguno le dé tiempo de cansarse."},
             // 3 Espejo
             {"Acuerdo: {A} y {B} acuerdan primero el objetivo de {P} y luego cada uno usa su método; el resultado es el mismo y nadie tuvo que corregir a nadie.",
@@ -236,7 +236,7 @@ final class ArenaGen {
             {"Acuerdo: {A} y {B} ponen reglas formales para {P} y cada uno se mantiene en su papel; trato de trámite, sin comentarios personales, y {P} se resuelve.",
                     "Acuerdo: {A} trata a {B} con respeto formal y {B} hace lo mismo; {P} se resuelve a distancia cortés, sin que nadie tenga que querer al otro."},
             // 8 Conflicto
-            {"Acuerdo: {A} y {B} ponen una regla clara para {P} y dejan que un tercero decida, sin tocar el punto débil de nadie; contacto mínimo, {P} resuelto. {R} pide distancia, y la distancia funciona.",
+            {"Acuerdo: {A} y {B} ponen una regla clara para {P} y dejan que un tercero decida, sin tocar el punto débil de nadie; contacto mínimo, {P} resuelto. La distancia funciona.",
                     "Acuerdo: {A} se muerde la lengua antes de criticar el {BP} de {B} y {B} hace lo mismo con el {AP} de {A}; {P} se resuelve por escrito, sin mirarse."},
             // 9 Cuasi-identidad
             {"Acuerdo: {A} y {B} nombran la diferencia en voz alta —suenan igual pero quieren cosas distintas— y reparten {P} desde ahí.",
@@ -365,15 +365,15 @@ final class ArenaGen {
             {"Pedirle a {A} que haga la parte que le toca a {B} y a {B} la que le toca a {A}, para que cada uno vea {P} desde el otro lado.",
                     "Decirles que como los dos ven lo mismo, da igual quién resuelva {P}: que lo haga el que tenga tiempo."},
             {"Pedirle a {A} que le explique a {B} con todo detalle qué necesita, paso a paso, para que no haya malentendidos.",
-                    "Proponer que {B} haga la parte fuerte de {A} para que aprenda a valerse solo."},
+                    "Proponer que {B} haga la parte fuerte de {A} en {P} para que aprenda a valerse solo."},
             {"Poner a {A} y a {B} a hacer {P} en una sola sesión larga, sin descansos, para aprovechar que están animados.",
                     "Pedirle a {A} y a {B} que se turnen cada cinco minutos para que nadie se canse."},
             {"Dejar que {A} y {B} usen cada uno su método para {P} sin acordar antes el objetivo.",
-                    "Pedirle a {A} que copie el método de {B} porque «es el mismo, solo que al revés»."},
+                    "Pedirle a {A} que copie el método de {B} para {P} porque «es el mismo, solo que al revés»."},
             {"Poner a {A} y a {B} a hacer {P} juntos, en el mismo sitio, porque les gusta lo mismo.",
                     "Pedirle a {A} que le enseñe a {B} su forma de hacer {P}, ya que los dos lo hacen parecido."},
             {"Decirle a {A} y a {B} que si se entienden en la mitad de {P}, con esfuerzo se entenderán en todo.",
-                    "Pedirle a {B} que le dé a {A} justo lo que un dual le daría."},
+                    "Pedirle a {B} que le dé a {A} justo lo que un dual le daría en {P}."},
             {"Convertir {P} en una charla profunda entre {A} y {B} para que se entiendan de verdad.",
                     "Pedirle a {A} y a {B} que se esfuercen más en {P}: con más esfuerzo sí va a funcionar."},
             {"Pedirle a {A} y a {B} que se acerquen y confíen para resolver {P} como amigos.",
@@ -501,7 +501,7 @@ final class ArenaGen {
         GamesData.Arena s = new GamesData.Arena();
         s.id = "g" + t1 + "-" + t2 + "-" + pi;
         s.title = p.title;
-        s.intro = p.context + " Relación: " + GamesData.relName(t1, t2) + ". " + REL_INFO[rel][0];
+        s.intro = p.context + " " + REL_INFO[rel][0];
         s.relation = GamesData.relName(t1, t2);
         s.t1 = t1; s.t2 = t2;
         for (int turn = 0; turn < 3; turn++) {
@@ -516,7 +516,7 @@ final class ArenaGen {
                 nm.near = true;
                 opts.add(nm);
             } else {
-                opts.add(opt(NEUTRAL[r.nextInt(NEUTRAL.length)],
+                opts.add(opt(fill(NEUTRAL[r.nextInt(NEUTRAL.length)], t1, t2, p),
                         "Se calman un poco, pero nadie cede.", 5, 5, 5));
             }
             if (d >= 3) {

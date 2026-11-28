@@ -93,6 +93,7 @@ public final class MainActivity extends Activity implements Store.Events {
     @Override protected void onCreate(Bundle state) {
         super.onCreate(state);
         Data.load(this);
+        NewBank.load(this);
         PracticeData.load(this);
         GamesData.load(this);
         SupabaseAuth.INSTANCE.init(this);

@@ -20,12 +20,12 @@ det28	1	3	El precio de la zanahoria subió y él ni se inmutó: sigue comprando 
 det29	1	3	El barrio entero habla de él, pero nadie sabe nada seguro.	Fe	Fi	Ni	Se	El rumor mueve el ambiente de todo el barrio (Fe).
 det30	1	3	Si el restaurante existe, ¿por qué nunca huele a comida en su casa?	Ti	Te	Ne	Fi	Busca la coherencia del relato: si fuera verdad, habría señales (Ti).
 det31	2	1	El informe tiene que salir hoy: si no mide nada, no sirve.	Te	Ti	Fi	Se	Pide un método de acción verificable y resultados medibles: trabajo y eficiencia (Te).
-det32	2	1	Si seguimos así, en tres meses el proyecto se cae: el ritmo no alcanza.	Ni	Ne	Te	Ti	Proyecta la secuencia en el tiempo: lo que pasará si nada cambia y si queda tiempo (Ni).
+det32	2	1	Si seguimos así, en tres meses el proyecto se cae: no llegamos.	Ni	Ne	Te	Ti	Proyecta la secuencia en el tiempo: lo que pasará si nada cambia y si queda tiempo (Ni).
 det33	2	1	El aire está muy frío y la silla no se aguanta: nadie trabaja cómodo así.	Si	Se	Ni	Te	Nota el estado del espacio y cómo se sienten las personas dentro de él (Si).
 det34	2	2	La jerarquía de firmas está mal: el jefe no puede aprobar lo que el becario escribió.	Ti	Te	Fi	Se	Aplica una regla de jerarquía y sistema: quién puede aprobar qué (Ti).
 det35	2	2	¡Tráeme el contrato ya! Que el cliente está en la puerta y no espera.	Se	Si	Te	Fe	Presiona por el objeto aquí y ahora: fuerza y presencia en el momento (Se).
 det36	2	2	No me importa el bono si el equipo se rompe: la gente vale más que el resultado.	Fi	Fe	Si	Te	Valora a las personas por encima del trabajo: lo que necesitan y la relación con ellas (Fi).
-det37	2	2	El ambiente en la reunión está cargado: nadie quiere ser el primero en hablar.	Fe	Fi	Ni	Se	Lee el clima emocional del grupo en este momento (Fe).
+det37	2	2	En la reunión nadie quiere ser el primero en hablar: se siente la tensión.	Fe	Fi	Ni	Se	Lee el clima emocional del grupo en este momento (Fe).
 det38	2	3	Esto huele a que el cliente va a cancelar en diciembre: hay que moverse antes.	Ni	Ne	Fi	Te	Anticipa el desarrollo en el tiempo: hacia dónde va esto y si queda tiempo (Ni).
 det39	2	3	¿Y si este informe sirve también para el otro departamento? Tiene más de un uso.	Ne	Ni	Se	Ti	Ve lo que el informe es capaz de ser: su contenido interno y su energía potencial (Ne).
 det40	2	3	Cada hora cuesta: si la reunión no decide nada, es tiempo tirado.	Te	Ti	Fi	Se	Se fija en el trabajo y en que el recurso rinda: eficiencia y métodos (Te).
@@ -44,7 +44,7 @@ det52	4	1	Prueba este mango: está en su punto, ni ácido ni pasado.	Si	Se	Ni	Te
 det53	4	1	¡Este puesto es mío desde las seis! ¡El que llegó primero, llegó primero!	Se	Si	Te	Fe	Defiende su lugar con presencia y fuerza aquí y ahora (Se).
 det54	4	2	A doña Carmen le fío porque nunca me ha quedado mal: con ella sí.	Fi	Fe	Ni	Se	Confía por el historial del vínculo: la relación que se ha construido (Fi).
 det55	4	2	Si no anoto las ventas, al final del día no sé si gané o perdí.	Te	Ti	Fi	Ne	Cuenta hechos y números: lo que entra y lo que sale (Te).
-det56	4	2	Las reglas del mercado son claras: primero se pesa, luego se cobra.	Ti	Te	Fi	Se	Aplica una regla general sin excepciones: orden y sistema (Ti).
+det56	4	2	En el mercado primero se pesa, luego se cobra. Sin excepciones.	Ti	Te	Fi	Se	Aplica una regla general sin excepciones: orden y sistema (Ti).
 det57	4	2	Si sigue lloviendo así, mañana no viene nadie: hay que vender hoy.	Ni	Ne	Fi	Te	Anticipa la secuencia en el tiempo: lo que pasará si nada cambia (Ni).
 det58	4	3	¿Y si estas flores sirven también para el altar? Tienen más de un uso.	Ne	Ni	Se	Ti	Ve lo que las flores son capaces de ser: su contenido y su esencia (Ne).
 det59	4	3	El chisme de hoy puso a todo el mercado de buen humor: hasta el perro ladra contento.	Fe	Fi	Ni	Se	El rumor mueve el ánimo de todo el mercado (Fe).

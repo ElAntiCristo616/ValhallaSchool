@@ -171,16 +171,20 @@ final class LoopScreen extends MainActivity.Screen {
         companion.next();
 
         main.addView(tv(a, item.title, 22, TEXT, BLACK), lpm(M, W, 0, 6, 0, 16));
-        LinearLayout ctx = col(a);
-        ctx.setBackground(round(SURF, 18, LINE, 2));
-        ctx.setPadding(dp(16), dp(16), dp(16), dp(16));
-        TextView tag = tv(a, item.tag, 13, BLUE, BLACK);
-        tag.setLetterSpacing(0.08f);
-        ctx.addView(tag, lpm(M, W, 0, 0, 0, 8));
-        TextView bd = tv(a, item.body, 17, TEXT, REG);
-        bd.setLineSpacing(0, 1.3f);
-        ctx.addView(bd);
-        main.addView(ctx, lpm(M, W, 0, 0, 0, 18));
+        // v1.3.6 fase 2: las preguntas nuevas de teoría son prompt-only
+        // (body vacío): no se muestra la tarjeta de contexto vacía.
+        if (item.body != null && !item.body.isEmpty()) {
+            LinearLayout ctx = col(a);
+            ctx.setBackground(round(SURF, 18, LINE, 2));
+            ctx.setPadding(dp(16), dp(16), dp(16), dp(16));
+            TextView tag = tv(a, item.tag, 13, BLUE, BLACK);
+            tag.setLetterSpacing(0.08f);
+            ctx.addView(tag, lpm(M, W, 0, 0, 0, 8));
+            TextView bd = tv(a, item.body, 17, TEXT, REG);
+            bd.setLineSpacing(0, 1.3f);
+            ctx.addView(bd);
+            main.addView(ctx, lpm(M, W, 0, 0, 0, 18));
+        }
 
         LinearLayout ol = item.opts.length == 2 ? row(a) : col(a);
         opts = new TextView[item.opts.length];

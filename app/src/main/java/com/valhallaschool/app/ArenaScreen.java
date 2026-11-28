@@ -78,7 +78,10 @@ class ArenaScreen extends MiniGame {
             done = turn;
             updateBar();
             addCompanion();
-            main.addView(card(sc.title.toUpperCase(java.util.Locale.ROOT) + " · " + sc.relation, sc.intro), lpm(M, W, 0, 10, 0, 12));
+            // v1.3.6 fase 2: la tarjeta ya NO nombra la relación (antes decía
+            // «Relación: X»): el jugador la deduce de la dinámica y la
+            // responde en la pregunta de teoría final.
+            main.addView(card(sc.title.toUpperCase(java.util.Locale.ROOT), sc.intro), lpm(M, W, 0, 10, 0, 12));
             buildBars();
             GamesData.ArenaTurn t = sc.turns[turn];
             TextView q = tv(a, "Turno " + (turn + 1) + " de 3 — " + t.situation, 17, TEXT, MEDIUM);

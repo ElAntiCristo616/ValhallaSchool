@@ -49,6 +49,24 @@ class TribunalScreen extends MiniGame {
         return c != null && !c.trim().isEmpty() && !c.trim().equals("—");
     }
 
+    /** Palabras de contenido (español) para medir solapamiento entre el
+     *  argumento y cada corrección (v1.3.6 fase 2). */
+    private static final java.util.Set<String> TRIB_STOP = new java.util.HashSet<>(java.util.Arrays.asList(("que de la el en y los las un una con por para se su es del al como mas pero sus este esta son o a lo no si ya le les mi tu nos te me yo el ella esto eso hay fue han ser sin sobre entre cuando cada tambien muy todo todos asi porque que cual quien donde hasta desde puede pueden tiene tienen esta estan era eran somos suyo suya".split(" "))));
+
+    private static java.util.Set<String> tribWords(String s) {
+        java.util.Set<String> out = new java.util.HashSet<>();
+        String n = java.text.Normalizer.normalize(s.toLowerCase(java.util.Locale.ROOT), java.text.Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+        for (String w : n.split("[^a-z]+")) if (w.length() >= 4 && !TRIB_STOP.contains(w)) out.add(w);
+        return out;
+    }
+
+    private static int tribOverlap(String a, String b) {
+        java.util.Set<String> wa = tribWords(a);
+        int n = 0;
+        for (String w : tribWords(b)) if (wa.contains(w)) n++;
+        return n;
+    }
+
     @Override protected void next() {
         main.removeAllViews();
         setFoot(0);
@@ -98,20 +116,31 @@ class TribunalScreen extends MiniGame {
             main.addView(q, lpm(M, W, 0, 0, 0, 12));
             List<String> opts = new ArrayList<>();
             opts.add(t.correction);
+            // v1.3.6 fase 2: distractores por solapamiento con el argumento
+            // (misma categoría primero, mayor solape primero): la correcta ya
+            // no es la única que comparte palabras con el argumento. Se baraja
+            // el pool antes de ordenar para desempatar los solapes iguales.
             List<GamesData.Trib> pool = new ArrayList<>(GamesData.TRIBUNAL);
             Collections.shuffle(pool);
-            // v1.3.5: distractores primero de la misma categoría de error (son
-            // los plausibles: hablan de lo mismo y no se descartan solos);
-            // después, de cualquier categoría. Y nunca una corrección «—» o
-            // vacía como opción (eso era el bug: 5 argumentos válidos tenían
-            // «—» y se colaba como distractor).
+            List<GamesData.Trib> same = new ArrayList<>(), others = new ArrayList<>();
             for (GamesData.Trib o : pool) {
-                if (opts.size() >= 3) break;
-                if (!o.id.equals(t.id) && o.category == t.category && isRealCorrection(o.correction) && !opts.contains(o.correction)) opts.add(o.correction);
+                if (o.id.equals(t.id) || o.category != t.category || !isRealCorrection(o.correction) || opts.contains(o.correction)) continue;
+                same.add(o);
             }
             for (GamesData.Trib o : pool) {
+                if (o.id.equals(t.id) || o.category == t.category || !isRealCorrection(o.correction) || opts.contains(o.correction)) continue;
+                others.add(o);
+            }
+            java.util.Comparator<GamesData.Trib> byOv = (x, y) -> tribOverlap(t.argument, y.correction) - tribOverlap(t.argument, x.correction);
+            Collections.sort(same, byOv);
+            Collections.sort(others, byOv);
+            for (GamesData.Trib o : same) {
                 if (opts.size() >= 3) break;
-                if (!o.id.equals(t.id) && isRealCorrection(o.correction) && !opts.contains(o.correction)) opts.add(o.correction);
+                opts.add(o.correction);
+            }
+            for (GamesData.Trib o : others) {
+                if (opts.size() >= 3) break;
+                opts.add(o.correction);
             }
             Collections.shuffle(opts);
             optViews.clear();

@@ -19,7 +19,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/** Generates Duolingo-style questions from the idea data (no network, no AI). */
+/** Generates Duolingo-style questions from the idea data (no network, no AI).
+ *  v1.3.6 fase 2: ya no hay preguntas de emparejar título con cuerpo
+ *  (headline/trueFalse eliminados); las lecciones mezclan el banco nuevo
+ *  (escenarios, parecidos, detección de errores) con fill y book. */
 final class Quiz {
     static final class Q {
         int id, answer;
@@ -48,47 +51,6 @@ final class Quiz {
             int t = o[i]; o[i] = o[j]; o[j] = t;
         }
         return o;
-    }
-
-    /** Palabras de contenido (español) para medir parecido entre ideas. */
-    private static final Set<String> STOP_ES = new HashSet<>(Arrays.asList(("que de la el en y los las un una con por para se su es del al como mas pero sus este esta son o a lo no si ya le les mi tu nos te me yo el ella esto eso hay fue han ser sin sobre entre cuando cada tambien muy todo todos asi porque que cual quien donde hasta desde puede pueden tiene tienen esta estan era eran somos".split(" "))));
-
-    private static Set<String> wordsOf(String s) {
-        Set<String> out = new HashSet<>();
-        for (String w : s.toLowerCase(Locale.ROOT).split("[^a-záéíóúñü]+")) {
-            if (w.length() >= 3 && !STOP_ES.contains(w)) out.add(w);
-        }
-        return out;
-    }
-
-    private static int overlap(Set<String> base, int other) {
-        int n = 0;
-        for (String w : wordsOf(Data.body[other] + " " + Data.head[other])) if (base.contains(w)) n++;
-        return n;
-    }
-
-    /** Las ideas de la misma lección más parecidas a `id` (por palabras en
-     *  común): los distractores ya no son al azar, sino los vecinos que de
-     *  verdad se confunden con la correcta (v1.3.5). */
-    private static List<Integer> nearest(int id, int n) {
-        int b = Data.book(id);
-        Set<String> base = wordsOf(Data.body[id] + " " + Data.head[id]);
-        ArrayList<Integer> cands = new ArrayList<>();
-        for (int i = b * Data.PER; i < b * Data.PER + Data.PER; i++) if (i != id) cands.add(i);
-        Collections.shuffle(cands, R);
-        cands.sort((x, y) -> overlap(base, y) - overlap(base, x));
-        return new ArrayList<>(cands.subList(0, Math.min(n, cands.size())));
-    }
-
-    /** v1.3.6: las ideas más parecidas a `id` de TODO el libro (470 ideas),
-     *  no solo de la misma lección: para Experto e Imposible. */
-    private static List<Integer> nearestAll(int id, int n) {
-        Set<String> base = wordsOf(Data.body[id] + " " + Data.head[id]);
-        ArrayList<Integer> cands = new ArrayList<>();
-        for (int i = 0; i < Data.N; i++) if (i != id) cands.add(i);
-        Collections.shuffle(cands, R);
-        cands.sort((x, y) -> overlap(base, y) - overlap(base, x));
-        return new ArrayList<>(cands.subList(0, Math.min(n, cands.size())));
     }
 
     /** Nivel global de dificultad (v1.3.6): en tests unitarios sin Android,
@@ -122,23 +84,6 @@ final class Quiz {
         return new ArrayList<>(c.subList(0, Math.min(n, c.size())));
     }
 
-    static Q headline(int id) {
-        // v1.3.5: distractores = las 3 ideas más parecidas de la misma lección
-        // (mismo tema, palabras en común), no 3 al azar que se descartan solas.
-        // v1.3.6: con dificultad 2-3, las 3 más parecidas de TODO el libro.
-        ArrayList<Integer> o = new ArrayList<>(diff() >= 2 ? nearestAll(id, 3) : nearest(id, 3));
-        o.add(id);
-        Collections.shuffle(o, R);
-        Q q = new Q();
-        q.id = id;
-        q.prompt = "¿Qué idea describe esto?";
-        q.body = Data.body[id];
-        q.opts = new String[o.size()];
-        for (int i = 0; i < o.size(); i++) q.opts[i] = Data.head[o.get(i)];
-        q.answer = o.indexOf(id);
-        return q;
-    }
-
     static Q book(int id) {
         int b = Data.book(id), c = Data.bCat[b];
         ArrayList<Integer> pool = new ArrayList<>(), rest = new ArrayList<>();
@@ -158,30 +103,12 @@ final class Quiz {
         return q;
     }
 
-    static Q trueFalse(int id) {
-        boolean truth = R.nextBoolean();
-        // v1.3.5: la explicación falsa es la más parecida de la lección, no
-        // una al azar: hay que leerla de verdad para notar que no corresponde.
-        // v1.3.6: con dificultad 3, la falsa es la más parecida de TODO el libro.
-        int other = truth ? id : (diff() >= 3 ? nearestAll(id, 1).get(0) : nearest(id, 1).get(0));
-        Q q = new Q();
-        q.id = id;
-        q.two = true;
-        q.prompt = "¿Esta explicación corresponde a la idea?";
-        q.head = Data.head[id];
-        q.body = Data.body[other];
-        q.opts = new String[]{"Verdadero", "Falso"};
-        q.answer = truth ? 0 : 1;
-        if (!truth) q.explain = "“" + Data.head[id] + "” significa: " + Data.body[id];
-        return q;
-    }
-
     static Q fill(int id) {
         String hd = Data.head[id];
         ArrayList<String> cands = new ArrayList<>();
         Matcher m = WORD.matcher(hd);
         while (m.find()) if (!STOP.contains(m.group().toLowerCase(Locale.ROOT))) cands.add(m.group());
-        if (cands.isEmpty()) return headline(id);
+        if (cands.isEmpty()) return book(id);
         // v1.3.5: la palabra que falta se elige al azar entre las candidatas
         // (antes, el 60% de las veces era la MÁS LARGA del titular: se delataba).
         String w = cands.get(R.nextInt(cands.size()));
@@ -236,15 +163,87 @@ final class Quiz {
         return q;
     }
 
-    /** One question per id, never the same type twice in a row. */
+    /** Una pregunta del banco nuevo para `id` (escenario, parecido o error).
+     *  Con nivel L se prefiere la fila con diff más cercano a L sin pasarse
+     *  (diff<=L); si no hay, la de diff menor. Si se pasa un formato a evitar,
+     *  se prefiere otro formato cuando el banco lo permite. Las opciones se
+     *  barajan en tiempo de ejecución y la respuesta se remapea. Si el banco
+     *  no está cargado o no tiene filas para la idea, cae a fill. */
+    static Q newQ(int id, String avoidFormat) {
+        List<NewBank.Row> rows = NewBank.rowsFor(id);
+        if (rows == null || rows.isEmpty()) return fill(id);
+        ArrayList<NewBank.Row> pool = new ArrayList<>();
+        for (NewBank.Row r : rows) if (avoidFormat == null || !r.format.equals(avoidFormat)) pool.add(r);
+        if (pool.isEmpty()) pool.addAll(rows);
+        int L = diff(), best = -1;
+        for (NewBank.Row r : pool) if (r.diff <= L && (best < 0 || r.diff > best)) best = r.diff;
+        if (best < 0) {
+            best = Integer.MAX_VALUE;
+            for (NewBank.Row r : pool) best = Math.min(best, r.diff);
+        }
+        ArrayList<NewBank.Row> cands = new ArrayList<>();
+        for (NewBank.Row r : pool) if (r.diff == best) cands.add(r);
+        NewBank.Row row = cands.get(R.nextInt(cands.size()));
+        int[] perm = shuffled4();
+        Q q = new Q();
+        q.id = id;
+        q.prompt = row.prompt;
+        q.opts = new String[4];
+        for (int i = 0; i < 4; i++) q.opts[i] = row.opts[perm[i]];
+        q.answer = 0;
+        for (int i = 0; i < 4; i++) if (perm[i] == row.answer) q.answer = i;
+        q.explain = row.expl;
+        return q;
+    }
+
+    static Q newQ(int id) { return newQ(id, null); }
+
+    /** Elige el tipo de pregunta: 0 nuevo, 1 fill, 2 book. Pesos base
+     *  62/28/10; nunca se repite el mismo tipo dos veces seguidas (los pesos
+     *  se renormalizan entre los otros dos). */
+    private static int pickKind(int lastKind, boolean withBook) {
+        int r = R.nextInt(100);
+        if (lastKind < 0) return r < 62 ? 0 : r < 90 ? 1 : (withBook ? 2 : 0);
+        if (lastKind == 0) { // quedan fill 28 / book 10
+            if (!withBook) return 1;
+            return r < 74 ? 1 : 2;
+        }
+        if (lastKind == 1) { // quedan nuevo 62 / book 10
+            if (!withBook) return 0;
+            return r < 86 ? 0 : 2;
+        }
+        // lastKind == 2: quedan nuevo 62 / fill 28
+        return r < 69 ? 0 : 1;
+    }
+
+    /** One question per id: banco nuevo + fill + book, never the same kind
+     *  twice in a row, and never the same new sub-format twice in a row when
+     *  the bank allows it. Las preguntas nuevas son prompt-only (head y body
+     *  nulos): la pantalla salta la tarjeta de contexto vacía. */
     static List<Q> make(List<Integer> ids, boolean withBook) {
-        int n = withBook ? 4 : 3, last = -1;
         ArrayList<Q> out = new ArrayList<>();
+        int lastKind = -1;
+        String lastSub = null;
         for (int id : ids) {
-            int g;
-            do g = R.nextInt(n); while (g == last);
-            last = g;
-            out.add(g == 0 ? headline(id) : g == 1 ? trueFalse(id) : g == 2 ? fill(id) : book(id));
+            int kind = pickKind(lastKind, withBook);
+            Q q;
+            if (kind == 0) {
+                q = newQ(id, lastSub);
+                List<NewBank.Row> rows = NewBank.rowsFor(id);
+                if (rows != null && !rows.isEmpty()) {
+                    // el sub-formato usado es el de la fila elegida: se
+                    // recupera por el prompt (único por fila en el banco).
+                    for (NewBank.Row r : rows) if (r.prompt.equals(q.prompt)) { lastSub = r.format; break; }
+                }
+            } else if (kind == 1) {
+                q = fill(id);
+                lastSub = null;
+            } else {
+                q = book(id);
+                lastSub = null;
+            }
+            lastKind = kind;
+            out.add(q);
         }
         return out;
     }
