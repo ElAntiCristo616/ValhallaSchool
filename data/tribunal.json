@@ -1,0 +1,347 @@
+{
+ "verdictOptions": [
+  "Válido",
+  "Incorrecto",
+  "Insuficiente"
+ ],
+ "categoryOptions": [
+  "Estereotipo",
+  "Conducta ≠ elemento",
+  "Posición sin evidencia",
+  "Contradicción estructural",
+  "Confusión de bloques o anillos",
+  "Sin error"
+ ],
+ "arguments": [
+  {
+   "id": "trib01",
+   "argument": "Es EIE porque llora mucho.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 1,
+   "categoryName": "Conducta ≠ elemento",
+   "correction": "Llorar no demuestra Fe base: hay que ver si procesa las emociones como su información principal.",
+   "explanation": "Una conducta aislada no demuestra el elemento ni su posición.",
+   "diff": 0
+  },
+  {
+   "id": "trib02",
+   "argument": "Es LSI porque usa Excel y parece enfadado.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "La hoja de cálculo no es Ti base y el mal humor no es Se: hay que ver el foco de su información, no la herramienta.",
+   "explanation": "Las herramientas y el humor no son elementos: es un estereotipo, no evidencia.",
+   "diff": 0
+  },
+  {
+   "id": "trib03",
+   "argument": "El ILE tiene Fe sugestiva y por eso toda expresión emocional demuestra ese tipo.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "Fe ocupa la sexta posición en ILE y una conducta aislada no demuestra el sociotipo.",
+   "explanation": "La posición importa: Fe sugestiva no es Fe base, y un gesto no basta para tipiar.",
+   "diff": 0
+  },
+  {
+   "id": "trib04",
+   "argument": "Tiene Ne base y Ti creativa, por lo tanto es ILE.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: Ne base con Ti creativa forma el Ego de ILE, así que la conclusión es correcta.",
+   "explanation": "Ne base con Ti creativa es el Ego de ILE: el argumento es correcto.",
+   "diff": 0
+  },
+  {
+   "id": "trib05",
+   "argument": "Es SEE porque es extrovertido y le gusta la gente.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "Ser extrovertido y sociable no es Se base: hay que ver si su información principal es la apariencia, la fuerza y la presencia.",
+   "explanation": "La extroversión no es un elemento: muchos tipos son extrovertidos.",
+   "diff": 0
+  },
+  {
+   "id": "trib06",
+   "argument": "Su función dolorosa es Fi, así que no entiende de relaciones.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 3,
+   "categoryName": "Contradicción estructural",
+   "correction": "La dolorosa es débil, no ausente: cumple lo mínimo normativo y le cuesta, pero no es que no entienda nada.",
+   "explanation": "Una función débil no significa incapacidad total: la PoLR es normativa.",
+   "diff": 0
+  },
+  {
+   "id": "trib07",
+   "argument": "Es ILI porque su Superid es Si y Fe.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "En ILI, Si es rol (3) y Fe es dolorosa (4); el Superid (5-6) es Se y Fi.",
+   "explanation": "Las posiciones importan: Si y Fe no están en el Superid de ILI.",
+   "diff": 0
+  },
+  {
+   "id": "trib08",
+   "argument": "Es LII porque su Ego es Ti-Ne y su dual es ESE.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: Ti-Ne es el Ego de LII y su dual es ESE (Fe-Si), así que la conclusión es correcta.",
+   "explanation": "Ti-Ne es el Ego de LII y su dual es ESE (Fe-Si): el argumento es correcto.",
+   "diff": 0
+  },
+  {
+   "id": "trib09",
+   "argument": "Es SLI porque le gusta la naturaleza y es tranquilo.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "Que le guste la naturaleza no es Si base: hay que ver si su información principal es el estado y el bienestar.",
+   "explanation": "Un gusto no es un elemento: es un estereotipo.",
+   "diff": 0
+  },
+  {
+   "id": "trib10",
+   "argument": "Su rol es Se, y por eso presume de fuerza: eso demuestra que Se es su función fuerte.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "Lo que se exhibe para quedar bien no es lo que domina: si lo alardea, está actuando.",
+   "explanation": "El anillo mental empieza por el rol: presumir no es dominar.",
+   "diff": 0
+  },
+  {
+   "id": "trib11",
+   "argument": "Es ESI porque su función base es Fi y su creativa es Se.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: Fi base con Se creativa forma el Ego de ESI, así que la conclusión es correcta.",
+   "explanation": "Fi base con Se creativa es el Ego de ESI: el argumento es correcto.",
+   "diff": 0
+  },
+  {
+   "id": "trib12",
+   "argument": "Tiene Ni en el anillo mental y Si en el vital, por lo tanto es IEI.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "En IEI, Si es rol (posición 3, anillo mental), no vital: el anillo vital de IEI es Se, Ti, Ne y Fi.",
+   "explanation": "El anillo mental es 1-4 y el vital 5-8: Si en IEI es mental.",
+   "diff": 0
+  },
+  {
+   "id": "trib13",
+   "argument": "Es IEE porque habla mucho y es simpático.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "Hablar mucho no es Ne base: hay que ver si su información principal son las habilidades, la esencia y los conceptos de las personas y las cosas.",
+   "explanation": "La simpatía no es un elemento: es un estereotipo.",
+   "diff": 0
+  },
+  {
+   "id": "trib14",
+   "argument": "Su función sugestiva es Te, así que busca a alguien que le dé datos y métodos.",
+   "verdict": 2,
+   "verdictName": "Insuficiente",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "Falta contexto: la quinta sí pide ese apoyo, pero un solo dato no determina el tipo.",
+   "explanation": "La afirmación es plausible pero insuficiente: sin más datos no se puede concluir.",
+   "diff": 0
+  },
+  {
+   "id": "trib15",
+   "argument": "El anillo vital son las posiciones 5 a 8 y el mental las 1 a 4.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: en el Modelo A el anillo mental es 1-4 y el vital 5-8, tal como se afirma.",
+   "explanation": "Definición correcta del Modelo A: mental 1-4, vital 5-8.",
+   "diff": 0
+  },
+  {
+   "id": "trib16",
+   "argument": "Es LIE porque es ambicioso y quiere dinero.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "Ser ambicioso no es Te base: hay que ver si su información principal son los hechos y los métodos.",
+   "explanation": "La ambición no es un elemento: es un estereotipo.",
+   "diff": 0
+  },
+  {
+   "id": "trib17",
+   "argument": "Su Ego es Ne-Ti y su Superid es Si-Fe, por lo tanto es ILE.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: Ego Ne-Ti con Superid Si-Fe corresponde a ILE, así que la conclusión es correcta.",
+   "explanation": "Ego Ne-Ti con Superid Si-Fe es ILE: el argumento es correcto.",
+   "diff": 0
+  },
+  {
+   "id": "trib18",
+   "argument": "Tiene Fi dolorosa, así que es un mal amigo.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 1,
+   "categoryName": "Conducta ≠ elemento",
+   "correction": "La dolorosa es débil y le cuesta, pero no determina cómo trata a sus amigos: cumple lo mínimo normativo.",
+   "explanation": "Una posición débil no es un juicio moral sobre la persona.",
+   "diff": 0
+  },
+  {
+   "id": "trib19",
+   "argument": "Es EII porque su función Mobilizing es Fe y su Demostrativa es Ni.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "En EII la sexta es Si y la octava es Ni; Fe es la séptima.",
+   "explanation": "Las posiciones están mal asignadas: hay que revisar el modelo completo.",
+   "diff": 0
+  },
+  {
+   "id": "trib20",
+   "argument": "No sé su tipo: solo sé que tiene Ti fuerte y Ne fuerte.",
+   "verdict": 2,
+   "verdictName": "Insuficiente",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "Ti y Ne fuertes apuntan a LII o ILE, pero sin saber cuál es base y cuál creativa no se puede decidir.",
+   "explanation": "Información insuficiente: faltan las posiciones para cerrar el tipo.",
+   "diff": 0
+  },
+  {
+   "id": "trib21",
+   "argument": "Tiene Se creativa, por lo tanto Se es su función más fuerte.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "La segunda es potente, pero la que manda es la primera: Se en segunda no es lo principal.",
+   "explanation": "La función más fuerte es la base (1); la creativa (2) es fuerte pero segunda.",
+   "diff": 1
+  },
+  {
+   "id": "trib22",
+   "argument": "Su Superego es Ne y Ti, por lo tanto es ILE.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "El Superego de ILE es Se y Fi; Ne y Ti son su Ego.",
+   "explanation": "En ILE, Ne-Ti es el Ego (1-2) y el Superego (3-4) es Se-Fi.",
+   "diff": 1
+  },
+  {
+   "id": "trib23",
+   "argument": "Es SEI porque su Ego es Si-Fe y su dual es ILE.",
+   "verdict": 0,
+   "verdictName": "Válido",
+   "category": 5,
+   "categoryName": "Sin error",
+   "correction": "El argumento es válido: Si-Fe es el Ego de SEI y su dual es ILE (Ne-Ti), así que la conclusión es correcta.",
+   "explanation": "Si-Fe es el Ego de SEI y su dual es ILE (Ne-Ti): el argumento es correcto.",
+   "diff": 1
+  },
+  {
+   "id": "trib24",
+   "argument": "Es EIE porque es dramático y le gusta llamar la atención.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 0,
+   "categoryName": "Estereotipo",
+   "correction": "Ser dramático no es Fe base: hay que ver si su información principal son las emociones y el ánimo.",
+   "explanation": "El dramatismo no es un elemento: es un estereotipo.",
+   "diff": 1
+  },
+  {
+   "id": "trib25",
+   "argument": "Tiene Fi en la posición 6, así que las relaciones son su punto débil.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "La sexta es floja pero valiosa: quiere que se note con quién está y de quién se alejó, no es su punto flojo principal; ese es la cuarta.",
+   "explanation": "La posición 6 es débil y valiosa, no la más débil: la dolorosa (4) es la vulnerable.",
+   "diff": 2
+  },
+  {
+   "id": "trib26",
+   "argument": "Su anillo vital es Ne, Ti, Se y Fi, por lo tanto es ILE.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "El anillo vital de ILE es Si, Fe, Ni y Te (5-8); Ne, Ti, Se y Fi son su anillo mental (1-4).",
+   "explanation": "En ILE el vital es 5-8 (Si, Fe, Ni, Te).",
+   "diff": 2
+  },
+  {
+   "id": "trib27",
+   "argument": "Su sugestiva es Ni, así que necesita a alguien que le organice el tiempo.",
+   "verdict": 2,
+   "verdictName": "Insuficiente",
+   "category": 2,
+   "categoryName": "Posición sin evidencia",
+   "correction": "La quinta es Ni: busca apoyo con los días, pero un solo dato no determina el tipo.",
+   "explanation": "La afirmación es plausible pero insuficiente: sin más datos no se puede concluir.",
+   "diff": 2
+  },
+  {
+   "id": "trib28",
+   "argument": "Es LSI porque su base es Ti y su dolorosa es Fi, y su dual es EIE.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 4,
+   "categoryName": "Confusión de bloques o anillos",
+   "correction": "En LSI la cuarta es Ne, no Fi: Fi es su tercera. El complemento sí es EIE.",
+   "explanation": "Las posiciones están mal asignadas: en LSI, Fi es rol y Ne es dolorosa.",
+   "diff": 3
+  },
+  {
+   "id": "trib29",
+   "argument": "Tiene Te base y Ni creativa, así que es LIE; además, su dual es ESE porque ESE tiene Fe base.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 3,
+   "categoryName": "Contradicción estructural",
+   "correction": "El dual de LIE es ESI (Fi-Se), no ESE: ESE es dual de LII.",
+   "explanation": "Te-Ni sí es el Ego de LIE, pero su dual es ESI, no ESE.",
+   "diff": 3
+  },
+  {
+   "id": "trib30",
+   "argument": "Es IEE porque tiene Ne base, y su supervisor es SLI porque SLI supervisa a IEE.",
+   "verdict": 1,
+   "verdictName": "Incorrecto",
+   "category": 3,
+   "categoryName": "Contradicción estructural",
+   "correction": "IEE es supervisado por LII, no por SLI: SLI supervisa a LIE.",
+   "explanation": "La supervisión tiene dirección: LII supervisa a IEE; SLI supervisa a LIE.",
+   "diff": 3
+  }
+ ]
+}

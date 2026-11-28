@@ -1,0 +1,1522 @@
+[
+ {
+  "type": "ILE",
+  "quadra": "Alfa",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ne · 2 Ti · 3 Se · 4 Fi · 5 Si · 6 Fe · 7 Ni · 8 Te"
+ },
+ {
+  "type": "SEI",
+  "quadra": "Alfa",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Si · 2 Fe · 3 Ni · 4 Te · 5 Ne · 6 Ti · 7 Se · 8 Fi"
+ },
+ {
+  "type": "ESE",
+  "quadra": "Alfa",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Fe · 2 Si · 3 Te · 4 Ni · 5 Ti · 6 Ne · 7 Fi · 8 Se"
+ },
+ {
+  "type": "LII",
+  "quadra": "Alfa",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ti · 2 Ne · 3 Fi · 4 Se · 5 Fe · 6 Si · 7 Te · 8 Ni"
+ },
+ {
+  "type": "EIE",
+  "quadra": "Beta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Fe · 2 Ni · 3 Te · 4 Si · 5 Ti · 6 Se · 7 Fi · 8 Ne"
+ },
+ {
+  "type": "LSI",
+  "quadra": "Beta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ti · 2 Se · 3 Fi · 4 Ne · 5 Fe · 6 Ni · 7 Te · 8 Si"
+ },
+ {
+  "type": "SLE",
+  "quadra": "Beta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Se · 2 Ti · 3 Ne · 4 Fi · 5 Ni · 6 Fe · 7 Si · 8 Te"
+ },
+ {
+  "type": "IEI",
+  "quadra": "Beta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ni · 2 Fe · 3 Si · 4 Te · 5 Se · 6 Ti · 7 Ne · 8 Fi"
+ },
+ {
+  "type": "SEE",
+  "quadra": "Gamma",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Se · 2 Fi · 3 Ne · 4 Ti · 5 Ni · 6 Te · 7 Si · 8 Fe"
+ },
+ {
+  "type": "ILI",
+  "quadra": "Gamma",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ni · 2 Te · 3 Si · 4 Fe · 5 Se · 6 Fi · 7 Ne · 8 Ti"
+ },
+ {
+  "type": "LIE",
+  "quadra": "Gamma",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Te · 2 Ni · 3 Fe · 4 Si · 5 Fi · 6 Se · 7 Ti · 8 Ne"
+ },
+ {
+  "type": "ESI",
+  "quadra": "Gamma",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Fi · 2 Se · 3 Ti · 4 Ne · 5 Te · 6 Ni · 7 Fe · 8 Si"
+ },
+ {
+  "type": "LSE",
+  "quadra": "Delta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Te · 2 Si · 3 Fe · 4 Ni · 5 Fi · 6 Ne · 7 Ti · 8 Se"
+ },
+ {
+  "type": "EII",
+  "quadra": "Delta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Fi · 2 Ne · 3 Ti · 4 Se · 5 Te · 6 Si · 7 Fe · 8 Ni"
+ },
+ {
+  "type": "IEE",
+  "quadra": "Delta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Ne · 2 Fi · 3 Se · 4 Ti · 5 Si · 6 Te · 7 Ni · 8 Fe"
+ },
+ {
+  "type": "SLI",
+  "quadra": "Delta",
+  "functions": [
+   {
+    "position": 1,
+    "positionCode": "base",
+    "positionName": "Base",
+    "element": "Si",
+    "elementName": "Sensación de bienestar",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 2,
+    "positionCode": "creativa",
+    "positionName": "Creativa",
+    "element": "Te",
+    "elementName": "Lógica del trabajo",
+    "block": "Ego",
+    "ring": "mental",
+    "strong": true,
+    "valued": true
+   },
+   {
+    "position": 3,
+    "positionCode": "rol",
+    "positionName": "Rol",
+    "element": "Ni",
+    "elementName": "Intuición de tiempo",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 4,
+    "positionCode": "dolorosa",
+    "positionName": "PoLR",
+    "element": "Fe",
+    "elementName": "Ética de emociones",
+    "block": "Superego",
+    "ring": "mental",
+    "strong": false,
+    "valued": false
+   },
+   {
+    "position": 5,
+    "positionCode": "sugestiva",
+    "positionName": "Sugestiva",
+    "element": "Ne",
+    "elementName": "Intuición de energía potencial",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 6,
+    "positionCode": "activación",
+    "positionName": "Mobilizing",
+    "element": "Fi",
+    "elementName": "Ética de relaciones",
+    "block": "Superid",
+    "ring": "vital",
+    "strong": false,
+    "valued": true
+   },
+   {
+    "position": 7,
+    "positionCode": "limitativa",
+    "positionName": "Observing",
+    "element": "Se",
+    "elementName": "Sensación de fuerza",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   },
+   {
+    "position": 8,
+    "positionCode": "fondo",
+    "positionName": "Demostrativa",
+    "element": "Ti",
+    "elementName": "Lógica de sistemas",
+    "block": "Id",
+    "ring": "vital",
+    "strong": true,
+    "valued": false
+   }
+  ],
+  "modelLine": "1 Si · 2 Te · 3 Ni · 4 Fe · 5 Ne · 6 Fi · 7 Se · 8 Ti"
+ }
+]

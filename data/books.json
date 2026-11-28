@@ -1,0 +1,360 @@
+{
+ "categories": [
+  {
+   "id": 0,
+   "name": "Los 8 elementos",
+   "color": "#D9A441"
+  },
+  {
+   "id": 1,
+   "name": "Modelo A",
+   "color": "#2AA198"
+  },
+  {
+   "id": 2,
+   "name": "Los 16 tipos y cuadras",
+   "color": "#E87B2E"
+  },
+  {
+   "id": 3,
+   "name": "Dicotomias de Reinin",
+   "color": "#7B5EA7"
+  },
+  {
+   "id": 4,
+   "name": "Relaciones y supervision",
+   "color": "#7A6A5F"
+  }
+ ],
+ "lessons": [
+  {
+   "id": 0,
+   "title": "Ne - Intuicion extravertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 1,
+   "title": "Ni - Intuicion introvertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 2,
+   "title": "Se - Sensacion extravertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 3,
+   "title": "Si - Sensacion introvertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 4,
+   "title": "Fe - Etica extravertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 5,
+   "title": "Fi - Etica introvertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 6,
+   "title": "Te - Logica extravertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 7,
+   "title": "Ti - Logica introvertida",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 8,
+   "title": "Cuerpos y campos",
+   "module": "Augusta - Elementos de informacion",
+   "category": 0,
+   "categoryName": "Los 8 elementos"
+  },
+  {
+   "id": 9,
+   "title": "Ego - el bloque fuerte",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 10,
+   "title": "SuperEgo - lo que exige la sociedad",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 11,
+   "title": "SuperId - lo que se necesita recibir",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 12,
+   "title": "Id - el piloto automatico",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 13,
+   "title": "Funcion 1 - Basica",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 14,
+   "title": "Funcion 2 - Creativa",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 15,
+   "title": "Funcion 3 - Rol",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 16,
+   "title": "Funcion 4 - Dolorosa",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 17,
+   "title": "Funcion 5 - Sugestiva",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 18,
+   "title": "Funcion 6 - Activacion",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 19,
+   "title": "Funcion 7 - Observing",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 20,
+   "title": "Funcion 8 - Demostrativa",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 21,
+   "title": "Anillo mental, anillo vital y 1D-4D",
+   "module": "Augusta - El Socion y Modelo A",
+   "category": 1,
+   "categoryName": "Modelo A"
+  },
+  {
+   "id": 22,
+   "title": "Cuadra Alfa",
+   "module": "Augusta - El Socion y Naturaleza dual",
+   "category": 2,
+   "categoryName": "Los 16 tipos y cuadras"
+  },
+  {
+   "id": 23,
+   "title": "Cuadra Beta",
+   "module": "Augusta - El Socion y Naturaleza dual",
+   "category": 2,
+   "categoryName": "Los 16 tipos y cuadras"
+  },
+  {
+   "id": 24,
+   "title": "Cuadra Gamma",
+   "module": "Augusta - El Socion y Naturaleza dual",
+   "category": 2,
+   "categoryName": "Los 16 tipos y cuadras"
+  },
+  {
+   "id": 25,
+   "title": "Cuadra Delta",
+   "module": "Augusta - El Socion y Naturaleza dual",
+   "category": 2,
+   "categoryName": "Los 16 tipos y cuadras"
+  },
+  {
+   "id": 26,
+   "title": "I - Extraversion e Introversion",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 27,
+   "title": "II - Estatico y Dinamico",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 28,
+   "title": "III - Interrogativo y Declarativo",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 29,
+   "title": "IV - Positivista y Negativista",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 30,
+   "title": "V - Programacion teorica y practica",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 31,
+   "title": "VI - Programacion objeto-sujeto",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 32,
+   "title": "VII - Tactico y Estrategico",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 33,
+   "title": "VIII - Constructivista y Emotivista",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 34,
+   "title": "IX - Izquierda y Derecha, Proceso y Resultado",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 35,
+   "title": "X - Racional e Irracional",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 36,
+   "title": "XI - Cedente y Obstinado",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 37,
+   "title": "XII - Despreocupado y Previsor",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 38,
+   "title": "XIII - Democrata y Aristocrata",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 39,
+   "title": "XIV - Alegre y Serio",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 40,
+   "title": "XV - Juicioso y Decisivo",
+   "module": "Augusta - Dicotomias de Reinin",
+   "category": 3,
+   "categoryName": "Dicotomias de Reinin"
+  },
+  {
+   "id": 41,
+   "title": "La dualidad",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  },
+  {
+   "id": 42,
+   "title": "La diada",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  },
+  {
+   "id": 43,
+   "title": "La supervision",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  },
+  {
+   "id": 44,
+   "title": "Los 4 anillos de supervision",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  },
+  {
+   "id": 45,
+   "title": "Anillos de progreso social y solicitud",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  },
+  {
+   "id": 46,
+   "title": "Activacion, conflicto y otras relaciones",
+   "module": "Augusta - Dualidad y supervision",
+   "category": 4,
+   "categoryName": "Relaciones y supervision"
+  }
+ ]
+}

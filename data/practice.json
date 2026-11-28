@@ -1,0 +1,5644 @@
+[
+ {
+  "id": "ALF-001",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«La ola de poder que ustedes han intentado contener con su estatus y tradiciones inútiles ha crecido más de lo que pueden manejar y ahora cae sobre nosotros. No podrán medir la era que viene con la clasificación de \"grado especial\".»",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Anticipa la ruptura de categorías obsoletas y apuesta por la energía potencial de una nueva generación que aún no cabe en las clasificaciones vigentes: ve lo que esos jóvenes son capaces de ser, no un sistema cerrado."
+ },
+ {
+  "id": "ALF-002",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Un tipador novato dice que esto es [Ni Creativa]: «Detecta el efecto transformador de discípulos heterodoxos al margen de criterios ortodoxos: apuesta por jóvenes considerados mediocres por otros, e improvisa en combate combinando registros dispares como invocaciones, aceite, barreras y manipulación capilar.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Ve las capacidades ocultas donde otros solo ven mediocridad y conecta recursos dispares en soluciones inéditas; ver la energía potencial de cada cosa gobierna toda su trayectoria."
+ },
+ {
+  "id": "ALF-003",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Toma un billete del cajón de su padre para comprar un frasco de limpiador solo por la rifa que trae el envase: ese billete, que para otros es solo cambio, para él puede ser un viaje familiar.",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Detecta de inmediato el potencial oculto en un objeto cotidiano —lo que ese billete es capaz de traer— y actúa sobre su capacidad sin deliberar sobre su probabilidad real."
+ },
+ {
+  "id": "ALF-004",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Los historiadores han creído durante siglos que el texto original estaba en un lugar, pero tras comparar el texto con las runas de este escudo, descubrí que una de las letras fue mal traducida.»",
+  "answer": {
+   "element": "Ti",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Cuestiona el consenso institucional verificando la coherencia interna de un sistema lingüístico: un solo error de clasificación invalida siglos de interpretación aceptada."
+ },
+ {
+  "id": "ALF-005",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Procesa el mundo como un conjunto de leyes verificables y relaciones estructurales: al evaluar una teoría ajena exige pruebas reproducibles y corrige la frecuencia de los cristales antes de presentarla ante un consejo.",
+  "answer": {
+   "element": "Ti",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Su identidad se organiza alrededor de principios consistentes y modelos causales; nada se acepta sin verificar su coherencia interna y su reproducibilidad."
+ },
+ {
+  "id": "ALF-006",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«¡Al infinito y más allá!»",
+  "answer": {
+   "element": "Fe",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Es una consigna movilizadora que condensa entusiasmo expansivo y regula el ánimo colectivo; el motor central es la expresión franca de afecto y la cohesión del grupo."
+ },
+ {
+  "id": "ALF-007",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Su relación con la comida y su destreza para moler, infusionar y servir café representan su modo primario de procesar la realidad; en medio de campañas agotadoras organiza pausas sensoriales que restauran el equilibrio físico de su unidad.",
+  "answer": {
+   "element": "Si",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "creativa"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Percibe y evalúa el entorno por su calidad sensorial y su efecto en el bienestar corporal, y estabiliza la realidad a través del confort físico concreto."
+ },
+ {
+  "id": "ALF-008",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Administra provisiones, caza, refugios y tiempos de descanso del grupo, y ante la consigna de aprovechar el terreno a su favor, reorganiza piedras y musgo para construir un asiento sombreado y cómodo.",
+  "answer": {
+   "element": "Si",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   }
+  ],
+  "justification": "Su cuidado se canaliza a través del anclaje físico y la comodidad concreta: lee el entorno sensorial y lo reordena para el bienestar corporal inmediato."
+ },
+ {
+  "id": "ALF-009",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Explica su técnica mediante la convergencia de series matemáticas y una paradoja clásica sobre el movimiento, traduciendo energía en principios formales manipulables; rediseña las condiciones de su propio dominio alterando volumen y resistencia hasta desconcertar a expertos.",
+  "answer": {
+   "element": "Ti",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   }
+  ],
+  "justification": "Usa la abstracción estructural como instrumento flexible al servicio de la exploración: formaliza lo posible en reglas manipulables e inventa métodos nuevos sobre la marcha."
+ },
+ {
+  "id": "ALF-010",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Sostiene su hipótesis frente al escepticismo institucional enlazando relatos globales sobre fuentes de energía antiguas, e improvisa el funcionamiento de vehículos desconocidos comprendiendo su principio conceptual al instante.",
+  "answer": {
+   "element": "Ne",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "Proyecta conexiones inesperadas entre sistemas dispares y percibe el contenido interno y las capacidades ocultas de lo desconocido; su Ne trabaja al servicio de su sistema lógico."
+ },
+ {
+  "id": "ALF-011",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Formula una maniobra inédita para viajar en el tiempo, deduce qué busca una sonda desconocida por sus cantos y concibe una alianza entre pueblos enemigos cuando el proyecto parece improbable.",
+  "answer": {
+   "element": "Ne",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "Genera hipótesis y detecta las capacidades ocultas de lo desconocido para evitar el dogmatismo: su Ne ve el contenido interno y la esencia de cada cosa."
+ },
+ {
+  "id": "ALF-012",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Canaliza su cuidado afectivo a través de la seguridad física del grupo: insiste en viajar donde hay cinturones de seguridad, y supervisa la rotación de baterías y el estado físico de los compañeros agotados durante una caminata.",
+  "answer": {
+   "element": "Si",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "El afecto se expresa cuidando el cuerpo y el entorno material del grupo: comodidad, protección tangible y preservación física concreta."
+ },
+ {
+  "id": "ALF-013",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Utiliza tarareos, canciones improvisadas y cumplidos sencillos para elevar el ánimo de un amigo ansioso e incluir a un compañero melancólico en el tejido del grupo, aliviando la tensión sin confrontación directa.",
+  "answer": {
+   "element": "Fe",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "Modula el clima afectivo con expresividad cálida y ligera: su instrumento social es el tono, la música y la presencia amigable, no el análisis."
+ },
+ {
+  "id": "ALF-014",
+  "quadra": "Alfa",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Lee el clima emocional con rapidez y advierte al grupo cuando su superiora entra en cólera, para evitar choques directos; su trato afable y sus bromas cómplices sostienen la moral colectiva.",
+  "answer": {
+   "element": "Fe",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   }
+  ],
+  "justification": "Emplea el tono afectivo y el humor ligero como herramienta para regular la atmósfera grupal y desactivar tensiones antes de que estallen."
+ },
+ {
+  "id": "ALF-015",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«No te preocupes. Soy el más fuerte.»",
+  "answer": {
+   "element": "Se",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Proyecta dominio y seguridad absoluta como carta de presentación ante otros; es una postura de fuerza exhibida hacia afuera, no una capacidad que sostenga con persistencia política o territorial."
+ },
+ {
+  "id": "ALF-016",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Proyecta una presencia física expansiva con poses teatrales y entradas estruendosas, y sabe movilizar coerción directa en momentos críticos; sin embargo, rechaza tres veces el cargo de máximo mando y evita ejercer autoridad burocrática permanente.",
+  "answer": {
+   "element": "Se",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "El despliegue de poder y autoridad es un rol situacional que abandona en cuanto cesa la urgencia: no busca sostener el mando ni el control territorial."
+ },
+ {
+  "id": "ALF-017",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Al enterarse de que el dueño de la casa desalojará a su padre por meses de renta vencida, golpea al propietario con una tabla de madera; frente a una vecina que abofetea a su padre, le exige que se enfrente con alguien de su tamaño.",
+  "answer": {
+   "element": "Se",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Ante una afrenta directa adopta una postura combativa y físicamente intrusiva para proyectar autoridad, pero esa asertividad no se sostiene: ante una respuesta firme de un adulto se repliega al llanto o a la huida."
+ },
+ {
+  "id": "ALF-018",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Se presenta con cortesía formal y respeto deferente hacia las figuras de autoridad académica, y sostiene un código ético personal rígido, aunque le cuesta evaluar de antemano las lealtades ocultas o las intenciones morales de quienes lo rodean.",
+  "answer": {
+   "element": "Fi",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La corrección formal y la distancia respetuosa funcionan como interfaz social: cumple el código visible de lealtad, pero no calibra con finura los vínculos privados reales."
+ },
+ {
+  "id": "ALF-019",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Sostiene una sobriedad cortés y una lealtad silenciosa que rara vez dramatiza: abandona a un mentor cuando descubre que mantiene sufriendo a una criatura en sus experimentos, y asume la responsabilidad por la muerte de una asistente.",
+  "answer": {
+   "element": "Fi",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   }
+  ],
+  "justification": "El código personal se expresa con contención y reserva afectiva, sin teatralidad: actúa según sus principios en silencio y solo bajo presión prolongada esa contención cede."
+ },
+ {
+  "id": "ALF-020",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Ti PoLR]: «En contextos formales adopta una máscara de pulcritud operativa: lleva bitácora de misión, redacta informes y asigna turnos, aunque esa competencia cede prioridad cuando entra en tensión con la lealtad grupal o las necesidades afectivas inmediatas.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Te",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La competencia procedimental es una interfaz de presentación social y logística, no un valor central: se agota rápido y queda subordinada al clima del grupo."
+ },
+ {
+  "id": "ALF-021",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Adopta vocabulario gerencial, organiza seminarios y celebra la productividad de su sucursal, mientras su rutina real se resume en un gráfico hecho por un compañero: 80% distracción, 19% procrastinación y 1% pensamiento crítico.",
+  "answer": {
+   "element": "Te",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La máscara de competencia ejecutiva se intenta proyectar en encuentros formales y se agota con rapidez al carecer de valoración interna: el desempeño real no sostiene la imagen."
+ },
+ {
+  "id": "ALF-022",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Aunque siente un afecto profundo por un amigo de la infancia, le responde con burlas hirientes, estafas menores y golpes de juego, incapaz de expresar cercanía íntima de manera serena y directa; cuando aparece una rival afectiva, su gestión colapsa en celos reactivos.",
+  "answer": {
+   "element": "Fi",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   }
+  ],
+  "justification": "No calibra la distancia psicológica ni el impacto relacional duradero de sus bromas: el afecto real se contradice con conductas que lo dañan, y la intimidad directa le resulta inaccesible."
+ },
+ {
+  "id": "ALF-023",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Carece de presencia intimidante y se desestabiliza ante la presión coercitiva directa: fracasa en todos los deportes de contacto, se encoge de reflejo ante un puño levantado y obedece al principio bajo amenaza armada.",
+  "answer": {
+   "element": "Se",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Elude la confrontación física y se desorganiza ante la imposición directa de voluntades: es su punto de menor resistencia, no una estrategia elegida."
+ },
+ {
+  "id": "ALF-024",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«Partes de una premisa falsa. Carezco de un ego que pueda herirse.»",
+  "answer": {
+   "element": "Se",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Rechaza la competencia por estatus y la imposición autoritaria: cede el mando sin conflicto porque no hay apego a la posición jerárquica que defender."
+ },
+ {
+  "id": "ALF-025",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Tarda en decodificar las intenciones manipuladoras de quien dirige el lugar donde el grupo se refugia, confiando en la estabilidad aparente del presente inmediato; su literalidad le impide anticipar que su propia historia de origen es falsa hasta que la realidad lo golpea de frente.",
+  "answer": {
+   "element": "Ni",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Te",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "No lee corrientes ocultas ni trayectorias a largo plazo: confía en lo que el presente muestra y solo reacciona cuando la evidencia física desmiente su marco."
+ },
+ {
+  "id": "ALF-026",
+  "quadra": "Alfa",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Promete pagar la matrícula universitaria de toda una clase de tercer grado, convencido de que diez años después será millonario; acumula deudas hasta proclamar su bancarrota en voz alta.",
+  "answer": {
+   "element": "Ni",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Carece de proyección temporal realista y subestima crónicamente las consecuencias a mediano y largo plazo de sus promesas y sus gastos."
+ },
+ {
+  "id": "ALF-027",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Cuida poco su cuerpo hasta que alguien le pone orden: usa vendas o gafas oscuras cuando los sentidos se le saturan, y come dulces diciendo que así piensa mejor.",
+  "answer": {
+   "element": "Si",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca el confort sensorial de forma simple y directa, pero lo gestiona de manera utilitaria y descuidada hasta que encuentra un sistema externo que lo regule."
+ },
+ {
+  "id": "ALF-028",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Busca y genera atmósferas expresivas y de camaradería con sus alumnos: rompe la solemnidad institucional con bromas y gestos teatrales, y provoca reacciones emocionales visibles en colegas rígidos.",
+  "answer": {
+   "element": "Fe",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   }
+  ],
+  "justification": "Se energiza generando entusiasmo compartido y reacciones visibles en otros; le importa que quienes lo rodean disfruten experiencias vitales en común."
+ },
+ {
+  "id": "ALF-029",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Aconseja a un joven colega mantener conversaciones cotidianas para impedir que el corazón se oscurezca, comparte un helado con su alumno cuando este sufre por carecer de familia y encuentra alivio genuino en el entusiasmo del joven.",
+  "answer": {
+   "element": "Fe",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Responde con energía a la calidez compartida y al humor abierto: la atmósfera expresiva de otros lo moviliza y lo reconforta."
+ },
+ {
+  "id": "ALF-030",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Ensaya su discurso frente a unas máscaras en el sótano buscando un público receptivo, se revitaliza ante la fe jovial de un mecenas y florece afectivamente cuando el grupo lo acoge junto a la fogata.",
+  "answer": {
+   "element": "Fe",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "activación"
+   },
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "activación"
+   }
+  ],
+  "justification": "Necesita el entusiasmo y la validación emocional del entorno para activarse: ante la frialdad se apaga, y ante la calidez compartida su energía se dispara."
+ },
+ {
+  "id": "ALF-031",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "El anhelo de equilibrio corporal, ausencia de dolor y estabilidad sensorial atraviesa su vida: dirige su investigación a aliviar primero su propio sufrimiento físico y después el de quienes padecen adicción en su ciudad natal.",
+  "answer": {
+   "element": "Si",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Busca activamente la homeostasis y el alivio del dolor como motor de su trabajo: el bienestar corporal es una meta que lo moviliza, no un estado que ya domine."
+ },
+ {
+  "id": "ALF-032",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Busca activamente marcos normativos coherentes y códigos de conducta claros que definan su deber: adopta una doctrina externa como sistema axiomático, y cuando ese sistema se derrumba, cae en el vacío hasta recibir una nueva premisa estructurante.",
+  "answer": {
+   "element": "Ti",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Necesita una regla clara venida de fuera para orientarse: sin un marco normativo que le diga qué es correcto, pierde el rumbo."
+ },
+ {
+  "id": "ALF-033",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«¿Por qué no me explicas esto como si tuviera cinco años?»",
+  "answer": {
+   "element": "Ti",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   }
+  ],
+  "justification": "Pide una simplificación lógica transparente y sin tecnicismos para orientarse en una decisión: busca claridad conceptual que estabilice su impulsividad."
+ },
+ {
+  "id": "ALF-034",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Simula poderes elementales mediante trucos ópticos, estampa su rostro entintado sobre el papel para «marcar su identidad» ante un maestro, e idea una maniobra de colisión aérea en cadena contra una flota enemiga.",
+  "answer": {
+   "element": "Ne",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "activación"
+   },
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   }
+  ],
+  "justification": "Responde con energía cuando el contexto exige soluciones creativas rápidas y reencuadres lúdicos: su inventiva lateral se amplifica al recibir validación por sus ideas."
+ },
+ {
+  "id": "ALF-035",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Recibe con apertura y alivio las lecturas no obvias y las soluciones ingeniosas que rompen impasses rígidos, y responde con flexibilidad proponiendo hipótesis abiertas, como que el enemigo quizá no tenga magos en esa zona.",
+  "answer": {
+   "element": "Ne",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   }
+  ],
+  "justification": "Se abre con alivio a enfoques alternativos que otros aportan: no genera ella misma la salida ingeniosa, pero la recibe y la desarrolla con flexibilidad."
+ },
+ {
+  "id": "ALF-036",
+  "quadra": "Alfa",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Durante una gran inundación, navega en un paraguas invertido para rescatar a un amigo atrapado por el agua; en otra ocasión, deja caer una piedra pesada a un lado de un amigo en el río para empujarlo con la ola hacia la orilla.",
+  "answer": {
+   "element": "Ne",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   }
+  ],
+  "justification": "Responde con fascinación a ideas insólitas y produce ocurrencias laterales sorprendentes cuando la rutina falla: la solución llega por un reencuadre imaginativo, no por cálculo."
+ },
+ {
+  "id": "ALF-037",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Comprende el desgaste de los sistemas tradicionales y su colapso inevitable, aunque rechaza el fatalismo y los destinos cerrados; interviene en el presente para multiplicar variables, lo que a veces lo lleva a subestimar trampas calculadas de largo aliento.",
+  "answer": {
+   "element": "Ni",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ne",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Ve las tendencias históricas pero se niega a subordinarse a ellas: la previsión existe solo como trasfondo y se descarta en favor de la intervención disruptiva inmediata."
+ },
+ {
+  "id": "ALF-038",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Resuelve problemas logísticos complejos en segundos y ejecuta misiones de alto riesgo con gasto casi nulo; oculta estratégicamente la supervivencia de un alumno ante las autoridades y deja preparada una contingencia para protegerlo si lo neutralizan.",
+  "answer": {
+   "element": "Te",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Despliega una eficacia pragmática notable sin asignarle valor identitario: la ejecución eficiente ocurre en segundo plano, al servicio de otros fines."
+ },
+ {
+  "id": "ALF-039",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Aunque su vida orbita alrededor de una profecía, opera con recelo ante determinismos rígidos: revisa y sustituye a sus candidatos conforme surgen nuevos datos y rechaza frontalmente el relato de quien pretende clausurar el curso histórico mediante un dolor absoluto.",
+  "answer": {
+   "element": "Ni",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   }
+  ],
+  "justification": "La lectura del porvenir se mantiene deliberadamente abierta y revisable: desconfía de cualquier visión cerrada del futuro, por más que el destino sea el tema de su vida."
+ },
+ {
+  "id": "ALF-040",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Comprende sin esfuerzo la trayectoria histórica de larga duración: percibe el declive de una civilización antigua y advierte sobre el desastre irreversible que implicaría extraer su fuente de energía o entregarla a potencias bélicas.",
+  "answer": {
+   "element": "Ni",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   },
+   {
+    "element": "Te",
+    "position": "fondo"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Lee consecuencias sistémicas a largo plazo con fluidez silenciosa, sin presentarse como profeta: la previsión opera en segundo plano mientras su indagación abierta sigue al frente."
+ },
+ {
+  "id": "ALF-041",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«Mis contribuciones serán efímeras, incluso en tu memoria.»",
+  "answer": {
+   "element": "Ni",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Proyecta su propia fugacidad en la escala temporal larga con lucidez serena: anticipa el olvido de sus aportes sin dramatismo, como una lectura de fondo del paso del tiempo."
+ },
+ {
+  "id": "ALF-042",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«Algún día, quizá descubras que poseer resulta menos placentero, al fin y al cabo, que desear. Carece de lógica, aunque suele ser cierto.»",
+  "answer": {
+   "element": "Ni",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Anticipa el desgaste psicológico futuro de un deseo cumplido: sintetiza un patrón temporal en una observación lacónica, sin hacer de la previsión su discurso central."
+ },
+ {
+  "id": "ALF-043",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Aunque mantiene una lealtad profunda, procesa los vínculos desde el compromiso visible y el tono emocional compartido antes que desde el escrutinio privado de simpatías o rencores: deja atrás casi de inmediato el intento de desplazarlo y evita juicios morales retorcidos incluso al rescatar a quien lo traicionó.",
+  "answer": {
+   "element": "Fi",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "fondo"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Las lealtades se perciben pero quedan subordinadas a la expresión emocional abierta: no hay un mapa privado de afinidades que pese en sus decisiones."
+ },
+ {
+  "id": "ALF-044",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Exige respeto profesional a un compañero con firmeza inesperada, defiende a su pareja ante una acusación y sostiene la presión negociadora frente a sus superiores corporativos.",
+  "answer": {
+   "element": "Se",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "La firmeza corporal y territorial surge de forma automática y no valorada cuando percibe invadido su territorio: es un recurso defensivo, no una búsqueda de dominio."
+ },
+ {
+  "id": "ALF-045",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Carece de ambición de dominio territorial, pero confronta de inmediato a adversarios físicamente superiores cuando alguien de su círculo corre peligro, ejecutando golpes precisos y maniobras de contención en el momento exacto.",
+  "answer": {
+   "element": "Se",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ne",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "El despliegue físico decidido aparece sin ostentación ni afán jerárquico, solo como respuesta táctica inmediata ante una amenaza concreta a los suyos."
+ },
+ {
+  "id": "ALF-046",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Mantiene lealtades personales profundas y silenciosas sin necesidad de verbalizarlas: su devoción por su superiora y su consideración constante por sus compañeros se expresan en actos concretos de respaldo cotidiano.",
+  "answer": {
+   "element": "Fi",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Los vínculos íntimos se sostienen con actos discretos y constantes, no con discursos morales: la lealtad es profunda pero no se exhibe ni se negocia en público."
+ },
+ {
+  "id": "ALF-047",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«Si hay un zumbido, alguien está haciendo un zumbido, y la única razón que conozco para hacer un zumbido es porque eres una abeja. Y la única razón que conozco para ser una abeja es hacer miel. Y la única razón para hacer miel es para que yo pueda comerla.»",
+  "answer": {
+   "element": "Ti",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Disfruta formular cadenas deductivas sencillas paso a paso que ordenan su experiencia cotidiana: busca explicaciones claras y directas, y esa lógica simple lo moviliza."
+ },
+ {
+  "id": "ALF-048",
+  "quadra": "Alfa",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Gestiona trueques e intercambios de monedas con soltura automática, engaña a un compañero para obtener dinero y navega el comercio informal del barrio con comprensión intuitiva de incentivos y costos, tratándolo como un recurso lúdico.",
+  "answer": {
+   "element": "Te",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Ejecuta transacciones prácticas y pequeños ardides económicos sin solemnidad ni esfuerzo visible: la eficacia instrumental está disponible en segundo plano, al servicio de sus ocurrencias."
+ },
+ {
+  "id": "BET-001",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«¡Esta fiesta nunca se detiene! ¡El tiempo ha muerto y el sentido carece de sentido! ¡La existencia está patas arriba y yo reino supremo! ¡Bienvenidos todos!»",
+  "answer": {
+   "element": "Fe",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "El caso es pura escenificación emocional: regula el clima afectivo de la escena con grandilocuencia y convierte su llegada en un espectáculo, sin argumentar ni planificar nada concreto."
+ },
+ {
+  "id": "BET-002",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Una oscuridad se acerca. Llegará un momento en el que todo lo que les importa cambiará. ¡Hasta entonces, los estaré observando!»",
+  "answer": {
+   "element": "Ni",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Instala un presagio sobre el futuro y lee la trayectoria de sus objetivos, usando esa anticipación como herramienta dramática al servicio del impacto emocional."
+ },
+ {
+  "id": "BET-003",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«¿Qué es esta sensación? Mi cuerpo arde. No puedo mover estas estúpidas piernas de fideo. Malditos palos de carne inútiles. El cuerpo se apaga.»",
+  "answer": {
+   "element": "Si",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Te",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "No entiende las señales de su propio cuerpo ni sus límites físicos: el agotamiento y el dolor lo desconciertan y lo celebran como algo ajeno, en vez de regularlos."
+ },
+ {
+  "id": "BET-004",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Suele depender de mentes analíticas externas para sostener sus ambiciones: necesita que alguien descifre ecuaciones y códigos que por sí mismo no domina, aunque predique la abolición de toda ley.",
+  "answer": {
+   "element": "Ti",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca un marco lógico externo que ordene y sostenga su plan, con una dependencia ambivalente hacia las reglas que dice despreciar."
+ },
+ {
+  "id": "BET-005",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«Un trato es un trato. No puedes evitar que llegue un puente entre nuestros mundos, pero será divertido verte intentarlo. Adorable, incluso.»",
+  "answer": {
+   "element": "Te",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Se presenta con el lenguaje formal del intercambio contractual y la transacción, como máscara de competencia pragmática, pero sin sostener después ninguna gestión metódica."
+ },
+ {
+  "id": "BET-006",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Lee con precisión el clima afectivo de una habitación y modula su registro expresivo —ternura, humor cómplice, furia histriónica— para dirigir las reacciones de quienes lo rodean.",
+  "answer": {
+   "element": "Fe",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "El eje es la modulación deliberada de los estados emocionales ajenos: cambia de tono según lo que necesita provocar en cada momento."
+ },
+ {
+  "id": "BET-007",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«No pensé que nadie pudiera lastimarme. Pero anoche me dispararon. ¿Y sabes algo? Dolió. Dolió como un demonio, ¡hasta sangró! ¿Por qué pasa eso?»",
+  "answer": {
+   "element": "Si",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "La sorpresa ante el dolor y el sangrado revela una relación alienada con el cuerpo: no comprende por qué un cuerpo se hiere ni cómo funcionan sus límites físicos."
+ },
+ {
+  "id": "BET-008",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Espera veinticinco años para cerrar un ciclo de venganza contra una misma familia, concibiendo su propia vida como una saga con clímax y retornos inevitables.",
+  "answer": {
+   "element": "Ni",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Hay paciencia estratégica y lectura de trayectorias a largo plazo: el tiempo se usa como escenario dramático donde el desenlace llega cuando toca."
+ },
+ {
+  "id": "BET-009",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«Yo no tengo un «problema» con matar. Me gusta matar un poco de vez en cuando. ¿Qué hay de malo en eso?»",
+  "answer": {
+   "element": "Fi",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Descarta la culpa y el lenguaje moral con ironía defensiva: percibe los juicios éticos ajenos pero los trata como algo irrelevante que no le vincula."
+ },
+ {
+  "id": "BET-010",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Bienvenidos, amigos. Lo primero que deben saber sobre mí es que me encanta abrazar.»",
+  "answer": {
+   "element": "Fe",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La bienvenida es pura ingeniería del clima emocional: calidez y proximidad física performativa para desarmar la desconfianza desde el primer contacto."
+ },
+ {
+  "id": "BET-011",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "A partir de una pérdida propia, elabora una doctrina determinista según la cual el paso de los días condena a todo el mundo al abandono y al descarte, y la usa para socavar la convicción de quienes aún creen en sus vínculos.",
+  "answer": {
+   "element": "Ni",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "No es una percepción pasiva del futuro, sino una narrativa cerrada de inevitabilidad construida al servicio de su persuasión emocional."
+ },
+ {
+  "id": "BET-012",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Edifica un régimen sobre una pirámide estricta con pases de lista, protocolos disciplinarios y una doctrina cerrada que justifica la explotación por el bien de la comunidad.",
+  "answer": {
+   "element": "Ti",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   }
+  ],
+  "justification": "Necesita estructuras rígidas, taxonomías claras y reglas absolutas que contengan su turbulencia afectiva y legitimen la jerarquía."
+ },
+ {
+  "id": "BET-013",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«¡Es solo una muñeca! ¡Hay cien millones iguales a ella!»",
+  "answer": {
+   "element": "Fi",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Niega la irreemplazabilidad de un vínculo particular: ve con claridad el apego ajeno, pero lo reduce a sentimentalismo descartable frente a la sustituibilidad."
+ },
+ {
+  "id": "BET-014",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Siempre soy yo. Tire o no de la anilla, todo el que se acerca a mí muere.»",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Organiza su experiencia en una línea temporal fatalista: convierte sus pérdidas en una ley causal cerrada que anuncia el desenlace antes de que ocurra."
+ },
+ {
+  "id": "BET-015",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Monta una cena escenificada en las ruinas de un lugar cargado de recuerdos, con dos sillas que representan dos identidades, para forzar una revelación afectiva mediante utilería, luces y provocación dramática.",
+  "answer": {
+   "element": "Fe",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "La teatralidad y la escalada emocional son el instrumento: diseña la escena para moldear el clima psicológico de quienes asisten."
+ },
+ {
+  "id": "BET-016",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Pese a su talento técnico, opera por inspiración errática y desatiende las consecuencias logísticas: arruina envíos, paraliza el comercio de otros y rehúsa asumir cualquier dirección organizativa.",
+  "answer": {
+   "element": "Te",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "El punto débil es la gestión pragmática y la eficiencia procedimental: el desorden operativo no es una elección, es el lugar donde su mente no llega."
+ },
+ {
+  "id": "BET-017",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«Ya no tienes que preocuparte por mí. No tienes que sentirte culpable por ser feliz. Mereces estar con ella.»",
+  "answer": {
+   "element": "Fi",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Detrás de su expresividad, evalúa en silencio las lealtades privadas y toma una decisión afectiva costosa: concede permiso a su hermana para ser feliz con otra persona."
+ },
+ {
+  "id": "BET-018",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Cuando convive con alguien a quien protege, adopta rutinas domésticas que simulan estabilidad corporal, pero esa regulación colapsa bajo tensión: descuida el sueño y la alimentación y permanece inmóvil junto a bandejas intactas.",
+  "answer": {
+   "element": "Si",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La atención al confort y al cuerpo es episódica y superficial: aparece como fachada de normalidad y se desarma en cuanto sube la tensión."
+ },
+ {
+  "id": "BET-019",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Siempre pierdo aquello que más deseo no perder. Por eso ya no siento nada. En el instante en que consigues algo por lo que vale la pena luchar, lo pierdes.»",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Anticipa el desenlace trágico de los vínculos antes de que se consume y erige el embotamiento afectivo como blindaje previo: el tiempo se lee como fatalidad."
+ },
+ {
+  "id": "BET-020",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Calibra con exactitud el tono afectivo de cada situación: adopta frivolidad cómica para desarmar sospechas, emplea persuasión verbal en interrogatorios y provoca a sus colegas para moverlos.",
+  "answer": {
+   "element": "Fe",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "La modulación emocional es un instrumento táctico preciso al servicio de su lectura anticipatoria, no su forma espontánea de ser."
+ },
+ {
+  "id": "BET-021",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Rechaza la gestión procedimental, la disciplina administrativa y los marcos normativos rígidos: rehúye el papeleo diario, sabotea la agenda milimétrica de un colega y opera mediante golpes de efecto puntuales.",
+  "answer": {
+   "element": "Te",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "El punto de menor resistencia es lo pragmático y procedimental: la eficacia organizativa le resulta ajena y la evita activamente."
+ },
+ {
+  "id": "BET-022",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Teje una simbiosis operativa con un compañero de presencia firme y directa, apoyándose en su capacidad de imponerse sobre un entorno hostil para anclar sus escenarios abstractos en la realidad material.",
+  "answer": {
+   "element": "Se",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca sin darse cuenta un respaldo volitivo externo: necesita que otra persona aporte la firmeza y el impacto directo que a él le faltan."
+ },
+ {
+  "id": "BET-023",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Posee amplia capacidad para concebir ramificaciones y contingencias múltiples, pero la mantiene subordinada a un filtrado convergente que selecciona una sola línea de acción eficaz.",
+  "answer": {
+   "element": "Ne",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   }
+  ],
+  "justification": "La inventiva divergente existe y es amplia, pero se descarta en la práctica: solo se conserva la opción que encaja en la trayectoria única que ya se anticipó."
+ },
+ {
+  "id": "BET-024",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Percibí el miedo de esa persona. Sabía que lo controlaría. Que lo haría autodestruirse.»",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Anticipa la trayectoria de colapso de un adversario a partir de su estado emocional latente, sin necesidad de actuar directamente sobre él."
+ },
+ {
+  "id": "BET-025",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Tú rompes el acuerdo y te conviertes en héroe. Yo lo hago y me convierto en el enemigo. Eso parece injusto.»",
+  "answer": {
+   "element": "Ti",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Exige simetría lógica de criterios: necesita que sus decisiones encajen en una coherencia interna de principios y reglas claras para legitimar su transgresión."
+ },
+ {
+  "id": "BET-026",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "En su estado habitual tiende a la vacilación y requiere un empujón externo para actuar; bajo amenaza extrema, esa misma función se sobreactiva de modo rígido como coerción directa y embestida implacable.",
+  "answer": {
+   "element": "Se",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   }
+  ],
+  "justification": "La voluntad directa no es su modo natural: la busca fuera y, cuando irrumpe, lo hace sin mediación táctica, como una descarga."
+ },
+ {
+  "id": "BET-027",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Cuando el grupo queda atrapado en un vertedero, detecta antes que el resto un techo magnético y lo usa para evadir las trituradoras, tras haber dirigido ya la huida y alterado el terreno a su favor.",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Procesa el mundo en términos de territorio, presión inmediata y control físico: ante la amenaza, actúa directamente sobre el entorno en vez de esperar o negociar."
+ },
+ {
+  "id": "BET-028",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Malinterpreta las intenciones de alguien que dejó una bolsa en la acera, leyéndolo como un abandono deliberado, y tarda en verbalizar sus propios sentimientos hacia una persona cercana.",
+  "answer": {
+   "element": "Fi",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   }
+  ],
+  "justification": "La fragilidad está en calibrar la estabilidad interna de los vínculos privados: lee los hechos observables y no logra leer las intenciones afectivas no declaradas."
+ },
+ {
+  "id": "BET-029",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Clasifica las situaciones con distinciones tajantes —lote completo frente a descarte, prisión frente a familia real— y ejecuta secuencias tácticas precisas durante una fuga.",
+  "answer": {
+   "element": "Ti",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   }
+  ],
+  "justification": "La lógica opera como herramienta al servicio de la acción: ordenar roles y reglas sirve para decidir rápido y moverse, no para construir un sistema abstracto."
+ },
+ {
+  "id": "BET-030",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "El clima emocional abierto, las celebraciones colectivas y el romanticismo teatral actúan como combustible inmediato que la reactiva con mayor rapidez que los discursos íntimos y contenidos.",
+  "answer": {
+   "element": "Fe",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   },
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Se energiza ante la expresividad compartida y visible: el ambiente festivo la moviliza, mientras la intimidad contenida no logra activarla igual."
+ },
+ {
+  "id": "BET-031",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Explora alternativas cuando el escenario inmediato se cierra —proyectar una nueva vida en otro lugar o improvisar retrasos en el camino—, pero bajo un bloqueo súbito se contrae a respuestas binarias de lucha o pánico.",
+  "answer": {
+   "element": "Ne",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Ver lo que cada salida es capaz de ofrecer es un recurso situacional y superficial: aparece cuando el camino se cierra y desaparece en cuanto la presión sube."
+ },
+ {
+  "id": "BET-032",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«No existe el bien ni el mal; solo existe el poder y quienes son demasiado débiles para buscarlo…»",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Reduce toda categoría moral a una ecuación binaria de fuerza y debilidad: la realidad se lee como un campo de fuerzas donde prevalece la voluntad de dominio."
+ },
+ {
+  "id": "BET-033",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Confunde la obediencia obtenida por terror con lealtad sólida y no comprende el sacrificio, la devoción genuina ni el remordimiento: el afecto le resulta una variable incomprensible.",
+  "answer": {
+   "element": "Fi",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   }
+  ],
+  "justification": "El punto ciego estructural es lo afectivo privado: interpreta los vínculos solo desde la coerción y por eso sus derrotas decisivas vienen de lealtades que no supo ver."
+ },
+ {
+  "id": "BET-034",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Al escuchar una fracción de una profecía, se aferra a una lectura determinista de ella y precipita la misma amenaza que intenta neutralizar, vinculando además sus objetos de poder a reliquias históricas.",
+  "answer": {
+   "element": "Ni",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "Muestra una fijación acrítica con el destino y los presagios: absorbe la visión ajena sobre el futuro sin cuestionarla y actúa para cumplirla."
+ },
+ {
+  "id": "BET-035",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Domina la infiltración, la lectura mental y el vuelo sin soporte: toda esa técnica y logística al servicio de su voluntad de dominio, sin hacer discurso de ello ni convertirlo en su bandera.",
+  "answer": {
+   "element": "Te",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "fondo"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "La solvencia operativa es fuerte pero queda en segundo plano: se usa con fluidez para ejecutar, nunca como el eje que define su identidad."
+ },
+ {
+  "id": "BET-036",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«¿Qué pasaría si alguien a quien desprecian como a mí se convirtiera en una gran hechicera?»",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La motivación central es invertir la jerarquía de estatus mediante poder demostrable: nacer despreciada se responde con imposición física y territorial."
+ },
+ {
+  "id": "BET-037",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Responde a un compañero que nunca piensa en a quién desea salvar, se bloquea ante un elogio sincero y pospone la reconciliación afectiva con su hermana hasta que ya es demasiado tarde.",
+  "answer": {
+   "element": "Fi",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   }
+  ],
+  "justification": "La torpeza está en la distancia relacional íntima: el duelo y el afecto no se verbalizan y se canalizan solo en acción ejecutiva."
+ },
+ {
+  "id": "BET-038",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Deduce la cadencia exacta de 24 acciones por segundo de un adversario y la usa para derrotarlo, auditando además cadenas causales y pautas de combate con rigor implacable.",
+  "answer": {
+   "element": "Ti",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   }
+  ],
+  "justification": "Descompone una mecánica compleja en reglas verificables al servicio de la pelea: el análisis existe para golpear en el instante exacto."
+ },
+ {
+  "id": "BET-039",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Subordina sistemáticamente el descanso y la preservación de la imagen a los objetivos de combate, minimizando quemaduras y dolor físico como si no contaran.",
+  "answer": {
+   "element": "Si",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   },
+   {
+    "element": "Se",
+    "position": "fondo"
+   }
+  ],
+  "justification": "El cuerpo y su bienestar se ignoran de forma constante y silenciosa: no hay conflicto con lo sensorial, simplemente no se le da peso frente a la acción."
+ },
+ {
+  "id": "BET-040",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«¡Este mundo está podrido, y quienes lo pudren merecen morir! Alguien tiene que hacerlo, ¿así que por qué no yo? Incluso si significa sacrificar mi propia mente y mi alma, vale la pena.»",
+  "answer": {
+   "element": "Ti",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Reduce la complejidad social a una taxonomía binaria estricta —lo podrido frente a lo purificado— y racionaliza el asesinato como depuración necesaria dentro de ese sistema."
+ },
+ {
+  "id": "BET-041",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Cuando un subordinado actúa por iniciativa propia fuera del guion asignado, su esquema deductivo colapsa: no tiene margen adaptativo ante la contingencia y su plan se desmorona.",
+  "answer": {
+   "element": "Ne",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   }
+  ],
+  "justification": "El punto débil es la ambigüedad y las variables humanas que escapan a su modelo determinista: lo imprevisto invalida sus premisas en vez de integrarse."
+ },
+ {
+  "id": "BET-042",
+  "quadra": "Beta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Busca resonancia afectiva colectiva, devoción pública y validación emocional masiva: el culto global a su figura alimenta este núcleo, que irrumpe desbordado en risas triunfales y en su estallido final.",
+  "answer": {
+   "element": "Fe",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "activación"
+   }
+  ],
+  "justification": "Depende del impacto emocional simbólico y de la admiración de las masas: la aprobación colectiva es lo que sostiene su autoimagen."
+ },
+ {
+  "id": "BET-043",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "Un tipador novato dice que esto es [Fe PoLR]: ««Lo que más me pesa es pisotear la buena voluntad de otras personas.»». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Fi",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Domina la etiqueta interpersonal y el discurso convencional sobre la rectitud moral: la cortesía y la corrección formal sostienen su fachada de persona ejemplar."
+ },
+ {
+  "id": "BET-044",
+  "quadra": "Beta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Reduce el crimen, la investigación y la ética a principios verificables, cadenas deductivas estrictas y una regla cardinal sin excepciones: no matar.",
+  "answer": {
+   "element": "Ti",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   }
+  ],
+  "justification": "El armazón de toda su conducta es un sistema normativo hermético: clasifica indicios, descarta inconsistencias y construye protocolos para cada escenario."
+ },
+ {
+  "id": "BET-045",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "frase",
+  "prompt": "«No lo entiendes, muchacho... esto no es un lodazal... es una mesa de operaciones. Y yo soy el cirujano.»",
+  "answer": {
+   "element": "Se",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "La fuerza se calibra como herramienta quirúrgica al servicio de su código: presencia física, control territorial y presión dosificada para imponer orden."
+ },
+ {
+  "id": "BET-046",
+  "quadra": "Beta",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Un tipador novato dice que esto es [Ni Rol]: «Diseña planes de contingencia exhaustivos contra cualquier amenaza escondida, incluidos sus propios aliados, porque desconfía por principio de lo imprevisible y de las intenciones no verificadas.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ne",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   }
+  ],
+  "justification": "La paranoia preparatoria nace del rechazo a lo que escapa a sus modelos de control: lo abierto y no verificable se vive como amenaza, no como una capacidad oculta que valga la pena ver."
+ },
+ {
+  "id": "BET-047",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Despliega una solvencia técnica, científica, forense y financiera sobresaliente, manteniéndola subordinada al cumplimiento de su código personal y a su misión, sin hacer de ella su bandera.",
+  "answer": {
+   "element": "Te",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   }
+  ],
+  "justification": "La destreza operativa es alta pero se ignora como criterio: solo cuenta en la medida en que valida su sistema interno, nunca por sí misma."
+ },
+ {
+  "id": "BET-048",
+  "quadra": "Beta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Opera en segundo plano una disciplina corporal extrema: resistencia al dolor, control de la fatiga y mantenimiento meticuloso de su arsenal y su entorno operativo, regulados con precisión automática sin buscar alivio.",
+  "answer": {
+   "element": "Si",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Te",
+    "position": "fondo"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "El cuidado sensorial y corporal funciona con fluidez automática en segundo plano, sin ocupar su atención ni orientar sus decisiones."
+ },
+ {
+  "id": "GAM-001",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«No me malinterpreten. Tampoco es que confíe en esa persona. Si nos traiciona o pierde el control, la eliminaré sin dudarlo.»",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La confianza se concede solo a quien demuestra lealtad con actos verificables, y el límite se fija de antemano con total frialdad. Es un juicio relacional íntimo y discriminativo que ordena todo lo demás."
+ },
+ {
+  "id": "GAM-002",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Cuando debe asegurar la custodia de alguien, lo golpea deliberadamente delante de las autoridades para demostrar que lo tiene bajo control.",
+  "answer": {
+   "element": "Se",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   }
+  ],
+  "justification": "La fuerza física se usa como herramienta calibrada al servicio de un juicio previo sobre esa persona, no como impulso descontrolado."
+ },
+ {
+  "id": "GAM-003",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Le incomoda profundamente no saber de antemano qué opción es correcta; ante opciones abiertas no logra ver lo que cada una es capaz de dar, y prefiere elegir aquello de lo que menos se arrepienta.",
+  "answer": {
+   "element": "Ne",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   }
+  ],
+  "justification": "Ver lo que cada opción es capaz de ser le resulta estructuralmente incómodo, así que lo sustituye por una regla ética mínima: minimizar el remordimiento."
+ },
+ {
+  "id": "GAM-004",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Limpia sus armas en pleno campo de batalla, inspecciona el polvo bajo las mesas y duerme dos o tres horas sentado en una silla sin cambiarse de ropa.",
+  "answer": {
+   "element": "Si",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "El dominio del orden físico, la higiene y la regulación corporal es constante y automático, sin teorizarlo ni convertirlo en eje de sus decisiones."
+ },
+ {
+  "id": "GAM-005",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Mantiene una expresión neutra o ceñuda, evita los discursos arengadores, responde con sarcasmo seco y procesa el duelo en aislamiento silencioso.",
+  "answer": {
+   "element": "Fe",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fi",
+    "position": "fondo"
+   }
+  ],
+  "justification": "La emoción expansiva se frena deliberadamente porque se desconfía de ella como moneda de cambio; el duelo se vive en privado."
+ },
+ {
+  "id": "GAM-006",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Una promesa hecha a un superior caído se convierte en el eje que organiza los últimos años de su vida, y cada decisión se mide por su coherencia con ese juramento.",
+  "answer": {
+   "element": "Ni",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   }
+  ],
+  "justification": "Necesita conferir sentido retrospectivo y dirección temporal a las pérdidas; el juramento funciona como vector que da sentido al sacrificio."
+ },
+ {
+  "id": "GAM-007",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Duele, ¿verdad? Que te mientan. Que te digan que eres una cosa y luego descubrir que todo es una ficción.»",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   }
+  ],
+  "justification": "El agravio central es la mentira en el plano íntimo: la veracidad relacional es el criterio soberano con el que juzga a las personas cercanas."
+ },
+ {
+  "id": "GAM-008",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Claro, incendiarlo todo, fácil. Aniquilarlo, fácil. Arrasarlo hasta los cimientos es fácil. Intentar reparar lo que está roto es difícil. La esperanza es difícil.»",
+  "answer": {
+   "element": "Te",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Rechaza la destrucción impulsiva y valora el esfuerzo sostenido y verificable de reparar lo roto; la eficacia responsable pesa más que el gesto espectacular."
+ },
+ {
+  "id": "GAM-009",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Te PoLR]: «Ante desconocidos o tribunales, adopta una fachada formalista basada en títulos, linaje, rangos y legalidad, que se resquebraja en cuanto la situación exige vulnerabilidad real.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ti",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Te",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La norma formal se usa como armadura social provisional, no como convicción propia; sirve para presentarse, no para decidir."
+ },
+ {
+  "id": "GAM-010",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Impone sumisión física con un cetro frente a una multitud reunida, usando la intimidación escénica para compensar una herida interna.",
+  "answer": {
+   "element": "Se",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "La fuerza situacional y la intimidación se emplean como herramientas al servicio de un fin relacional o defensivo."
+ },
+ {
+  "id": "GAM-011",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Aprecia el lujo ceremonial, el disfrute sin medida y la elegancia en el porte, y tolera el castigo y la privación física sin convertir su cuerpo en eje de sus decisiones.",
+  "answer": {
+   "element": "Si",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "La solvencia sensorial y estética es espontánea y está siempre disponible, pero nunca dirige las decisiones importantes."
+ },
+ {
+  "id": "GAM-012",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Todos hemos tenido malos días. Pero aprendemos y seguimos juntos.»",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La cohesión del vínculo prevalece sobre el error técnico; la lealtad íntima es el criterio que ordena la conducta."
+ },
+ {
+  "id": "GAM-013",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«Todos en mi vida han cambiado. Prométeme que tú no vas a cambiar.»",
+  "answer": {
+   "element": "Ne",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   }
+  ],
+  "justification": "La transformación imprevisible de los vínculos desestabiliza su brújula interna; ante la ambigüedad, exige una garantía de permanencia."
+ },
+ {
+  "id": "GAM-014",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Un tipador novato dice que esto es [Si Rol]: «Resuelve los bloqueos ocupando el espacio físico: lidera incursiones, abre entradas en territorio hostil y derrota a rivales en combate cerrado para proteger a los suyos.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Se",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "La presencia corporal y la presión directa traducen en acción un mandato previo de protección; la fuerza es contención, no exhibición."
+ },
+ {
+  "id": "GAM-015",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Cuando alguien le explica las cosas con datos comprobados y con un plan claro paso a paso, se relaja por completo y confía: por fin alguien le quita ese peso de encima.",
+  "answer": {
+   "element": "Te",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ti",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca competencia técnica comprobable en sus aliados para orientar su energía hacia objetivos viables; el método ajeno la estabiliza."
+ },
+ {
+  "id": "GAM-016",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Proyecta una vida de respeto para su comunidad y tantea quedarse a construir una vida tranquila; cuando sus decisiones derivan en pérdida, concluye que siempre elige mal.",
+  "answer": {
+   "element": "Ni",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Necesita un horizonte con sentido para sus sacrificios, pero bajo fatiga esa misma lectura temporal se vuelve determinista y se culpa de toda la cadena de pérdidas."
+ },
+ {
+  "id": "GAM-017",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Desestima las deliberaciones ceremoniales y responde con sarcasmo seco a los discursos de poder; su expresión afectiva permanece sobria y reservada a la cercanía uno a uno.",
+  "answer": {
+   "element": "Fe",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   },
+   {
+    "element": "Te",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Comprende la carga emocional de una sala, pero desconfía de la teatralidad y la presión afectiva grupal como formas de manipulación."
+ },
+ {
+  "id": "GAM-018",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Escucha, mantente lejos de esa persona. Es mía, y nadie me la va a quitar.»",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Defiende de forma directa su lugar y su exclusividad afectiva; el mundo se lee en términos de territorio, presencia y control situacional."
+ },
+ {
+  "id": "GAM-019",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Tienes razón. No puedo impedir que crezca... pero no me lo perdería por nada del mundo.»",
+  "answer": {
+   "element": "Ni",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Si",
+    "position": "activación"
+   }
+  ],
+  "justification": "Acepta el paso inevitable del tiempo eligiendo la experiencia relacional sobre la preservación pasiva; el futuro se ordena desde fuera, con ayuda de otros."
+ },
+ {
+  "id": "GAM-020",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Predica ante el grupo que nadie será reemplazado mientras sabotea a un rival por celos, e improvisa una farsa incoherente cuando lo descubren.",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   }
+  ],
+  "justification": "Los marcos normativos impersonales y la coherencia lógica rígida le generan fricción; bajo presión, improvisa y cae en contradicciones verbales."
+ },
+ {
+  "id": "GAM-021",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Delega listas de mantenimiento, diseña rutas de escape paso a paso tras interrogar a alguien y convierte el cuidado de un ser indefenso en una misión logística exhaustiva.",
+  "answer": {
+   "element": "Te",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   },
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Busca confirmación personal a través de la utilidad concreta y la eficiencia operativa; sentirse útil en términos prácticos estabiliza su autoestima."
+ },
+ {
+  "id": "GAM-022",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Ni PoLR]: «Ante la novedad, ensaya una apertura superficial y evalúa rápido lo que cada cosa es capaz de dar, pero pronto se agota y regresa a lo tangible; tarda mucho en concebir una identidad alternativa fuera de su papel habitual.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ne",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Ver lo que cada novedad es capaz de ser es breve y adaptativo, no sostenido; se sondea la capacidad oculta y se descarta para volver a lo concreto."
+ },
+ {
+  "id": "GAM-023",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Soporta quemaduras, desgarros repetidos y persecuciones sin vacilar, y rechaza vivir conservado e intacto detrás de un vidrio porque privilegia la intensidad vivida del vínculo sobre el descanso estático.",
+  "answer": {
+   "element": "Si",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Percibe el confort y el desgaste físico, pero los sacrifica sin dudar cuando prima un objetivo volitivo o afectivo."
+ },
+ {
+  "id": "GAM-024",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Permíteme alcanzar mi forma perfecta final. Alguien como tú puede apreciar el desafío.»",
+  "answer": {
+   "element": "Fi",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   }
+  ],
+  "justification": "Calibra con precisión el orgullo y el código de honor del interlocutor para negociar su propia supervivencia; la lectura relacional es una palanca táctica."
+ },
+ {
+  "id": "GAM-025",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«¡No seré humillado por un niño! ¡Esto ha ido demasiado lejos! ¡Estoy harto de estos juegos! Esto no puede estar pasando. Estoy completo. ¡Es imposible que un niño me derrote! Soy el luchador definitivo. No tengo igual.»",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "rol"
+   }
+  ],
+  "justification": "Su certeza reposa en un axioma rígido que se desintegra cuando la realidad lo contradice; ante la contradicción empírica, no reestructura el problema, se desregula."
+ },
+ {
+  "id": "GAM-026",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Absorbe la energía de miles de civiles para acumular pegada, ocultando su presencia y retirándose tácticamente cuando el entorno le resulta desfavorable.",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Cada fase gira en torno a expandir la capacidad de impacto tangible y medir el cuerpo contra la resistencia material del entorno."
+ },
+ {
+  "id": "GAM-027",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Concede diez días de preparación antes de un torneo y se obsesiona con ver pelear a un rival joven del que todos hablan: quiere estar ahí cuando demuestre de qué es capaz.",
+  "answer": {
+   "element": "Ne",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La apertura hacia lo posible es una pose de presentación que se agota en cuanto amenaza su control inmediato; no hay exploración sostenida."
+ },
+ {
+  "id": "GAM-028",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Irrumpe en las cadenas de televisión para anunciar un torneo con cortesía sarcástica, cultivando deliberadamente el pánico masivo de la audiencia.",
+  "answer": {
+   "element": "Fe",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "fondo"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Maneja con soltura el espectáculo emocional y la atmósfera pública sin necesitar validación afectiva genuina; la expresividad amplifica su dominancia."
+ },
+ {
+  "id": "GAM-029",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Al alcanzar la meta que daba sentido a su existencia, queda desorientado sin proyecto posterior y necesita inventar un desenlace dramático con cuenta regresiva para dar sentido a lo que viene.",
+  "answer": {
+   "element": "Ni",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "Depende de una narrativa de destino que ordene temporalmente su despliegue de fuerza; sin ella, el futuro se vuelve vacío y debe fabricar un clímax."
+ },
+ {
+  "id": "GAM-030",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«El músculo lo es todo. El músculo lo perdona todo. Incluso el pasado. Lamenta tu propia debilidad.»",
+  "answer": {
+   "element": "Se",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La fuerza constituye el árbitro último de la realidad física y moral; todo, incluso el pasado, pretende someterse al dominio del presente."
+ },
+ {
+  "id": "GAM-031",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«¡Tu batalla ya terminó! Sabes que es inútil y, aun así, algo te empuja a seguir adelante. ¿Qué podría ser?»",
+  "answer": {
+   "element": "Te",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Le desconcierta una conducta ineficaz en el plano material; valora la economía de energía y los resultados comprobables, y no entiende persistir sin ventaja tangible."
+ },
+ {
+  "id": "GAM-032",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Su doctrina de que el más fuerte siempre tiene la razón es circular y se desmorona ante la primera contradicción: cuando un rival demuestra mayor fuerza, se niega a aceptar la consecuencia lógica y viola el código del torneo disparando contra las gradas.",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Ne",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "Carece de tolerancia hacia la coherencia lógica formal cuando colisiona con su voluntad o su herida afectiva; la norma se rompe antes que la premisa."
+ },
+ {
+  "id": "GAM-033",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Su rutina se limita a la meditación austera y al combate extremo; ignora las heridas, el desgaste y el goce físico elemental, priorizando siempre la tensión volitiva sobre la homeostasis corporal.",
+  "answer": {
+   "element": "Si",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   },
+   {
+    "element": "Se",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Desatiende el confort y el equilibrio orgánico cotidiano; el cuerpo solo importa como instrumento de fuerza."
+ },
+ {
+  "id": "GAM-034",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Busca lo que hay más allá de la fuerza y desea deshacer o redimir el pasado; vive atrapado en una línea temporal no resuelta y busca un sentido trascendente que unifique su esfuerzo.",
+  "answer": {
+   "element": "Ni",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "activación"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "El pasado no resuelto organiza su presente y necesita un cierre temporal que no puede darse a sí mismo; requiere un catalizador externo para reinterpretar su destino."
+ },
+ {
+  "id": "GAM-035",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«De verdad tienen que aprender magia negra.»",
+  "answer": {
+   "element": "Te",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Reduce lo sobrenatural a una competencia técnica básica y evalúa a las personas según su rendimiento funcional; lo oculto se trata como ingeniería aplicada."
+ },
+ {
+  "id": "GAM-036",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Enfrenta a un asesino con un hacha y un lanzallamas improvisado, y salta sobre el ojo de una deidad para tallar un sello con una navaja.",
+  "answer": {
+   "element": "Se",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Responde al conflicto con iniciativa física directa y confrontación frontal; la voluntad de mando se activa ante la amenaza."
+ },
+ {
+  "id": "GAM-037",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Pasa dos noches sin dormir a punta de refrescos de cola y seis días fuera de su cuerpo por proyección astral sin haber leído que al séptimo su espíritu se disolverá.",
+  "answer": {
+   "element": "Si",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "Desatiende sistemáticamente los límites fisiológicos, el confort y la prudencia somática; el riesgo corporal ni siquiera se verifica."
+ },
+ {
+  "id": "GAM-038",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Si alguna parte de ti me quiere tanto como yo te quiero a ti, arreglarás esto. Encuentra la manera.»",
+  "answer": {
+   "element": "Fi",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Abandona la ironía defensiva para declarar su afecto y traducir esa lealtad en una exigencia resolutiva concreta; debajo del pragmatismo, la permanencia del vínculo es lo que más pesa."
+ },
+ {
+  "id": "GAM-039",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Reutiliza objetos malditos como sistema de rescate, improvisa una beca para niñas precoces ante un cazador amnésico y combina podadoras y sopladores de hojas para destruir a un enemigo.",
+  "answer": {
+   "element": "Ne",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Genera soluciones laterales e improvisaciones tácticas de forma fluida cuando el plan inicial colapsa, sin detenerse en especulación abstracta."
+ },
+ {
+  "id": "GAM-040",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Aprovecha que no existe una norma explícita que lo prohíba para ocupar un cargo público para el que no cumple los requisitos formales, y desestima permisos mientras combate una plaga.",
+  "answer": {
+   "element": "Ti",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   },
+   {
+    "element": "Te",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Comprende los sistemas normativos lo suficiente para explotar sus vacíos, pero descarta la obediencia formal cuando carece de utilidad práctica."
+ },
+ {
+  "id": "GAM-041",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Le acomodamos ambas piernas. Estaban rotas. Aparte de eso, solo tienes problemas psicológicos.»",
+  "answer": {
+   "element": "Te",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Evalúa la realidad con procedimientos, diagnósticos y hechos verificables, con humor seco; la identidad se sostiene en la utilidad comprobable."
+ },
+ {
+  "id": "GAM-042",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Ante una epidemia, calcula que el deterioro biológico impedirá contener el colapso poblacional y elige una intervención irreversible con horizonte generacional: digitalizar su mente.",
+  "answer": {
+   "element": "Ni",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Ne",
+    "position": "rol"
+   }
+  ],
+  "justification": "Proyecta trayectorias de riesgo y consecuencias futuras al servicio de la eficacia; la decisión drástica se toma por su efecto a largo plazo."
+ },
+ {
+  "id": "GAM-043",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Proyecta una cordialidad profesional, calmada y ligeramente irónica que facilita el trato clínico; cuando ordena a alguien entrar en una máquina para extraer su conciencia, mantiene un tono maternal afable que contrasta con la gravedad coercitiva de la orden.",
+  "answer": {
+   "element": "Fe",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La expresividad funciona como máscara social de contención de corta duración; facilita el contacto, pero no expresa el verdadero peso de la decisión."
+ },
+ {
+  "id": "GAM-044",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Para impedir que unos guardias se lleven a alguien a reeducación, inventa una enfermedad inexistente y la respalda con su autoridad profesional para liberarlo.",
+  "answer": {
+   "element": "Ti",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   },
+   {
+    "element": "Te",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Domina los marcos normativos, pero los considera prescindibles cuando chocan con la eficacia o con sus prioridades personales."
+ },
+ {
+  "id": "GAM-045",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Comprende de inmediato que permanecer en su barrio carece de sentido si el planeta entero desaparece, y más tarde acepta el borrado total de su identidad como única salida sostenible a largo plazo.",
+  "answer": {
+   "element": "Ni",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "Proyecta trayectorias causales y urgencia temporal al servicio de la eficacia; el costo irreversible se asume si es la única vía viable."
+ },
+ {
+  "id": "GAM-046",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Se aferra a una nave espacial hasta perder el aliento, ignora las lesiones tras ser arrollado por un tren para concentrarse de inmediato en fabricar otro traje y vive con austeridad en un apartamento mínimo.",
+  "answer": {
+   "element": "Si",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "fondo"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "Descuida crónicamente la homeostasis corporal, el descanso y la cautela física; el cuerpo se pospone ante la siguiente tarea."
+ },
+ {
+  "id": "GAM-047",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Entrega voluntariamente el control de unos drones tácticos a alguien que simula cercanía y validación moral, y es manipulado; su brújula ética se sostiene en personas concretas, no en principios abstractos.",
+  "answer": {
+   "element": "Fi",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Se",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Necesita vínculos leales y aprobación afectiva personalizada; al carecer de malicia interpersonal, queda expuesto ante quien finge cercanía."
+ },
+ {
+  "id": "GAM-048",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Formula su propio fluido adhesivo en la escuela, desensambla núcleos de energía para deducir su ingeniería híbrida y fabrica curas para neutralizar a villanos de otras realidades.",
+  "answer": {
+   "element": "Te",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "activación"
+   },
+   {
+    "element": "Ni",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Evalúa el mundo por funcionalidad, viabilidad técnica y resultados observables; ante cualquier crisis, pregunta primero qué mecanismo concreto permite arreglar el problema."
+ },
+ {
+  "id": "GAM-049",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Improvisa tácticas constantes y asociaciones laterales sin pretensiones teóricas, reorganizando el combate prescindiendo de la vista frente a ilusiones y coordinando de forma espontánea el trabajo en equipo.",
+  "answer": {
+   "element": "Ne",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "La improvisación lateral es fluida y está siempre disponible como recurso de fondo, sin convertirse en especulación desligada de la acción."
+ },
+ {
+  "id": "GAM-050",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Naturalmente, tengo mucho interés en saber cómo logras cometer estos asesinatos sin estar presente... pero no me importa esperar un poco más. Podrás responder a todas mis preguntas cuando te atrape. Volvamos a vernos pronto.»",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Anticipa la conducta del adversario desde el primer patrón y convierte la provocación en un experimento controlado con resultado verificable."
+ },
+ {
+  "id": "GAM-051",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Instala cámaras y micrófonos en una residencia, analiza los tiempos exactos de una línea de tren tras una muerte y propone verificar experimentalmente una regla con un condenado a muerte.",
+  "answer": {
+   "element": "Te",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "Traduce las intuiciones en pruebas empíricas, diseños experimentales y protocolos de verificación; nada se da por cierto sin comprobación fáctica."
+ },
+ {
+  "id": "GAM-052",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Carece de tacto expresivo, mantiene un rostro inexpresivo y responde con incomodidad o sequedad clínica ante demostraciones emocionales intensas del grupo.",
+  "answer": {
+   "element": "Fe",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "La modulación del clima emocional ajeno le resulta ajena y agotadora; su frialdad se percibe como crueldad aunque solo sea incapacidad expresiva."
+ },
+ {
+  "id": "GAM-053",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Tú no eres el culpable. Es decir, sería un problema si lo fueras. Porque… siento que eres el primer amigo que he tenido.»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Detrás de la distancia emocional hay una sensibilidad silenciosa hacia la lealtad y el vínculo selectivo; sospechar traición en su único interlocutor a su nivel lo afecta profundamente."
+ },
+ {
+  "id": "GAM-054",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Desmonta un conjunto de principios que parecían infalibles: encuentra dónde se contradicen, las encadena una con otra y las deja sin sustento, todo sin hacer ruido y solo para comprobar qué es verdad.",
+  "answer": {
+   "element": "Ti",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "fondo"
+   },
+   {
+    "element": "Te",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Maneja con soltura sistemas deductivos formales y coherencia interna, pero los usa como herramienta de fondo, no como eje de sus decisiones."
+ },
+ {
+  "id": "GAM-055",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Viste siempre la misma ropa holgada, se alimenta casi solo de dulces para sostener su actividad cerebral y deja su manutención y su entorno físico en manos de otra persona.",
+  "answer": {
+   "element": "Si",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La relación con la comodidad corporal es austera y utilitaria: se adoptan rutinas excéntricas que priorizan la eficacia mental sobre el bienestar sensorial."
+ },
+ {
+  "id": "GAM-056",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Desde el primer contacto con cualquier iniciativa ajena, proyecta mentalmente el desenlace caótico que inevitablemente arruinará su día.",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "activación"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Filtra la realidad a través de un escepticismo anticipatorio; vive orientado al tiempo subjetivo con un pesimismo de fondo sobre la decadencia previsible."
+ },
+ {
+  "id": "GAM-057",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Claro, como si fuera a gastar un solo instante de mi tiempo soplando burbujas. ... Oh, por favor. Es decir, ¿quién en el mundo pagaría por soplar burbujas?»",
+  "answer": {
+   "element": "Te",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   }
+  ],
+  "justification": "Aplica un criterio pragmático y escéptico frente a la utilidad real de las cosas; ridiculiza de inmediato lo que juzga económicamente absurdo."
+ },
+ {
+  "id": "GAM-058",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Cultiva rituales domésticos precisos —baños calientes, tardes tranquilas, lectura y silencio— como refugio deliberado, pero cualquier irrupción sonora quiebra su compostura y lo arroja a la irritación inmediata.",
+  "answer": {
+   "element": "Si",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "El equilibrio físico se construye como rol consciente y frágil; funciona como refugio, no como dominio natural."
+ },
+ {
+  "id": "GAM-059",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Descarta con rapidez las ocurrencias divergentes y los juegos imaginativos de sus vecinos por juzgarlos pueriles o improductivos, aferrándose a una lectura unívoca y escéptica de lo que merece ser tomado en serio.",
+  "answer": {
+   "element": "Ne",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "fondo"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Las capacidades ocultas y las ideas divergentes se descartan de entrada en favor de una sola lectura convergente; ver más allá de lo evidente se percibe como pérdida de tiempo."
+ },
+ {
+  "id": "GAM-060",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«¡Ingratos! ¡Puse mi corazón y mi alma en ese libro! ¡No es mi culpa que no tengan la sensibilidad intelectual y artística para entender mi obra!»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "sugestiva"
+   }
+  ],
+  "justification": "Bajo el cinismo subsiste una sensibilidad privada e intensa hacia la dignidad personal y el reconocimiento íntimo de su expresión artística; la incomprensión hiere un vínculo, no un ego público."
+ },
+ {
+  "id": "GAM-061",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Tu juventud te delata. La paciencia es producto de la edad.»",
+  "answer": {
+   "element": "Ni",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Opera en escalas temporales de décadas con serenidad; la temporalidad larga es su programa, no una pose."
+ },
+ {
+  "id": "GAM-062",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«¿Por qué comete cualquiera actos que otros consideran indecibles? Por una sola persona.»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Detrás de décadas de cálculo frío, el motor absoluto es una devoción privada inquebrantable hacia una sola persona; la lealtad íntima se antepone a toda norma pública."
+ },
+ {
+  "id": "GAM-063",
+  "quadra": "Gamma",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Evalúa cada alianza únicamente por su rendimiento funcional para el problema técnico de vencer la muerte, desde sintetizar una sustancia mutagénica hasta usar sangre regenerativa para estabilizar un cuerpo.",
+  "answer": {
+   "element": "Te",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "Traduce su visión temporal en biotecnología aplicada y negociación de recursos; carece de apego ideológico, solo importa la eficiencia empírica."
+ },
+ {
+  "id": "GAM-064",
+  "quadra": "Gamma",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Habla siempre en un tono monocorde, pausado y desprovisto de afectación, inmune a la indignación moral o a la retórica marcial de sus interlocutores.",
+  "answer": {
+   "element": "Fe",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   },
+   {
+    "element": "Si",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "Ausencia total de teatralidad o apelación emocional colectiva; el distanciamiento del escándalo público le permite ejecutar procedimientos atroces sin fricción visible."
+ },
+ {
+  "id": "GAM-065",
+  "quadra": "Gamma",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Evita el combate físico directo y confía la presión territorial a socios con empuje impositivo, quienes le proveen protección, financiación y acceso a los medios para sus experimentos.",
+  "answer": {
+   "element": "Se",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "Responde a la fuerza externa decidida que rompe su inercia contemplativa; busca aliados que impongan lo que él no impone."
+ },
+ {
+  "id": "GAM-066",
+  "quadra": "Gamma",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Descarta toda especulación que distraiga de su única línea de convergencia: restaurar a una persona querida, aunque comprenda las ramificaciones de la ciencia que otros exploran.",
+  "answer": {
+   "element": "Ne",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ni",
+    "position": "activación"
+   }
+  ],
+  "justification": "Las capacidades y los conceptos divergentes se conocen pero se ignoran deliberadamente; solo cuenta la trayectoria que lleva al objetivo único."
+ },
+ {
+  "id": "DEL-001",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "Un tipador novato dice que esto es [Ti Creativa]: ««Mi oficio consiste en tomar dinero de gente rica y usarlo para hacerla más rica. Eso es todo. Francamente, a nadie le importaría si yo desapareciera.»». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Te",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Evalúa su oficio solo por su utilidad tangible y su impacto comprobable, sin adornos ideológicos."
+ },
+ {
+  "id": "DEL-002",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Suele medir lo que significa crecer por pequeños cambios físicos y cotidianos, como encontrar más cabellos en la almohada o que su pan favorito ya no esté en la tienda.",
+  "answer": {
+   "element": "Si",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La madurez se registra a través de sensaciones y rutinas concretas, no de grandes ideas abstractas."
+ },
+ {
+  "id": "DEL-003",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Te Base]: «Necesita acotar sus días en bloques medibles, con horarios estrictos y horas extras, porque la incertidumbre sobre lo que vendrá le genera una ansiedad constante.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ni",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   }
+  ],
+  "justification": "El futuro abierto se vive como amenaza y solo se tolera partiéndolo en tramos controlables."
+ },
+ {
+  "id": "DEL-004",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "accion",
+  "prompt": "Tras recibir un agradecimiento directo y sincero de una empleada de una panadería, decide cambiar de vida y volver a un oficio que había abandonado.",
+  "answer": {
+   "element": "Fi",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "activación"
+   }
+  ],
+  "justification": "Una muestra genuina de gratitud basta para reorientar su rumbo, aunque no la busque ni la exija."
+ },
+ {
+  "id": "DEL-005",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Con medio cuerpo quemado, sigue combatiendo y despejando el camino para proteger a alguien más joven, sin buscar reconocimiento ni dominio.",
+  "answer": {
+   "element": "Se",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Despliega una fuerza física enorme solo cuando la emergencia lo exige, al servicio de proteger a otros."
+ },
+ {
+  "id": "DEL-006",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Tienes una elección entre salvar a una persona y salvar a un mundo entero. A todos los mundos.»",
+  "answer": {
+   "element": "Te",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Reduce un dilema moral a un cálculo utilitario entre un costo individual y la supervivencia del conjunto."
+ },
+ {
+  "id": "DEL-007",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Tras una catástrofe personal, convierte una correlación traumática en una ley determinista inmutable y no concibe desenlaces distintos en los que un suceso clave se resuelva sin colapso.",
+  "answer": {
+   "element": "Ni",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   }
+  ],
+  "justification": "La inseguridad ante el devenir se compensa aferrándose a un guion fijo del futuro."
+ },
+ {
+  "id": "DEL-008",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Al principio recibe a un visitante con cortesía formal y tono medido, pero esa fachada diplomática se quiebra en cuanto percibe insubordinación y deriva en estallidos de ira.",
+  "answer": {
+   "element": "Fe",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La amabilidad social es un esfuerzo consciente y frágil, no una expresividad natural."
+ },
+ {
+  "id": "DEL-009",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "accion",
+  "prompt": "Un tipador novato dice que esto es [Si Observing]: «Cuando la persuasión falla, inmoviliza a su oponente con puro músculo y dominio físico inmediato, sin exhibicionismo ni búsqueda de prestigio.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Se",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Si",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "La potencia física aparece como recurso de respaldo sobrio, solo para destrabar el bloqueo."
+ },
+ {
+  "id": "DEL-010",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Hay otro camino. Siempre hay otro camino... ¡Hay otro camino para llegar a la isla!»",
+  "answer": {
+   "element": "Ne",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Ante el bloqueo total del plan, insiste en buscar una salida lateral en vez de rendirse."
+ },
+ {
+  "id": "DEL-011",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Cruza el arrecife sin saber navegar y fuerza el paso frente a una amenaza volcánica desoyendo la advertencia táctica de su compañero, pese al riesgo evidente.",
+  "answer": {
+   "element": "Ni",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   }
+  ],
+  "justification": "Actúa sin calibrar las consecuencias remotas ni el momento oportuno, precipitándose ante la incertidumbre."
+ },
+ {
+  "id": "DEL-012",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Corrige con precisión que su título no es «princesa» sino «hija del jefe», pero desacata la ley de su comunidad cuando comprueba empíricamente que permanecer dentro del arrecife condena a su pueblo.",
+  "answer": {
+   "element": "Ti",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   }
+  ],
+  "justification": "Conoce las reglas y categorías formales, pero las subordina a la utilidad real comprobada."
+ },
+ {
+  "id": "DEL-013",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Aprende a navegar midiendo el cielo con la mano, percibiendo la temperatura de las corrientes y ajustando las velas según la respuesta física del viento.",
+  "answer": {
+   "element": "Si",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "El oficio se aprende de forma encarnada, con el cuerpo y los sentidos, no solo con teoría."
+ },
+ {
+  "id": "DEL-014",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Su hogar es su refugio: baños de lodo, la temperatura de siempre, comida rústica y silencio; en cambio, los trajes ajustados y los lugares llenos de gente le resultan físicamente insoportables.",
+  "answer": {
+   "element": "Si",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Fe",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Todo se organiza alrededor de la homeostasis corporal y el control de su espacio cotidiano."
+ },
+ {
+  "id": "DEL-015",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Detesta los cantos espontáneos, el espectáculo mecánico de una ciudad festiva y que le exijan actuar como atracción repitiendo su rugido a pedido; ante esa presión responde con sarcasmo o estalla.",
+  "answer": {
+   "element": "Fe",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Si",
+    "position": "base"
+   }
+  ],
+  "justification": "La expresividad emocional colectiva y la obligación de generar entusiasmo le saturan y le resultan ajenas."
+ },
+ {
+  "id": "DEL-016",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Bueno, tampoco es que no cambiaría si pudiera. Yo solo... solo desearía poder hacerla feliz.»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Está dispuesto a renunciar a su propia comodidad física por el bienestar de su vínculo más cercano."
+ },
+ {
+  "id": "DEL-017",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Desconfía de inmediato de una pila de comida en medio del bosque por pura incongruencia contextual, y desmonta con ironía las contradicciones entre un guion romántico y la evidencia que tiene delante.",
+  "answer": {
+   "element": "Ti",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Te",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La coherencia lógica y la detección de lo incongruente operan de forma automática, sin esfuerzo."
+ },
+ {
+  "id": "DEL-018",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Escucha, odio decírtelo, pero lo que la gente llama «amor» es solo una reacción química que obliga a los animales a reproducirse. Golpea fuerte, luego se desvanece lentamente y te deja varado en un matrimonio fallido.»",
+  "answer": {
+   "element": "Te",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "Reduce un fenómeno afectivo a un mecanismo funcional y lo usa como argumento práctico para descartarlo."
+ },
+ {
+  "id": "DEL-019",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "«Las bodas son básicamente funerales con pastel.»",
+  "answer": {
+   "element": "Fe",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "rol"
+   }
+  ],
+  "justification": "Rechaza con ironía seca un ritual social de emotividad pautada."
+ },
+ {
+  "id": "DEL-020",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Mierda, soy un padre terrible.»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Tras ver un recuerdo que había borrado, irrumpe un juicio moral severo sobre su propia conducta, sin cinismo que lo tape."
+ },
+ {
+  "id": "DEL-021",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Si Base]: «Posee una capacidad devastadora para el choque directo y la confrontación armada, pero abandona la ciudadela que ayudó a fundar y ridiculiza a las autoridades que ejercen poder político.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Se",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "limitativa"
+   },
+   {
+    "element": "Si",
+    "position": "base"
+   }
+  ],
+  "justification": "Puede imponer fuerza cuando amenazan su perímetro, pero rechaza el dominio territorial sostenido como fin."
+ },
+ {
+  "id": "DEL-022",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Dosifica el uso de su técnica ocular porque agota su organismo, combate leyendo una novela para minimizar el gasto energético y busca descansar apenas concluye una crisis.",
+  "answer": {
+   "element": "Si",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "rol"
+   }
+  ],
+  "justification": "Calibra constantemente la fatiga física y la economía de energía antes que el lucimiento."
+ },
+ {
+  "id": "DEL-023",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "accion",
+  "prompt": "Diseña un entrenamiento acelerado con clones para acortar años de práctica a unos pocos días, priorizando el rendimiento comprobable sobre la tradición.",
+  "answer": {
+   "element": "Te",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Evalúa técnicas y métodos por su resultado práctico y los optimiza sin reverencia por el procedimiento habitual."
+ },
+ {
+  "id": "DEL-024",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Al presentarse ante un equipo nuevo, bloquea cualquier indagación personal; ante el entusiasmo expansivo de un colega responde con desconexión deliberada.",
+  "answer": {
+   "element": "Fe",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "activación"
+   }
+  ],
+  "justification": "Elude las demostraciones emocionales abiertas y la presión del clima afectivo grupal."
+ },
+ {
+  "id": "DEL-025",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Quienes rompen las reglas son escoria, es cierto. Pero quienes abandonan a sus amigos son peores que la escoria.»",
+  "answer": {
+   "element": "Fi",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ne",
+    "position": "activación"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Coloca la lealtad personal por encima del cumplimiento mecánico de las normas."
+ },
+ {
+  "id": "DEL-026",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«En este país, primero tienes que hacer el dinero. Luego, cuando tienes el dinero, obtienes el poder. Y cuando tienes el poder, entonces consigues a la mujer. Por eso tienes que hacer tus propios movimientos.»",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Ve el entorno como un campo de oportunidades y reduce el ascenso a una secuencia de movimientos propios."
+ },
+ {
+  "id": "DEL-027",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Nunca jodí a nadie en mi vida que no se lo mereciera. ¿Entendido? Todo lo que tengo en este mundo son mis pelotas y mi palabra, y no las rompo por nadie.»",
+  "answer": {
+   "element": "Fi",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   }
+  ],
+  "justification": "Decide desde un código moral privado e inflexible, no desde normas externas."
+ },
+ {
+  "id": "DEL-028",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Proyecta una fachada de dominio territorial con trajes llamativos, una mansión ostentosa y desafíos verbales constantes para imponerse en un entorno hostil.",
+  "answer": {
+   "element": "Se",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "fondo"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   }
+  ],
+  "justification": "La fuerza y la ostentación son una postura teatral y reactiva cuando siente amenazada su autoridad."
+ },
+ {
+  "id": "DEL-029",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Un tipador novato dice que esto es [Te Mobilizing]: «Cierra un acuerdo importante por cuenta propia sin autorización de su jefe y se irrita ante los procedimientos técnicos de lavado de dinero que le explica su banquero.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   }
+  ],
+  "justification": "Pasa por alto jerarquías formales y marcos legales porque no los registra como límite real."
+ },
+ {
+  "id": "DEL-030",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Debajo de su agitación constante, disfruta con placer infantil observando aves en televisión desde una bañera enorme y anhela una familia estable y una vida doméstica tranquila.",
+  "answer": {
+   "element": "Si",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca torpemente bienestar corporal y calma cotidiana, algo que rara vez logra sostener por sí mismo."
+ },
+ {
+  "id": "DEL-031",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Maneja con soltura la intensidad emocional, el sarcasmo mordaz y la presencia escénica, usando la expresividad dramática para desnudar la hipocresía ajena y dominar la atmósfera del recinto.",
+  "answer": {
+   "element": "Fe",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Fi",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "El clima afectivo grupal se maneja con soltura técnica, como instrumento, no como entrega emocional."
+ },
+ {
+  "id": "DEL-032",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Un tipador novato dice que esto es [Ni Creativa]: «Escanea personas, habitaciones y coartadas buscando discrepancias entre la narrativa declarada y lo que el sujeto esconde de verdad, y formula hipótesis laterales en segundos.». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Percibe el contenido interno y las capacidades ocultas donde otros ven una historia lineal y cerrada."
+ },
+ {
+  "id": "DEL-033",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Por arrogancia... estupidez. Hice enfadar mucho a un hombre malvado y las mató para darme una lección. Para que lamentara lo que hice... y lo lamento. Arrepentirse es un castigo mucho peor que estar muerto.»",
+  "answer": {
+   "element": "Fi",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "El eje del sufrimiento es la condena ética interna y la responsabilidad personal, no el castigo externo."
+ },
+ {
+  "id": "DEL-034",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "frase",
+  "prompt": "Un tipador novato dice que esto es [Fi Creativa]: ««A mí no me importa la ley. Me importa lo que está bien, y eso dice que esa persona merece sufrir.»». Pero se equivoca. ¿Qué función en qué posición muestra esto de verdad?",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Desapega el juicio moral personal de la norma legal impersonal."
+ },
+ {
+  "id": "DEL-035",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Mantiene un ritual constante con el té, rechaza el café, aprecia el aire libre y la comida compartida, y busca obsesivamente un sofá donde descansar al llegar a una oficina nueva.",
+  "answer": {
+   "element": "Si",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Se",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca anclajes sensoriales de comodidad y rutina suave que él mismo rara vez logra sostener."
+ },
+ {
+  "id": "DEL-036",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Regula la temperatura emocional de una habitación con naturalidad: relaja a testigos, provoca reacciones impulsivas o distrae a un sospechoso con su sonrisa y su ironía.",
+  "answer": {
+   "element": "Fe",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Maneja el clima afectivo grupal con soltura técnica, como instrumento, no como entrega emocional."
+ },
+ {
+  "id": "DEL-037",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Esta es mi realidad. Es una realidad que a mí tampoco me gusta, porque me quita todas las oportunidades que pueda tener.»",
+  "answer": {
+   "element": "Ne",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   },
+   {
+    "element": "Ni",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Rechaza su entorno porque lo vive como una clausura de su propia energía potencial: lo que ella es capaz de ser no cabe en esa realidad."
+ },
+ {
+  "id": "DEL-038",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Construye versiones contradictorias sobre su origen, llegando a declarar muertos a sus padres y a presentar a su madrina como empleada, sin un relato verificable que resista el cruce de datos.",
+  "answer": {
+   "element": "Ti",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "rol"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   }
+  ],
+  "justification": "La coherencia estructural y la consistencia entre sus propios enunciados es su punto más frágil."
+ },
+ {
+  "id": "DEL-039",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«¡Odio ser pobre, lo odio, lo odio!»",
+  "answer": {
+   "element": "Si",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   }
+  ],
+  "justification": "La precariedad material se vive como una amenaza corporal y doméstica, no solo como falta de dinero."
+ },
+ {
+  "id": "DEL-040",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Previó que traicionar a sus seres cercanos acarrearía aislamiento, pero relegó esa certeza hasta que el derrumbe se volvió ineludible.",
+  "answer": {
+   "element": "Ni",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "limitativa"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   }
+  ],
+  "justification": "Puede anticipar trayectorias de largo plazo, pero descarta las señales de desgaste cuando aparece una oportunidad inmediata."
+ },
+ {
+  "id": "DEL-041",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«Si quieren decirle lo que hicieron, es decisión suya, pero yo no voy a decírselo. No soy un soplón.»",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Ti",
+    "position": "rol"
+   }
+  ],
+  "justification": "Mantiene su integridad personal y respeta la agencia moral de los demás, aunque le cueste un castigo injusto."
+ },
+ {
+  "id": "DEL-042",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«¿Cómo puede hacerlo si nunca sale de su escalinata?»",
+  "answer": {
+   "element": "Ne",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Desmonta una amenaza percibida con una lectura alternativa de la situación."
+ },
+ {
+  "id": "DEL-043",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "accion",
+  "prompt": "Presenta cuarenta páginas basadas en los artículos de la constitución escolar para apelar la sanción de un compañero ante el director.",
+  "answer": {
+   "element": "Ti",
+   "position": "rol"
+  },
+  "distractors": [
+   {
+    "element": "Ti",
+    "position": "fondo"
+   },
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   }
+  ],
+  "justification": "Recurre a reglas formales y procedimientos solo como herramienta puntual para legitimar una causa ética."
+ },
+ {
+  "id": "DEL-044",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "La amenaza de una golpiza lo desestabiliza hasta obligarlo a fingir locura para evitar el choque físico, y le cuesta imponer límites tajantes a tiempo.",
+  "answer": {
+   "element": "Se",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   }
+  ],
+  "justification": "La presión física y la intimidación directa generan bloqueo inmediato."
+ },
+ {
+  "id": "DEL-045",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Se apega a su habitación con tragaluz, a la música jazz y a su pequeña gorra azul, sin la cual se niega a salir de casa.",
+  "answer": {
+   "element": "Si",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   },
+   {
+    "element": "Se",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Su equilibrio depende de la armonía cotidiana y la familiaridad sensorial de su entorno."
+ },
+ {
+  "id": "DEL-046",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Advierte a una compañera que huir de la escuela cristalizará su vergüenza interior, y comprende que los atajos evasivos solo prolongan el estancamiento.",
+  "answer": {
+   "element": "Ni",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Ne",
+    "position": "creativa"
+   }
+  ],
+  "justification": "Capta sin teorizar cómo una decisión presente moldea la identidad a largo plazo."
+ },
+ {
+  "id": "DEL-047",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "frase",
+  "prompt": "«A veces, para hacer lo correcto, tenemos que mantenernos firmes y renunciar a lo que más deseamos. Incluso a nuestros sueños.»",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Apela a la capacidad de elección ética intacta del adversario en lugar de someterlo solo por fuerza."
+ },
+ {
+  "id": "DEL-048",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "En su vida civil tolera abusos de su jefe, de un cliente y de su casero con timidez casi paralizante, y rehúye la agresión gratuita y el despliegue de poder.",
+  "answer": {
+   "element": "Se",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Fi",
+    "position": "base"
+   }
+  ],
+  "justification": "La intimidación y la coerción directa le incomodan y lo bloquean."
+ },
+ {
+  "id": "DEL-049",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "comportamiento",
+  "prompt": "Admira la competencia práctica y la disciplina productiva, y sufre angustia recurrente ante la desorganización de su empleo, sus finanzas y sus horarios.",
+  "answer": {
+   "element": "Te",
+   "position": "sugestiva"
+  },
+  "distractors": [
+   {
+    "element": "Te",
+    "position": "base"
+   },
+   {
+    "element": "Si",
+    "position": "sugestiva"
+   },
+   {
+    "element": "Ti",
+    "position": "activación"
+   }
+  ],
+  "justification": "Busca orientación fáctica y eficacia concreta que aterricen sus convicciones."
+ },
+ {
+  "id": "DEL-050",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Rehúye el exhibicionismo emocional y la ostentación pública; incluso cuando una multitud lo aclama, la celebración masiva desestabiliza su sobriedad habitual.",
+  "answer": {
+   "element": "Fe",
+   "position": "limitativa"
+  },
+  "distractors": [
+   {
+    "element": "Fe",
+    "position": "rol"
+   },
+   {
+    "element": "Ni",
+    "position": "limitativa"
+   },
+   {
+    "element": "Fi",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Evita el dramatismo expansivo y reserva su expresión afectiva genuina al trato íntimo."
+ },
+ {
+  "id": "DEL-051",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Perdona la vida a una criatura quebrada y rechaza el derramamiento de sangre al regresar a su hogar, actuando desde una convicción ética que coloca la misericordia por encima de la venganza.",
+  "answer": {
+   "element": "Fi",
+   "position": "base"
+  },
+  "distractors": [
+   {
+    "element": "Fi",
+    "position": "activación"
+   },
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "La compasión y la fidelidad a sus compañeros sostienen su resistencia sin necesidad de crueldad."
+ },
+ {
+  "id": "DEL-052",
+  "quadra": "Delta",
+  "level": 1,
+  "kind": "comportamiento",
+  "prompt": "Distingue la dualidad en una criatura que otros ven solo como maldad cerrada, apostando por su fracción rescatable y manteniendo viva su capacidad de redimirse.",
+  "answer": {
+   "element": "Ne",
+   "position": "creativa"
+  },
+  "distractors": [
+   {
+    "element": "Ne",
+    "position": "base"
+   },
+   {
+    "element": "Fi",
+    "position": "creativa"
+   },
+   {
+    "element": "Ni",
+    "position": "fondo"
+   }
+  ],
+  "justification": "Percibe matices ocultos y restos de humanidad donde otros solo ven una amenaza unidimensional."
+ },
+ {
+  "id": "DEL-053",
+  "quadra": "Delta",
+  "level": 2,
+  "kind": "comportamiento",
+  "prompt": "Carece de pulsión de dominio, ambición territorial o apetito de poder coercitivo, y en combate depende de la protección de sus aliados.",
+  "answer": {
+   "element": "Se",
+   "position": "dolorosa"
+  },
+  "distractors": [
+   {
+    "element": "Se",
+    "position": "rol"
+   },
+   {
+    "element": "Ti",
+    "position": "dolorosa"
+   },
+   {
+    "element": "Si",
+    "position": "rol"
+   }
+  ],
+  "justification": "La violencia directa y la imposición por fuerza le resultan ajenas a su constitución."
+ },
+ {
+  "id": "DEL-054",
+  "quadra": "Delta",
+  "level": 3,
+  "kind": "frase",
+  "prompt": "«Desearía que esto no hubiera tenido que ocurrir en mi tiempo.»",
+  "answer": {
+   "element": "Si",
+   "position": "activación"
+  },
+  "distractors": [
+   {
+    "element": "Si",
+    "position": "base"
+   },
+   {
+    "element": "Te",
+    "position": "activación"
+   },
+   {
+    "element": "Se",
+    "position": "dolorosa"
+   }
+  ],
+  "justification": "Anhela la paz cotidiana y se resiste a la irrupción del conflicto histórico."
+ },
+ {
+  "id": "DEL-055",
+  "quadra": "Delta",
+  "level": 4,
+  "kind": "comportamiento",
+  "prompt": "Acepta con calma el momento de ceder su lugar a su compañero y partir, reconociendo que hay cosas que nada puede sanar y heridas que calan demasiado hondo.",
+  "answer": {
+   "element": "Ni",
+   "position": "fondo"
+  },
+  "distractors": [
+   {
+    "element": "Ni",
+    "position": "rol"
+   },
+   {
+    "element": "Fe",
+    "position": "fondo"
+   },
+   {
+    "element": "Ne",
+    "position": "limitativa"
+   }
+  ],
+  "justification": "Muestra lucidez serena sobre el costo irreversible de la historia y la naturaleza transitoria de su permanencia."
+ }
+]

@@ -1,0 +1,1188 @@
+{
+ "problems": [
+  {
+   "title": "La última palta",
+   "context": "En la feria queda una sola palta y dos manos la quieren."
+  },
+  {
+   "title": "La fila del súper",
+   "context": "En la fila del súper, alguien se cuela y nadie dice nada."
+  },
+  {
+   "title": "La impresora",
+   "context": "La impresora de la oficina se atascó justo antes de entregar el informe."
+  },
+  {
+   "title": "El almuerzo robado",
+   "context": "Alguien se comió el almuerzo de otro en la cocina de la oficina."
+  },
+  {
+   "title": "El corte de pelo",
+   "context": "El peluquero cortó más de lo pedido y el cliente no se reconoce."
+  },
+  {
+   "title": "La ventana del micro",
+   "context": "En el micro, uno quiere la ventana abierta y el otro cerrada."
+  },
+  {
+   "title": "El estacionamiento",
+   "context": "Dos autos llegan al mismo tiempo al último lugar libre."
+  },
+  {
+   "title": "El proyecto",
+   "context": "El proyecto se atrasa y cada uno culpa al otro."
+  },
+  {
+   "title": "El ascensor",
+   "context": "El ascensor se quedó entre pisos con dos vecinos adentro."
+  },
+  {
+   "title": "El perro del vecino",
+   "context": "El perro del vecino ladra toda la noche y nadie duerme."
+  },
+  {
+   "title": "El ruido de la fiesta",
+   "context": "La fiesta de al lado sigue a las tres de la mañana."
+  },
+  {
+   "title": "El turno de limpieza",
+   "context": "Nadie quiere hacer el turno de limpieza de la casa."
+  },
+  {
+   "title": "El préstamo",
+   "context": "Uno le prestó dinero al otro y ya pasaron tres meses."
+  },
+  {
+   "title": "La reunión de vecinos",
+   "context": "En la reunión de vecinos, nadie se pone de acuerdo en la cuota."
+  }
+ ],
+ "neutral": [
+  "Decirles que se calmen y respiren un momento antes de seguir con {P}.",
+  "Preguntar a cada uno qué pasó con {P}, sin interrumpir.",
+  "Proponer una pausa de cinco minutos en {P}.",
+  "Repetir lo que cada uno dijo de {P} para que se oigan.",
+  "Preguntar qué acuerdo sobre {P} les parecería justo a los dos."
+ ],
+ "placeholders": {
+  "{AB}": "base de A (elemento 1 de A)",
+  "{BB}": "base de B (elemento 1 de B)",
+  "{AC}": "creativa de A (elemento 2 de A)",
+  "{BC}": "creativa de B (elemento 2 de B)",
+  "{AR}": "rol de A (elemento 3 de A)",
+  "{BR}": "rol de B (elemento 3 de B)",
+  "{AP}": "PoLR / dolorosa de A (elemento 4 de A)",
+  "{BP}": "PoLR / dolorosa de B (elemento 4 de B)",
+  "{AS}": "sugestiva de A (elemento 5 de A)",
+  "{BS}": "sugestiva de B (elemento 5 de B)",
+  "{AM}": "Mobilizing / activación de A (elemento 6 de A)",
+  "{BM}": "Mobilizing / activación de B (elemento 6 de B)",
+  "{A}": "tipo A",
+  "{B}": "tipo B",
+  "{P}": "título de la problemática (en minúsculas)",
+  "{R}": "nombre de la relación entre A y B"
+ },
+ "placeholderOrderNote": "Al sustituir, primero los placeholders largos ({AB}, {BB}, {AC}, {BC}, {AP}, {BP}, {AR}, {BR}, {AS}, {BS}, {AM}, {BM}) y luego {A}, {B}, {P}, {R}; así {A} no rompe {AB}.",
+ "relations": [
+  {
+   "code": 0,
+   "name": "Identidad",
+   "dynamics": {
+    "friction": "Los dos ven el mundo igual y se pelean por el mismo papel: cada uno cree que el otro le copia.",
+    "whatWorks": "Repartan por tareas concretas y que cada uno cubra el punto débil del otro con alguien más.",
+    "whatWorsens": "Asumir que el otro ve lo mismo que tú: si tú no lo ves, él tampoco."
+   },
+   "correct": [
+    "Repartir {P} por tareas concretas: que {A} haga una parte y {B} la otra, sin pisarse.",
+    "Que cada uno diga qué parte de {P} ve y que un tercero junte las dos versiones."
+   ],
+   "mistake": [
+    "Decirles que si los dos ven lo mismo en {P}, uno de los dos sobra.",
+    "Ponerlos a competir por ver quién resuelve {P} mejor."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {A} que haga la parte que le toca a {B} y a {B} la que le toca a {A}, para que cada uno vea {P} desde el otro lado.",
+     "why": "Casi: repartir está bien, pero al revés no: cada uno tiene que hacer SU parte, no la del otro. Intercambiar los papeles no es repartir."
+    },
+    {
+     "text": "Decirles que como los dos ven lo mismo, da igual quién resuelva {P}: que lo haga el que tenga tiempo.",
+     "why": "Casi: ven lo mismo, sí, pero ninguno de los dos cubre lo que al otro le falta. Que lo haga «el que tenga tiempo» deja el hueco sin cubrir."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} descubren que piensan exactamente igual sobre {P}, así que se reparten el trabajo por turnos y terminan antes de lo previsto, cada uno convencido de que la idea fue suya. Puro acuerdo.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} le dice a {B} lo que haría él y {B} asiente porque es justo lo que pensaba; {P} se resuelve en silencio, sin que nadie tenga que explicarle nada al otro.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} y {B} se pelean por quién resuelve mejor {P}, cada uno copiando al otro al milímetro, hasta que los dos hacen exactamente lo mismo a la vez y se acusan mutuamente de plagio.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} le explica a {B} cómo se hace {P} y {B} le explica lo mismo a {A}, palabra por palabra, durante una hora, hasta que los dos se van convencidos de que el otro no entendió nada.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 9,
+     "name": "Cuasi-identidad"
+    },
+    {
+     "code": 3,
+     "name": "Espejo"
+    },
+    {
+     "code": 4,
+     "name": "Afinidad"
+    }
+   ]
+  },
+  {
+   "code": 1,
+   "name": "Dualidad",
+   "dynamics": {
+    "friction": "Cada uno habla el idioma que el otro no entiende al principio: lo que a uno le sobra, al otro le falta.",
+    "whatWorks": "Dejen que cada uno haga su parte fuerte y pidan lo que necesitan en concreto.",
+    "whatWorsens": "Hacer todo solo o esperar que el otro piense como tú."
+   },
+   "correct": [
+    "Preguntarle a {A} qué necesita en concreto y a {B} qué puede aportar de su parte fuerte.",
+    "Proponer que {A} se encargue de su parte fuerte y {B} de la suya, sin meterse en lo del otro."
+   ],
+   "mistake": [
+    "Decirle a {A} que haga {P} todo solo porque «tú puedes».",
+    "Esperar que {B} piense como {A} en {P} y criticarlo cuando no lo hace."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {A} que le explique a {B} con todo detalle qué necesita, paso a paso, para que no haya malentendidos.",
+     "why": "Casi: en dualidad no hace falta explicarlo todo: lo que uno necesita, el otro lo da sin que se lo pidan. Exigir la explicación convierte la ayuda en un trámite."
+    },
+    {
+     "text": "Proponer que {B} haga la parte fuerte de {A} en {P} para que aprenda a valerse solo.",
+     "why": "Casi: la parte fuerte de {A} es justo la débil de {B}. Pedirle que la haga solo es pedirle que falle en su punto débil."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} hace su parte fuerte sin que nadie se lo pida y {B} recibe la ayuda con gratitud; {P} se resuelve solo, como si los dos hubieran nacido para eso.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {B} le pide a {A} justo lo que {A} sabe dar y {A} se lo da sin dramas; {P} queda resuelto y los dos terminan más seguros que antes. Todo funcionando como debe.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} decide hacer {P} solo para demostrar que no necesita a nadie, se atasca en su {AS} y termina pidiéndole ayuda a {B} a gritos, que era justo lo que {B} le ofrecía desde el principio.",
+     "weakFunctionsUsed": [
+      {
+       "placeholder": "{AS}",
+       "function": "sugestiva de A"
+      }
+     ]
+    },
+    {
+     "text": "Escalada: {B} espera que {A} adivine lo que necesita para {P} y {A} espera que {B} lo pida en concreto; ninguno dice nada, {P} se pudre, y los dos se van convencidos de que el otro es un egoísta.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 5,
+     "name": "Semidualidad"
+    },
+    {
+     "code": 2,
+     "name": "Activación"
+    },
+    {
+     "code": 6,
+     "name": "Espejismo"
+    }
+   ]
+  },
+  {
+   "code": 2,
+   "name": "Activación",
+   "dynamics": {
+    "friction": "Se animan mutuamente, pero se cansan rápido: la energía dura poco.",
+    "whatWorks": "Ráfagas cortas con roles claros y descansos entre medias.",
+    "whatWorsens": "Maratones largos juntos sin parar: terminan agotados y de mal humor."
+   },
+   "correct": [
+    "Hacer {P} en ráfagas cortas: veinte minutos cada uno y un descanso entre medias.",
+    "Repartir roles claros para {P} y parar antes de que se agoten."
+   ],
+   "mistake": [
+    "Ponerlos a resolver {P} sin parar hasta que terminen.",
+    "Decirles que si se cansan con {P} es porque no quieren de verdad."
+   ],
+   "nearMiss": [
+    {
+     "text": "Poner a {A} y a {B} a hacer {P} en una sola sesión larga, sin descansos, para aprovechar que están animados.",
+     "why": "Casi: en activación la energía dura poco. Sin descansos se agotan a la vez y terminan de mal humor."
+    },
+    {
+     "text": "Pedirle a {A} y a {B} que se turnen cada cinco minutos para que nadie se canse.",
+     "why": "Casi: los turnos tan cortos rompen la ráfaga. En activación hacen falta bloques de veinte minutos con un descanso entre medias, no microturnos."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} resuelven {P} en una ráfaga de veinte minutos, con roles claros, y paran antes de agotarse: energía corta, resultado completo. En su mejor forma.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} anima a {B}, {B} anima a {A}, y {P} se resuelve entre los dos antes de que a ninguno le dé tiempo de cansarse.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} y {B} se ponen a resolver {P} sin parar hasta terminar, se agotan a la vez, y terminan discutiendo por quién está más cansado mientras {P} sigue ahí, intacto.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} le dice a {B} que si se cansa es porque no quiere de verdad; {B} se esfuerza hasta quedarse sin energía, se duerme encima de {P} y {A} lo toma como prueba de que tenía razón.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 1,
+     "name": "Dualidad"
+    },
+    {
+     "code": 5,
+     "name": "Semidualidad"
+    },
+    {
+     "code": 6,
+     "name": "Espejismo"
+    }
+   ]
+  },
+  {
+   "code": 3,
+   "name": "Espejo",
+   "dynamics": {
+    "friction": "Ven lo mismo pero al revés: se corrigen el método a cada rato.",
+    "whatWorks": "Acuerden primero el objetivo y luego repartan los métodos.",
+    "whatWorsens": "Corregir el método del otro en plena acción."
+   },
+   "correct": [
+    "Acordar primero el objetivo de {P} y luego dejar que cada uno lo haga a su manera.",
+    "Pedirles que digan el objetivo en voz alta antes de discutir el cómo."
+   ],
+   "mistake": [
+    "Dejar que {A} corrija el método de {B} para {P} en plena acción.",
+    "Decirles que discutan el cómo de {P} hasta que uno gane."
+   ],
+   "nearMiss": [
+    {
+     "text": "Dejar que {A} y {B} usen cada uno su método para {P} sin acordar antes el objetivo.",
+     "why": "Casi: en espejo los métodos son distintos aunque el objetivo sea el mismo. Sin acordar el objetivo primero, cada uno corrige el método del otro."
+    },
+    {
+     "text": "Pedirle a {A} que copie el método de {B} para {P} porque «es el mismo, solo que al revés».",
+     "why": "Casi: el Ego está al revés, no es el mismo. Copiar el método del otro es usar su segunda función como si fuera la primera."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} acuerdan primero el objetivo de {P} y luego cada uno usa su método; el resultado es el mismo y nadie tuvo que corregir a nadie.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} le muestra a {B} su método para {P}, {B} le muestra el suyo, y los dos se van con un método mejor que el que traían.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} corrige el método de {B} en plena acción, {B} corrige el de {A} para vengarse, y {P} termina hecho de una forma que ninguno de los dos reconoce como suya.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} y {B} discuten el cómo de {P} hasta que uno gane; gana {A}, aplica su método, sale mal, y {B} le recuerda el resto del día que él lo habría hecho con su método.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 9,
+     "name": "Cuasi-identidad"
+    },
+    {
+     "code": 4,
+     "name": "Afinidad"
+    },
+    {
+     "code": 0,
+     "name": "Identidad"
+    }
+   ]
+  },
+  {
+   "code": 4,
+   "name": "Afinidad",
+   "dynamics": {
+    "friction": "Les gusta lo mismo y compiten por el mismo nicho: cada uno cree hacerlo mejor.",
+    "whatWorks": "Cada uno en su área: mismo gusto, distinto terreno.",
+    "whatWorsens": "Comparar quién lo hace mejor delante de todos."
+   },
+   "correct": [
+    "Darle a cada uno su terreno en {P}: mismo gusto, distinto lugar.",
+    "Que {A} y {B} hagan su parte de {P} por separado y luego la junten."
+   ],
+   "mistake": [
+    "Comparar delante de todos quién hace mejor {P}.",
+    "Ponerlos a pelear por el mismo nicho de {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Poner a {A} y a {B} a hacer {P} juntos, en el mismo sitio, porque les gusta lo mismo.",
+     "why": "Casi: les gusta lo mismo y compiten por el mismo nicho. Juntos en el mismo sitio se estorban; cada uno necesita su terreno."
+    },
+    {
+     "text": "Pedirle a {A} que le enseñe a {B} su forma de hacer {P}, ya que los dos lo hacen parecido.",
+     "why": "Casi: se parecen en lo fuerte, pero nadie cubre lo que falta. Enseñarle tu forma no le da lo que no tiene."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} se reparten {P} por terrenos: mismo gusto, distinto lugar, y cada uno hace su parte sin pisar la del otro.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} hace su parte de {P} por un lado y {B} la suya por el otro; al juntarlas descubren que les salió casi lo mismo, y se ríen.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} y {B} comparan delante de todos quién hace mejor {P}; gana {B} por un pelo, {A} exige revancha, y la revancha dura tres días.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} y {B} pelean por el mismo nicho de {P} hasta que los dos lo hacen a la vez, en el mismo sitio, estorbándose, y el resultado es peor que si lo hubiera hecho uno solo.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 3,
+     "name": "Espejo"
+    },
+    {
+     "code": 0,
+     "name": "Identidad"
+    },
+    {
+     "code": 9,
+     "name": "Cuasi-identidad"
+    }
+   ]
+  },
+  {
+   "code": 5,
+   "name": "Semidualidad",
+   "dynamics": {
+    "friction": "Una parte encaja y la otra no: uno se entiende y el otro se queda fuera.",
+    "whatWorks": "Usen la parte que sí encaja y no fuercen el resto.",
+    "whatWorsens": "Exigir que el otro te entienda en todo."
+   },
+   "correct": [
+    "Usar la zona de {P} en la que sí se entienden y dejar el resto para después.",
+    "Preguntar en qué zona de {P} están de acuerdo y empezar por ahí."
+   ],
+   "mistake": [
+    "Exigirle a {B} que entienda a {A} en todo lo de {P}, sin excepciones.",
+    "Decirles que si no se entienden en {P} es porque no se esfuerzan."
+   ],
+   "nearMiss": [
+    {
+     "text": "Decirle a {A} y a {B} que si se entienden en la mitad de {P}, con esfuerzo se entenderán en todo.",
+     "why": "Casi: la parte que no encaja no se arregla con esfuerzo. En semidualidad hay un hueco que no se cubre por más que se intente."
+    },
+    {
+     "text": "Pedirle a {B} que le dé a {A} justo lo que un dual le daría en {P}.",
+     "why": "Casi: {B} no es el dual de {A}: le da una parte, no todo. Esperar de {B} lo que solo un dual da es pedirle lo imposible."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} usan la parte de {P} en la que sí se entienden y dejan el resto para después; lo que encaja, encaja de verdad.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} le da a {B} lo que sí puede darle para {P} y {B} deja de pedirle lo que no tiene; con eso basta y {P} se resuelve.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {B} le exige a {A} que lo entienda en todo para {P}, {A} lo intenta, falla justo en la parte que no encaja, y {B} se va convencido de que {A} lo hace a propósito.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} y {B} se entienden tan bien en la mitad de {P} que dan por hecho que se entienden en todo; la otra mitad explota y los dos se echan la culpa de haber confiado.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 1,
+     "name": "Dualidad"
+    },
+    {
+     "code": 2,
+     "name": "Activación"
+    },
+    {
+     "code": 6,
+     "name": "Espejismo"
+    }
+   ]
+  },
+  {
+   "code": 6,
+   "name": "Espejismo",
+   "dynamics": {
+    "friction": "Todo es fácil y relajado, pero los malentendidos se acumulan en silencio.",
+    "whatWorks": "Manténganlo ligero: no conviertan lo casual en debate serio.",
+    "whatWorsens": "Cavar hondo en una cosa casual hasta romperla."
+   },
+   "correct": [
+    "Mantener {P} ligero: resolver lo práctico y no convertirlo en debate serio.",
+    "Proponer una solución rápida para {P} y no cavar más hondo."
+   ],
+   "mistake": [
+    "Convertir {P} en un debate serio y profundo hasta romperlo.",
+    "Cavar en lo que cada uno siente de verdad por {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Convertir {P} en una charla profunda entre {A} y {B} para que se entiendan de verdad.",
+     "why": "Casi: en espejismo hay que mantenerlo ligero. Cavar hondo en una cosa casual la rompe."
+    },
+    {
+     "text": "Pedirle a {A} y a {B} que se esfuercen más en {P}: con más esfuerzo sí va a funcionar.",
+     "why": "Casi: el problema no es el esfuerzo, es que sus funciones no se complementan. Más esfuerzo en lo mismo solo cansa más."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} mantienen {P} ligero, resuelven lo práctico y no convierten lo casual en debate; {P} se acaba sin que nadie sufra.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} propone una solución rápida para {P}, {B} acepta sin cavar más hondo, y los dos se van contentos sin saber muy bien por qué funcionó.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} convierte {P} en un debate serio y profundo hasta romperlo; {B} se queda mirando, sin entender cuándo una cosa casual se volvió una crisis existencial.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} le pide a {A} para {P} justo lo que {A} no puede darle, {A} lo intenta por no quedar mal, y terminan los dos decepcionados de algo que nunca iba a funcionar.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 5,
+     "name": "Semidualidad"
+    },
+    {
+     "code": 2,
+     "name": "Activación"
+    },
+    {
+     "code": 1,
+     "name": "Dualidad"
+    }
+   ]
+  },
+  {
+   "code": 7,
+   "name": "Superyó",
+   "dynamics": {
+    "friction": "Distancia cortés: valores distintos y desconfianza mutua.",
+    "whatWorks": "Respeto formal y reglas claras, sin intimidad.",
+    "whatWorsens": "Comentarios personales o intentar acercarse de más."
+   },
+   "correct": [
+    "Poner reglas formales para {P} y que cada uno se mantenga en su papel.",
+    "Tratar {P} como un trámite: sin comentarios personales, solo lo necesario."
+   ],
+   "mistake": [
+    "Hacer un comentario personal sobre {A} delante de {B} por lo de {P}.",
+    "Forzarlos a acercarse y a confiar en {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {A} y a {B} que se acerquen y confíen para resolver {P} como amigos.",
+     "why": "Casi: en superyó la distancia es cortés por algo. Forzar la cercanía se siente como una invasión, no como confianza."
+    },
+    {
+     "text": "Pedirle a {A} que le haga un comentario personal a {B} para romper el hielo en {P}.",
+     "why": "Casi: los comentarios personales son justo lo que empeora el superyó. Lo que funciona es el trato formal, sin intimidad."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} ponen reglas formales para {P} y cada uno se mantiene en su papel; trato de trámite, sin comentarios personales, y {P} se resuelve.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} trata a {B} con respeto formal y {B} hace lo mismo; {P} se resuelve a distancia cortés, sin que nadie tenga que querer al otro.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} le suelta a {B} un comentario personal sobre {P} delante de todos; {B} le devuelve el juicio con intereses y terminan juzgándose la vida entera por una tontería.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} intenta acercarse a {B} para resolver {P} con confianza; {B} lo toma como una invasión, se cierra, y {P} queda peor que antes de intentarlo.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 8,
+     "name": "Conflicto"
+    },
+    {
+     "code": 9,
+     "name": "Cuasi-identidad"
+    },
+    {
+     "code": 11,
+     "name": "Negocios"
+    }
+   ]
+  },
+  {
+   "code": 8,
+   "name": "Conflicto",
+   "dynamics": {
+    "friction": "Cada uno pisa el punto débil del otro sin querer: lo fuerte de uno es lo débil del otro.",
+    "whatWorks": "Contacto mínimo, reglas concretas y un tercero que medie; nunca atacar el punto débil.",
+    "whatWorsens": "Criticar justo donde al otro le duele o atacar en público."
+   },
+   "correct": [
+    "Poner una regla clara para {P} y que un tercero decida, sin tocar lo que a cada uno le duele.",
+    "Separarlos un momento y que cada uno diga qué necesita sin criticar al otro."
+   ],
+   "mistake": [
+    "Decirle a {A} que su forma de hacer {P} es un desastre.",
+    "Recordarles a los dos sus peores errores en {P} frente a todos."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {A} que le explique a {B} con calma por qué su forma de hacer {P} está mal.",
+     "why": "Casi: la base de {A} es la dolorosa de {B}. Explicarle «con calma» lo que hace mal sigue pisándole el punto débil, solo que con buenos modales."
+    },
+    {
+     "text": "Poner a {A} y a {B} a hablar de {P} cara a cara, sin reglas, para que se digan las cosas claras.",
+     "why": "Casi: sin reglas ni un tercero, cada uno pisa el punto débil del otro sin querer. En conflicto hace falta contacto mínimo y reglas concretas."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} ponen una regla clara para {P} y dejan que un tercero decida, sin tocar el punto débil de nadie; contacto mínimo, {P} resuelto. La distancia funciona.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} se muerde la lengua antes de criticar el {BP} de {B} y {B} hace lo mismo con el {AP} de {A}; {P} se resuelve por escrito, sin mirarse.",
+     "weakFunctionsUsed": [
+      {
+       "placeholder": "{BP}",
+       "function": "PoLR de B"
+      },
+      {
+       "placeholder": "{AP}",
+       "function": "PoLR de A"
+      }
+     ]
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} se desata y baila sobre {P} nomás para darle la razón a {B} de que es mala persona: {B} asiente con su {BB} en alto y dice «¿ves?», mientras {A} sigue bailando, furioso de tener razón en contra suya.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} le critica a {B} justo su {BP} delante de todos; {B} le devuelve la crítica en su {AP} y terminan peleando por lo que menos dominan, que es justo donde más duele.",
+     "weakFunctionsUsed": [
+      {
+       "placeholder": "{BP}",
+       "function": "PoLR de B"
+      },
+      {
+       "placeholder": "{AP}",
+       "function": "PoLR de A"
+      }
+     ]
+    }
+   ],
+   "confusable": [
+    {
+     "code": 7,
+     "name": "Superyó"
+    },
+    {
+     "code": 9,
+     "name": "Cuasi-identidad"
+    },
+    {
+     "code": 10,
+     "name": "Extinción"
+    }
+   ]
+  },
+  {
+   "code": 9,
+   "name": "Cuasi-identidad",
+   "dynamics": {
+    "friction": "Se parecen pero son distintos: «eres como yo, pero mal».",
+    "whatWorks": "Nombrar la diferencia en voz alta y repartir desde ahí.",
+    "whatWorsens": "Asumir que están de acuerdo porque suenan igual."
+   },
+   "correct": [
+    "Nombrar la diferencia en voz alta: «ustedes suenan igual pero quieren cosas distintas».",
+    "Pedirle a cada uno que diga qué quiere de {P} con sus propias palabras."
+   ],
+   "mistake": [
+    "Asumir que están de acuerdo en {P} porque suenan igual.",
+    "Decirle a {B} que copie a {A} en {P} porque «es lo mismo»."
+   ],
+   "nearMiss": [
+    {
+     "text": "Asumir que {A} y {B} están de acuerdo en {P} porque suenan igual y repartir el trabajo desde ahí.",
+     "why": "Casi: suenan igual pero procesan distinto. Hay que nombrar la diferencia en voz alta antes de repartir nada."
+    },
+    {
+     "text": "Pedirle a {B} que copie a {A} porque «total, es lo mismo».",
+     "why": "Casi: no es lo mismo: por dentro procesan distinto. Copiarlo es responder con algo parecido que no es lo mismo."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} nombran la diferencia en voz alta —suenan igual pero quieren cosas distintas— y reparten {P} desde ahí.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} dice qué quiere de {P} con sus propias palabras, {B} hace lo mismo, y descubren que no estaban de acuerdo en nada, pero al menos ya lo saben.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} asume que {B} está de acuerdo porque suena igual; {B} asume lo mismo de {A}; los dos trabajan en direcciones opuestas y se encuentran al final, sorprendidos.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} copia a {A} para resolver {P} porque «es lo mismo»; no es lo mismo, sale todo al revés, y {A} le dice a {B} que lo copió mal.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 0,
+     "name": "Identidad"
+    },
+    {
+     "code": 3,
+     "name": "Espejo"
+    },
+    {
+     "code": 4,
+     "name": "Afinidad"
+    }
+   ]
+  },
+  {
+   "code": 10,
+   "name": "Extinción",
+   "dynamics": {
+    "friction": "Valores opuestos que se apagan mutuamente: aburrimiento y cansancio.",
+    "whatWorks": "Contacto breve y centrado en la tarea, sin emociones.",
+    "whatWorsens": "Discusiones largas y emocionales."
+   },
+   "correct": [
+    "Resolver {P} rápido y en corto: tarea concreta, sin emociones de por medio.",
+    "Ponerle un límite de tiempo a {P}: cinco minutos y se acabó."
+   ],
+   "mistake": [
+    "Ponerlos a discutir {P} con emociones hasta que se agoten.",
+    "Decirles que hablen de sus sentimientos sobre {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Poner a {A} y a {B} a discutir {P} con emociones para que se desahoguen.",
+     "why": "Casi: en extinción las discusiones largas y emocionales los agotan. Lo que funciona es contacto breve y centrado en la tarea."
+    },
+    {
+     "text": "Pedirle a {A} que convenza a {B} de su propuesta para {P} con más argumentos.",
+     "why": "Casi: sus funciones se anulan mutuamente. Más argumentos no avanzan nada: cada uno desarma lo del otro sin querer."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} resuelven {P} rápido y en corto, sin emociones: cinco minutos, tarea concreta, y cada uno por su lado.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} y {B} le ponen un límite de tiempo a {P} y lo cumplen; contacto breve, sin discusiones largas, y {P} se acaba.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} y {B} se ponen a discutir {P} con emociones hasta agotarse; ninguno convence al otro, {P} sigue igual, y los dos terminan más aburridos que al empezar.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {A} propone algo para {P} y {B} lo desarma sin querer; {B} propone otra cosa y {A} la desarma; al final no queda nada en pie, ni siquiera la propuesta.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 8,
+     "name": "Conflicto"
+    },
+    {
+     "code": 7,
+     "name": "Superyó"
+    },
+    {
+     "code": 11,
+     "name": "Negocios"
+    }
+   ]
+  },
+  {
+   "code": 11,
+   "name": "Negocios",
+   "dynamics": {
+    "friction": "Valores distintos pero trabajo posible: cada uno ve el negocio a su manera.",
+    "whatWorks": "Repartir por competencia y mantenerlo en lo práctico.",
+    "whatWorsens": "Meter sentimientos en un asunto de trabajo."
+   },
+   "correct": [
+    "Repartir {P} por competencia: que lo haga quien lo hace mejor y punto.",
+    "Mantener {P} en lo práctico: números, fechas y nada de sentimientos."
+   ],
+   "mistake": [
+    "Meter sentimientos en {P}: «¿no te importa nada?».",
+    "Decirle a {A} que {B} no lo respeta en {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {A} y a {B} que hablen de cómo se sienten con {P} para mejorar la relación.",
+     "why": "Casi: en negocios no hay que meter sentimientos. Hablar de cómo se sienten rompe justo lo que funciona: lo práctico."
+    },
+    {
+     "text": "Pedirle a {A} que le dé a {B} apoyo emocional con {P}, ya que trabajan juntos.",
+     "why": "Casi: ninguno de los dos le da al otro lo que necesita por dentro, y ninguno lo espera. El apoyo que funciona aquí es práctico, no emocional."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} y {B} reparten {P} por competencia, cada uno hace lo suyo y nadie mete sentimientos; números, fechas y {P} resuelto.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} hace lo que hace mejor en {P} y {B} lo que hace mejor él; sin química y sin conflicto, {P} queda hecho.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} mete sentimientos en {P} y le pregunta a {B} «¿no te importa nada?»; {B} le contesta con un presupuesto y terminan peleando por si el presupuesto tiene sentimientos.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} le dice a {A} que no lo respeta por cómo lleva {P}; {A} le muestra el Excel de todo lo que hizo y {B} se va, ofendido, sin mirar el Excel.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 7,
+     "name": "Superyó"
+    },
+    {
+     "code": 10,
+     "name": "Extinción"
+    },
+    {
+     "code": 8,
+     "name": "Conflicto"
+    }
+   ]
+  },
+  {
+   "code": 12,
+   "name": "Benefactor",
+   "dynamics": {
+    "friction": "Uno da lo que el otro necesita y no recibe nada a cambio: ayuda de un solo sentido.",
+    "whatWorks": "El benefactor ofrece en concreto y el beneficiario acepta sin dar explicaciones.",
+    "whatWorsens": "El benefactor exigiendo gratitud o el beneficiario criticando la ayuda."
+   },
+   "correct": [
+    "Que {A} ofrezca lo concreto que sirve para {P} y {B} lo acepte sin dar explicaciones.",
+    "Pedirle a {A} que diga exactamente qué puede hacer por {P} y que {B} elija."
+   ],
+   "mistake": [
+    "Exigirle a {B} que agradezca la ayuda de {A} en {P} como se debe.",
+    "Decirle a {B} que sin {A} no es nadie en {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Pedirle a {B} que le devuelva a {A} la ayuda para {P} con algo equivalente.",
+     "why": "Casi: {B} no puede devolver lo mismo: lo que {B} ofrece, {A} no lo necesita. Exigir reciprocidad rompe el beneficio."
+    },
+    {
+     "text": "Pedirle a {A} que le explique a {B} por qué su ayuda para {P} es tan valiosa.",
+     "why": "Casi: la ayuda del benefactor funciona porque llega sin que el otro note de dónde viene. Explicarla la convierte en una deuda."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} ofrece ayuda concreta para {P} y {B} la acepta sin dar explicaciones; nadie pide gratitud y {P} se resuelve.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} dice exactamente qué puede hacer por {P} y {B} elige; la ayuda llega en la medida justa y nadie se siente en deuda.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} le exige a {B} que agradezca la ayuda para {P} como se debe; {B} agradece con un discurso de media hora y {A} se va convencido de que lo hizo por obligación.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} le critica a {A} cómo lo ayuda en {P}; {A} deja de ayudar, {B} se hunde en {P}, y los dos se echan la culpa de lo que el otro no hizo.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 13,
+     "name": "Beneficiario"
+    },
+    {
+     "code": 14,
+     "name": "Supervisor"
+    },
+    {
+     "code": 2,
+     "name": "Activación"
+    }
+   ]
+  },
+  {
+   "code": 13,
+   "name": "Beneficiario",
+   "dynamics": {
+    "friction": "Recibe ayuda que no pidió y se siente en deuda o molesto.",
+    "whatWorks": "Aceptar lo concreto que sirve y agradecer sin más.",
+    "whatWorsens": "Rechazar la ayuda con desprecio o criticar cómo te ayudan."
+   },
+   "correct": [
+    "Que {B} acepte lo concreto que sirve de {P} y agradezca sin más.",
+    "Preguntarle a {B} qué parte de la ayuda le sirve y dejar el resto."
+   ],
+   "mistake": [
+    "Decirle a {B} que rechace la ayuda para {P} con desprecio.",
+    "Criticar delante de todos cómo {A} ayuda en {P}."
+   ],
+   "nearMiss": [
+    {
+     "text": "Decirle a {B} que rechace la ayuda de {A} para {P} si no la pidió.",
+     "why": "Casi: rechazarla con desprecio es lo que empeora el beneficio. Lo que funciona es aceptar lo concreto que sirve y agradecer sin más."
+    },
+    {
+     "text": "Pedirle a {B} que le diga a {A} exactamente cómo tiene que ayudarlo en {P}.",
+     "why": "Casi: la ayuda llega en la medida correcta cuando {A} la ofrece en concreto. Criticar cómo te ayudan es justo lo que rompe la relación."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {B} acepta lo concreto que sirve de {P} y agradece sin más; {A} no exige nada y {P} se resuelve.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {B} dice qué parte de la ayuda le sirve para {P} y deja el resto; {A} lo entiende y {P} queda hecho.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {B} rechaza la ayuda de {A} para {P} con desprecio; {A} se ofende, {B} se queda sin ayuda, y {P} se lo come vivo delante de los dos.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} acepta la ayuda de {A} para {P} pero se siente tan en deuda que le devuelve el favor con algo que {A} no quería; ahora {A} se siente en deuda y el ciclo no termina nunca.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 12,
+     "name": "Benefactor"
+    },
+    {
+     "code": 15,
+     "name": "Supervisado"
+    },
+    {
+     "code": 2,
+     "name": "Activación"
+    }
+   ]
+  },
+  {
+   "code": 14,
+   "name": "Supervisor",
+   "dynamics": {
+    "friction": "El supervisor corrige sin darse cuenta y el supervisado se siente atacado.",
+    "whatWorks": "El supervisor suaviza la crítica en sugerencias concretas; el supervisado pide ejemplos.",
+    "whatWorsens": "Criticar en público o moralizar."
+   },
+   "correct": [
+    "Pedirle a {A} que diga la crítica como sugerencia concreta, no como sentencia.",
+    "Que {B} pregunte «¿qué harías tú en mi lugar?» y tome nota sin discutir."
+   ],
+   "mistake": [
+    "Dejar que {A} le explique a {B} todo lo que hace mal en {P}, en público.",
+    "Decirle a {B} que si no aguanta la crítica sobre {P} es porque es débil."
+   ],
+   "nearMiss": [
+    {
+     "text": "Dejar que {A} le explique a {B} todo lo que hace mal en {P}, en público, para que aprenda.",
+     "why": "Casi: la base de {A} es la dolorosa de {B}. Criticar en público es lo que más duele; la crítica tiene que ser sugerencia concreta, no sentencia."
+    },
+    {
+     "text": "Decirle a {B} que si no aguanta la crítica de {A} sobre {P} es porque es débil.",
+     "why": "Casi: {B} acepta la corrección porque la ve correcta, pero le duele. Decirle que es débil por sentirlo solo añade insulto a la herida."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {A} dice la crítica como sugerencia concreta para {P} y {B} pregunta qué haría {A} en su lugar; {P} se resuelve sin moralizar.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {B} pide ejemplos concretos de lo que le molesta a {A} de {P} y no lo toma como ataque; {A} explica sin sentencias y {P} queda hecho.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {A} le explica a {B} todo lo que hace mal en {P}, en público, con su {AB} en alto; {B} aguanta porque sabe que {A} tiene razón en su {BP}, y eso le duele más que la crítica.",
+     "weakFunctionsUsed": [
+      {
+       "placeholder": "{BP}",
+       "function": "PoLR de B"
+      }
+     ]
+    },
+    {
+     "text": "Escalada: {A} le dice a {B} que si no aguanta la crítica es porque es débil; {B} se traga la crítica, la procesa con su {BP} dolorosa y termina haciendo {P} peor, solo para demostrar que la crítica no servía.",
+     "weakFunctionsUsed": [
+      {
+       "placeholder": "{BP}",
+       "function": "PoLR de B"
+      }
+     ]
+    }
+   ],
+   "confusable": [
+    {
+     "code": 15,
+     "name": "Supervisado"
+    },
+    {
+     "code": 12,
+     "name": "Benefactor"
+    },
+    {
+     "code": 8,
+     "name": "Conflicto"
+    }
+   ]
+  },
+  {
+   "code": 15,
+   "name": "Supervisado",
+   "dynamics": {
+    "friction": "Te corrigen todo el tiempo y no sabes por qué: su fuerte es tu punto débil.",
+    "whatWorks": "Pedir ejemplos concretos y no tomarlo como ataque personal.",
+    "whatWorsens": "Responder a la defensiva o devolver la crítica."
+   },
+   "correct": [
+    "Pedirle a {B} ejemplos concretos de lo que le molesta de {P} y no tomarlo como ataque.",
+    "Que {A} explique qué quiere de {P} sin moralizar y {B} responda con hechos."
+   ],
+   "mistake": [
+    "Decirle a {B} que devuelva la crítica sobre {P} con la misma fuerza.",
+    "Poner a {B} a la defensiva por {P}: «¿por qué siempre te equivocas?»."
+   ],
+   "nearMiss": [
+    {
+     "text": "Decirle a {B} que devuelva la crítica a {A} con la misma fuerza para que se respete.",
+     "why": "Casi: devolver la crítica es lo que empeora la supervisión. Lo que funciona es pedir ejemplos concretos y no tomarlo como ataque personal."
+    },
+    {
+     "text": "Pedirle a {A} que deje de corregir a {B} en {P} para que {B} no se sienta vigilado.",
+     "why": "Casi: {A} corrige sin darse cuenta: su fuerte es el punto débil de {B}. Pedirle que no corrija no quita la fricción; lo que funciona es pedir ejemplos concretos."
+    }
+   ],
+   "endGood": [
+    {
+     "text": "Acuerdo: {B} pide ejemplos concretos de lo que le molesta de {P} y {A} explica qué quiere sin moralizar; {B} responde con hechos y {P} se resuelve.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Acuerdo: {A} le explica a {B} qué quiere de {P} sin sentencias y {B} toma nota sin discutir; trato corto, {P} hecho.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "endBad": [
+    {
+     "text": "Escalada: {B} le devuelve la crítica a {A} con la misma fuerza; {A} ni se inmuta —para él era obvio— y {B} se queda gritándole a alguien que ya se fue a hacer {P}.",
+     "weakFunctionsUsed": []
+    },
+    {
+     "text": "Escalada: {B} se pone a la defensiva con {P} y le pregunta a {A} «¿por qué siempre me equivoco?»; {A} le contesta con una lista, {B} llora, y la lista sigue creciendo.",
+     "weakFunctionsUsed": []
+    }
+   ],
+   "confusable": [
+    {
+     "code": 14,
+     "name": "Supervisor"
+    },
+    {
+     "code": 13,
+     "name": "Beneficiario"
+    },
+    {
+     "code": 8,
+     "name": "Conflicto"
+    }
+   ]
+  }
+ ],
+ "mechanics": {
+  "pairs": "256 parejas (16x16) agrupadas por las 16 relaciones.",
+  "turns": 3,
+  "bars": {
+   "initial": {
+    "tension": 40,
+    "comprension": 30,
+    "cooperacion": 30
+   },
+   "min": 0,
+   "max": 100
+  },
+  "optionEffects": {
+   "correct": {
+    "tension": -20,
+    "comprension": 20,
+    "cooperacion": 15,
+    "reaction": "Funciona: <lo que funciona de la relación>"
+   },
+   "neutral": {
+    "tension": 5,
+    "comprension": 5,
+    "cooperacion": 5,
+    "reaction": "Se calman un poco, pero nadie cede."
+   },
+   "mistake": {
+    "tension": 25,
+    "comprension": -10,
+    "cooperacion": -10,
+    "reaction": "La tensión sube: <lo que empeora de la relación>"
+   },
+   "nearMiss": {
+    "tension": 5,
+    "comprension": 5,
+    "cooperacion": 5,
+    "reaction": "<por qué falla el detalle fino>",
+    "title": "¡Casi!"
+   }
+  },
+  "nearMissRules": {
+   "difficulty>=2": "la opción neutral es un near-miss",
+   "difficulty>=3": "la opción de error también es un near-miss"
+  },
+  "goodOptionRule": "Una opción es buena si su tensión <= 0 y (comprensión >= 0 o cooperación >= 0).",
+  "tension100": {
+   "title": "¡COMBO CÓMICO!",
+   "description": "La tensión llegó a 100: los dos tipos hablan a la vez, nadie escucha, y el vecino ya tocó la pared. Aún se puede recuperar la discusión.",
+   "recoveryOptions": [
+    {
+     "text": "Pedir un minuto de silencio y que cada uno repita lo que oyó",
+     "good": true,
+     "effects": {
+      "tension": -30,
+      "comprension": 10
+     },
+     "feedback": "Silencio, repetición, y la discusión vuelve a su cauce. Tensión -30, comprensión +10."
+    },
+    {
+     "text": "Subir la voz para que te hagan caso",
+     "good": false,
+     "effects": {
+      "tension": 10,
+      "comprension": -10
+     },
+     "feedback": "Subir la voz nunca recupera nada. Tensión +10, comprensión -10."
+    }
+   ]
+  },
+  "ending": {
+   "goodIf": "tensión < 70 al terminar los 3 turnos (ACUERDO, usa endGood)",
+   "badIf": "tensión >= 70 (ESCALADA, usa endBad)",
+   "theoryQuestion": "¿Qué relación hay entre {A} y {B}?",
+   "theoryDistractors": {
+    "difficulty>=1": "las 3 relaciones más confundibles con la correcta",
+    "difficulty=0": "3 relaciones al azar"
+   },
+   "xp": {
+    "awardIds": [
+     "arena:<t1>-<t2>-<problema>",
+     "arena:<t1>-<t2>-<problema>:t (teoría)"
+    ],
+    "xpPerItem": 10,
+    "note": "Solo la primera vez por ítem."
+   }
+  },
+  "turnSituations": [
+   "{A} y {B} se encuentran por {P}. <fricción de la relación>",
+   "La cosa sube: {A} tira de su lado fuerte ({base A}) y {B} responde con lo suyo ({base B}).",
+   "Nadie cede: hay que cerrar {P} sin que explote todo."
+  ]
+ }
+}

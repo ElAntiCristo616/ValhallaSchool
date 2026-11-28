@@ -1,0 +1,631 @@
+{
+ "cases": [
+  {
+   "id": 0,
+   "title": "La cafetería",
+   "intro": "Una cafetería con una solicitud práctica: alguien pide lo concreto y otro anticipa problemas que nadie ha visto. ¿Qué información se está procesando en cada frase?",
+   "typeA": "LSE",
+   "typeB": "IEI",
+   "closing": "El tipo es LSE: Te base con Si creativa (avances concretos y cuidado del ambiente). IEI anticipa, pero su base es Ni, no Te.",
+   "closingAnswer": 0,
+   "closingAnswerMeaning": "tipo A",
+   "scenes": [
+    "La mañana en la cafetería",
+    "El pedido",
+    "El cierre"
+   ]
+  },
+  {
+   "id": 1,
+   "title": "El vecino de las zanahorias",
+   "intro": "Un vecino compra doce kilos de zanahorias cada martes y todo el barrio sospecha. Hay pistas, pero no todas determinan un tipo: algunas frases no dicen nada tipológico.",
+   "typeA": "SEI",
+   "typeB": "SLI",
+   "closing": "Indeterminado: los datos no alcanzan. Comprar mucho de algo puede ser Si, Te o simple costumbre: ninguna frase aislada determina el tipo.",
+   "closingAnswer": 2,
+   "closingAnswerMeaning": "indeterminado",
+   "scenes": [
+    "El rumor del barrio",
+    "Las entrevistas",
+    "La contradicción"
+   ]
+  },
+  {
+   "id": 2,
+   "title": "La oficina",
+   "intro": "Una oficina con un proyecto atrasado: alguien pide resultados medibles y otro anticipa el derrumbe. ¿Qué información se procesa en cada frase?",
+   "typeA": "LIE",
+   "typeB": "LSE",
+   "closing": "El tipo es LIE: Te base con Ni creativa (rendimiento en el tiempo, no el ambiente físico). LSE comparte Te, pero su creativa es Si: cuida el espacio y la comodidad, no el horizonte.",
+   "closingAnswer": 0,
+   "closingAnswerMeaning": "tipo A",
+   "scenes": [
+    "La reunión",
+    "El proyecto",
+    "La entrega"
+   ]
+  },
+  {
+   "id": 3,
+   "title": "La biblioteca",
+   "intro": "Una biblioteca de barrio: alguien juzga a las personas por su lealtad y otro anticipa quién va a triunfar. Marca el foco informacional de cada fragmento.",
+   "typeA": "EII",
+   "typeB": "IEI",
+   "closing": "El tipo es EII: Fi base con Ne creativa (valora el vínculo y ve el potencial de las personas). IEI comparte la intuición, pero su base es Ni y su creativa Fe: anticipa el ambiente, no juzga el vínculo.",
+   "closingAnswer": 1,
+   "closingAnswerMeaning": "tipo B",
+   "scenes": [
+    "La sala de lectura",
+    "El préstamo",
+    "La devolución"
+   ]
+  },
+  {
+   "id": 4,
+   "title": "El mercado",
+   "intro": "Un mercado en día de fiesta: alguien ambienta el lugar con su ánimo y otro impone su presencia. ¿Qué información se está procesando en cada frase?",
+   "typeA": "ESE",
+   "typeB": "SEE",
+   "closing": "El tipo es ESE: Fe base con Si creativa (el ambiente y el sabor del lugar). SEE comparte la sensación, pero su base es Se y su creativa Fi: impone presencia y cobra lealtades, no ambienta.",
+   "closingAnswer": 0,
+   "closingAnswerMeaning": "tipo A",
+   "scenes": [
+    "La llegada al mercado",
+    "El regateo",
+    "La despedida"
+   ]
+  }
+ ],
+ "fragments": [
+  {
+   "id": "det11",
+   "case": 0,
+   "scene": 1,
+   "fragment": "¿Me pasas los números de ventas de ayer? Necesito datos, no impresiones.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Ne",
+   "d3": "Fi",
+   "justification": "Pide hechos y métodos concretos y medibles, no opiniones (Te)."
+  },
+  {
+   "id": "det12",
+   "case": 0,
+   "scene": 1,
+   "fragment": "Si seguimos con este menú, en diciembre ya no vendrá nadie: la gente se aburre.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Fi",
+   "d3": "Te",
+   "justification": "Proyecta la tendencia en el tiempo: lo que pasará si nada cambia (Ni)."
+  },
+  {
+   "id": "det13",
+   "case": 0,
+   "scene": 1,
+   "fragment": "Mira cómo tiembla la taza: el café está demasiado caliente para agarrarlo así.",
+   "answer": "Si",
+   "d1": "Se",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Nota la temperatura y cómo se siente al tacto (Si)."
+  },
+  {
+   "id": "det14",
+   "case": 0,
+   "scene": 2,
+   "fragment": "La regla es clara: primero se cobra, luego se sirve. Sin excepciones.",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Aplica una regla general sin excepciones: orden y sistema (Ti)."
+  },
+  {
+   "id": "det15",
+   "case": 0,
+   "scene": 2,
+   "fragment": "¡Ya basta de vueltas! Siéntense o se van: la mesa es para clientes.",
+   "answer": "Se",
+   "d1": "Te",
+   "d2": "Fe",
+   "d3": "Si",
+   "justification": "Impone presencia y ocupa el espacio aquí y ahora (Se)."
+  },
+  {
+   "id": "det16",
+   "case": 0,
+   "scene": 2,
+   "fragment": "No me gusta cómo le hablaste al mesero; se fue triste.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Si",
+   "d3": "Ni",
+   "justification": "Se fija en cómo quedó la relación con el mesero: el trato personal (Fi)."
+  },
+  {
+   "id": "det17",
+   "case": 0,
+   "scene": 2,
+   "fragment": "Se nota que hoy todos están de buen humor: hasta la música suena distinto.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Lee el ánimo colectivo del lugar (Fe)."
+  },
+  {
+   "id": "det18",
+   "case": 0,
+   "scene": 3,
+   "fragment": "¿Y si ponemos una mesa para leer y otra para jugar? La cafetería podría ser dos lugares.",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve lo que el espacio es capaz de ser: otro contenido, otra esencia (Ne)."
+  },
+  {
+   "id": "det19",
+   "case": 0,
+   "scene": 3,
+   "fragment": "El pedido llegó incompleto: faltan dos tazas y un plato, y eso ya es la tercera vez.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Se",
+   "d3": "Fi",
+   "justification": "Cuenta hechos y repeticiones: lo que falta y cuántas veces (Te)."
+  },
+  {
+   "id": "det20",
+   "case": 0,
+   "scene": 3,
+   "fragment": "No me fío de ese proveedor: cada vez promete y cada vez falla.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Desconfía por el historial de la relación: lo que ha hecho antes (Fi)."
+  },
+  {
+   "id": "det21",
+   "case": 1,
+   "scene": 1,
+   "fragment": "Compra doce kilos de zanahorias cada martes, sin falta.",
+   "answer": "Si",
+   "d1": "Te",
+   "d2": "Se",
+   "d3": "Ni",
+   "justification": "Una rutina ligada a las necesidades del cuerpo y del hogar (Si)."
+  },
+  {
+   "id": "det22",
+   "case": 1,
+   "scene": 1,
+   "fragment": "Dice que las zanahorias son para el restaurante, pero nadie ha visto el restaurante.",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Ne",
+   "d3": "Fi",
+   "justification": "Detecta que el relato no cuadra: contradicción lógica (Ti)."
+  },
+  {
+   "id": "det23",
+   "case": 1,
+   "scene": 1,
+   "fragment": "El vecino sonríe y saluda a todos; nadie sospecha de él.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Se",
+   "d3": "Ni",
+   "justification": "Maneja el ambiente con los vecinos: cae bien y no levanta sospechas (Fe)."
+  },
+  {
+   "id": "det24",
+   "case": 1,
+   "scene": 2,
+   "fragment": "Si sigue así, en un año tendrá zanahorias hasta en el techo.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Si",
+   "d3": "Te",
+   "justification": "Proyecta la rutina hacia el futuro (Ni)."
+  },
+  {
+   "id": "det25",
+   "case": 1,
+   "scene": 2,
+   "fragment": "¿Y si las zanahorias son para algo que no nos imaginamos?",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve lo que las zanahorias son capaces de ser: su contenido y su esencia (Ne)."
+  },
+  {
+   "id": "det26",
+   "case": 1,
+   "scene": 2,
+   "fragment": "Ayer lo vi cargando las bolsas con una sola mano, como si nada.",
+   "answer": "Se",
+   "d1": "Si",
+   "d2": "Te",
+   "d3": "Fe",
+   "justification": "Fuerza física y presencia en el acto (Se)."
+  },
+  {
+   "id": "det27",
+   "case": 1,
+   "scene": 2,
+   "fragment": "No me cae bien: algo en su forma de mirar me incomoda.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Una reacción personal de distancia: no le gusta cómo lo mira (Fi)."
+  },
+  {
+   "id": "det28",
+   "case": 1,
+   "scene": 3,
+   "fragment": "El precio de la zanahoria subió y él ni se inmutó: sigue comprando igual.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Fi",
+   "d3": "Ne",
+   "justification": "El costo no cambia su decisión: importan los hechos y la eficiencia, no el precio (Te)."
+  },
+  {
+   "id": "det29",
+   "case": 1,
+   "scene": 3,
+   "fragment": "El barrio entero habla de él, pero nadie sabe nada seguro.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "El rumor mueve el ambiente de todo el barrio (Fe)."
+  },
+  {
+   "id": "det30",
+   "case": 1,
+   "scene": 3,
+   "fragment": "Si el restaurante existe, ¿por qué nunca huele a comida en su casa?",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Ne",
+   "d3": "Fi",
+   "justification": "Busca la coherencia del relato: si fuera verdad, habría señales (Ti)."
+  },
+  {
+   "id": "det31",
+   "case": 2,
+   "scene": 1,
+   "fragment": "El informe tiene que salir hoy: si no mide nada, no sirve.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Pide un método de acción verificable y resultados medibles: trabajo y eficiencia (Te)."
+  },
+  {
+   "id": "det32",
+   "case": 2,
+   "scene": 1,
+   "fragment": "Si seguimos así, en tres meses el proyecto se cae: no llegamos.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Te",
+   "d3": "Ti",
+   "justification": "Proyecta la secuencia en el tiempo: lo que pasará si nada cambia y si queda tiempo (Ni)."
+  },
+  {
+   "id": "det33",
+   "case": 2,
+   "scene": 1,
+   "fragment": "El aire está muy frío y la silla no se aguanta: nadie trabaja cómodo así.",
+   "answer": "Si",
+   "d1": "Se",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Nota el estado del espacio y cómo se sienten las personas dentro de él (Si)."
+  },
+  {
+   "id": "det34",
+   "case": 2,
+   "scene": 2,
+   "fragment": "La jerarquía de firmas está mal: el jefe no puede aprobar lo que el becario escribió.",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Aplica una regla de jerarquía y sistema: quién puede aprobar qué (Ti)."
+  },
+  {
+   "id": "det35",
+   "case": 2,
+   "scene": 2,
+   "fragment": "¡Tráeme el contrato ya! Que el cliente está en la puerta y no espera.",
+   "answer": "Se",
+   "d1": "Si",
+   "d2": "Te",
+   "d3": "Fe",
+   "justification": "Presiona por el objeto aquí y ahora: fuerza y presencia en el momento (Se)."
+  },
+  {
+   "id": "det36",
+   "case": 2,
+   "scene": 2,
+   "fragment": "No me importa el bono si el equipo se rompe: la gente vale más que el resultado.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Si",
+   "d3": "Te",
+   "justification": "Valora a las personas por encima del trabajo: lo que necesitan y la relación con ellas (Fi)."
+  },
+  {
+   "id": "det37",
+   "case": 2,
+   "scene": 2,
+   "fragment": "En la reunión nadie quiere ser el primero en hablar: se siente la tensión.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Lee el clima emocional del grupo en este momento (Fe)."
+  },
+  {
+   "id": "det38",
+   "case": 2,
+   "scene": 3,
+   "fragment": "Esto huele a que el cliente va a cancelar en diciembre: hay que moverse antes.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Fi",
+   "d3": "Te",
+   "justification": "Anticipa el desarrollo en el tiempo: hacia dónde va esto y si queda tiempo (Ni)."
+  },
+  {
+   "id": "det39",
+   "case": 2,
+   "scene": 3,
+   "fragment": "¿Y si este informe sirve también para el otro departamento? Tiene más de un uso.",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve lo que el informe es capaz de ser: su contenido interno y su energía potencial (Ne)."
+  },
+  {
+   "id": "det40",
+   "case": 2,
+   "scene": 3,
+   "fragment": "Cada hora cuesta: si la reunión no decide nada, es tiempo tirado.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Se fija en el trabajo y en que el recurso rinda: eficiencia y métodos (Te)."
+  },
+  {
+   "id": "det41",
+   "case": 3,
+   "scene": 1,
+   "fragment": "No le presto mis libros a quien no cuida los ajenos: la confianza se gana.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Si",
+   "d3": "Ni",
+   "justification": "Juzga la relación por la lealtad: quién merece confianza y quién no (Fi)."
+  },
+  {
+   "id": "det42",
+   "case": 3,
+   "scene": 1,
+   "fragment": "Esta chica tiene talento para la poesía: solo necesita que alguien lo vea.",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve las capacidades ocultas de una persona: su energía potencial y su esencia (Ne)."
+  },
+  {
+   "id": "det43",
+   "case": 3,
+   "scene": 1,
+   "fragment": "Si sigue leyendo así, en un año va a pedir la beca: se ve venir.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Fi",
+   "d3": "Te",
+   "justification": "Proyecta la secuencia en el tiempo: hacia dónde va esto (Ni)."
+  },
+  {
+   "id": "det44",
+   "case": 3,
+   "scene": 2,
+   "fragment": "Hoy la sala está alegre: hasta el silencio suena distinto.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Lee el ánimo colectivo del lugar y su excitación (Fe)."
+  },
+  {
+   "id": "det45",
+   "case": 3,
+   "scene": 2,
+   "fragment": "El catálogo tiene que estar al día: si un libro no se encuentra, no existe.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Ne",
+   "d3": "Fi",
+   "justification": "Pide un método de trabajo concreto y medible: que las cosas funcionen (Te)."
+  },
+  {
+   "id": "det46",
+   "case": 3,
+   "scene": 2,
+   "fragment": "Los libros van por sistema, no por color: la clasificación es la clasificación.",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Aplica una regla general sin excepciones: orden y sistema (Ti)."
+  },
+  {
+   "id": "det47",
+   "case": 3,
+   "scene": 2,
+   "fragment": "¡Baja la voz o te saco! La sala es para leer, no para presumir.",
+   "answer": "Se",
+   "d1": "Te",
+   "d2": "Fe",
+   "d3": "Si",
+   "justification": "Impone presencia y ocupa el espacio aquí y ahora (Se)."
+  },
+  {
+   "id": "det48",
+   "case": 3,
+   "scene": 3,
+   "fragment": "La luz de esta esquina es perfecta para leer: ni fría ni cansada.",
+   "answer": "Si",
+   "d1": "Se",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Nota cómo se siente el espacio en el cuerpo: luz, comodidad y bienestar (Si)."
+  },
+  {
+   "id": "det49",
+   "case": 3,
+   "scene": 3,
+   "fragment": "Me quedo con quien me devuelve los libros a tiempo: eso dice quién es.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Evalúa el vínculo por el historial: lo que la persona ha hecho antes (Fi)."
+  },
+  {
+   "id": "det50",
+   "case": 3,
+   "scene": 3,
+   "fragment": "Este libro viejo puede ser el inicio de una colección: tiene más dentro de lo que parece.",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve lo que el libro es capaz de ser: su contenido interno y su esencia (Ne)."
+  },
+  {
+   "id": "det51",
+   "case": 4,
+   "scene": 1,
+   "fragment": "¡Pásenle, marchanta! Hoy el mercado está de fiesta y se siente en el aire.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Contagia el ánimo del lugar: emociones y excitación colectiva (Fe)."
+  },
+  {
+   "id": "det52",
+   "case": 4,
+   "scene": 1,
+   "fragment": "Prueba este mango: está en su punto, ni ácido ni pasado.",
+   "answer": "Si",
+   "d1": "Se",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Percibe el sabor y el estado del producto en el presente (Si)."
+  },
+  {
+   "id": "det53",
+   "case": 4,
+   "scene": 1,
+   "fragment": "¡Este puesto es mío desde las seis! ¡El que llegó primero, llegó primero!",
+   "answer": "Se",
+   "d1": "Si",
+   "d2": "Te",
+   "d3": "Fe",
+   "justification": "Defiende su lugar con presencia y fuerza aquí y ahora (Se)."
+  },
+  {
+   "id": "det54",
+   "case": 4,
+   "scene": 2,
+   "fragment": "A doña Carmen le fío porque nunca me ha quedado mal: con ella sí.",
+   "answer": "Fi",
+   "d1": "Fe",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "Confía por el historial del vínculo: la relación que se ha construido (Fi)."
+  },
+  {
+   "id": "det55",
+   "case": 4,
+   "scene": 2,
+   "fragment": "Si no anoto las ventas, al final del día no sé si gané o perdí.",
+   "answer": "Te",
+   "d1": "Ti",
+   "d2": "Fi",
+   "d3": "Ne",
+   "justification": "Cuenta hechos y números: lo que entra y lo que sale (Te)."
+  },
+  {
+   "id": "det56",
+   "case": 4,
+   "scene": 2,
+   "fragment": "En el mercado primero se pesa, luego se cobra. Sin excepciones.",
+   "answer": "Ti",
+   "d1": "Te",
+   "d2": "Fi",
+   "d3": "Se",
+   "justification": "Aplica una regla general sin excepciones: orden y sistema (Ti)."
+  },
+  {
+   "id": "det57",
+   "case": 4,
+   "scene": 2,
+   "fragment": "Si sigue lloviendo así, mañana no viene nadie: hay que vender hoy.",
+   "answer": "Ni",
+   "d1": "Ne",
+   "d2": "Fi",
+   "d3": "Te",
+   "justification": "Anticipa la secuencia en el tiempo: lo que pasará si nada cambia (Ni)."
+  },
+  {
+   "id": "det58",
+   "case": 4,
+   "scene": 3,
+   "fragment": "¿Y si estas flores sirven también para el altar? Tienen más de un uso.",
+   "answer": "Ne",
+   "d1": "Ni",
+   "d2": "Se",
+   "d3": "Ti",
+   "justification": "Ve lo que las flores son capaces de ser: su contenido y su esencia (Ne)."
+  },
+  {
+   "id": "det59",
+   "case": 4,
+   "scene": 3,
+   "fragment": "El chisme de hoy puso a todo el mercado de buen humor: hasta el perro ladra contento.",
+   "answer": "Fe",
+   "d1": "Fi",
+   "d2": "Ni",
+   "d3": "Se",
+   "justification": "El rumor mueve el ánimo de todo el mercado (Fe)."
+  },
+  {
+   "id": "det60",
+   "case": 4,
+   "scene": 3,
+   "fragment": "El olor del pan recién hecho llena todo el pasillo: huele a casa.",
+   "answer": "Si",
+   "d1": "Se",
+   "d2": "Ni",
+   "d3": "Te",
+   "justification": "Percibe el ambiente por las sensaciones del presente: olor y bienestar (Si)."
+  }
+ ]
+}

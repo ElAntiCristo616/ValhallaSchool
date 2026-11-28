@@ -1,0 +1,245 @@
+{
+ "defaultTheme": "navidad",
+ "themes": [
+  {
+   "id": "navidad",
+   "name": "Navidad",
+   "particle": {
+    "code": 0,
+    "name": "nieve"
+   },
+   "colors": {
+    "background": "#04140e",
+    "surface": "#0e3426",
+    "accent": "#d9a441",
+    "secondary": "#cd2d32",
+    "text": "#f5efe0"
+   }
+  },
+  {
+   "id": "invierno",
+   "name": "Invierno",
+   "particle": {
+    "code": 1,
+    "name": "copos grandes"
+   },
+   "colors": {
+    "background": "#0b1626",
+    "surface": "#16273e",
+    "accent": "#7fb8e8",
+    "secondary": "#bfe0f5",
+    "text": "#eaf3fb"
+   }
+  },
+  {
+   "id": "sakura",
+   "name": "Sakura",
+   "particle": {
+    "code": 2,
+    "name": "pétalos"
+   },
+   "colors": {
+    "background": "#2a1220",
+    "surface": "#3d1b2e",
+    "accent": "#f4a7c3",
+    "secondary": "#ffd6e8",
+    "text": "#fff0f5"
+   }
+  },
+  {
+   "id": "fuego",
+   "name": "Fuego",
+   "particle": {
+    "code": 3,
+    "name": "brasas"
+   },
+   "colors": {
+    "background": "#1a0a06",
+    "surface": "#2e130a",
+    "accent": "#ff6b35",
+    "secondary": "#ffc53d",
+    "text": "#fff1e6"
+   }
+  },
+  {
+   "id": "oceano",
+   "name": "Océano",
+   "particle": {
+    "code": 4,
+    "name": "burbujas"
+   },
+   "colors": {
+    "background": "#06222e",
+    "surface": "#0b3547",
+    "accent": "#2aa198",
+    "secondary": "#4dd0e1",
+    "text": "#e6f7f5"
+   }
+  },
+  {
+   "id": "galaxia",
+   "name": "Galaxia",
+   "particle": {
+    "code": 5,
+    "name": "estrellas"
+   },
+   "colors": {
+    "background": "#0d0620",
+    "surface": "#1b0f38",
+    "accent": "#9b7ede",
+    "secondary": "#ffd166",
+    "text": "#f0eafb"
+   }
+  },
+  {
+   "id": "bosque",
+   "name": "Bosque",
+   "particle": {
+    "code": 6,
+    "name": "hojas/polen"
+   },
+   "colors": {
+    "background": "#0c1f12",
+    "surface": "#162e1b",
+    "accent": "#7fb069",
+    "secondary": "#d9a441",
+    "text": "#edf5e9"
+   }
+  },
+  {
+   "id": "atardecer",
+   "name": "Atardecer",
+   "particle": {
+    "code": 7,
+    "name": "chispas doradas"
+   },
+   "colors": {
+    "background": "#22101a",
+    "surface": "#3a1b28",
+    "accent": "#e87b2e",
+    "secondary": "#f4a259",
+    "text": "#fff0e6"
+   }
+  },
+  {
+   "id": "neon",
+   "name": "Neón",
+   "particle": {
+    "code": 8,
+    "name": "destellos"
+   },
+   "colors": {
+    "background": "#0a0a14",
+    "surface": "#14142a",
+    "accent": "#00f5d4",
+    "secondary": "#ff2e88",
+    "text": "#f2f2ff"
+   }
+  },
+  {
+   "id": "otono",
+   "name": "Otoño",
+   "particle": {
+    "code": 9,
+    "name": "hojas otoño"
+   },
+   "colors": {
+    "background": "#201209",
+    "surface": "#33200f",
+    "accent": "#d9822b",
+    "secondary": "#a63d2f",
+    "text": "#fbf0dc"
+   }
+  },
+  {
+   "id": "dulce",
+   "name": "Dulce",
+   "particle": {
+    "code": 10,
+    "name": "dulces"
+   },
+   "colors": {
+    "background": "#2b1030",
+    "surface": "#3e1a45",
+    "accent": "#ff8fab",
+    "secondary": "#ffc8dd",
+    "text": "#fff0f6"
+   }
+  },
+  {
+   "id": "lluvia",
+   "name": "Lluvia",
+   "particle": {
+    "code": 11,
+    "name": "lluvia"
+   },
+   "colors": {
+    "background": "#0e1b26",
+    "surface": "#16283a",
+    "accent": "#5b8def",
+    "secondary": "#7fb8e8",
+    "text": "#eaf2fa"
+   }
+  },
+  {
+   "id": "claro",
+   "name": "Claro",
+   "particle": {
+    "code": 12,
+    "name": "motas"
+   },
+   "colors": {
+    "background": "#f7f3e8",
+    "surface": "#ffffff",
+    "accent": "#8a6d1b",
+    "secondary": "#2aa198",
+    "text": "#1f2937"
+   }
+  },
+  {
+   "id": "aurora",
+   "name": "Aurora",
+   "particle": {
+    "code": 13,
+    "name": "aurora"
+   },
+   "colors": {
+    "background": "#061a1e",
+    "surface": "#0b2e33",
+    "accent": "#7ef0c1",
+    "secondary": "#b388ff",
+    "text": "#e6fff4"
+   }
+  },
+  {
+   "id": "desierto",
+   "name": "Desierto",
+   "particle": {
+    "code": 14,
+    "name": "arena"
+   },
+   "colors": {
+    "background": "#241a0c",
+    "surface": "#3a2c15",
+    "accent": "#e0a458",
+    "secondary": "#c97b2d",
+    "text": "#fdf3dc"
+   }
+  },
+  {
+   "id": "medianoche",
+   "name": "Medianoche",
+   "particle": {
+    "code": 15,
+    "name": "fugaces"
+   },
+   "colors": {
+    "background": "#050510",
+    "surface": "#0e0e24",
+    "accent": "#8e9bff",
+    "secondary": "#e8e8ff",
+    "text": "#ededf7"
+   }
+  }
+ ]
+}

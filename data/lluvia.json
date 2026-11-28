@@ -1,0 +1,833 @@
+{
+ "rounds": [
+  "Elementos A",
+  "Elementos B",
+  "Posiciones A",
+  "Posiciones B",
+  "Bloques",
+  "Anillos"
+ ],
+ "speeds": [
+  "Rápida (6 s)",
+  "Normal (10 s)",
+  "Tranquila (sin caída)"
+ ],
+ "cards": [
+  {
+   "id": "rain01",
+   "text": "Tu vecino va a tirar una silla rota. Tú la miras un rato y le dices: «esto se puede arreglar y servir como banco para el jardín». ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ne",
+   "explanation": "Ne: energía potencial del objeto, sus capacidades y su esencia.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 0
+  },
+  {
+   "id": "rain02",
+   "text": "Quedaron en verse a las seis. Son las cinco y media y ya estás intranquilo: si no sales ahora, llegas tarde, y si llegas tarde, se arruina el plan. ¿Qué elemento está hablando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ni",
+   "explanation": "Desarrollo en el tiempo: Ni, intuición de tiempo.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 0
+  },
+  {
+   "id": "rain03",
+   "text": "Entra alguien a la sala y sin que diga una palabra ya sabes si es fuerte, cómo se viste y qué lugar ocupa. ¿Qué elemento está hablando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Se",
+   "explanation": "Apariencia y fuerza: Se, sensación de fuerza.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 0
+  },
+  {
+   "id": "rain04",
+   "text": "Llevas horas sentado en esa silla y el cuerpo te dice que ya no aguanta: te duele la espalda y necesitas moverte. ¿Qué elemento está hablando?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Si",
+   "explanation": "Estado del cuerpo: Si, sensación de bienestar.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 0
+  },
+  {
+   "id": "rain05",
+   "text": "Le cuentan una idea nueva y de inmediato ve qué tiene dentro, para qué sirve de verdad y en qué se podría convertir. ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ne",
+   "explanation": "Ne: la esencia y los conceptos de una idea, su energía potencial.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 0
+  },
+  {
+   "id": "rain06",
+   "text": "Le piden comprobar si algo salió bien. Pide los números, compara lo que se hizo con lo que se debía hacer y decide con los datos. ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Te",
+   "explanation": "Trabajo y eficacia medible: Te, lógica del trabajo.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 0
+  },
+  {
+   "id": "rain07",
+   "text": "Está armando un juego y nota que dos de sus partes se contradicen: si una vale, la otra no puede valer. Las reordena hasta que todo encaje. ¿Qué elemento está hablando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Ti",
+   "explanation": "Coherencia interna del sistema: Ti, lógica de sistemas.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 0
+  },
+  {
+   "id": "rain08",
+   "text": "El grupo está apagado y aburrido. Dice una frase con el tono justo y de pronto todos se ríen y se animan. ¿Qué elemento está hablando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Fe",
+   "explanation": "Clima emocional: Fe, ética de emociones.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 0
+  },
+  {
+   "id": "rain09",
+   "text": "Conoce a alguien nuevo y en minutos sabe si le cae bien o mal, si le tiene confianza o si mejor se aleja. ¿Qué elemento está hablando?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Fi",
+   "explanation": "Distancia personal: Fi, ética de relaciones.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 0
+  },
+  {
+   "id": "rain10",
+   "text": "Tiene que terminar algo en una hora. Prueba dos formas de hacerlo, se queda con la que rinde más y la que menos esfuerzo gasta. ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Te",
+   "explanation": "El método que rinde: Te, lógica del trabajo.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 0
+  },
+  {
+   "id": "rain11",
+   "text": "Cuando le preguntan por su tema, habla sin dudar, corrige a cualquiera que se equivoque y no se cansa de hacerlo: es su forma natural de ver el mundo. ¿Qué función está usando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "base",
+   "explanation": "La función 1 es la base (programa).",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 0
+  },
+  {
+   "id": "rain12",
+   "text": "Le ponen un problema enfrente y lo resuelve con una herramienta que maneja con soltura: la usa para producir, experimenta con ella y se enorgullece del resultado. ¿Qué función está usando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "creativa",
+   "explanation": "La función 2 es la creativa.",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 0
+  },
+  {
+   "id": "rain13",
+   "text": "En una reunión presume de algo que en realidad le cuesta: lo hace solo para quedar bien, lo mínimo necesario, y en cuanto puede deja de hacerlo. ¿Qué función está usando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "rol",
+   "explanation": "La función 3 es el rol.",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 0
+  },
+  {
+   "id": "rain14",
+   "text": "Le piden algo en un tema que le incomoda: lo evita, se pone tenso y si tiene que hacerlo lo hace mal o se enoja. ¿Qué función está usando?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "dolorosa",
+   "explanation": "La función 4 es la dolorosa.",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 0
+  },
+  {
+   "id": "rain15",
+   "text": "Es la función que nunca se apaga: la usa sin pensar, define cómo ve el mundo y todo lo demás gira alrededor de ella. ¿Qué función es?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "base",
+   "explanation": "El programa es la base (1).",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 0
+  },
+  {
+   "id": "rain16",
+   "text": "Alguien le explica con calma algo que él no domina y lo recibe con gratitud: no critica, solo agradece que le ayuden en eso. ¿Qué función está usando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "sugestiva",
+   "explanation": "La función 5 es la sugestiva.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 0
+  },
+  {
+   "id": "rain17",
+   "text": "Hay algo que valora mucho aunque le cueste: lo compara con un ideal que lleva dentro y quiere que se note que lo tiene. ¿Qué función está usando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "Mobilizing",
+   "explanation": "La función 6 es la Mobilizing.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 0
+  },
+  {
+   "id": "rain18",
+   "text": "Ve a alguien a punto de cometer un error que él ya cometió antes y le advierte: «por ahí no, eso no sale bien». ¿Qué función está usando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "Observing",
+   "explanation": "La función 7 es la Observing.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 0
+  },
+  {
+   "id": "rain19",
+   "text": "Sin darse cuenta, previene un problema antes de que pase: actúa por instinto y solo después se da cuenta de lo que hizo. ¿Qué función está usando?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "Demostrativa",
+   "explanation": "La función 8 es la Demostrativa.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 0
+  },
+  {
+   "id": "rain20",
+   "text": "Le falta algo que no sabe hacer y no le da vergüenza pedirlo: acepta la ayuda tal como viene, sin criticar cómo se la dan. ¿Qué función está usando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "sugestiva",
+   "explanation": "La sugestiva (5) acepta ayuda con gratitud.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 0
+  },
+  {
+   "id": "rain21",
+   "text": "Son las dos funciones que usa con total seguridad y consciencia: con ellas piensa, decide y se muestra al mundo. ¿Qué bloque forman?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Ego",
+   "explanation": "Las funciones 1-2 forman el Ego.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 0
+  },
+  {
+   "id": "rain22",
+   "text": "Son dos funciones débiles pero conscientes: las usa para cumplir con lo que se espera de él, aunque le incomoden. ¿Qué bloque forman?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Superego",
+   "explanation": "Las funciones 3-4 forman el Superego.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 0
+  },
+  {
+   "id": "rain23",
+   "text": "Son dos funciones débiles que no controla: necesita que otros le ayuden con ellas y recibe esa ayuda con gusto. ¿Qué bloque forman?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Superid",
+   "explanation": "Las funciones 5-6 forman el Superid.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 0
+  },
+  {
+   "id": "rain24",
+   "text": "Son dos funciones fuertes que trabajan en silencio: vigilan que nada salga mal y actúan sin que él se dé cuenta. ¿Qué bloque forman?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Id",
+   "explanation": "Las funciones 7-8 forman el Id.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 0
+  },
+  {
+   "id": "rain25",
+   "text": "Le dan información de ese tipo y la recibe como un niño con un dulce: la consume con gusto, pide más y no se cansa. ¿Qué bloque es?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Superid",
+   "explanation": "El Superid (5-6) es el bloque infantil.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 0
+  },
+  {
+   "id": "rain26",
+   "text": "Función 3: ¿mental o vital?",
+   "answer": 0,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Mental",
+   "explanation": "Las posiciones 1-4 son el anillo mental.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 0
+  },
+  {
+   "id": "rain27",
+   "text": "Función 6: ¿mental o vital?",
+   "answer": 1,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Vital",
+   "explanation": "Las posiciones 5-8 son el anillo vital.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 0
+  },
+  {
+   "id": "rain28",
+   "text": "Función 1: ¿mental o vital?",
+   "answer": 0,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Mental",
+   "explanation": "La base (1) es mental: se usa consciente.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 0
+  },
+  {
+   "id": "rain29",
+   "text": "Función 8: ¿mental o vital?",
+   "answer": 1,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Vital",
+   "explanation": "La Demostrativa (8) es vital: trabaja sin consciencia.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 0
+  },
+  {
+   "id": "rain30",
+   "text": "Función 5: ¿mental o vital?",
+   "answer": 1,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Vital",
+   "explanation": "La sugestiva (5) es vital: pide ayuda sin darse cuenta.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 0
+  },
+  {
+   "id": "rain31",
+   "text": "Mira una cuerda vieja y dice: «esto podría ser un columpio, una cuerda de tender o el mango de algo». ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ne",
+   "explanation": "Ne: energía potencial del objeto, lo que podría llegar a ser.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 1
+  },
+  {
+   "id": "rain32",
+   "text": "Le dan un objeto y en vez de decir para qué sirve ahora, cuenta en qué se podría convertir si todo sale bien. ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ne",
+   "explanation": "Habla de la energía potencial del objeto, no del desarrollo en el tiempo: Ne, no Ni.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 2
+  },
+  {
+   "id": "rain33",
+   "text": "Mira a una persona y dice: «tiene pinta de que en unos años va a ser alguien importante». ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ne",
+    "Ni",
+    "Se",
+    "Si"
+   ],
+   "answerText": "Ne",
+   "explanation": "Ve la energía potencial de la persona, lo que es capaz de llegar a ser: Ne. El tiempo es solo el marco, no lo que mide.",
+   "round": 0,
+   "roundName": "Elementos A",
+   "diff": 3
+  },
+  {
+   "id": "rain34",
+   "text": "Tiene que organizar un almacén: mide cuánto tarda cada tarea, quita los pasos que no aportan y deja un método que cualquiera puede seguir. ¿Qué elemento está hablando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Te",
+   "explanation": "Trabajo y eficacia medible: Te, lógica del trabajo.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 1
+  },
+  {
+   "id": "rain35",
+   "text": "Le piden que un informe sea «correcto». En vez de mirar los números, revisa que las definiciones no se contradigan y que cada conclusión se siga de las anteriores. ¿Qué elemento está hablando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Ti",
+   "explanation": "Coherencia interna del sistema, no el resultado medible: Ti, no Te.",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 2
+  },
+  {
+   "id": "rain36",
+   "text": "Conoce a alguien y en minutos decide que no le cae bien, pero no lo dice: simplemente se aleja y evita quedar con esa persona. ¿Qué elemento está hablando?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "Te",
+    "Ti",
+    "Fe",
+    "Fi"
+   ],
+   "answerText": "Fi",
+   "explanation": "Distancia personal, atracción o repulsión: Fi. No está moviendo el ánimo de nadie (Fe).",
+   "round": 1,
+   "roundName": "Elementos B",
+   "diff": 3
+  },
+  {
+   "id": "rain37",
+   "text": "Cuando le preguntan por su tema favorito, responde sin dudar y con seguridad total, como si fuera lo más obvio del mundo. ¿Qué función está usando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "base",
+   "explanation": "La función 1 es la base: se usa sin pensar y con total seguridad.",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 1
+  },
+  {
+   "id": "rain38",
+   "text": "Delante de todos presume de algo que en realidad le cuesta, y lo hace solo para quedar bien. Cuando le toca usarlo en serio, se atasca. ¿Qué función está mostrando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "rol",
+   "explanation": "Presumir para quedar bien es el rol (3); la dolorosa (4) es lo que se evita, no lo que se presume.",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 2
+  },
+  {
+   "id": "rain39",
+   "text": "Usa una función con soltura y la muestra al mundo, pero no es su forma natural de verlo: es la herramienta con la que produce. ¿Qué función está usando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "base",
+    "creativa",
+    "rol",
+    "dolorosa"
+   ],
+   "answerText": "creativa",
+   "explanation": "La creativa (2) se maneja con soltura y produce, pero el programa es la base (1).",
+   "round": 2,
+   "roundName": "Posiciones A",
+   "diff": 3
+  },
+  {
+   "id": "rain40",
+   "text": "Cuando alguien le da justo lo que necesita sin que lo pida, se le ilumina la cara: lo consume con gusto y pide más. ¿Qué función está usando?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "sugestiva",
+   "explanation": "La sugestiva (5) recibe con gratitud lo que le dan.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 1
+  },
+  {
+   "id": "rain41",
+   "text": "Se fija en lo que hacen los demás y quiere estar a la altura: si alguien lo hace bien, se esfuerza por hacerlo igual o mejor, aunque le cueste. ¿Qué función está usando?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "Mobilizing",
+   "explanation": "La Mobilizing (6) quiere estar a la altura del ideal y que se note.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 2
+  },
+  {
+   "id": "rain42",
+   "text": "Está atento a que nada salga mal y corrige en silencio, sin que nadie se lo pida: vigila, no actúa. ¿Qué función está usando?",
+   "answer": 2,
+   "nOpts": 4,
+   "options": [
+    "sugestiva",
+    "Mobilizing",
+    "Observing",
+    "Demostrativa"
+   ],
+   "answerText": "Observing",
+   "explanation": "La Observing (7) vigila en silencio que nada salga mal; la Demostrativa (8) actúa sin darse cuenta.",
+   "round": 3,
+   "roundName": "Posiciones B",
+   "diff": 3
+  },
+  {
+   "id": "rain43",
+   "text": "Es el bloque que más se nota desde fuera: las dos funciones con las que se presenta al mundo. ¿Qué bloque es?",
+   "answer": 0,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Ego",
+   "explanation": "El Ego (1-2) son las funciones fuertes y conscientes con las que se muestra.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 1
+  },
+  {
+   "id": "rain44",
+   "text": "Son dos funciones débiles y conscientes: las usa para cumplir con lo que se espera, aunque le incomoden, y si presume de ellas es para quedar bien. ¿Qué bloque forman?",
+   "answer": 1,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Superego",
+   "explanation": "El Superego (3-4) es débil pero consciente: rol y dolorosa.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 2
+  },
+  {
+   "id": "rain45",
+   "text": "Son dos funciones fuertes pero vitales: trabajan sin que él se dé cuenta y sin que pueda explicar cómo lo hacen. ¿Qué bloque forman?",
+   "answer": 3,
+   "nOpts": 4,
+   "options": [
+    "Ego",
+    "Superego",
+    "Superid",
+    "Id"
+   ],
+   "answerText": "Id",
+   "explanation": "El Id (7-8) es fuerte y vital: Observing y Demostrativa trabajan en silencio.",
+   "round": 4,
+   "roundName": "Bloques",
+   "diff": 3
+  },
+  {
+   "id": "rain46",
+   "text": "Función 2: ¿mental o vital?",
+   "answer": 0,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Mental",
+   "explanation": "Las posiciones 1-4 son el anillo mental; la creativa (2) es mental.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 1
+  },
+  {
+   "id": "rain47",
+   "text": "Función 7: ¿mental o vital?",
+   "answer": 1,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Vital",
+   "explanation": "Las posiciones 5-8 son el anillo vital; la Observing (7) es vital.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 2
+  },
+  {
+   "id": "rain48",
+   "text": "La función que se usa para quedar bien con la sociedad: ¿mental o vital?",
+   "answer": 0,
+   "nOpts": 2,
+   "options": [
+    "Mental",
+    "Vital",
+    "-",
+    "-"
+   ],
+   "answerText": "Mental",
+   "explanation": "El rol (3) es del anillo mental: se usa de forma consciente para quedar bien.",
+   "round": 5,
+   "roundName": "Anillos",
+   "diff": 3
+  }
+ ]
+}

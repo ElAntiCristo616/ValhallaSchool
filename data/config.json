@@ -1,0 +1,119 @@
+{
+ "supabaseUrl": "https://aombvvcfxwlnhujjfqwt.supabase.co",
+ "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvbWJ2dmNmeHdsbmh1ampmcXd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU2NDczNjEsImV4cCI6MjExMTIyMzM2MX0.OXNQ9VC01cyyAwCU3up-l-jXJTyCoCmZvkU40Iu4Mcs",
+ "project": {
+  "ref": "aombvvcfxwlnhujjfqwt",
+  "region": "us-east-2",
+  "plan": "Free",
+  "emailConfirmation": false,
+  "note": "La ANON KEY es la clave PÚBLICA (publishable): va en la app sin problema, la protege el RLS. NUNCA la service_role key."
+ },
+ "auth": {
+  "provider": "Supabase Auth (correo)",
+  "emailConfirmation": false,
+  "session": "El token del usuario se toma de la sesión (SupabaseAuth.currentSession()); sin sesión las llamadas fallan con 'Sin sesión' sin tocar la red.",
+  "userIdentity": {
+   "userId": "auth.uid() (UUID de Supabase Auth)",
+   "username": "displayName(): nickname del usuario o «Sin nombre» si no tiene",
+   "note": "En game_scores.username va el apodo visible; user_id es el UUID de auth."
+  }
+ },
+ "rest": {
+  "base": "https://aombvvcfxwlnhujjfqwt.supabase.co/rest/v1",
+  "headers": {
+   "apikey": "ANON KEY pública",
+   "Authorization": "Bearer <token del usuario> (no la anon key: es ese token lo que el RLS usa para saber quién eres)",
+   "Content-Type": "application/json",
+   "Prefer (solo upserts)": "resolution=merge-duplicates,return=representation"
+  }
+ },
+ "tables": {
+  "game_progress": {
+   "columns": {
+    "user_id": "UUID (auth.uid())",
+    "module": "int",
+    "lesson": "int",
+    "xp": "int",
+    "streak": "int",
+    "hearts": "int (por defecto 3)",
+    "gems": "int (por defecto 0)",
+    "completed": "bool (por defecto false)",
+    "updated_at": "ISO-8601 UTC"
+   },
+   "uniqueKey": [
+    "user_id",
+    "module",
+    "lesson"
+   ],
+   "upsert": "POST game_progress?on_conflict=user_id,module,lesson",
+   "fetch": "GET game_progress?select=*&order=module.asc,lesson.asc",
+   "rls": "Cada usuario solo toca sus filas."
+  },
+  "game_scores": {
+   "columns": {
+    "user_id": "UUID (auth.uid())",
+    "username": "string (apodo) o null",
+    "total_xp": "int",
+    "level": "int (por defecto 1)",
+    "updated_at": "ISO-8601 UTC"
+   },
+   "uniqueKey": [
+    "user_id"
+   ],
+   "upsert": "POST game_scores?on_conflict=user_id",
+   "leaderboard": "GET game_scores?select=user_id,username,total_xp,level&order=total_xp.desc&limit=<1..100> (por defecto 20)",
+   "rls": "Legible por cualquier usuario autenticado."
+  }
+ },
+ "xp": {
+  "read": 5,
+  "perQuestion": 10,
+  "perLesson": 20,
+  "perfect": 10,
+  "gameItemFirstTime": 10,
+  "levelFormula": "level(xp) = floor((sqrt(1 + 8*xp/100) - 1) / 2) + 1; levelBase(l) = 50*(l-1)*l",
+  "srsDays": [
+   1,
+   3,
+   7,
+   16,
+   35,
+   80
+  ],
+  "goals": [
+   20,
+   50,
+   100,
+   200
+  ],
+  "goalNames": [
+   "Tranquilo",
+   "Regular",
+   "En serio",
+   "Intenso"
+  ],
+  "defaultGoal": 50
+ },
+ "difficulty": {
+  "names": [
+   "Normal",
+   "Difícil",
+   "Experto",
+   "Imposible"
+  ],
+  "default": 0
+ },
+ "localPersistence": {
+  "file": "state.json (filesDir de la app)",
+  "note": "El progreso local manda; la nube es sincronización. El backup web usa la misma forma."
+ },
+ "quiz": {
+  "types": {
+   "new": "banco nuevo (escenario, parecido, error) — peso 62",
+   "fill": "completar la palabra que falta del titular — peso 28",
+   "book": "¿de qué lección es esta idea? — peso 10"
+  },
+  "rule": "Nunca se repite el mismo tipo dos veces seguidas; las opciones se barajan y la correcta se remapea.",
+  "newBankSelection": "Con nivel L se prefiere la fila con diff más cercano a L sin pasarse (diff<=L); si no hay, la de diff menor. Si no hay filas para la idea, cae a fill."
+ }
+}

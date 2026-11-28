@@ -1,0 +1,905 @@
+{
+ "typesOrder": [
+  "ILE",
+  "SEI",
+  "ESE",
+  "LII",
+  "EIE",
+  "LSI",
+  "SLE",
+  "IEI",
+  "SEE",
+  "ILI",
+  "LIE",
+  "ESI",
+  "LSE",
+  "EII",
+  "IEE",
+  "SLI"
+ ],
+ "relationNames": [
+  "Identidad",
+  "Dualidad",
+  "Activación",
+  "Espejo",
+  "Afinidad",
+  "Semidualidad",
+  "Espejismo",
+  "Superyó",
+  "Conflicto",
+  "Cuasi-identidad",
+  "Extinción",
+  "Negocios",
+  "Benefactor",
+  "Beneficiario",
+  "Supervisor",
+  "Supervisado"
+ ],
+ "matrix": [
+  [
+   0,
+   1,
+   2,
+   3,
+   12,
+   14,
+   11,
+   6,
+   7,
+   10,
+   9,
+   8,
+   13,
+   15,
+   4,
+   5
+  ],
+  [
+   1,
+   0,
+   3,
+   2,
+   14,
+   12,
+   6,
+   11,
+   10,
+   7,
+   8,
+   9,
+   15,
+   13,
+   5,
+   4
+  ],
+  [
+   2,
+   3,
+   0,
+   1,
+   4,
+   5,
+   13,
+   15,
+   9,
+   8,
+   7,
+   10,
+   11,
+   6,
+   12,
+   14
+  ],
+  [
+   3,
+   2,
+   1,
+   0,
+   5,
+   4,
+   15,
+   13,
+   8,
+   9,
+   10,
+   7,
+   6,
+   11,
+   14,
+   12
+  ],
+  [
+   13,
+   15,
+   4,
+   5,
+   0,
+   1,
+   2,
+   3,
+   12,
+   14,
+   11,
+   6,
+   7,
+   10,
+   9,
+   8
+  ],
+  [
+   15,
+   13,
+   5,
+   4,
+   1,
+   0,
+   3,
+   2,
+   14,
+   12,
+   6,
+   11,
+   10,
+   7,
+   8,
+   9
+  ],
+  [
+   11,
+   6,
+   12,
+   14,
+   2,
+   3,
+   0,
+   1,
+   4,
+   5,
+   13,
+   15,
+   9,
+   8,
+   7,
+   10
+  ],
+  [
+   6,
+   11,
+   14,
+   12,
+   3,
+   2,
+   1,
+   0,
+   5,
+   4,
+   15,
+   13,
+   8,
+   9,
+   10,
+   7
+  ],
+  [
+   7,
+   10,
+   9,
+   8,
+   13,
+   15,
+   4,
+   5,
+   0,
+   1,
+   2,
+   3,
+   12,
+   14,
+   11,
+   6
+  ],
+  [
+   10,
+   7,
+   8,
+   9,
+   15,
+   13,
+   5,
+   4,
+   1,
+   0,
+   3,
+   2,
+   14,
+   12,
+   6,
+   11
+  ],
+  [
+   9,
+   8,
+   7,
+   10,
+   11,
+   6,
+   12,
+   14,
+   2,
+   3,
+   0,
+   1,
+   4,
+   5,
+   13,
+   15
+  ],
+  [
+   8,
+   9,
+   10,
+   7,
+   6,
+   11,
+   14,
+   12,
+   3,
+   2,
+   1,
+   0,
+   5,
+   4,
+   15,
+   13
+  ],
+  [
+   12,
+   14,
+   11,
+   6,
+   7,
+   10,
+   9,
+   8,
+   13,
+   15,
+   4,
+   5,
+   0,
+   1,
+   2,
+   3
+  ],
+  [
+   14,
+   12,
+   6,
+   11,
+   10,
+   7,
+   8,
+   9,
+   15,
+   13,
+   5,
+   4,
+   1,
+   0,
+   3,
+   2
+  ],
+  [
+   4,
+   5,
+   13,
+   15,
+   9,
+   8,
+   7,
+   10,
+   11,
+   6,
+   12,
+   14,
+   2,
+   3,
+   0,
+   1
+  ],
+  [
+   5,
+   4,
+   15,
+   13,
+   8,
+   9,
+   10,
+   7,
+   6,
+   11,
+   14,
+   12,
+   3,
+   2,
+   1,
+   0
+  ]
+ ],
+ "matrixNote": "REL[fila][columna] = código de relación (0-15) de TYPES[fila] hacia TYPES[columna).",
+ "relations": [
+  {
+   "code": 0,
+   "name": "Identidad",
+   "description": "Mismo tipo: los dos procesan el mundo con las mismas funciones en el mismo orden, así que se entienden sin hablar y casi nunca discuten de fondo. Cada uno ve en el otro su propio reflejo: lo que uno piensa, el otro ya lo pensó. Eso hace la convivencia fácil y sin sorpresas, pero también plana: nadie cubre lo que al otro le falta, porque les falta lo mismo. Con el tiempo pueden aburrirse el uno del otro, o acomodarse en una rutina cómoda donde nada cambia. Funciona bien como compañía tranquila; para crecer, necesitan a alguien de fuera que les traiga lo que ninguno de los dos tiene.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 1,
+   "name": "Dualidad",
+   "description": "Dualidad: la pareja ideal del Modelo A. La base de uno es justo la sugestiva del otro: lo que uno hace sin esfuerzo es exactamente lo que el otro necesita que le den, y al revés. Por eso el trato se siente natural desde el primer día: cada uno cubre el hueco del otro sin que nadie tenga que pedirlo ni explicarlo. No se corrigen ni se juzgan: el dual acepta la ayuda con gratitud porque llega en la medida justa. Los roces existen, pero se disuelven solos: lo que a uno le cuesta, al otro le sale solo. Con el tiempo la relación se hace cada vez más sólida y cómoda, y los dos terminan más seguros de sí mismos de lo que eran solos.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 2,
+   "name": "Activación",
+   "description": "Activación: se animan mutuamente y se contagian energía: cada uno ve en el otro algo que le gusta y lo activa. Comparten la misma forma de ver las cosas en lo importante, así que la conversación fluye y el trato es cálido. El problema es el ritmo: ninguno de los dos descansa de verdad en el otro, y los dos se cansan a la vez de lo mismo. En el día a día se llevan bien y se divierten, pero si pasan demasiado tiempo juntos terminan agotados sin saber por qué. Con distancia y pausas, la relación se mantiene viva y agradable; pegados todo el día, se desgasta.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 3,
+   "name": "Espejo",
+   "description": "Espejo: mismos valores y mismas funciones fuertes, pero en distinto orden: cada uno pone primero lo que el otro pone segundo. Por eso se entienden a fondo y a la vez se corrigen sin parar: cada uno ve en el otro su propia forma de pensar, un poco torcida. Las conversaciones son largas y estimulantes, porque hablan el mismo idioma con distinto acento. El roce típico es que cada uno cree que su orden es el correcto y trata de convencer al otro. En el día a día es una relación cómoda y de confianza, que mejora con el tiempo si aprenden a no tomarse las correcciones como ataques.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 4,
+   "name": "Afinidad",
+   "description": "Afinidad: comparten las funciones fuertes, así que ven el mundo de forma parecida y se sienten cómodos juntos desde el principio. La conversación es fácil y no hay fricción: ninguno pisa el punto débil del otro. El límite es que se parecen demasiado en lo fuerte y en lo débil: nadie cubre lo que falta, y los dos evitan las mismas cosas. En el día a día es una compañía agradable y sin sobresaltos, buena para pasar el rato. Con el tiempo puede quedarse en eso, una amistad tranquila que no profundiza, a menos que busquen juntos lo que ninguno tiene.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 5,
+   "name": "Semidualidad",
+   "description": "Semidualidad: casi duales, pero no del todo: se complementan en una parte y fallan en la otra. Al principio el trato se siente muy bien, como si hubieran encontrado a su dual, y hay atracción y confianza. Pero hay un hueco que se nota cada vez más: uno de los dos no recibe lo que esperaba del otro, y lo siente como una falta. El malentendido típico es esperar del otro lo que solo un dual da, y decepcionarse cuando no llega. En el día a día funciona si los dos aceptan ese hueco sin echárselo en cara. Con el tiempo, o se acomodan con lo que sí hay, o la falta pesa más que lo bueno.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 6,
+   "name": "Espejismo",
+   "description": "Espejismo: desde lejos se admiran y se atraen: cada uno ve en el otro algo que le gusta y que no tiene. De cerca, en cambio, no encajan: lo que uno necesita, el otro no se lo da, y lo que el otro ofrece, uno no lo pide. La convivencia se vuelve confusa: hay cariño, pero también una sensación constante de que algo no cuadra. El malentendido típico es creer que con más esfuerzo sí va a funcionar, cuando el problema no es el esfuerzo sino que sus funciones no se complementan. En el día a día es mejor de lejos, con encuentros cortos y agradables; viviendo juntos, el desencanto crece.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 7,
+   "name": "Superyó",
+   "description": "Superyó: se juzgan mutuamente por lo que el otro no valora: cada uno ve en el otro justo lo que desprecia o lo que le parece una pérdida de tiempo. La relación es tensa desde el principio, aunque al principio pueda disfrazarse de interés. Cada uno siente que el otro lo mira por encima del hombro y lo corrige en lo que más le importa. En el día a día los roces son constantes y pequeños, y se acumulan: nadie se siente aceptado. Con el tiempo, si no hay distancia, el juicio mutuo se vuelve costumbre y la relación se enfría. Funciona solo con trato corto y temas neutros.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 8,
+   "name": "Conflicto",
+   "description": "Conflicto: la peor relación del Modelo A. Cada uno pisa con su función más fuerte justo el punto más débil del otro: lo que uno hace sin pensar es lo que al otro más le duele. Por eso los choques son constantes y parecen personales, aunque nadie lo haga a propósito. Cada uno siente que el otro lo ataca en lo que menos domina, y se defiende o se cierra. En el día a día, hasta las cosas simples se vuelven discusión: no hay tema seguro. Con el tiempo la relación no mejora sola: solo funciona con mucha distancia, trato corto y temas muy delimitados, y aun así cansa.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 9,
+   "name": "Cuasi-identidad",
+   "description": "Cuasi-identidad: se parecen muchísimo por fuera —mismos temas, mismos gustos, misma forma de hablar— y por eso al principio creen que se entienden del todo. Pero por dentro procesan distinto: lo que uno dice, el otro lo entiende a medias y responde con algo parecido que no es lo mismo. El malentendido típico es esa sensación de hablar y no llegar nunca al punto: se escuchan, se caen bien, pero no se encuentran. En el día a día es una relación amable y sin conflicto, pero superficial. Con el tiempo se queda en una buena compañía para pasar el rato, sin la profundidad que ambos esperaban al principio.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 10,
+   "name": "Extinción",
+   "description": "Extinción: se anulan mutuamente. Cada uno, con su sola presencia, apaga lo que el otro quiere hacer: lo que uno propone, el otro lo desarma sin querer, y al revés. No hay mala intención: simplemente sus funciones fuertes chocan y ninguna de las dos avanza. El trato se siente pesado y estéril, como hablarle a una pared amable. En el día a día es mejor de lejos: juntos, los dos terminan cansados y sin haber logrado nada. Con el tiempo, la relación se enfría sola si se ven poco; si se ven mucho, el desgaste es mutuo.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 11,
+   "name": "Negocios",
+   "description": "Negocios: cooperan bien sin intimidad. Cada uno sabe lo suyo y respeta lo del otro: se reparten el trabajo, cumplen y no se meten en la vida del otro. No hay química ni conflicto: es una relación práctica y ordenada. El límite es que no hay cercanía: ninguno de los dos le da al otro lo que necesita por dentro, y ninguno lo espera. En el día a día funciona muy bien para trabajar juntos, hacer trámites o compartir un proyecto. Con el tiempo se mantiene estable tal como es: no se profundiza, pero tampoco se rompe.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 12,
+   "name": "Benefactor",
+   "description": "{A} es benefactor de {B}: le da justo lo que {B} necesita y no sabe pedir, y la ayuda llega en la medida correcta, así que {B} la recibe con gusto sin darse cuenta de dónde viene. {B}, en cambio, no puede devolverle lo mismo: lo que {B} ofrece, {A} no lo necesita, y {A} lo nota. Por eso la relación es asimétrica: {A} se siente útil y generoso, {B} se siente agradecido, pero {A} puede terminar sintiendo que da más de lo que recibe. En el día a día funciona bien si {A} no espera reciprocidad. Con el tiempo, si {A} se cansa de dar sin recibir, se aleja; {B} lo extraña sin entender bien por qué.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 13,
+   "name": "Beneficiario",
+   "description": "{B} es benefactor de {A}: le da justo lo que {A} necesita y no sabe pedir, y la ayuda llega en la medida correcta, así que {A} la recibe con gusto sin darse cuenta de dónde viene. {A}, en cambio, no puede devolverle lo mismo: lo que {A} ofrece, {B} no lo necesita, y {B} lo nota. Por eso la relación es asimétrica: {B} se siente útil y generoso, {A} se siente agradecido, pero {B} puede terminar sintiendo que da más de lo que recibe. En el día a día funciona bien si {B} no espera reciprocidad. Con el tiempo, si {B} se cansa de dar sin recibir, se aleja; {A} lo extraña sin entender bien por qué.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 14,
+   "name": "Supervisor",
+   "description": "{A} supervisa a {B}: marca los errores de {B} sin proponérselo, porque con su función fuerte toca justo el punto débil de {B}, y {B} lo siente como una crítica aunque {A} no critique nada. {B} acepta la corrección porque la ve correcta, pero le duele: cada señalamiento le recuerda lo que no domina. {A}, por su parte, no entiende por qué {B} se toma tan en serio algo que para él es obvio. En el día a día, {B} termina pendiente de lo que {A} piensa y tratando de no fallar delante de él. Con el tiempo, {B} se cansa de sentirse vigilado y busca distancia; si hay afecto, la relación sobrevive con trato corto y temas seguros.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  },
+  {
+   "code": 15,
+   "name": "Supervisado",
+   "description": "{B} supervisa a {A}: marca los errores de {A} sin proponérselo, porque con su función fuerte toca justo el punto débil de {A}, y {A} lo siente como una crítica aunque {B} no critique nada. {A} acepta la corrección porque la ve correcta, pero le duele: cada señalamiento le recuerda lo que no domina. {B}, por su parte, no entiende por qué {A} se toma tan en serio algo que para él es obvio. En el día a día, {A} termina pendiente de lo que {B} piensa y tratando de no fallar delante de él. Con el tiempo, {A} se cansa de sentirse vigilado y busca distancia; si hay afecto, la relación sobrevive con trato corto y temas seguros.",
+   "pairTail": {
+    "template": " En esta pareja, el {BASE_A} de {A} es {ART1} {POS_A_EN_B} de {B}, y el {BASE_B} de {B} es {ART2} {POS_B_EN_A} de {A}.",
+    "rule": "Se calcula con los 16 modelos clásicos: la base de A (su elemento 1) se busca en el modelo de B y se nombra su posición (Base, Creativa, Rol, PoLR, Sugestiva, Mobilizing, Observing, Demostrativa); igual a la inversa. Artículo: 'el' si la posición es Rol, 'la' en los demás casos.",
+    "placeholders": {
+     "{BASE_A}": "elemento base de A",
+     "{BASE_B}": "elemento base de B",
+     "{POS_A_EN_B}": "posición del elemento base de A dentro del modelo de B",
+     "{POS_B_EN_A}": "posición del elemento base de B dentro del modelo de A",
+     "{ART1}": "'el' si la posición es Rol, 'la' si no",
+     "{ART2}": "'el' si la posición es Rol, 'la' si no"
+    }
+   }
+  }
+ ],
+ "encargos": [
+  {
+   "id": "conn01",
+   "client": "Un productor de debates necesita contraste marcado para su programa. Ya contrató a un ILE.",
+   "goal": "Armar un debate con choques frontales, no con acuerdos.",
+   "hired": "ILE",
+   "candidates": [
+    "ESI",
+    "LII",
+    "SEI",
+    "LIE"
+   ],
+   "answer": 0,
+   "explanation": "ESI es el conflicto de ILE: choque frontal de valores, perfecto para el debate. El dual (SEI) suavizaría todo.",
+   "diff": 0
+  },
+  {
+   "id": "conn02",
+   "client": "Una investigadora ILE busca socio para un proyecto largo: necesita a alguien que cubra lo que ella no domina.",
+   "goal": "Cubrir el Superid con funciones fuertes y sin drama.",
+   "hired": "ILE",
+   "candidates": [
+    "SEI",
+    "ESE",
+    "LII",
+    "SLE"
+   ],
+   "answer": 0,
+   "explanation": "SEI es el dual de ILE: cubre su Superid (Si, Fe) con funciones fuertes, sin drama. La activación (ESE) ayuda, pero no cubre tanto.",
+   "diff": 0
+  },
+  {
+   "id": "conn03",
+   "client": "Un taller contrató a un LSE como jefe: quiere un compañero que discuta métodos con él sin romper el equipo.",
+   "goal": "Discutir métodos con alguien que piensa casi igual.",
+   "hired": "LSE",
+   "candidates": [
+    "EII",
+    "SLI",
+    "IEE",
+    "ESE"
+   ],
+   "answer": 1,
+   "explanation": "SLI es el espejo de LSE: mismo Ego al revés (Si-Te frente a Te-Si), discuten métodos sin romperse.",
+   "diff": 0
+  },
+  {
+   "id": "conn04",
+   "client": "Un reality ficticio busca rivalidad: contrataron a una EIE como protagonista y quieren a su contraparte.",
+   "goal": "Choque total de valores para el show.",
+   "hired": "EIE",
+   "candidates": [
+    "SLI",
+    "LSI",
+    "SLE",
+    "ILI"
+   ],
+   "answer": 0,
+   "explanation": "SLI es el conflicto de EIE: choque total de valores, ideal para el reality. El dual (LSI) sería demasiado cómodo.",
+   "diff": 0
+  },
+  {
+   "id": "conn05",
+   "client": "Una tienda contrató a una SEE como vendedora: necesita un socio para la parte aburrida de la tienda.",
+   "goal": "Cooperar sin intimidad, cada uno en lo suyo.",
+   "hired": "SEE",
+   "candidates": [
+    "IEE",
+    "ILI",
+    "LIE",
+    "ESI"
+   ],
+   "answer": 0,
+   "explanation": "IEE es el negocio de SEE: cooperan sin intimidad, cada uno en lo suyo. El dual (ILI) sería mejor para vivir, no para la tienda.",
+   "diff": 0
+  },
+  {
+   "id": "conn06",
+   "client": "Un LII quiere salir más y dejar de rumiar: busca a alguien que lo empuje a actuar.",
+   "goal": "Que lo empuje a salir sin invadirlo.",
+   "hired": "LII",
+   "candidates": [
+    "ESE",
+    "SEI",
+    "ILE",
+    "EIE"
+   ],
+   "answer": 1,
+   "explanation": "SEI es la activación de LII: lo empuja a salir y actuar sin invadirlo. El dual (ESE) lo cuidaría, pero no lo empuja igual.",
+   "diff": 0
+  },
+  {
+   "id": "conn07",
+   "client": "Un equipo contrató a un ILI como analista: necesita un jefe que le marque los errores y no lo deje esconderse.",
+   "goal": "Que alguien le marque los errores y no lo deje esconderse.",
+   "hired": "ILI",
+   "candidates": [
+    "EIE",
+    "SEE",
+    "LIE",
+    "ESI"
+   ],
+   "answer": 0,
+   "explanation": "EIE supervisa a ILI: le marca el ritmo y no lo deja esconderse. El dual (SEE) lo dejaría tranquilo, que es justo lo que no se quiere.",
+   "diff": 0
+  },
+  {
+   "id": "conn08",
+   "client": "Una ESI quiere ayudar a alguien que lo necesita: busca a quién darle su apoyo.",
+   "goal": "Ayudar a alguien que lo necesite de verdad.",
+   "hired": "ESI",
+   "candidates": [
+    "IEI",
+    "LIE",
+    "EII",
+    "SLI"
+   ],
+   "answer": 0,
+   "explanation": "ESI es benefactora de IEI: le da lo que IEI no se da solo. El dual (LIE) no necesita su ayuda: ya lo tiene fuerte.",
+   "diff": 0
+  },
+  {
+   "id": "conn09",
+   "client": "Un estudio creativo contrató a un SLE: busca un colaborador ligero, sin compromisos.",
+   "goal": "Colaboración ligera, sin presión.",
+   "hired": "SLE",
+   "candidates": [
+    "SEI",
+    "IEI",
+    "EII",
+    "LSE"
+   ],
+   "answer": 0,
+   "explanation": "SEI es el espejismo de SLE: se entienden sin esfuerzo, colaboración ligera sin compromiso. El dual (IEI) implicaría más.",
+   "diff": 0
+  },
+  {
+   "id": "conn10",
+   "client": "Una empresa contrató a un LIE como director: necesita a alguien a quien dirigir sin peleas.",
+   "goal": "Dirigir a alguien que acepte que le marquen los métodos.",
+   "hired": "LIE",
+   "candidates": [
+    "IEI",
+    "ESI",
+    "IEE",
+    "SEE"
+   ],
+   "answer": 0,
+   "explanation": "LIE supervisa a IEI: le marca los métodos y IEI lo acepta sin pelear. El dual (ESI) no aceptaría que lo dirijan así.",
+   "diff": 0
+  },
+  {
+   "id": "conn11",
+   "client": "Un club de debate contrató a un IEI: quiere un rival filosófico parecido pero distinto.",
+   "goal": "Debate sin fin con alguien casi igual.",
+   "hired": "IEI",
+   "candidates": [
+    "EII",
+    "LSE",
+    "IEE",
+    "SLI"
+   ],
+   "answer": 0,
+   "explanation": "EII es la cuasi-identidad de IEI: piensan parecido pero con los valores al revés, debate sin fin.",
+   "diff": 0
+  },
+  {
+   "id": "conn12",
+   "client": "Un SLI se mete en líos por ir a su ritmo: su familia busca a alguien que apague sus fuegos.",
+   "goal": "Alguien que lo calme sin drama.",
+   "hired": "SLI",
+   "candidates": [
+    "SLE",
+    "IEE",
+    "ESE",
+    "LSE"
+   ],
+   "answer": 0,
+   "explanation": "SLE es la extinción de SLI: apaga sus fuegos con calma y sin drama. El dual (IEE) lo animaría, no lo calmaría.",
+   "diff": 0
+  },
+  {
+   "id": "conn13",
+   "client": "Un productor de debates contrató a un ILE y busca a su compañero ideal para un proyecto largo.",
+   "goal": "Cubrir el Superid con funciones fuertes y sin drama.",
+   "hired": "ILE",
+   "candidates": [
+    "SEI",
+    "SLI",
+    "ESE",
+    "LII"
+   ],
+   "answer": 0,
+   "explanation": "SEI es el dual de ILE: cubre su Superid (Si, Fe) con funciones fuertes, sin drama. SLI es semidual (cubre solo una parte) y ESE es activación (anima pero no cubre).",
+   "diff": 1
+  },
+  {
+   "id": "conn14",
+   "client": "Un equipo contrató a un LII y quiere a alguien que le marque los errores de verdad.",
+   "goal": "Alguien que le marque los errores sin proponérselo.",
+   "hired": "LII",
+   "candidates": [
+    "SLE",
+    "IEE",
+    "ESE",
+    "SEI"
+   ],
+   "answer": 0,
+   "explanation": "SLE supervisa a LII: le marca los errores sin proponérselo. IEE es al revés: LII supervisa a IEE, no al contrario.",
+   "diff": 1
+  },
+  {
+   "id": "conn15",
+   "client": "Un IEI busca a alguien que lo ayude sin que tenga que pedirlo.",
+   "goal": "Recibir ayuda sin tener que pedirla.",
+   "hired": "IEI",
+   "candidates": [
+    "ESI",
+    "LIE",
+    "SLE",
+    "EII"
+   ],
+   "answer": 0,
+   "explanation": "ESI es benefactora de IEI: le da justo lo que IEI no se da solo. LIE lo supervisa, no lo beneficia.",
+   "diff": 1
+  },
+  {
+   "id": "conn16",
+   "client": "Un LSE necesita a alguien que cubra lo que él no domina: su Superid es Fi y Ne.",
+   "goal": "Cubrir el Superid con funciones fuertes.",
+   "hired": "LSE",
+   "candidates": [
+    "EII",
+    "ESI",
+    "IEE",
+    "SLI"
+   ],
+   "answer": 0,
+   "explanation": "EII es el dual de LSE: cubre su Superid (Fi, Ne) con funciones fuertes. ESI es semidual (cubre solo Fi) e IEE es activación.",
+   "diff": 2
+  },
+  {
+   "id": "conn17",
+   "client": "Un ILI quiere dirigir a alguien que acepte su corrección sin pelear.",
+   "goal": "Que alguien acepte que le marquen los métodos sin pelear.",
+   "hired": "ILI",
+   "candidates": [
+    "LSE",
+    "SEE",
+    "EIE",
+    "LIE"
+   ],
+   "answer": 0,
+   "explanation": "ILI supervisa a LSE: su Ni base pisa la dolorosa de LSE (Ni) y LSE lo acepta. EIE es al revés: EIE supervisa a ILI.",
+   "diff": 2
+  },
+  {
+   "id": "conn18",
+   "client": "Un LIE quiere ayudar a alguien que lo necesite de verdad.",
+   "goal": "Ayudar a alguien que lo necesite de verdad.",
+   "hired": "LIE",
+   "candidates": [
+    "SLE",
+    "IEI",
+    "ESI",
+    "IEE"
+   ],
+   "answer": 0,
+   "explanation": "LIE es benefactor de SLE: le da lo que SLE necesita sin que lo note. IEE es al revés: IEE es benefactor de LIE.",
+   "diff": 2
+  },
+  {
+   "id": "conn19",
+   "client": "Una EII busca a su compañero ideal para un proyecto de toda la vida.",
+   "goal": "Cubrir el Superid con funciones fuertes y sin drama.",
+   "hired": "EII",
+   "candidates": [
+    "LSE",
+    "LIE",
+    "SLI",
+    "IEE"
+   ],
+   "answer": 0,
+   "explanation": "LSE es el dual de EII: cubre su Superid (Te, Si) con funciones fuertes. LIE es semidual (cubre solo una parte) y SLI es activación.",
+   "diff": 3
+  },
+  {
+   "id": "conn20",
+   "client": "Un SEE se mete en líos por ir a su ritmo: su familia busca a alguien que le marque los errores.",
+   "goal": "Alguien que le marque los errores y no lo deje a su ritmo.",
+   "hired": "SEE",
+   "candidates": [
+    "LSI",
+    "EII",
+    "ILI",
+    "LIE"
+   ],
+   "answer": 0,
+   "explanation": "LSI supervisa a SEE: le marca los errores sin proponérselo. EII es al revés: SEE supervisa a EII, no al contrario.",
+   "diff": 3
+  }
+ ]
+}

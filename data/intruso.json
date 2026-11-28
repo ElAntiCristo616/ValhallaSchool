@@ -1,0 +1,572 @@
+[
+ {
+  "id": "int01",
+  "kind": "cuadra",
+  "items": [
+   "ILE",
+   "SEI",
+   "ESE",
+   "LIE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Alfa?",
+  "property": "Los otros tres valoran Ne, Ti, Si y Fe.",
+  "explanation": "ILE, SEI y ESE son Alfa; LIE es Gamma (valora Se, Fi, Ni y Te).",
+  "diff": 0
+ },
+ {
+  "id": "int02",
+  "kind": "cuadra",
+  "items": [
+   "EIE",
+   "LSI",
+   "SLE",
+   "ILI"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Beta?",
+  "property": "Los otros tres valoran Se, Ti, Ni y Fe.",
+  "explanation": "EIE, LSI y SLE son Beta; ILI es Gamma.",
+  "diff": 0
+ },
+ {
+  "id": "int03",
+  "kind": "cuadra",
+  "items": [
+   "SEE",
+   "ILI",
+   "LIE",
+   "EII"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Gamma?",
+  "property": "Los otros tres valoran Se, Fi, Ni y Te.",
+  "explanation": "SEE, ILI y LIE son Gamma; EII es Delta.",
+  "diff": 0
+ },
+ {
+  "id": "int04",
+  "kind": "cuadra",
+  "items": [
+   "LSE",
+   "EII",
+   "IEE",
+   "ESE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Delta?",
+  "property": "Los otros tres valoran Ne, Fi, Si y Te.",
+  "explanation": "LSE, EII y IEE son Delta; ESE es Alfa.",
+  "diff": 0
+ },
+ {
+  "id": "int05",
+  "kind": "cuadra",
+  "items": [
+   "LII",
+   "ESE",
+   "SEI",
+   "SLE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Alfa?",
+  "property": "Los otros tres valoran Ne, Ti, Si y Fe.",
+  "explanation": "LII, ESE y SEI son Alfa; SLE es Beta.",
+  "diff": 0
+ },
+ {
+  "id": "int06",
+  "kind": "cuadra",
+  "items": [
+   "IEI",
+   "EIE",
+   "LSI",
+   "LIE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Beta?",
+  "property": "Los otros tres valoran Se, Ti, Ni y Fe.",
+  "explanation": "IEI, EIE y LSI son Beta; LIE es Gamma.",
+  "diff": 0
+ },
+ {
+  "id": "int07",
+  "kind": "cuadra",
+  "items": [
+   "ESI",
+   "SEE",
+   "ILI",
+   "IEE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Gamma?",
+  "property": "Los otros tres valoran Se, Fi, Ni y Te.",
+  "explanation": "ESI, SEE y ILI son Gamma; IEE es Delta.",
+  "diff": 0
+ },
+ {
+  "id": "int08",
+  "kind": "cuadra",
+  "items": [
+   "SLI",
+   "LSE",
+   "EII",
+   "IEI"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Delta?",
+  "property": "Los otros tres valoran Ne, Fi, Si y Te.",
+  "explanation": "SLI, LSE y EII son Delta; IEI es Beta.",
+  "diff": 0
+ },
+ {
+  "id": "int09",
+  "kind": "elemento",
+  "items": [
+   "Ne",
+   "Ti",
+   "Si",
+   "Te"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es valor de Alfa?",
+  "property": "Ne, Ti y Si son valores de Alfa.",
+  "explanation": "Alfa valora Ne, Ti, Si y Fe; Te no es valor de Alfa.",
+  "diff": 0
+ },
+ {
+  "id": "int10",
+  "kind": "elemento",
+  "items": [
+   "Se",
+   "Ti",
+   "Ni",
+   "Ne"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es valor de Beta?",
+  "property": "Se, Ti y Ni son valores de Beta.",
+  "explanation": "Beta valora Se, Ti, Ni y Fe; Ne no es valor de Beta.",
+  "diff": 0
+ },
+ {
+  "id": "int11",
+  "kind": "elemento",
+  "items": [
+   "Se",
+   "Fi",
+   "Ni",
+   "Si"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es valor de Gamma?",
+  "property": "Se, Fi y Ni son valores de Gamma.",
+  "explanation": "Gamma valora Se, Fi, Ni y Te; Si no es valor de Gamma.",
+  "diff": 0
+ },
+ {
+  "id": "int12",
+  "kind": "elemento",
+  "items": [
+   "Ne",
+   "Fi",
+   "Si",
+   "Fe"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es valor de Delta?",
+  "property": "Ne, Fi y Si son valores de Delta.",
+  "explanation": "Delta valora Ne, Fi, Si y Te; Fe no es valor de Delta.",
+  "diff": 0
+ },
+ {
+  "id": "int13",
+  "kind": "elemento",
+  "items": [
+   "Ne",
+   "Ni",
+   "Se",
+   "Te"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es irracional?",
+  "property": "Ne, Ni y Se son irracionales (percepción).",
+  "explanation": "Ne, Ni y Se son funciones de percepción; Te es racional (juicio).",
+  "diff": 0
+ },
+ {
+  "id": "int14",
+  "kind": "elemento",
+  "items": [
+   "Ti",
+   "Fi",
+   "Te",
+   "Se"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es racional?",
+  "property": "Ti, Fi y Te son racionales (juicio).",
+  "explanation": "Ti, Fi y Te son funciones de juicio; Se es irracional (percepción).",
+  "diff": 0
+ },
+ {
+  "id": "int20",
+  "kind": "bloque",
+  "items": [
+   "[Ne base]",
+   "[Ti creativa]",
+   "[Fe base]",
+   "[Si sugestiva]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del Ego?",
+  "property": "Las otras tres son Ego (base o creativa).",
+  "explanation": "Ne, Ti y Fe son Ego (1-2); Si sugestiva es Superid (5).",
+  "diff": 0
+ },
+ {
+  "id": "int21",
+  "kind": "bloque",
+  "items": [
+   "[Se rol]",
+   "[Fi dolorosa]",
+   "[Ti rol]",
+   "[Ne Demostrativa]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del Superego?",
+  "property": "Las otras tres son Superego (rol o dolorosa).",
+  "explanation": "Se, Fi y Ti son Superego (3-4); Ne Demostrativa es Id (8).",
+  "diff": 0
+ },
+ {
+  "id": "int22",
+  "kind": "bloque",
+  "items": [
+   "[Si sugestiva]",
+   "[Fe Mobilizing]",
+   "[Te sugestiva]",
+   "[Ni Observing]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del Superid?",
+  "property": "Las otras tres son Superid (sugestiva o Mobilizing).",
+  "explanation": "Si, Fe y Te son Superid (5-6); Ni Observing es Id (7).",
+  "diff": 0
+ },
+ {
+  "id": "int23",
+  "kind": "bloque",
+  "items": [
+   "[Ni Observing]",
+   "[Te Demostrativa]",
+   "[Se Observing]",
+   "[Fi base]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del Id?",
+  "property": "Las otras tres son Id (Observing o Demostrativa).",
+  "explanation": "Ni, Te y Se son Id (7-8); Fi base es Ego (1).",
+  "diff": 0
+ },
+ {
+  "id": "int24",
+  "kind": "anillo",
+  "items": [
+   "[Ne base]",
+   "[Ti rol]",
+   "[Fi dolorosa]",
+   "[Si sugestiva]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del anillo mental?",
+  "property": "Las otras tres son mentales (posiciones 1-4).",
+  "explanation": "Ne, Ti y Fi son mentales; Si sugestiva es vital (5).",
+  "diff": 0
+ },
+ {
+  "id": "int25",
+  "kind": "anillo",
+  "items": [
+   "[Si sugestiva]",
+   "[Fe Mobilizing]",
+   "[Ni Observing]",
+   "[Ne base]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del anillo vital?",
+  "property": "Las otras tres son vitales (posiciones 5-8).",
+  "explanation": "Si, Fe y Ni son vitales; Ne base es mental (1).",
+  "diff": 0
+ },
+ {
+  "id": "int26",
+  "kind": "anillo",
+  "items": [
+   "[Te Demostrativa]",
+   "[Si sugestiva]",
+   "[Fe Mobilizing]",
+   "[Ti creativa]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del anillo vital?",
+  "property": "Las otras tres son vitales (posiciones 5-8).",
+  "explanation": "Te, Si y Fe son vitales; Ti creativa es mental (2).",
+  "diff": 0
+ },
+ {
+  "id": "int27",
+  "kind": "valor",
+  "items": [
+   "[Ne base]",
+   "[Ti creativa]",
+   "[Si sugestiva]",
+   "[Se rol]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es valiosa para Alfa?",
+  "property": "Ne, Ti y Si son valores de Alfa.",
+  "explanation": "En Alfa, Ne, Ti, Si y Fe son valiosas; Se rol no lo es.",
+  "diff": 0
+ },
+ {
+  "id": "int28",
+  "kind": "valor",
+  "items": [
+   "[Se base]",
+   "[Fi creativa]",
+   "[Ni sugestiva]",
+   "[Ne rol]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es valiosa para Gamma?",
+  "property": "Se, Fi y Ni son valores de Gamma.",
+  "explanation": "En Gamma, Se, Fi, Ni y Te son valiosas; Ne rol no lo es.",
+  "diff": 0
+ },
+ {
+  "id": "int29",
+  "kind": "fuerza",
+  "items": [
+   "[Ne base]",
+   "[Ti creativa]",
+   "[Ni Observing]",
+   "[Se rol]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es fuerte?",
+  "property": "Ne, Ti y Ni son fuertes (posiciones 1, 2, 7 u 8).",
+  "explanation": "Ne base, Ti creativa y Ni Observing son fuertes; Se rol es débil (3).",
+  "diff": 0
+ },
+ {
+  "id": "int30",
+  "kind": "fuerza",
+  "items": [
+   "[Fi dolorosa]",
+   "[Ne rol]",
+   "[Te sugestiva]",
+   "[Si base]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es débil?",
+  "property": "Fi, Ne y Te son débiles (posiciones 3, 4, 5 o 6).",
+  "explanation": "Fi dolorosa, Ne rol y Te sugestiva son débiles; Si base es fuerte (1).",
+  "diff": 0
+ },
+ {
+  "id": "int31",
+  "kind": "cuadra",
+  "items": [
+   "ILE",
+   "SEI",
+   "LII",
+   "SLE"
+  ],
+  "answer": 3,
+  "rule": "¿Quién no pertenece a la cuadra Alfa?",
+  "property": "Los otros tres valoran Ne, Ti, Si y Fe.",
+  "explanation": "ILE, SEI y LII son Alfa; SLE es Beta (valora Se, Ti, Ni y Fe).",
+  "diff": 1
+ },
+ {
+  "id": "int32",
+  "kind": "elemento",
+  "items": [
+   "Se",
+   "Fi",
+   "Te",
+   "Ne"
+  ],
+  "answer": 3,
+  "rule": "¿Qué elemento no es valor de Gamma?",
+  "property": "Se, Fi y Te son valores de Gamma.",
+  "explanation": "Gamma valora Se, Fi, Ni y Te; Ne no es valor de Gamma.",
+  "diff": 1
+ },
+ {
+  "id": "int33",
+  "kind": "bloque",
+  "items": [
+   "[Te base]",
+   "[Ni creativa]",
+   "[Se base]",
+   "[Fi sugestiva]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es del Ego?",
+  "property": "Las otras tres son Ego (base o creativa).",
+  "explanation": "Te, Ni y Se son Ego (1-2); Fi sugestiva es Superid (5).",
+  "diff": 1
+ },
+ {
+  "id": "int34",
+  "kind": "anillo",
+  "items": [
+   "[Se Observing]",
+   "[Fi Demostrativa]",
+   "[Te base]",
+   "[Ni Mobilizing]"
+  ],
+  "answer": 2,
+  "rule": "¿Qué función no es del anillo vital?",
+  "property": "Las otras tres son vitales (posiciones 5-8).",
+  "explanation": "Se, Fi y Ni son vitales; Te base es mental (1).",
+  "diff": 2
+ },
+ {
+  "id": "int35",
+  "kind": "fuerza",
+  "items": [
+   "[Ti Observing]",
+   "[Ne creativa]",
+   "[Si Demostrativa]",
+   "[Fe dolorosa]"
+  ],
+  "answer": 3,
+  "rule": "¿Qué función no es fuerte?",
+  "property": "Ti, Ne y Si son fuertes (posiciones 1, 2, 7 u 8).",
+  "explanation": "Ti Observing (7), Ne creativa (2) y Si Demostrativa (8) son fuertes; Fe dolorosa es débil (4).",
+  "diff": 2
+ },
+ {
+  "id": "int36",
+  "kind": "relacion",
+  "items": [
+   "ILE–SEI",
+   "ESE–LII",
+   "EIE–LSI",
+   "ILE–ESE"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja NO es dual?",
+  "property": "Las otras tres parejas son duales.",
+  "explanation": "ILE–SEI, ESE–LII y EIE–LSI son duales: la base de uno es la sugestiva del otro. ILE–ESE es activación, no dualidad.",
+  "diff": 1
+ },
+ {
+  "id": "int37",
+  "kind": "relacion",
+  "items": [
+   "ESE–ILI",
+   "LII–SEE",
+   "EIE–SLI",
+   "ESE–SEI"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja NO es de conflicto?",
+  "property": "Las otras tres parejas son conflictores.",
+  "explanation": "ESE–ILI, LII–SEE y EIE–SLI son conflictores: la base de uno pisa la dolorosa del otro. ESE–SEI es espejo, no conflicto.",
+  "diff": 1
+ },
+ {
+  "id": "int38",
+  "kind": "relacion",
+  "items": [
+   "ILE–LII",
+   "ESE–SEI",
+   "EIE–IEI",
+   "ILE–SEI"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja NO es de espejo?",
+  "property": "Las otras tres parejas son de espejo.",
+  "explanation": "ILE–LII, ESE–SEI y EIE–IEI son espejos: mismo Ego al revés. ILE–SEI es dualidad, no espejo.",
+  "diff": 1
+ },
+ {
+  "id": "int39",
+  "kind": "relacion",
+  "items": [
+   "ESE–ILE",
+   "LII–SEI",
+   "EIE–SLE",
+   "ESE–LII"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja NO es de activación?",
+  "property": "Las otras tres parejas son de activación.",
+  "explanation": "ESE–ILE, LII–SEI y EIE–SLE son activaciones: se animan en ráfagas cortas. ESE–LII es dualidad, no activación.",
+  "diff": 1
+ },
+ {
+  "id": "int40",
+  "kind": "relacion",
+  "items": [
+   "SEI",
+   "LII",
+   "ESE",
+   "LIE"
+  ],
+  "answer": 3,
+  "rule": "¿Qué tipo NO es dual de un tipo de Alfa?",
+  "property": "Los otros tres son duales de tipos de Alfa.",
+  "explanation": "SEI es dual de ILE, LII es dual de ESE y ESE es dual de LII (todos Alfa). LIE es dual de ESI, que es Gamma.",
+  "diff": 2
+ },
+ {
+  "id": "int41",
+  "kind": "relacion",
+  "items": [
+   "ILE → LSI",
+   "SEI → EIE",
+   "ESE → SLI",
+   "LSI → ILE"
+  ],
+  "answer": 3,
+  "rule": "¿En qué pareja la supervisión NO va en esa dirección?",
+  "property": "En las otras tres, el primer tipo supervisa al segundo.",
+  "explanation": "ILE supervisa a LSI, SEI supervisa a EIE y ESE supervisa a SLI. En cambio, LSI es supervisado por ILE: la flecha va al revés.",
+  "diff": 2
+ },
+ {
+  "id": "int42",
+  "kind": "relacion",
+  "items": [
+   "ILE–SEI",
+   "ESE–LII",
+   "EIE–LSI",
+   "ILE–SLI"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja es semidual entre tres duales?",
+  "property": "Las otras tres parejas son duales y no semiduales.",
+  "explanation": "ILE–SEI, ESE–LII y EIE–LSI son duales: base y sugestiva se cubren por los dos lados. ILE–SLI es semidual: encaja solo una parte.",
+  "diff": 2
+ },
+ {
+  "id": "int43",
+  "kind": "relacion",
+  "items": [
+   "SEI–SLI",
+   "LII–LSI",
+   "EIE–ESE",
+   "SEI–LSE"
+  ],
+  "answer": 3,
+  "rule": "¿Qué pareja NO es de afinidad?",
+  "property": "Las otras tres parejas son de afinidad.",
+  "explanation": "SEI–SLI, LII–LSI y EIE–ESE son afinidades: comparten las funciones fuertes. SEI–LSE es supervisión: LSE supervisa a SEI.",
+  "diff": 3
+ }
+]
